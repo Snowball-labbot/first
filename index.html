@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<base href="https://xfkgnkhlaizz4.ok.kimi.link">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中央财经大学创新发展学院新闻中心 - 照片档案系统</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'academic-red': '#C41E3A',
+                        'academic-dark-red': '#A01729',
+                        'academic-gold': '#D4AF37',
+                        'wechat-green': '#07C160'
+                    },
+                    fontFamily: {
+                        'serif': ['Noto Serif SC', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%),
+                        url('resources/hero-campus.png') center/cover;
+            min-height: 100vh;
+        }
+        
+        .auth-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(196, 30, 58, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #C41E3A 0%, #A01729 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.3);
+        }
+        
+        .btn-wechat {
+            background: #07C160;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-wechat:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(7, 193, 96, 0.3);
+        }
+        
+        .form-input {
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #C41E3A;
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast-success { background: #10b981; }
+        .toast-error { background: #ef4444; }
+        .toast-info { background: #3b82f6; }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .logo-container {
+            background: white;
+            border-radius: 50%;
+            padding: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .typewriter-text {
+            border-right: 2px solid #C41E3A;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #C41E3A; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        /* 上传区域样式 */
+        .upload-area {
+            border: 2px dashed #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover, .upload-area.drag-over {
+            border-color: #C41E3A;
+            background-color: rgba(196, 30, 58, 0.05);
+        }
+        
+        .upload-preview {
+            height: 120px;
+            object-fit: cover;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #C41E3A 0%, #A01729 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* 切换动画 */
+        .auth-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .auth-tab.active {
+            color: #C41E3A;
+            font-weight: 600;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 底部导航 */
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- 登录/注册区域 -->
+    <div class="hero-bg flex items-center justify-center p-4" id="authSection">
+        <div class="w-full max-w-md">
+            <!-- Logo和标题 -->
+            <div class="text-center mb-8 fade-in" style="animation: fadeIn 0.8s ease forwards;">
+                <div class="logo-container inline-block mb-4">
+                    <img src="resources/logo-news-center.png" alt="新闻中心Logo" class="w-16 h-16">
+                </div>
+                <h1 class="font-serif text-2xl font-bold text-gray-800 mb-2">
+                    中央财经大学
+                </h1>
+                <h2 class="font-serif text-lg font-medium text-academic-red">
+                    创新发展学院新闻中心
+                </h2>
+                <div class="text-sm text-gray-600 mt-2">
+                    <span class="typewriter-text" id="typewriter"></span>
+                </div>
+            </div>
+            
+            <!-- 认证卡片 -->
+            <div class="auth-card rounded-2xl p-8 shadow-2xl fade-in" style="animation: fadeIn 0.8s ease 0.2s forwards; opacity: 0;">
+                <!-- 选项卡切换 -->
+                <div class="flex justify-center mb-6">
+                    <div class="auth-tab active px-4 py-2" data-tab="login">登录</div>
+                    <div class="auth-tab px-4 py-2" data-tab="register">注册</div>
+                </div>
+                
+                <!-- 登录表单 -->
+                <div class="tab-content active" id="loginTab">
+                    <div class="text-center mb-6">
+                        <h3 class="font-serif text-xl font-bold text-gray-800 mb-2">照片档案系统</h3>
+                        <p class="text-gray-600 text-sm">请使用您的账号登录</p>
+                    </div>
+                    
+                    <form id="loginForm" class="space-y-4">
+                        <div>
+                            <label for="loginUsername" class="block text-sm font-medium text-gray-700 mb-2">
+                                用户名/邮箱
+                            </label>
+                            <input 
+                                type="text" 
+                                id="loginUsername" 
+                                name="loginUsername"
+                                placeholder="请输入用户名或邮箱"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-2">
+                                密码
+                            </label>
+                            <input 
+                                type="password" 
+                                id="loginPassword" 
+                                name="loginPassword"
+                                placeholder="请输入密码"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-sm">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-gray-300 text-academic-red focus:ring-academic-red">
+                                <span class="ml-2 text-gray-600">记住我</span>
+                            </label>
+                            <a href="#" class="text-academic-red hover:text-academic-dark-red">
+                                忘记密码？
+                            </a>
+                        </div>
+                        
+                        <button 
+                            type="submit" 
+                            class="btn-primary w-full py-3 px-4 rounded-lg text-white font-medium text-sm"
+                        >
+                            登录系统
+                        </button>
+                    </form>
+                    
+                    <!-- 微信登录 -->
+                    <div class="relative my-4">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-200"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">其他登录方式</span>
+                        </div>
+                    </div>
+                    
+                    <button id="wechatLogin" class="btn-wechat w-full py-3 px-4 rounded-lg text-white font-medium text-sm flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7.775 20.849c2.19 0 4.144-.765 5.663-2.056l-2.09-1.624c-.704.471-2.034 1.02-3.573 1.02-3.216 0-5.807-2.57-5.807-5.736 0-3.167 2.591-5.736 5.807-5.736 1.538 0 2.869.549 3.573 1.02l2.09-1.624c-1.519-1.291-3.473-2.056-5.663-2.056-4.66 0-8.447 3.787-8.447 8.447 0 4.66 3.787 8.449 8.447 8.449zm12.141-9.907c0 .623-.505 1.127-1.128 1.127-.623 0-1.128-.504-1.128-1.127 0-.623.505-1.127 1.128-1.127.623 0 1.128.504 1.128 1.127zM15.224 16.618c-1.495 0-2.709-1.214-2.709-2.709 0-1.495 1.214-2.709 2.709-2.709 1.495 0 2.709 1.214 2.709 2.709 0 1.495-1.214 2.709-2.709 2.709z"/>
+                        </svg>
+                        微信快捷登录
+                    </button>
+                    
+                    <div class="text-center mt-4 text-sm">
+                        <span class="text-gray-600">还没有账号？</span>
+                        <a href="#" class="text-academic-red hover:text-academic-dark-red ml-1 auth-tab" data-tab="register">立即注册</a>
+                    </div>
+                </div>
+                
+                <!-- 注册表单 -->
+                <div class="tab-content" id="registerTab">
+                    <div class="text-center mb-6">
+                        <h3 class="font-serif text-xl font-bold text-gray-800 mb-2">创建账号</h3>
+                        <p class="text-gray-600 text-sm">注册后即可使用照片档案系统</p>
+                    </div>
+                    
+                    <form id="registerForm" class="space-y-4">
+                        <div>
+                            <label for="regUsername" class="block text-sm font-medium text-gray-700 mb-2">
+                                用户名
+                            </label>
+                            <input 
+                                type="text" 
+                                id="regUsername" 
+                                name="regUsername"
+                                placeholder="请设置用户名"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="regEmail" class="block text-sm font-medium text-gray-700 mb-2">
+                                邮箱
+                            </label>
+                            <input 
+                                type="email" 
+                                id="regEmail" 
+                                name="regEmail"
+                                placeholder="请输入邮箱地址"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="regPassword" class="block text-sm font-medium text-gray-700 mb-2">
+                                密码
+                            </label>
+                            <input 
+                                type="password" 
+                                id="regPassword" 
+                                name="regPassword"
+                                placeholder="请设置密码（至少8位）"
+                                minlength="8"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-2">
+                                确认密码
+                            </label>
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword"
+                                placeholder="请再次输入密码"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                        </div>
+                        
+                        <button 
+                            type="submit" 
+                            class="btn-primary w-full py-3 px-4 rounded-lg text-white font-medium text-sm"
+                        >
+                            注册账号
+                        </button>
+                    </form>
+                    
+                    <!-- 微信注册 -->
+                    <div class="relative my-4">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-200"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">快捷注册</span>
+                        </div>
+                    </div>
+                    
+                    <button id="wechatRegister" class="btn-wechat w-full py-3 px-4 rounded-lg text-white font-medium text-sm flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7.775 20.849c2.19 0 4.144-.765 5.663-2.056l-2.09-1.624c-.704.471-2.034 1.02-3.573 1.02-3.216 0-5.807-2.57-5.807-5.736 0-3.167 2.591-5.736 5.807-5.736 1.538 0 2.869.549 3.573 1.02l2.09-1.624c-1.519-1.291-3.473-2.056-5.663-2.056-4.66 0-8.447 3.787-8.447 8.447 0 4.66 3.787 8.449 8.447 8.449zm12.141-9.907c0 .623-.505 1.127-1.128 1.127-.623 0-1.128-.504-1.128-1.127 0-.623.505-1.127 1.128-1.127.623 0 1.128.504 1.128 1.127zM15.224 16.618c-1.495 0-2.709-1.214-2.709-2.709 0-1.495 1.214-2.709 2.709-2.709 1.495 0 2.709 1.214 2.709 2.709 0 1.495-1.214 2.709-2.709 2.709z"/>
+                        </svg>
+                        微信快捷注册
+                    </button>
+                    
+                    <div class="text-center mt-4 text-sm">
+                        <span class="text-gray-600">已有账号？</span>
+                        <a href="#" class="text-academic-red hover:text-academic-dark-red ml-1 auth-tab" data-tab="login">立即登录</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 页脚 -->
+            <div class="text-center mt-6 fade-in" style="animation: fadeIn 0.8s ease 0.4s forwards; opacity: 0;">
+                <p class="text-sm text-gray-600">
+                    © 2024 中央财经大学创新发展学院新闻中心
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                    技术支持：现代教育技术中心
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 上传照片区域 (默认隐藏) -->
+    <div id="uploadSection" class="hidden p-4 max-w-4xl mx-auto">
+        <!-- 顶部导航 -->
+        <header class="py-4 border-b border-gray-200 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="resources/logo-news-center.png" alt="新闻中心Logo" class="w-10 h-10 mr-3">
+                <div>
+                    <h1 class="font-serif text-lg font-bold text-gray-800">照片档案系统</h1>
+                    <p class="text-xs text-gray-500">中央财经大学创新发展学院</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <span class="text-sm text-gray-600 mr-3" id="userDisplayName">用户名</span>
+                <button id="logoutBtn" class="text-academic-red text-sm hover:underline">退出</button>
+            </div>
+        </header>
+        
+        <!-- 上传区域 -->
+        <div class="mt-8">
+            <h2 class="font-serif text-xl font-bold text-gray-800 mb-6">上传照片</h2>
+            
+            <!-- 上传区域 -->
+            <div class="upload-area rounded-xl p-8 text-center mb-8 cursor-pointer" id="dropArea">
+                <input type="file" id="fileInput" class="hidden" accept="image/*" multiple>
+                <svg class="w-16 h-16 text-academic-red mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.626 3.813A1 1 0 018 4v10a1 1 0 01-1.707.707L3 10.707V14a1 1 0 001 1h10a1 1 0 001-1v-3.293l-1.293-1.293A1 1 0 0116 9V4a1 1 0 01-1.707-.707l-6.626-6.627a1 1 0 00-1.414 0l-6.627 6.627A1 1 0 012 4v5a1 1 0 001 1h3v3.707l1.293-1.293a1 1 0 011.414 0L8 15.293V5a1 1 0 00-.374-.787z" clip-rule="evenodd"></path>
+                </svg>
+                <h3 class="font-medium text-gray-800 mb-2">拖放照片到此处上传</h3>
+                <p class="text-sm text-gray-500 mb-4">支持JPG、PNG格式，单张不超过10MB</p>
+                <button id="browseBtn" class="btn-primary py-2 px-6 rounded-lg text-white font-medium text-sm">
+                    选择照片
+                </button>
+            </div>
+            
+            <!-- 照片预览和信息 -->
+            <div id="previewContainer" class="space-y-6 hidden">
+                <h3 class="font-medium text-gray-800">待上传照片</h3>
+                
+                <div id="photosPreview" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- 照片预览会动态添加到这里 -->
+                </div>
+                
+                <!-- 照片信息 -->
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <h4 class="font-medium text-gray-800 mb-4">照片信息</h4>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label for="photoCategory" class="block text-sm font-medium text-gray-700 mb-2">
+                                分类
+                            </label>
+                            <select id="photoCategory" class="form-input w-full px-4 py-3 rounded-lg text-sm">
+                                <option value="academic">学术活动</option>
+                                <option value="campus">校园活动</option>
+                                <option value="conference">会议记录</option>
+                                <option value="ceremony">典礼仪式</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="photoTitle" class="block text-sm font-medium text-gray-700 mb-2">
+                                标题
+                            </label>
+                            <input 
+                                type="text" 
+                                id="photoTitle" 
+                                placeholder="请输入照片标题"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="photoDescription" class="block text-sm font-medium text-gray-700 mb-2">
+                                描述
+                            </label>
+                            <textarea 
+                                id="photoDescription" 
+                                rows="3"
+                                placeholder="请输入照片描述（可选）"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                            ></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="photoTags" class="block text-sm font-medium text-gray-700 mb-2">
+                                标签
+                            </label>
+                            <input 
+                                type="text" 
+                                id="photoTags" 
+                                placeholder="请输入标签，用逗号分隔"
+                                class="form-input w-full px-4 py-3 rounded-lg text-sm"
+                            >
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 上传进度 -->
+                <div id="uploadProgress" class="hidden">
+                    <div class="flex justify-between text-sm mb-1">
+                        <span id="progressText">正在上传...</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="bg-gray-200 rounded-full h-4">
+                        <div class="progress-bar rounded-full" id="progressBar"></div>
+                    </div>
+                </div>
+                
+                <!-- 操作按钮 -->
+                <div class="flex justify-end space-x-4 pt-4 border-t border-gray-200">
+                    <button id="cancelUpload" class="py-3 px-6 rounded-lg border border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-50 transition">
+                        取消
+                    </button>
+                    <button id="confirmUpload" class="btn-primary py-3 px-6 rounded-lg text-white font-medium text-sm">
+                        确认上传
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 上传历史 -->
+            <div class="mt-12">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="font-serif text-xl font-bold text-gray-800">上传历史</h2>
+                    <a href="#" class="text-academic-red text-sm hover:underline">查看全部</a>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="uploadHistory">
+                    <!-- 历史记录会动态加载 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 底部导航 -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 hidden" id="bottomNav">
+        <div class="flex justify-around items-center max-w-4xl mx-auto">
+            <a href="#" class="nav-item flex flex-col items-center py-2 text-academic-red">
+                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                </svg>
+                <span class="text-xs">首页</span>
+            </a>
+            <a href="#" class="nav-item flex flex-col items-center py-2 text-academic-red">
+                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-xs">上传</span>
+            </a>
+            <a href="#" class="nav-item flex flex-col items-center py-2 text-gray-400">
+                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-xs">我的</span>
+            </a>
+        </div>
+    </nav>
+    
+    <script>
+        // 全局对象管理系统功能
+        const photoArchive = {
+            // 当前登录用户
+            currentUser: null,
+            
+            // 显示提示信息
+            showToast: function(message, type = 'info') {
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                toast.textContent = message;
+                document.body.appendChild(toast);
+                
+                // 显示动画
+                setTimeout(() => toast.classList.add('show'), 10);
+                
+                // 3秒后隐藏
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            },
+            
+            // 登录功能
+            login: function(username, password) {
+                // 模拟登录验证
+                if ((username === 'admin' && password === 'password123') || 
+                    (username === 'user' && password === 'password123')) {
+                    this.currentUser = {
+                        username: username,
+                        displayName: username === 'admin' ? '管理员' : '普通用户',
+                        role: username === 'admin' ? 'admin' : 'user'
+                    };
+                    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+                    return { success: true };
+                } else {
+                    return { success: false, message: '用户名或密码错误' };
+                }
+            },
+            
+            // 注册功能
+            register: function(username, email, password) {
+                // 模拟注册逻辑
+                if (username && email && password) {
+                    this.currentUser = {
+                        username: username,
+                        displayName: username,
+                        email: email,
+                        role: 'user'
+                    };
+                    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+                    return { success: true };
+                } else {
+                    return { success: false, message: '请填写完整信息' };
+                }
+            },
+            
+            // 微信登录
+            wechatLogin: function() {
+                // 模拟微信登录流程
+                this.showToast('正在唤起微信登录...', 'info');
+                
+                setTimeout(() => {
+                    this.currentUser = {
+                        username: 'wechat_' + Math.random().toString(36).substr(2, 9),
+                        displayName: '微信用户',
+                        role: 'user',
+                        wechatBound: true
+                    };
+                    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+                    this.showToast('微信登录成功', 'success');
+                    
+                    setTimeout(() => {
+                        this.switchToUploadSection();
+                    }, 1000);
+                }, 1500);
+            },
+            
+            // 退出登录
+            logout: function() {
+                this.currentUser = null;
+                localStorage.removeItem('currentUser');
+                this.switchToAuthSection();
+                this.showToast('已退出登录', 'info');
+            },
+            
+            // 切换到认证页面
+            switchToAuthSection: function() {
+                document.getElementById('authSection').classList.remove('hidden');
+                document.getElementById('uploadSection').classList.add('hidden');
+                document.getElementById('bottomNav').classList.add('hidden');
+            },
+            
+            // 切换到上传页面
+            switchToUploadSection: function() {
+                if (this.currentUser) {
+                    document.getElementById('userDisplayName').textContent = this.currentUser.displayName;
+                    document.getElementById('authSection').classList.add('hidden');
+                    document.getElementById('uploadSection').classList.remove('hidden');
+                    document.getElementById('bottomNav').classList.remove('hidden');
+                    
+                    // 加载上传历史
+                    this.loadUploadHistory();
+                }
+            },
+            
+            // 加载上传历史
+            loadUploadHistory: function() {
+                const historyContainer = document.getElementById('uploadHistory');
+                historyContainer.innerHTML = '';
+                
+                // 模拟历史数据
+                const history = [
+                    { id: 1, src: 'https://picsum.photos/200/200?random=1', date: '今天', title: '学术研讨会' },
+                    { id: 2, src: 'https://picsum.photos/200/200?random=2', date: '昨天', title: '校园开放日' },
+                    { id: 3, src: 'https://picsum.photos/200/200?random=3', date: '3天前', title: '新生开学典礼' },
+                    { id: 4, src: 'https://picsum.photos/200/200?random=4', date: '1周前', title: '校友座谈会' }
+                ];
+                
+                history.forEach(item => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'relative group';
+                    itemEl.innerHTML = `
+                        <img src="${item.src}" alt="${item.title}" class="w-full h-24 object-cover rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white text-xs">查看详情</span>
+                        </div>
+                        <div class="mt-1 text-xs text-gray-600">${item.date}</div>
+                        <div class="text-xs text-gray-800 truncate">${item.title}</div>
+                    `;
+                    historyContainer.appendChild(itemEl);
+                });
+            },
+            
+            // 初始化上传功能
+            initUpload: function() {
+                const dropArea = document.getElementById('dropArea');
+                const fileInput = document.getElementById('fileInput');
+                const browseBtn = document.getElementById('browseBtn');
+                const previewContainer = document.getElementById('previewContainer');
+                const photosPreview = document.getElementById('photosPreview');
+                const confirmUpload = document.getElementById('confirmUpload');
+                const cancelUpload = document.getElementById('cancelUpload');
+                const uploadProgress = document.getElementById('uploadProgress');
+                const progressBar = document.getElementById('progressBar');
+                const progressText = document.getElementById('progressText');
+                const progressPercent = document.getElementById('progressPercent');
+                
+                // 浏览文件
+                browseBtn.addEventListener('click', () => fileInput.click());
+                
+                // 文件选择
+                fileInput.addEventListener('change', (e) => {
+                    this.handleFiles(e.target.files);
+                });
+                
+                // 拖放功能
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, preventDefaults, false);
+                });
+                
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, highlight, false);
+                });
+                
+                ['dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, unhighlight, false);
+                });
+                
+                function highlight() {
+                    dropArea.classList.add('drag-over');
+                }
+                
+                function unhighlight() {
+                    dropArea.classList.remove('drag-over');
+                }
+                
+                dropArea.addEventListener('drop', (e) => {
+                    const dt = e.dataTransfer;
+                    const files = dt.files;
+                    this.handleFiles(files);
+                }, false);
+                
+                // 处理选择的文件
+                this.handleFiles = function(files) {
+                    if (files.length === 0) return;
+                    
+                    // 显示预览容器
+                    previewContainer.classList.remove('hidden');
+                    photosPreview.innerHTML = '';
+                    
+                    // 预览图片
+                    Array.from(files).forEach((file, index) => {
+                        if (!file.type.match('image.*')) {
+                            photoArchive.showToast('请选择图片文件', 'error');
+                            return;
+                        }
+                        
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const preview = document.createElement('div');
+                            preview.className = 'relative group';
+                            preview.innerHTML = `
+                                <img src="${e.target.result}" alt="预览图" class="upload-preview w-full rounded-lg">
+                                <button class="absolute top-1 right-1 bg-white bg-opacity-80 rounded-full w-6 h-6 flex items-center justify-center text-gray-600 hover:text-academic-red remove-photo" data-index="${index}">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            `;
+                            photosPreview.appendChild(preview);
+                            
+                            // 添加删除功能
+                            preview.querySelector('.remove-photo').addEventListener('click', function() {
+                                preview.remove();
+                                if (photosPreview.children.length === 0) {
+                                    previewContainer.classList.add('hidden');
+                                }
+                            });
+                        };
+                        reader.readAsDataURL(file);
+                    });
+                };
+                
+                // 确认上传
+                confirmUpload.addEventListener('click', () => {
+                    // 检查是否填写了标题
+                    if (!document.getElementById('photoTitle').value.trim()) {
+                        this.showToast('请输入照片标题', 'error');
+                        return;
+                    }
+                    
+                    // 显示进度条
+                    uploadProgress.classList.remove('hidden');
+                    confirmUpload.disabled = true;
+                    cancelUpload.disabled = true;
+                    
+                    // 模拟上传进度
+                    let progress = 0;
+                    const interval = setInterval(() => {
+                        progress += 5;
+                        progressBar.style.width = `${progress}%`;
+                        progressPercent.textContent = `${progress}%`;
+                        
+                        if (progress >= 100) {
+                            clearInterval(interval);
+                            progressText.textContent = '上传完成';
+                            
+                            // 显示成功消息
+                            setTimeout(() => {
+                                this.showToast('照片上传成功', 'success');
+                                previewContainer.classList.add('hidden');
+                                uploadProgress.classList.add('hidden');
+                                progressBar.style.width = '0%';
+                                confirmUpload.disabled = false;
+                                cancelUpload.disabled = false;
+                                
+                                // 重置表单
+                                document.getElementById('photoTitle').value = '';
+                                document.getElementById('photoDescription').value = '';
+                                document.getElementById('photoTags').value = '';
+                                
+                                // 刷新历史记录
+                                this.loadUploadHistory();
+                            }, 500);
+                        }
+                    }, 150);
+                });
+                
+                // 取消上传
+                cancelUpload.addEventListener('click', () => {
+                    previewContainer.classList.add('hidden');
+                    photosPreview.innerHTML = '';
+                    
+                    // 重置表单
+                    document.getElementById('photoTitle').value = '';
+                    document.getElementById('photoDescription').value = '';
+                    document.getElementById('photoTags').value = '';
+                });
+            },
+            
+            // 初始化页面
+            init: function() {
+                // 检查是否已登录
+                const savedUser = localStorage.getItem('currentUser');
+                if (savedUser) {
+                    this.currentUser = JSON.parse(savedUser);
+                    this.switchToUploadSection();
+                }
+                
+                // 初始化打字机效果
+                const typewriter = new Typed('#typewriter', {
+                    strings: [
+                        '照片档案管理系统',
+                        '校园活动记录平台',
+                        '新闻图片存储中心',
+                        '学术资源共享库'
+                    ],
+                    typeSpeed: 80,
+                    backSpeed: 50,
+                    backDelay: 2000,
+                    loop: true,
+                    showCursor: false
+                });
+                
+                // 初始化选项卡切换
+                const authTabs = document.querySelectorAll('.auth-tab');
+                authTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        const tabName = this.getAttribute('data-tab');
+                        
+                        // 更新选项卡状态
+                        authTabs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // 更新内容区域
+                        document.querySelectorAll('.tab-content').forEach(content => {
+                            content.classList.remove('active');
+                        });
+                        document.getElementById(`${tabName}Tab`).classList.add('active');
+                    });
+                });
+                
+                // 登录表单提交
+                document.getElementById('loginForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const username = document.getElementById('loginUsername').value;
+                    const password = document.getElementById('loginPassword').value;
+                    
+                    if (!username || !password) {
+                        this.showToast('请填写用户名和密码', 'error');
+                        return;
+                    }
+                    
+                    const result = this.login(username, password);
+                    
+                    if (result.success) {
+                        this.showToast('登录成功！正在跳转...', 'success');
+                        
+                        // 登录动画
+                        anime({
+                            targets: '.auth-card',
+                            scale: [1, 0.95],
+                            opacity: [1, 0.8],
+                            duration: 300,
+                            easing: 'easeOutQuart',
+                            complete: () => {
+                                setTimeout(() => {
+                                    this.switchToUploadSection();
+                                }, 500);
+                            }
+                        });
+                    } else {
+                        this.showToast(result.message, 'error');
+                        
+                        // 错误动画
+                        anime({
+                            targets: '.auth-card',
+                            translateX: [0, -10, 10, -10, 10, 0],
+                            duration: 500,
+                            easing: 'easeOutQuart'
+                        });
+                    }
+                });
+                
+                // 注册表单提交
+                document.getElementById('registerForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const username = document.getElementById('regUsername').value;
+                    const email = document.getElementById('regEmail').value;
+                    const password = document.getElementById('regPassword').value;
+                    const confirmPassword = document.getElementById('confirmPassword').value;
+                    
+                    if (password !== confirmPassword) {
+                        this.showToast('两次输入的密码不一致', 'error');
+                        return;
+                    }
+                    
+                    const result = this.register(username, email, password);
+                    
+                    if (result.success) {
+                        this.showToast('注册成功！正在跳转...', 'success');
+                        
+                        // 注册动画
+                        anime({
+                            targets: '.auth-card',
+                            scale: [1, 0.95],
+                            opacity: [1, 0.8],
+                            duration: 300,
+                            easing: 'easeOutQuart',
+                            complete: () => {
+                                setTimeout(() => {
+                                    this.switchToUploadSection();
+                                }, 500);
+                            }
+                        });
+                    } else {
+                        this.showToast(result.message, 'error');
+                    }
+                });
+                
+                // 微信登录
+                document.getElementById('wechatLogin').addEventListener('click', () => {
+                    this.wechatLogin();
+                });
+                
+                // 微信注册
+                document.getElementById('wechatRegister').addEventListener('click', () => {
+                    this.wechatLogin();
+                });
+                
+                // 退出登录
+                document.getElementById('logoutBtn').addEventListener('click', () => {
+                    this.logout();
+                });
+                
+                // 初始化输入框动画
+                const inputs = document.querySelectorAll('.form-input');
+                inputs.forEach(input => {
+                    input.addEventListener('focus', function() {
+                        anime({
+                            targets: this,
+                            scale: [1, 1.02],
+                            duration: 200,
+                            easing: 'easeOutQuart'
+                        });
+                    });
+                    
+                    input.addEventListener('blur', function() {
+                        anime({
+                            targets: this,
+                            scale: [1.02, 1],
+                            duration: 200,
+                            easing: 'easeOutQuart'
+                        });
+                    });
+                });
+                
+                // 初始化上传功能
+                this.initUpload();
+            }
+        };
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            photoArchive.init();
+        });
+    </script>
+</body>
+</html>
