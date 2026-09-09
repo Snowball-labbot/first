@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全国大学生数学建模竞赛 · C类题作战手册 2026</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --panel2:#fbfcfd; --line:#e3e7ec;
+  --tx:#1b2027; --tx2:#5a6472; --tx3:#8b95a3;
+  --ac:#2563eb; --ac2:#eff4ff; --ac3:#dbe6ff;
+  --ok:#0f9960; --ok2:#e8f5ef;
+  --wn:#c2410c; --wn2:#fff2e8;
+  --dg:#b3261e; --dg2:#fdecea;
+  --pp:#6d28d9; --pp2:#f3edff;
+  --cy:#0e7490; --cy2:#e6f6f9;
+  --sh:0 1px 2px rgba(16,24,40,.05),0 6px 18px rgba(16,24,40,.05);
+  --r:12px;
+}
+html[data-t="d"]{
+  --bg:#0e1116; --panel:#161b22; --panel2:#1b2129; --line:#2a313c;
+  --tx:#e6edf3; --tx2:#a6b1bf; --tx3:#7d8896;
+  --ac:#5b9bff; --ac2:#16233a; --ac3:#22375a;
+  --ok:#3fb984; --ok2:#11281f;
+  --wn:#e08b4c; --wn2:#2b1f14;
+  --dg:#f2777a; --dg2:#2d1718;
+  --pp:#a78bfa; --pp2:#221c33;
+  --cy:#4dd0e1; --cy2:#0f262b;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC",system-ui,-apple-system,sans-serif;
+  background:var(--bg); color:var(--tx); line-height:1.75; font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--ac);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:216px 1fr;gap:32px}
+@media(max-width:1000px){.wrap{grid-template-columns:1fr;gap:0}nav.side{display:none}}
+
+/* ---------- hero ---------- */
+header.hero{
+  background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 45%,#0e7490 100%);
+  color:#fff; padding:40px 24px 34px; position:relative; overflow:hidden;
+}
+html[data-t="d"] header.hero{background:linear-gradient(135deg,#14213d 0%,#1e3a8a 50%,#0b3b47 100%)}
+.hero-in{max-width:1240px;margin:0 auto;position:relative;z-index:2}
+.hero h1{font-size:27px;font-weight:800;letter-spacing:.5px;margin-bottom:8px}
+.hero .sub{opacity:.9;font-size:14.5px;margin-bottom:22px}
+.cd{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.cd-box{background:rgba(255,255,255,.15);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);
+  border-radius:10px;padding:10px 16px;min-width:80px;text-align:center}
+.cd-box b{display:block;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2}
+.cd-box span{font-size:11.5px;opacity:.85}
+.cd-note{margin-top:14px;font-size:13px;background:rgba(0,0,0,.18);display:inline-block;padding:7px 14px;border-radius:8px}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.13),transparent 65%)}
+
+/* ---------- side nav ---------- */
+nav.side{position:sticky;top:20px;align-self:start;padding-top:28px;max-height:calc(100vh - 40px);overflow:auto}
+nav.side .t{font-size:11.5px;font-weight:700;color:var(--tx3);letter-spacing:1.2px;margin:0 0 10px 12px}
+nav.side a{display:block;padding:7px 12px;margin-bottom:2px;border-radius:8px;color:var(--tx2);
+  font-size:13.5px;border-left:2px solid transparent;transition:.15s}
+nav.side a:hover{background:var(--ac2);color:var(--ac);text-decoration:none}
+nav.side a.on{background:var(--ac2);color:var(--ac);font-weight:600;border-left-color:var(--ac)}
+
+/* ---------- sections ---------- */
+main{padding-top:28px}
+section{margin-bottom:46px;scroll-margin-top:20px}
+h2{font-size:21px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+h2 .n{background:var(--ac);color:#fff;width:27px;height:27px;border-radius:7px;display:inline-flex;
+  align-items:center;justify-content:center;font-size:13px;flex:none}
+h2+.lead{color:var(--tx2);font-size:14px;margin-bottom:18px}
+h3{font-size:16px;font-weight:700;margin:24px 0 10px;padding-left:10px;border-left:3px solid var(--ac)}
+h4{font-size:14.5px;font-weight:700;margin:16px 0 8px;color:var(--tx)}
+p{margin-bottom:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--sh);margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+
+/* ---------- timeline ---------- */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--ac3)}
+html[data-t="d"] .tl::before{background:var(--ac3)}
+.tl-i{position:relative;margin-bottom:18px}
+.tl-i::before{content:"";position:absolute;left:-28px;top:6px;width:12px;height:12px;border-radius:50%;
+  background:var(--ac);border:3px solid var(--panel);box-shadow:0 0 0 2px var(--ac3)}
+.tl-i .h{font-weight:700;font-size:15px}
+.tl-i .m{font-size:12.5px;color:var(--tx3);margin-bottom:4px;font-variant-numeric:tabular-nums}
+.tl-i .b{font-size:13.8px;color:var(--tx2)}
+
+/* ---------- table ---------- */
+table{width:100%;border-collapse:collapse;font-size:13.6px;margin:10px 0}
+th{background:var(--panel2);text-align:left;padding:10px 12px;font-weight:700;border-bottom:2px solid var(--line);
+  font-size:13px;color:var(--tx2);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--panel2)}
+td.c,th.c{text-align:center}
+.tn{font-variant-numeric:tabular-nums}
+
+/* ---------- tags / pills ---------- */
+.tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11.5px;font-weight:600;line-height:1.7}
+.t-blue{background:var(--ac2);color:var(--ac)}
+.t-green{background:var(--ok2);color:var(--ok)}
+.t-orange{background:var(--wn2);color:var(--wn)}
+.t-red{background:var(--dg2);color:var(--dg)}
+.t-purple{background:var(--pp2);color:var(--pp)}
+.t-cyan{background:var(--cy2);color:var(--cy)}
+.t-grey{background:var(--panel2);color:var(--tx3);border:1px solid var(--line)}
+
+/* ---------- callout ---------- */
+.co{border-left:4px solid var(--ac);background:var(--ac2);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14px}
+.co.w{border-color:var(--wn);background:var(--wn2)}
+.co.d{border-color:var(--dg);background:var(--dg2)}
+.co.g{border-color:var(--ok);background:var(--ok2)}
+.co b{color:inherit}
+
+/* ---------- resource cards ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.fbtn{padding:6px 14px;border-radius:20px;border:1px solid var(--line);background:var(--panel);
+  color:var(--tx2);font-size:13px;cursor:pointer;transition:.15s;font-family:inherit}
+.fbtn:hover{border-color:var(--ac);color:var(--ac)}
+.fbtn.on{background:var(--ac);color:#fff;border-color:var(--ac);font-weight:600}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:900px){.res{grid-template-columns:1fr}}
+.rc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;
+  box-shadow:var(--sh);display:flex;flex-direction:column;gap:7px;transition:.15s;border-top:3px solid var(--ac)}
+.rc:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(16,24,40,.1)}
+.rc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.rc .nm{font-weight:700;font-size:14.5px;word-break:break-all;line-height:1.45}
+.rc .nm small{display:block;font-weight:400;color:var(--tx3);font-size:12px;margin-top:2px}
+.st{background:var(--wn2);color:var(--wn);padding:2px 8px;border-radius:6px;font-size:12px;
+  font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.rc .ds{font-size:13px;color:var(--tx2);flex:1}
+.rc .mt{font-size:11.5px;color:var(--tx3);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.rc code{background:var(--panel2);border:1px solid var(--line);padding:1px 6px;border-radius:5px;
+  font-size:11.5px;font-family:ui-monospace,Consolas,monospace;color:var(--tx2)}
+
+/* ---------- checklist ---------- */
+.ck{list-style:none}
+.ck li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.ck li:last-child{border-bottom:none}
+.ck input{width:16px;height:16px;margin-top:4px;flex:none;accent-color:var(--ac);cursor:pointer}
+.ck label{cursor:pointer;flex:1}
+.ck input:checked+label{text-decoration:line-through;color:var(--tx3)}
+
+/* ---------- misc ---------- */
+.kbd{background:var(--panel2);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;
+  padding:1px 6px;font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--tx)}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:13px}
+.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch;margin:12px 0}
+.fs{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:11px 13px;flex:1;min-width:130px;
+  box-shadow:var(--sh);position:relative}
+.fs b{display:block;font-size:13.5px;margin-bottom:2px}
+.fs span{font-size:11.8px;color:var(--tx3)}
+.fs .q{position:absolute;top:-8px;left:-6px;background:var(--ac);color:#fff;width:19px;height:19px;
+  border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
+#tt{position:fixed;top:14px;right:14px;z-index:99;background:var(--panel);border:1px solid var(--line);
+  border-radius:8px;padding:7px 12px;font-size:12.5px;cursor:pointer;box-shadow:var(--sh);color:var(--tx2);font-family:inherit}
+.foot{text-align:center;color:var(--tx3);font-size:12.5px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:30px}
+.bar{height:8px;border-radius:5px;background:var(--line);overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--cy))}
+</style>
+</head>
+<body>
+<button id="tt">🌗 切换主题</button>
+
+<header class="hero">
+  <div class="hero-in">
+    <h1>全国大学生数学建模竞赛 · C 类题作战手册</h1>
+    <div class="sub">2026 高教社杯 CUMCM（9/10 18:00 — 9/13 20:00） · 附美赛 MCM/ICM C 题对照 · GitHub 数模资源全景</div>
+    <div class="cd" id="cd"></div>
+    <div class="cd-note">⏱ 比赛全程 <b>74 小时</b>：9月10日（周四）18:00 发题 → 9月13日（周日）20:00 截止提交</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="side">
+    <div class="t">目录</div>
+    <a href="#s1" class="on">1 · 赛程全流程</a>
+    <a href="#s2">2 · 规则红线</a>
+    <a href="#s3">3 · 74h 时间表</a>
+    <a href="#s4">4 · 三人分工</a>
+    <a href="#s5">5 · C 题专项攻略</a>
+    <a href="#s6">6 · C 题算法地图</a>
+    <a href="#s7">7 · 论文结构与写作</a>
+    <a href="#s8">8 · GitHub 资源</a>
+    <a href="#s9">9 · 开赛前检查清单</a>
+  </nav>
+
+  <main>
+
+  <!-- ============ 1 ============ -->
+  <section id="s1">
+    <h2><span class="n">1</span>赛程全流程</h2>
+    <p class="lead">从报名到出结果，国赛的完整链路。主办：中国工业与应用数学学会（CSIAM），"高教社杯"冠名，首批列入高校学科竞赛排行榜。</p>
+
+    <div class="card">
+      <div class="tl">
+        <div class="tl-i">
+          <div class="m">赛前 1–2 个月</div>
+          <div class="h">校赛 / 选拔 → 组队报名</div>
+          <div class="b">3 人一队，<b>必须同校</b>，不可跨校；分本科组 / 专科组。报名费 300 元/队（各省不同）。建议组队时覆盖三种能力：建模、编程、写作。</div>
+        </div>
+        <div class="tl-i">
+          <div class="m">9月10日（周四）18:00</div>
+          <div class="h">🚨 赛题发布</div>
+          <div class="b">官网 <a href="http://www.mcm.edu.cn" target="_blank">mcm.edu.cn</a> 同步发布 A / B / C（专科组 D / E）。同时在中国知网、中国大学生在线、高等教育出版社、中国高校数学建模课程中心发布。</div>
+        </div>
+        <div class="tl-i">
+          <div class="m">9月10日 18:00 → 9月13日 20:00</div>
+          <div class="h">⏱ 74 小时闭门作战</div>
+          <div class="b">全校队内封闭完成：选题 → 建模 → 求解 → 出图 → 写论文 → 排版 → 提交。详见第 3 节时间表。</div>
+        </div>
+        <div class="tl-i">
+          <div class="m">9月13日（周日）20:00 前</div>
+          <div class="h">📤 提交论文 + 支撑材料</div>
+          <div class="b">通过<b>全国大学生数学建模竞赛管理系统</b> <span class="mono">cumcm.cnki.net</span> 上传：<br>
+            ① 论文（PDF，正文不超过 20 页左右为宜）<br>
+            ② 支撑材料压缩包（程序代码、数据、中间结果、额外图表）</div>
+        </div>
+        <div class="tl-i">
+          <div class="m">9月下旬 — 10月</div>
+          <div class="h">赛区评审</div>
+          <div class="b">赛区评出一/二/三等奖，比例上限分别为参赛总队数的 <b>9% / 16% / 25%</b>。</div>
+        </div>
+        <div class="tl-i">
+          <div class="m">10月 — 11月</div>
+          <div class="h">🏆 国家级奖项评定</div>
+          <div class="b">从赛区一等奖中择优推荐参加国奖评审：高教社杯（冠名奖）、国家一等奖、国家二等奖。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="co g"><b>为什么重点盯 C 题？</b> 国赛 C 题是"大数据 / 数据分析"类，题目给出成规模的实际数据附件，考察数据清洗、统计建模、机器学习与可视化表达。<b>特点是"上手容易、区分度在深度"</b>——人人都能跑出图，胜出的关键是：特征工程是否扎实、模型是否有对比与检验、结论是否回答了题目的每一个小问、图表是否达到出版级水准。</div>
+  </section>
+
+  <!-- ============ 2 ============ -->
+  <section id="s2">
+    <h2><span class="n">2</span>规则红线（必读）</h2>
+    <p class="lead">这些是"一票否决"级别的坑，比模型本身更重要。</p>
+    <div class="grid2">
+      <div class="card">
+        <h4 style="color:var(--dg);margin-top:0">🚫 绝对禁止</h4>
+        <ul style="padding-left:18px;font-size:13.8px;color:var(--tx2)">
+          <li><b>不得与队外任何人讨论</b>——包括指导教师。<span class="tag t-red">2026 修订章程明确：指导老师竞赛期间参与属违纪</span></li>
+          <li>不得在网络公开平台（群、论坛、贴吧、社交平台）发布赛题或求解过程</li>
+          <li>不得抄袭、代做、套用往年论文（组委会用知网/大雅相似度查重）</li>
+          <li>论文中<b>不得出现</b>队员姓名、学校、指导老师等任何身份信息</li>
+          <li>不得在队外寻求帮助代写代码、代写论文</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--ok);margin-top:0">✅ 允许使用</h4>
+        <ul style="padding-left:18px;font-size:13.8px;color:var(--tx2)">
+          <li>图书馆、网络资料、公开数据集</li>
+          <li>任何软件与代码库（Python / MATLAB / 北太天元 / Lingo 等）</li>
+          <li>AI 工具——但 <b>2026 年有专门的《AI 使用规定》文件</b>，务必在赛前于官方"参赛须知"中确认当届要求（是否需声明、是否限制）</li>
+          <li>引用必须规范标注，参考文献列表齐全</li>
+        </ul>
+        <div class="co w" style="font-size:13px;margin-bottom:0">
+          <b>AI 使用提示：</b>近年各赛事对 AI 的态度趋于"允许但需声明/受限"。若使用 AI 辅助，建议全程保留使用记录，并在文末按要求声明；同时务必人工复核所有 AI 生成内容的数值一致性——<b>评审最忌讳文末结论与文中表格数字对不上</b>。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 ============ -->
+  <section id="s3">
+    <h2><span class="n">3</span>74 小时作战时间表</h2>
+    <p class="lead">以 9/10 18:00 发题为 T0。核心原则：<b>先保完整，再追深度；论文必须提前 12 小时封稿</b>。</p>
+
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:88px">时段</th><th style="width:110px">主题</th><th>关键动作</th><th style="width:150px">交付物</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tn"><b>D0</b><br>18:00–24:00<br><span class="tag t-purple">6h</span></td>
+            <td><b>选题 + 破题</b></td>
+            <td>三人<b>各自独立读完全部题目</b>（含附件），各写一份思路；汇总后投票定题。<br>定题后：拆解题中所有"子问题"列成清单，逐条确认"题目到底要我回答什么"。<br>立刻开始<b>查数据/读数据</b>，同步拉框架写"问题重述 + 问题分析 + 假设"。</td>
+            <td>选题结论<br>子问题清单<br>论文骨架</td>
+          </tr>
+          <tr>
+            <td class="tn"><b>D1</b><br>9/11 全天<br><span class="tag t-blue">16h</span></td>
+            <td><b>数据 + 第一问</b></td>
+            <td><b>数据清洗是 C 题的命脉</b>：缺失、异常、重复、单位、编码、量纲统一，全部记录处理逻辑（写进论文！）。<br>做完整 EDA：分布、相关矩阵、时间趋势、分组统计。<br>攻克第 1 问，跑通端到端（代码→数→图→表）。</td>
+            <td>清洗报告<br>EDA 图 ≥6 张<br>问题1 结果</td>
+          </tr>
+          <tr>
+            <td class="tn"><b>D2</b><br>9/12 全天<br><span class="tag t-orange">18h</span></td>
+            <td><b>主攻 + 求解</b></td>
+            <td>全部剩余子问题建模求解。<b>每问至少两个模型对比</b>（这是国赛评审的加分项）。<br>同步出正式图：每个子问题至少 1 张结果图，全书 ≥ 8–10 张。<br>论文手同步开写，写完一问就贴一问，别等代码全部跑完。</td>
+            <td>全问题结果<br>正式图表集<br>论文主体 70%</td>
+          </tr>
+          <tr>
+            <td class="tn"><b>D3 上午</b><br>9/13 08:00–14:00<br><span class="tag t-red">6h</span></td>
+            <td><b>封稿 + 打磨</b></td>
+            <td>论文全文定稿。<b>补"模型评价与改进"和"灵敏度/稳健性分析"</b>——这两块是 C 题最容易拉分的地方。<br>检查：每个子问题是否都有明确结论？结论是否呼应摘要？</td>
+            <td>完整论文 v1</td>
+          </tr>
+          <tr>
+            <td class="tn"><b>D3 下午</b><br>9/13 14:00–18:00<br><span class="tag t-red">4h</span></td>
+            <td><b>排版 + 质检</b></td>
+            <td>按官方模板排版（Word 或 LaTeX）；<b>交叉检查数值一致性</b>：摘要、正文、表格、图、结论四处数字必须完全吻合。<br>整理支撑材料压缩包，代码文件命名清晰、可复现。<br>去敏感信息：全文搜姓名/学校/队号。</td>
+            <td>可提交 PDF<br>支撑材料 zip</td>
+          </tr>
+          <tr>
+            <td class="tn"><b>D3 晚</b><br>18:00–20:00<br><span class="tag t-grey">2h</span></td>
+            <td><b>上传 + 缓冲</b></td>
+            <td><b>18:00 前必须完成首次上传</b>。留 2 小时应对系统拥堵、格式报错、临时发现的错误。<br>上传后截图留存回执。</td>
+            <td>提交回执</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="co d"><b>血泪经验：</b>每年都有队伍在 19:50 上传失败、或上传后发现摘要里结论写反。<b>D3 14:00 之后不要再改模型，只改文字与格式。</b>另外，睡眠必须安排——建议 D1 夜 / D2 夜各保证一人轮休 4 小时，72 小时不睡做出的论文一定有低级错误。</div>
+  </section>
+
+  <!-- ============ 4 ============ -->
+  <section id="s4">
+    <h2><span class="n">4</span>三人分工与协作</h2>
+    <div class="grid3">
+      <div class="card" style="border-top:3px solid var(--ac)">
+        <h4 style="margin-top:0">🧠 建模手</h4>
+        <p style="font-size:13.5px;color:var(--tx2);margin-bottom:8px">决定论文上限</p>
+        <ul style="padding-left:17px;font-size:13.3px;color:var(--tx2)">
+          <li>读题拆解子问题、定义变量与假设</li>
+          <li>选定模型体系并说明<b>为什么选它</b></li>
+          <li>设计验证方案与灵敏度分析</li>
+          <li>给出结果的实际含义解读</li>
+        </ul>
+      </div>
+      <div class="card" style="border-top:3px solid var(--cy)">
+        <h4 style="margin-top:0">💻 编程手</h4>
+        <p style="font-size:13.5px;color:var(--tx2);margin-bottom:8px">C 题的核心发动机</p>
+        <ul style="padding-left:17px;font-size:13.3px;color:var(--tx2)">
+          <li>数据清洗、特征工程、EDA</li>
+          <li>模型实现与调参（Python 为主）</li>
+          <li><b>出版级出图</b>（矢量 SVG + 300dpi PNG）</li>
+          <li>记录随机种子、依赖版本 → 复现清单</li>
+        </ul>
+      </div>
+      <div class="card" style="border-top:3px solid var(--pp)">
+        <h4 style="margin-top:0">✍️ 论文手</h4>
+        <p style="font-size:13.5px;color:var(--tx2);margin-bottom:8px">决定论文下限</p>
+        <ul style="padding-left:17px;font-size:13.3px;color:var(--tx2)">
+          <li>全程同步写作，不等结果</li>
+          <li>摘要（最后精修，反复打磨 ≥5 遍）</li>
+          <li>图表编号、公式、参考文献规范</li>
+          <li>终稿数值一致性 + 排版质检</li>
+        </ul>
+      </div>
+    </div>
+    <div class="co"><b>协作铁律：</b>① 共用一份子问题清单，做完一问打勾一问；② 编程手每出一张图立刻丢群里，论文手立刻贴进稿子（<b>不要攒到最后</b>）；③ 建模手发现模型跑不通要<b>果断降级</b>换成能跑通的简单模型，宁可模型简单也不要结果空白；④ 任何争议由队长在 10 分钟内拍板，不纠缠。</div>
+  </section>
+
+  <!-- ============ 5 ============ -->
+  <section id="s5">
+    <h2><span class="n">5</span>C 题专项攻略</h2>
+    <p class="lead">国赛 C 题（大数据分析）与美赛 C 题（Data Insights）对照 —— 你主攻的题型。</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0">🇨🇳 国赛 CUMCM · C 题</h4>
+        <p style="font-size:13.5px;color:var(--tx2)">定位：大数据 / 数据分析类，附件通常给出 Excel/CSV，数据量从几千到几十万行。近年真题：</p>
+        <table style="font-size:13px">
+          <tr><td class="tn" style="width:52px"><b>2024</b></td><td>农作物种植策略（优化 + 风险评估）</td></tr>
+          <tr><td class="tn"><b>2023</b></td><td>蔬菜类商品自动定价与补货（关联分析 + 预测 + 优化）</td></tr>
+          <tr><td class="tn"><b>2022</b></td><td>古代玻璃制品成分分析与鉴别（分类 + 敏感性分析）</td></tr>
+          <tr><td class="tn"><b>2021</b></td><td>生产企业原材料订购与运输（数据处理 + 规划）</td></tr>
+          <tr><td class="tn"><b>2020</b></td><td>中小微企业信贷决策（评价 + 优化）</td></tr>
+        </table>
+        <div class="co" style="font-size:13px;margin-bottom:0"><b>规律：</b>C 题基本是「<b>数据分析 → 评价/预测 → 优化决策</b>」三段式。最后一问几乎必然落到<b>决策建议</b>，不是纯预测。</div>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">🇺🇸 美赛 MCM · C 题（Data Insights）</h4>
+        <p style="font-size:13.5px;color:var(--tx2)">定位：给定数据，要求"从数据中提炼洞察"。通常数据量大、类型杂（含文本/图像/时间序列）。近年真题：</p>
+        <table style="font-size:13px">
+          <tr><td class="tn" style="width:52px"><b>2026</b></td><td>Data With The Stars（粉丝投票估计）</td></tr>
+          <tr><td class="tn"><b>2025</b></td><td>奥运会奖牌榜（预测 + 评价 + 反事实分析）</td></tr>
+          <tr><td class="tn"><b>2024</b></td><td>网球比赛"动量"（随机过程 + 预测 + 检验）</td></tr>
+          <tr><td class="tn"><b>2023</b></td><td>Wordle 结果预测（时间序列 + 情感分析）</td></tr>
+          <tr><td class="tn"><b>2022</b></td><td>黄金与比特币投资（时间序列 + 投资组合）</td></tr>
+        </table>
+        <div class="co w" style="font-size:13px;margin-bottom:0"><b>差异：</b>美赛是 <b>96 小时</b>（4 天）、<b>全英文</b>、<b>25 页上限</b>（含附录代码）、结论需给<b>直接建议</b>。评审极度看重<b>摘要质量</b>与<b>假设合理性 + 灵敏度分析</b>，且对"创新可容错"——有创意的错误论文也可能获奖。</div>
+      </div>
+    </div>
+
+    <h3>C 题标准解题流水线</h3>
+    <div class="flow">
+      <div class="fs"><span class="q">1</span><b>数据清洗</b><span>缺失/异常/重复/量纲，留痕</span></div>
+      <div class="fs"><span class="q">2</span><b>EDA 探索</b><span>分布·相关·趋势·分组</span></div>
+      <div class="fs"><span class="q">3</span><b>特征工程</b><span>构造/编码/降维/选择</span></div>
+      <div class="fs"><span class="q">4</span><b>建模求解</b><span>分类·预测·评价·优化</span></div>
+      <div class="fs"><span class="q">5</span><b>检验对比</b><span>多模型对比 + 误差指标</span></div>
+      <div class="fs"><span class="q">6</span><b>稳健性</b><span>灵敏度 + 扰动 + 交叉验证</span></div>
+      <div class="fs"><span class="q">7</span><b>决策建议</b><span>回答题目每一小问</span></div>
+    </div>
+
+    <div class="co g"><b>C 题拿分三板斧：</b><br>
+      ① <b>把数据处理过程写进论文</b>——C 题评审会看你是否认真处理了异常值与缺失值，这是免费的分数；<br>
+      ② <b>每个模型都配对比与检验</b>——单一模型直接给结论是最常见的扣分点，加一个对比模型（如 ARIMA vs LSTM vs 灰色预测）立刻提升档次；<br>
+      ③ <b>图要出版级</b>——国赛论文第一印象几乎由图决定。统一配色、中文宋体/英文 Times、坐标轴带单位、300dpi 以上、优先矢量图。
+    </div>
+  </section>
+
+  <!-- ============ 6 ============ -->
+  <section id="s6">
+    <h2><span class="n">6</span>C 题算法地图</h2>
+    <p class="lead">按子问题类型检索。Python 生态推荐：<span class="mono">pandas / numpy / scikit-learn / statsmodels / scipy / matplotlib / seaborn / xgboost / lightgbm / prophet</span></p>
+
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:110px">问题类型</th><th style="width:280px">推荐算法</th><th>典型使用场景</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag t-cyan">数据预处理</span></td>
+            <td>多重插补 / KNN 插补、IQR 与 3σ 异常检测、Isolation Forest、Z-score / MinMax 标准化、独热编码、目标编码</td>
+            <td>缺失值处理、离群点筛除、量纲统一、类别变量编码</td></tr>
+          <tr><td><span class="tag t-blue">统计分析</span></td>
+            <td>Pearson / Spearman 相关、t 检验、卡方检验、ANOVA、Shapiro-Wilk 正态性检验、Mann-Kendall 趋势检验</td>
+            <td>变量关系初判、显著性验证、趋势存在性证明</td></tr>
+          <tr><td><span class="tag t-purple">降维聚类</span></td>
+            <td>PCA、因子分析、K-means++、DBSCAN、层次聚类、轮廓系数选 K、t-SNE/UMAP 可视化</td>
+            <td>指标压缩、样本分群、画像构建、去冗余</td></tr>
+          <tr><td><span class="tag t-green">分类判别</span></td>
+            <td>逻辑回归、SVM、决策树、随机森林、XGBoost / LightGBM、KNN、朴素贝叶斯</td>
+            <td>玻璃类别鉴别、风险客户识别、文本分类</td></tr>
+          <tr><td><span class="tag t-orange">预测外推</span></td>
+            <td>ARIMA / SARIMA、指数平滑、Prophet、灰色预测 GM(1,1)、LSTM / GRU、随机森林回归、岭回归 / Lasso</td>
+            <td>销量预测、价格预测、奖牌数预测、客流预测</td></tr>
+          <tr><td><span class="tag t-red">综合评价</span></td>
+            <td>AHP 层次分析、熵权法 EWM、TOPSIS、灰色关联、模糊综合评价、DEA 数据包络、CRITIC 权重</td>
+            <td>多指标打分、方案排序、水平评价（国赛出现率最高的一类）</td></tr>
+          <tr><td><span class="tag t-grey">优化决策</span></td>
+            <td>线性/整数规划（PuLP / scipy.optimize / Gurobi）、遗传算法、模拟退火、粒子群、NSGA-II 多目标</td>
+            <td>C 题最后一问：补货策略、种植方案、资源分配</td></tr>
+          <tr><td><span class="tag t-blue">不确定性与检验</span></td>
+            <td>Monte Carlo 仿真、Bootstrap、灵敏度分析、残差检验、ADF 平稳性、Granger 因果、交叉验证</td>
+            <td>风险评估、稳健性论证、结果可信度支撑</td></tr>
+          <tr><td><span class="tag t-cyan">可视化</span></td>
+            <td>热力图、箱线图/小提琴图、散点矩阵、时序分解图、ROC/混淆矩阵、SHAP 特征重要性、桑基图、雷达图、PCA 散点</td>
+            <td>论文图表主力，优先 SVG/300dpi</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co w"><b>Python 环境建议（现在就装好）：</b><span class="mono">pip install numpy pandas scipy scikit-learn statsmodels matplotlib seaborn xgboost lightgbm prophet pmdarima shap openpyxl</span><br>若用 MATLAB/北太天元，务必赛前验证工具箱（Optimization / Statistics / Global Optimization）是否可用。</div>
+  </section>
+
+  <!-- ============ 7 ============ -->
+  <section id="s7">
+    <h2><span class="n">7</span>论文结构与写作要点</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:150px">章节</th><th>要点</th><th style="width:60px" class="c">篇幅</th></tr></thead>
+        <tbody>
+          <tr><td><b>摘要</b>（独立一页）</td><td><b>全文最重要的一页。</b>四段式：① 问题背景与要解决的问题 ② 采用的方法与模型（点名具体算法）③ 得到的关键结果（<b>给具体数字</b>）④ 结论与建议。<b>最后写，改 5 遍以上。</b></td><td class="c tn">1 页</td></tr>
+          <tr><td>一、问题重述</td><td>用自己的话复述，<b>不要照抄题目</b>；明确列出题目给了哪些数据、要求回答哪几个问题。</td><td class="c tn">0.5 页</td></tr>
+          <tr><td>二、问题分析</td><td>画<b>技术路线图</b>（必画！），逐问说明思路与模型选型理由。</td><td class="c tn">1–1.5 页</td></tr>
+          <tr><td>三、模型假设</td><td>每条假设都要<b>有理由</b>，且必须是"为建模不得不做的简化"。卡住的地方可以写进假设。</td><td class="c tn">0.5 页</td></tr>
+          <tr><td>四、符号说明</td><td>符号表，全文统一，避免一处多义。</td><td class="c tn">0.5 页</td></tr>
+          <tr><td>五、数据处理</td><td><b>C 题重点章节。</b>数据来源、清洗规则、异常值处理、缺失填补、描述性统计表、EDA 图。</td><td class="c tn">2 页</td></tr>
+          <tr><td>六~八、模型建立与求解</td><td>按子问题分节。每问：模型原理 → 公式推导 → 求解方法 → 结果图表 → 结果解读。<b>每问配对比模型。</b></td><td class="c tn">8–10 页</td></tr>
+          <tr><td>九、模型评价与改进</td><td>优点 / 缺点 / 改进方向。缺点要真说，改进要具体。配灵敏度或稳健性分析。</td><td class="c tn">1–1.5 页</td></tr>
+          <tr><td>十、结论与建议</td><td>呼应摘要，<b>逐条回应题目的每一个小问</b>，给出可执行的建议。</td><td class="c tn">1 页</td></tr>
+          <tr><td>参考文献</td><td>规范引用，GB/T 7714 格式。数据、算法、文献均需标注。</td><td class="c tn">0.5 页</td></tr>
+          <tr><td>附录（支撑材料）</td><td>核心代码、补充图表、中间数据。<b>放支撑材料压缩包，不占正文页数。</b></td><td class="c tn">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co d"><b>终稿质检 5 查：</b>① 摘要与正文结论数字是否一致；② 全文搜索有无姓名/学校/队号残留；③ 图是否有编号+标题+单位，正文中是否都引用了；④ 表格是否用三线表，数字是否有单位；⑤ 转 PDF 后是否乱码、图是否清晰、页数是否符合要求。</div>
+  </section>
+
+  <!-- ============ 8 ============ -->
+  <section id="s8">
+    <h2><span class="n">8</span>GitHub 数模资源全景</h2>
+    <p class="lead">已遍历 GitHub 检索并核对，按用途分类。⭐ 为 star 数（2026-09 数据）。<b>标 <span class="tag t-green">推荐</span> 的是我筛出的首选。</b></p>
+
+    <div class="filters">
+      <button class="fbtn on" data-f="all">全部</button>
+      <button class="fbtn" data-f="skill">🤖 AI Skills / Agent</button>
+      <button class="fbtn" data-f="kb">📚 知识库 / 教程</button>
+      <button class="fbtn" data-f="tpl">📄 模板 / 绘图</button>
+      <button class="fbtn" data-f="paper">🏆 优秀论文 / 真题</button>
+    </div>
+
+    <div class="res" id="res">
+
+      <!-- SKILL -->
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">jihe520 / MathModelAgent<small>端到端全自动数模 Agent</small></div><div class="st">⭐ 4.4k</div></div>
+        <div class="ds">数模圈最火的自动化项目。<b>一条命令从读题跑到成稿</b>：内置 17 套 Typst 论文模板（国赛/华数杯/华为杯/MCM 等自动匹配）、建模知识库与模型选择决策树、9 步自动验收（文本泄漏检测→数值一致性→编译→PDF 检查）。<b>有开箱即用的桌面版</b>（Windows / macOS，内置 Claude Code + 全套 Skills，只需填 API Key）。</div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-blue">有桌面版</span><span class="tag t-purple">Typst 17 套模板</span></div>
+        <div class="mt"><code>npx skills add jihe520/MathModelAgent --all</code></div>
+        <div class="mt"><a href="https://github.com/jihe520/MathModelAgent" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">XiaoMaColtAI / math-modeling-skill<small>三阶段工作流 · 国赛最对口</small></div><div class="st">⭐ 1.3k</div></div>
+        <div class="ds">结构最规范的一套：<b>建模手 → 编程手 → 论文手</b> 三阶段，5 道质量门禁（M1 建模终检 / P1 最小可运行结果 / P2 编程终检 / W1 证据大纲 / W2 论文终检）。支持 Python + MATLAB 双语言，<b>默认直接产出 Word 论文</b>（国赛主流提交方式），可选 LaTeX。内含七类算法资料、出版级科学可视化规范、OpenAlex 文献双引擎检索、可复现运行清单。v1.3.0 还补充了"评阅人抓分方法论"。</div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-blue">出 Word</span><span class="tag t-cyan">五门禁质检</span><span class="tag t-purple">双语言</span></div>
+        <div class="mt"><code>npx skills add XiaoMaColtAI/math-modeling-skill</code></div>
+        <div class="mt"><a href="https://github.com/XiaoMaColtAI/math-modeling-skill" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">zhnnky329 / MathModeling-skills<small>Claude Code / Codex Skills</small></div><div class="st">⭐ 810</div></div>
+        <div class="ds">分阶段建模流程，代码分支支持 <b>Python / MATLAB / 北太天元</b>。北太天元是国产 MATLAB 替代，若学校要求或担心版权问题，这套是少有的覆盖了。</div>
+        <div class="mt"><span class="tag t-cyan">北太天元</span><span class="tag t-grey">分阶段流程</span></div>
+        <div class="mt"><a href="https://github.com/zhnnky329/MathModeling-skills" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">Lupynow / math-modeling-skills<small>全题型一条龙</small></div><div class="st">⭐ 342</div></div>
+        <div class="ds">从拿到赛题到交出论文一条龙，明确覆盖 <b>国赛 CUMCM（A/B/C）与美赛 MCM/ICM（A–F）全部题型</b>。适合想一套 Skill 通吃两赛的队伍。</div>
+        <div class="mt"><span class="tag t-blue">国赛 A/B/C</span><span class="tag t-purple">美赛 A–F</span></div>
+        <div class="mt"><a href="https://github.com/Lupynow/math-modeling-skills" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">handsomeZR-netizen / mathmodel-skill<small>三竞赛 · 问答式驱动</small></div><div class="st">⭐ 265</div></div>
+        <div class="ds">支持 CUMCM / MCM / 电工杯，harness-agnostic（Claude Code 与 Codex CLI 均可）。特点是<b>全程问答式</b>（Friendly Mode），会主动向你确认关键决策，而不是闷头跑到底——适合希望保留人工掌控感的队伍。</div>
+        <div class="mt"><span class="tag t-cyan">问答式</span><span class="tag t-grey">人工把关</span></div>
+        <div class="mt"><a href="https://github.com/handsomeZR-netizen/mathmodel-skill" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">BZDmathclub / bzd-math-modeling-skills<small>论文智能评审 · 模拟评委打分</small></div><div class="st">⭐ 230</div></div>
+        <div class="ds"><b>差异化最强的工具。</b>用近五年国赛<b>评阅细则、评分要点、评分概述</b>蒸馏而成，模拟真实主观评审标准给你的论文挑毛病、打分。<b>建议 D3 下午封稿前用它做一次"模拟评卷"</b>，比任何自查清单都贴近真实评分。</div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-red">评委视角</span><span class="tag t-orange">国赛评阅细则蒸馏</span></div>
+        <div class="mt"><a href="https://github.com/BZDmathclub/bzd-math-modeling-skills" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">sweetcornna / mathodology<small>多赛事获奖级工作流</small></div><div class="st">⭐ 197</div></div>
+        <div class="ds">覆盖 MCM/ICM 美赛、CUMCM 国赛、华数杯、M3、HiMCM 等，面向 Claude Code 与 Codex 的获奖级建模工作流。</div>
+        <div class="mt"><span class="tag t-purple">多赛事</span></div>
+        <div class="mt"><a href="https://github.com/sweetcornna/mathodology" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">haoxilin / cumcm-live-workflow-skill<small>国赛实战流程 · 含去 AIGC 清单</small></div><div class="st">⭐ 93</div></div>
+        <div class="ds">CUMCM 全流程：读题自查 → 建模出图 → LaTeX 论文 → 交叉审阅 → 填 result 模板 → <b>AI 自查表终审</b> → 清理打包。含题意理解红线、数值严谨性守则，以及 <b>「去 AIGC 特征清单」</b>——在 2026 年国赛 AI 使用规定下，这份清单价值很高。</div>
+        <div class="mt"><span class="tag t-orange">去 AIGC 特征</span><span class="tag t-red">国赛专项</span><span class="tag t-blue">LaTeX</span></div>
+        <div class="mt"><a href="https://github.com/haoxilin/cumcm-live-workflow-skill" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">liufanshan11 / cumcm-c-problem-lfs<small>🎯 只做国赛 C 题的 Skill</small></div><div class="st">⭐ 119</div></div>
+        <div class="ds"><b>与你主攻方向完全对口</b>——专精国赛 C 题的专用 Skill。同作者另有 B 题版（108⭐）。专用 Skill 的提示词与流程针对 C 题数据特性调优，比通用 Skill 更贴题。</div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-red">C 题专属</span></div>
+        <div class="mt"><a href="https://github.com/liufanshan11/cumcm-c-problem-lfs" target="_blank">C 题版 →</a> · <a href="https://github.com/liufanshan11/cumcm-b-problem-lfs" target="_blank">B 题版 →</a></div>
+      </div>
+
+      <div class="rc" data-c="skill">
+        <div class="top"><div class="nm">xuec699-sudo / math-modeling-skills<small>工业级 · 6 维问题分流 + 5 人评审团</small></div><div class="st">⭐ 233</div></div>
+        <div class="ds">支持国赛/五一赛/美赛，双模式（全自动 + 人工把关），具备 <b>6 维问题分流、5 人评审团、模型依赖 DAG</b> 等设计，一站式论文产出。适合追求流程严谨、想做多轮内部评审的队伍。</div>
+        <div class="mt"><span class="tag t-purple">评审团机制</span><span class="tag t-grey">依赖 DAG</span></div>
+        <div class="mt"><a href="https://github.com/xuec699-sudo/math-modeling-skills" target="_blank">仓库 →</a></div>
+      </div>
+
+      <!-- KB -->
+      <div class="rc" data-c="kb">
+        <div class="top"><div class="nm">datawhalechina / intro-mathmodel<small>《数学建模导论》</small></div><div class="st">⭐ 931</div></div>
+        <div class="ds">Datawhale 出品的开源教程，<b>公认最系统的中文数模教材</b>。从问题分类到模型算法到代码实现全覆盖，适合赛前系统补基础，尤其适合快速补齐预测/评价/优化三类模型。</div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-blue">系统教程</span><span class="tag t-cyan">Python</span></div>
+        <div class="mt"><a href="https://github.com/datawhalechina/intro-mathmodel" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="kb">
+        <div class="top"><div class="nm">zhanwen / MathModel<small>老牌资源大合集</small></div><div class="st">⭐ 11.7k</div></div>
+        <div class="ds">数模 GitHub 第一大仓：研究生/本科生数模<b>优秀论文</b>、算法实现、LaTeX 模板、<b>算法思维导图</b>、参考书籍、Matlab 教程、PPT。<b>找资料的第一站。</b></div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-orange">资源最全</span></div>
+        <div class="mt"><a href="https://github.com/zhanwen/MathModel" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="kb">
+        <div class="top"><div class="nm">personqianduixue / Math_Model<small>全赛事资料库</small></div><div class="st">⭐ 5.1k</div></div>
+        <div class="ds">覆盖国赛、美赛、华为杯研赛、MathorCup、电工杯、华中赛、APMCM、深圳杯等几乎所有赛事，含各赛事 LaTeX 模板与历年资料。</div>
+        <div class="mt"><span class="tag t-purple">全赛事</span><span class="tag t-blue">LaTeX 模板</span></div>
+        <div class="mt"><a href="https://github.com/personqianduixue/Math_Model" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="kb">
+        <div class="top"><div class="nm">HuangCongQing / Algorithms_MathModels<small>算法 MATLAB 实现</small></div><div class="st">⭐ 2.4k</div></div>
+        <div class="ds">国赛/美赛常用算法的 MATLAB 实现合集，代码可直接改。<b>MATLAB 党首选。</b></div>
+        <div class="mt"><span class="tag t-orange">MATLAB</span></div>
+        <div class="mt"><a href="https://github.com/HuangCongQing/Algorithms_MathModels" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="kb">
+        <div class="top"><div class="nm">Lanrzip / Mathematical-Modeling<small>常见模型 Python 实现</small></div><div class="st">⭐ 553</div></div>
+        <div class="ds">数学建模常见模型的 Python 实现，涵盖预测、评价、优化、图论等。<b>Python 党的算法速查代码库。</b>同类还有 ravenxrz/Mathematical-Modeling（567⭐）。</div>
+        <div class="mt"><span class="tag t-cyan">Python</span></div>
+        <div class="mt"><a href="https://github.com/Lanrzip/Mathematical-Modeling" target="_blank">仓库 →</a> · <a href="https://github.com/ravenxrz/Mathematical-Modeling" target="_blank">ravenxrz 版 →</a></div>
+      </div>
+
+      <div class="rc" data-c="kb">
+        <div class="top"><div class="nm">QInzhengk / Math-Model-and-Machine-Learning<small>数模 + 机器学习笔记</small></div><div class="st">⭐ 647</div></div>
+        <div class="ds">数学建模与机器学习/深度学习/大模型的笔记与资料，持续更新。<b>C 题越来越依赖机器学习，这套笔记可作为算法进阶补充。</b></div>
+        <div class="mt"><span class="tag t-purple">机器学习</span></div>
+        <div class="mt"><a href="https://github.com/QInzhengk/Math-Model-and-Machine-Learning" target="_blank">仓库 →</a></div>
+      </div>
+
+      <!-- TPL -->
+      <div class="rc" data-c="tpl">
+        <div class="top"><div class="nm">latexstudio / CUMCMThesis<small>🎯 国赛 LaTeX 模板（已适配 2026）</small></div><div class="st">⭐ 1.3k</div></div>
+        <div class="ds">LaTeX 工作室维护的<b>全国大学生数学建模竞赛官方格式 LaTeX 模板，已适配 2026 年格式</b>。若队伍决定用 LaTeX 排版，<b>直接用这套，别自己造轮子</b>。</div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-red">2026 格式</span><span class="tag t-blue">LaTeX</span></div>
+        <div class="mt"><a href="https://github.com/latexstudio/CUMCMThesis" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="tpl">
+        <div class="top"><div class="nm">Juccy-12 / MathModelHub<small>美赛资源库 · 含五天时间轴</small></div><div class="st">近期活跃</div></div>
+        <div class="ds">美赛 (MCM/ICM) 专项：算法参考手册（评价/预测/优化/ML）、LaTeX + Word 模板、<b>可视化 Notebook（直方图/箱线图/热力图/散点等 6 类）</b>、2021–2025 年 C 题 O 奖论文索引。文档十分扎实，含<b>评审机制、选题策略、五天时间轴、团队协作分工</b>。<b>打美赛必看。</b></div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-purple">美赛</span><span class="tag t-cyan">可视化 Notebook</span><span class="tag t-orange">O 奖论文</span></div>
+        <div class="mt"><a href="https://github.com/Juccy-12/MathModelHub" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="tpl">
+        <div class="top"><div class="nm">jihe520 / sci-box<small>科研图表 & 流程图 Skill</small></div><div class="st">姊妹项目</div></div>
+        <div class="ds">从 MathModelAgent 独立出的绘图 Skill：<b>SHAP / ROC / Taylor 图 / 云雨图 / 和弦图 / 环形热图</b> 等科研级图表 Python 模板（导出 PNG/PDF/SVG），以及 <b>draw.io 可编辑流程图模板</b>（五层技术路线图、三栏研究框架、横向任务流水线）。<b>技术路线图直接拿这个改。</b></div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-cyan">出版级图表</span><span class="tag t-blue">流程图</span></div>
+        <div class="mt"><code>npx skills add jihe520/sci-box</code></div>
+        <div class="mt"><a href="https://github.com/jihe520/sci-box" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="tpl">
+        <div class="top"><div class="nm">CQULeaf / MCM-ICM_Study_Resources<small>重大队伍美赛备赛全记录</small></div><div class="st">⭐ 50</div></div>
+        <div class="ds">重庆大学队伍的真实备赛资料：LaTeX 模板、numpy/pandas 数据处理、matplotlib/seaborn 高级绘图、数据预处理、分类回归算法、综合评价法，以及<b>三次模拟赛 + 正式赛的完整论文</b>（含作者自评不足）。<b>看真实队伍的成长轨迹比看教程更有用。</b></div>
+        <div class="mt"><span class="tag t-purple">美赛</span><span class="tag t-grey">真实案例</span></div>
+        <div class="mt"><a href="https://github.com/CQULeaf/MCM-ICM_Study_Resources" target="_blank">仓库 →</a></div>
+      </div>
+
+      <!-- PAPER -->
+      <div class="rc" data-c="paper">
+        <div class="top"><div class="nm">dick20 / MCM-ICM<small>2004–2020 美赛 O 奖论文合集</small></div><div class="st">⭐ 2.3k</div></div>
+        <div class="ds">美赛 O 奖（Outstanding Winner）论文大全集，覆盖 2004–2020。<b>打美赛前精读 5–10 篇 O 奖论文，是提升最快的路径。</b>重点看摘要写法、图表质量与假设/灵敏度章节。</div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-orange">O 奖论文</span></div>
+        <div class="mt"><a href="https://github.com/dick20/MCM-ICM" target="_blank">仓库 →</a></div>
+      </div>
+
+      <div class="rc" data-c="paper">
+        <div class="top"><div class="nm">历年国赛 C 题优秀论文合集<small>🎯 你的主攻方向</small></div><div class="st">多个仓库</div></div>
+        <div class="ds">C 题真迹（含论文 + 代码 + 数据）：<br>
+          · <a href="https://github.com/Elysia415/CUMCM2024-C" target="_blank">Elysia415/CUMCM2024-C</a> — 2024 国一层次<br>
+          · <a href="https://github.com/kalipolis/CUMCM2023_C" target="_blank">kalipolis/CUMCM2023_C</a> — 2023，含完整数据处理<br>
+          · <a href="https://github.com/Nagi-ovo/CUMCM2023-C" target="_blank">Nagi-ovo/CUMCM2023-C</a> — 2023 另一解<br>
+          · <a href="https://github.com/Shinning-Zhou/2022CUMCM-C" target="_blank">Shinning-Zhou/2022CUMCM-C</a> — 2022 代码+建模+思路<br>
+          · <a href="https://github.com/zz-wolf/CUMCM2021-C" target="_blank">zz-wolf/CUMCM2021-C</a> — 2021 国二代码<br>
+          · <a href="https://github.com/leek-emperor/2020-CMCM-C" target="_blank">leek-emperor/2020-CMCM-C</a> — 2020 国一优秀论文</div>
+        <div class="mt"><span class="tag t-green">推荐</span><span class="tag t-red">C 题专项</span><span class="tag t-cyan">含代码</span></div>
+      </div>
+
+      <div class="rc" data-c="paper">
+        <div class="top"><div class="nm">美赛 C 题优秀实现<small>Data Insights 专项</small></div><div class="st">多个仓库</div></div>
+        <div class="ds">· <a href="https://github.com/Tony1101-ai/mcm-2026-problem-c" target="_blank">Tony1101-ai/mcm-2026-problem-c</a> — 2026 C 题 Data With The Stars 完整解<br>
+          · <a href="https://github.com/Travor278/2026-MCM-Problem-C" target="_blank">Travor278/2026-MCM-Problem-C</a> — 2026 C 题<br>
+          · <a href="https://github.com/Huzijiao/Wordle-DataMining" target="_blank">Huzijiao/Wordle-DataMining</a> — 2023 C 题 Wordle<br>
+          · <a href="https://github.com/Hiroki39/MCM2022" target="_blank">Hiroki39/MCM2022</a> — 2022 C 题，含数据处理代码</div>
+        <div class="mt"><span class="tag t-purple">美赛 C 题</span><span class="tag t-cyan">含代码</span></div>
+      </div>
+
+      <div class="rc" data-c="paper">
+        <div class="top"><div class="nm">zichuan-liu / WHUT_CUMCM20<small>武汉理工获奖资料包</small></div><div class="st">⭐ 169</div></div>
+        <div class="ds">2020 数学建模国赛国二 / 美赛国二 / 数维杯国一 / 亚太国二等获奖资料 + 校内集训材料 + 优秀论文。</div>
+        <div class="mt"><span class="tag t-grey">获奖资料</span></div>
+        <div class="mt"><a href="https://github.com/zichuan-liu/WHUT_CUMCM20" target="_blank">仓库 →</a></div>
+      </div>
+
+    </div>
+
+    <div class="co" style="margin-top:16px"><b>我的推荐组合（针对你主攻 C 题）：</b><br>
+      <b>赛前</b>：用 <span class="tag t-blue">datawhalechina/intro-mathmodel</span> 补算法基础 → 精读 2–3 篇历年 C 题国奖论文 → 装好 <span class="tag t-blue">latexstudio/CUMCMThesis</span> 模板或 Word 官方模板。<br>
+      <b>赛中</b>：用 <span class="tag t-blue">XiaoMaColtAI/math-modeling-skill</span>（出 Word + 五门禁质检）或 <span class="tag t-blue">liufanshan11/cumcm-c-problem-lfs</span>（C 题专用）驱动流程；<span class="tag t-blue">jihe520/sci-box</span> 出图与画技术路线图。<br>
+      <b>封稿前</b>：用 <span class="tag t-blue">BZDmathclub/bzd-math-modeling-skills</span> 做一次模拟评委打分，查漏补缺。<br>
+      <b>打美赛时</b>：切到 <span class="tag t-blue">Juccy-12/MathModelHub</span>（含五天时间轴与美赛评审机制）+ <span class="tag t-blue">dick20/MCM-ICM</span> O 奖论文。
+    </div>
+  </section>
+
+  <!-- ============ 9 ============ -->
+  <section id="s9">
+    <h2><span class="n">9</span>开赛前 24 小时检查清单</h2>
+    <p class="lead">明天 18:00 发题，今晚把下面这些全部搞定。勾选状态会自动保存在本地浏览器。</p>
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0;color:var(--cy)">💻 环境</h4>
+        <ul class="ck">
+          <li><input type="checkbox" id="c1"><label for="c1">Python 全套依赖装好，跑通 <span class="kbd">import numpy, pandas, sklearn, statsmodels, matplotlib</span></label></li>
+          <li><input type="checkbox" id="c2"><label for="c2">装好 xgboost / lightgbm / shap（C 题机器学习常用）</label></li>
+          <li><input type="checkbox" id="c3"><label for="c3">matplotlib <b>中文字体</b>配置完成（否则图全变方块）</label></li>
+          <li><input type="checkbox" id="c4"><label for="c4">Word 官方模板 或 LaTeX 模板（CUMCMThesis）已下载并编译测试通过</label></li>
+          <li><input type="checkbox" id="c5"><label for="c5">MATLAB / 北太天元工具箱可用（若使用）</label></li>
+          <li><input type="checkbox" id="c6"><label for="c6">Git 仓库建好，三人协作目录约定清楚（data / code / figures / paper）</label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0;color:var(--pp)">📚 素材</h4>
+        <ul class="ck">
+          <li><input type="checkbox" id="d1"><label for="d1">历年 C 题（至少 3 年）真题 + 国奖论文各读 1 篇</label></li>
+          <li><input type="checkbox" id="d2"><label for="d2">常用算法代码模板本地化：清洗/EDA/预测/评价/优化/出图</label></li>
+          <li><input type="checkbox" id="d3"><label for="d3">技术路线图模板准备（sci-box 的 draw.io 模板）</label></li>
+          <li><input type="checkbox" id="d4"><label for="d4">图表配色方案定好（<b>色觉友好</b>，避免红绿同图）</label></li>
+          <li><input type="checkbox" id="d5"><label for="d5">参考文献格式（GB/T 7714）模板准备</label></li>
+          <li><input type="checkbox" id="d6"><label for="d6">AI 工具/API Key 可用，且已阅读当届《AI 使用规定》</label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0;color:var(--wn)">👥 团队</h4>
+        <ul class="ck">
+          <li><input type="checkbox" id="e1"><label for="e1">三人分工明确（建模 / 编程 / 论文），并各有备份能力</label></li>
+          <li><input type="checkbox" id="e2"><label for="e2">约定作息与轮休方案（72h 不能全不睡）</label></li>
+          <li><input type="checkbox" id="e3"><label for="e3">队长有权在 10 分钟内拍板争议</label></li>
+          <li><input type="checkbox" id="e4"><label for="e4">D3 14:00 停止改模型的红线，全员认可</label></li>
+          <li><input type="checkbox" id="e5"><label for="e5">提交系统 <span class="kbd">cumcm.cnki.net</span> 账号密码已验证可登录</label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0;color:var(--ok)">🎯 策略</h4>
+        <ul class="ck">
+          <li><input type="checkbox" id="f1"><label for="f1">三人各自了解 A/B/C 三题的题型特征与常用模型</label></li>
+          <li><input type="checkbox" id="f2"><label for="f2">约定选题决策规则（如：谁有完整思路选谁，2:1 少数服从多数）</label></li>
+          <li><input type="checkbox" id="f3"><label for="f3">准备好"降级预案"：模型做不出来时的简化替代方案</label></li>
+          <li><input type="checkbox" id="f4"><label for="f4">明确：<b>论文完整性 &gt; 模型复杂度</b>，全员共识</label></li>
+        </ul>
+        <div class="bar"><i style="width:0%" id="pb"></i></div>
+        <div style="font-size:12px;color:var(--tx3);margin-top:5px" id="pt">完成度 0 / 21</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    生成时间 2026-09-09 · 数据基于 GitHub 公开检索与 2026 各高校国赛报名通知<br>
+    赛程与规则以 <a href="http://www.mcm.edu.cn" target="_blank">全国大学生数学建模竞赛官网</a> 当届官方文件为准
+  </div>
+
+  </main>
+</div>
+
+<script>
+// 倒计时
+const T0 = new Date('2026-09-10T18:00:00+08:00').getTime();
+const T1 = new Date('2026-09-13T20:00:00+08:00').getTime();
+function pad(n){return String(n).padStart(2,'0')}
+function tick(){
+  const now = Date.now();
+  document.getElementById('cd').innerHTML = tickBox(now);
+}
+function tickBox(now){
+  let label, target;
+  if(now < T0){ label='距开赛'; target=T0; }
+  else if(now < T1){ label='距提交截止'; target=T1; }
+  else { return '<div class="cd-box"><b>--</b><span>比赛已结束</span></div>'; }
+  let d = Math.max(0, target-now);
+  const dd=Math.floor(d/86400000); d%=86400000;
+  const hh=Math.floor(d/3600000); d%=3600000;
+  const mm=Math.floor(d/60000); d%=60000;
+  const ss=Math.floor(d/1000);
+  const pct = Math.min(100, (1-(target-now)/(target-T0))*100);
+  return `<div class="cd-box" style="min-width:110px"><span>${label}</span></div>`+
+    `<div class="cd-box"><b>${dd}</b><span>天</span></div>`+
+    `<div class="cd-box"><b>${pad(hh)}</b><span>时</span></div>`+
+    `<div class="cd-box"><b>${pad(mm)}</b><span>分</span></div>`+
+    `<div class="cd-box"><b>${pad(ss)}</b><span>秒</span></div>`;
+}
+setInterval(tick,1000); tick();
+
+// 主题
+const btn=document.getElementById('tt');
+btn.onclick=()=>{
+  const d=document.documentElement;
+  const cur=d.getAttribute('data-t')==='d'?'l':'d';
+  d.setAttribute('data-t',cur);
+  localStorage.setItem('mmtheme',cur);
+  btn.textContent = cur==='d'?'☀️ 切换主题':'🌗 切换主题';
+};
+if(localStorage.getItem('mmtheme')==='d'){document.documentElement.setAttribute('data-t','d');btn.textContent='☀️ 切换主题';}
+
+// 导航高亮
+const secs=[...document.querySelectorAll('section')];
+const links=[...document.querySelectorAll('nav.side a')];
+window.addEventListener('scroll',()=>{
+  let cur=secs[0].id;
+  for(const s of secs){ if(window.scrollY+120 >= s.offsetTop) cur=s.id; }
+  links.forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+cur));
+});
+links.forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();
+  document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+}));
+
+// 资源筛选
+document.querySelectorAll('.fbtn').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    const f=b.dataset.f;
+    document.querySelectorAll('.rc').forEach(c=>{
+      c.style.display = (f==='all'||c.dataset.c===f)?'flex':'none';
+    });
+  };
+});
+
+// 清单
+const boxes=[...document.querySelectorAll('.ck input')];
+const pb=document.getElementById('pb'), pt=document.getElementById('pt');
+function upd(){
+  const n=boxes.filter(b=>b.checked).length;
+  pb.style.width=(n/boxes.length*100)+'%';
+  pt.textContent=`完成度 ${n} / ${boxes.length}`;
+  localStorage.setItem('mmck', JSON.stringify(boxes.map(b=>b.checked)));
+}
+boxes.forEach((b,i)=>b.addEventListener('change',upd));
+try{
+  const saved=JSON.parse(localStorage.getItem('mmck')||'[]');
+  if(saved.length===boxes.length) boxes.forEach((b,i)=>b.checked=saved[i]);
+}catch(e){}
+upd();
+</script>
+</body>
+</html>

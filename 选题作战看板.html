@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>选题作战看板 · 2026 国赛</title>
+<style>
+:root{
+  --bg:#f6f7f9;--panel:#fff;--panel2:#fbfcfd;--line:#e3e7ec;
+  --tx:#1b2027;--tx2:#5a6472;--tx3:#8b95a3;
+  --ac:#2563eb;--ac2:#eff4ff;--ok:#0f9960;--ok2:#e8f5ef;
+  --wn:#c2410c;--wn2:#fff2e8;--dg:#b3261e;--dg2:#fdecea;
+  --pp:#6d28d9;--pp2:#f3edff;--cy:#0e7490;--cy2:#e6f6f9;
+  --sh:0 1px 2px rgba(16,24,40,.05),0 6px 18px rgba(16,24,40,.05);--r:12px;
+}
+html[data-t="d"]{
+  --bg:#0e1116;--panel:#161b22;--panel2:#1b2129;--line:#2a313c;
+  --tx:#e6edf3;--tx2:#a6b1bf;--tx3:#7d8896;
+  --ac:#5b9bff;--ac2:#16233a;--ok:#3fb984;--ok2:#11281f;
+  --wn:#e08b4c;--wn2:#2b1f14;--dg:#f2777a;--dg2:#2d1718;
+  --pp:#a78bfa;--pp2:#221c33;--cy:#4dd0e1;--cy2:#0f262b;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--tx);
+  line-height:1.7;font-size:14.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px 70px}
+header.hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 45%,#0e7490 100%);color:#fff;padding:26px 24px 22px;position:relative;overflow:hidden}
+html[data-t="d"] header.hero{background:linear-gradient(135deg,#14213d 0%,#1e3a8a 50%,#0b3b47 100%)}
+.hero-in{max-width:1240px;margin:0 auto;position:relative;z-index:2;display:flex;justify-content:space-between;
+  align-items:flex-end;flex-wrap:wrap;gap:14px}
+.hero h1{font-size:22px;font-weight:800;margin-bottom:4px}
+.hero .sub{opacity:.9;font-size:13.5px}
+.cd{display:flex;gap:8px}
+.cd-box{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:9px;padding:7px 13px;text-align:center;min-width:62px}
+.cd-box b{display:block;font-size:20px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2}
+.cd-box span{font-size:11px;opacity:.85}
+.rules{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--dg);border-radius:0 var(--r) var(--r) 0;
+  padding:13px 17px;margin:16px 0;font-size:13.5px}
+.rules b{color:var(--dg)}
+.tabs{display:flex;gap:8px;margin:18px 0 14px;flex-wrap:wrap}
+.tab{padding:8px 20px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--tx2);
+  cursor:pointer;font-size:14px;font-family:inherit;transition:.15s}
+.tab:hover{border-color:var(--ac);color:var(--ac)}
+.tab.on{background:var(--ac);color:#fff;border-color:var(--ac);font-weight:600}
+.pane{display:none}.pane.on{display:block}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.grid3{grid-template-columns:1fr}}
+.tcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:15px;box-shadow:var(--sh);border-top:3px solid var(--ac)}
+.tcard h3{font-size:15.5px;font-weight:700;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center}
+.tcard .tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--ac2);color:var(--ac)}
+.fld{margin-top:9px}
+.fld label{display:block;font-size:12.2px;color:var(--tx2);margin-bottom:3px;font-weight:600}
+.fld .hint{font-weight:400;color:var(--tx3);font-size:11.5px}
+textarea,input[type=text],select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:7px;
+  background:var(--panel2);color:var(--tx);font-family:inherit;font-size:13px;resize:vertical}
+textarea:focus,input:focus,select:focus{outline:none;border-color:var(--ac);background:var(--panel)}
+textarea{min-height:52px}
+.score{display:flex;align-items:center;gap:10px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.score input[type=range]{flex:1;accent-color:var(--ac)}
+.score .v{font-size:22px;font-weight:800;min-width:34px;text-align:center;font-variant-numeric:tabular-nums}
+.summary{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--sh);margin-top:22px}
+.summary h2{font-size:18px;font-weight:800;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:var(--panel2);text-align:left;padding:9px 11px;font-weight:700;border-bottom:2px solid var(--line);font-size:12.6px;color:var(--tx2)}
+td{padding:9px 11px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+td.c,th.c{text-align:center}
+.tn{font-variant-numeric:tabular-nums}
+.win{background:var(--ok2)!important}
+.win td{font-weight:700}
+.reco{margin-top:14px;padding:14px 16px;border-radius:9px;font-size:14px}
+.reco.ok{background:var(--ok2);border-left:4px solid var(--ok)}
+.reco.warn{background:var(--wn2);border-left:4px solid var(--wn)}
+.bar{height:7px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;border-radius:4px}
+.btns{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
+.btn{padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--tx2);
+  cursor:pointer;font-size:13.3px;font-family:inherit}
+.btn:hover{border-color:var(--ac);color:var(--ac)}
+.btn.p{background:var(--ac);color:#fff;border-color:var(--ac);font-weight:600}
+#tt{position:fixed;top:14px;right:14px;z-index:99;background:var(--panel);border:1px solid var(--line);
+  border-radius:8px;padding:7px 12px;font-size:12.5px;cursor:pointer;box-shadow:var(--sh);color:var(--tx2);font-family:inherit}
+.foot{text-align:center;color:var(--tx3);font-size:12.3px;padding:24px 0 0;margin-top:28px;border-top:1px solid var(--line)}
+@media print{
+  header.hero,.tabs,.btns,#tt{display:none}
+  .pane{display:block!important;page-break-before:always}
+  body{background:#fff}
+  .tcard,.summary{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<button id="tt">🌗 切换主题</button>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <h1>选题作战看板 · 2026 国赛</h1>
+      <div class="sub">三人各自独立填写 → 汇总自动计算 → 22:00 前必须定题</div>
+    </div>
+    <div class="cd" id="cd"></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="rules">
+    <b>读题纪律：</b>① 18:00–19:30 <b>各自独立读题，禁止讨论</b>；② 每张卡必须<b>点名具体算法</b>，写不出算法名 = 没思路；
+    ③ 子问题清单列不全的题<b>直接淘汰</b>；④ 打分取<b>三人最低分</b>而非平均分（短板决定风险）；⑤ 22:00 定不下来，选"下限最稳"的那题。
+  </div>
+
+  <div class="tabs">
+    <button class="tab on" data-p="p1" title="双击可改为真实姓名">👤 队员甲</button>
+    <button class="tab" data-p="p2" title="双击可改为真实姓名">👤 队员乙</button>
+    <button class="tab" data-p="p3" title="双击可改为真实姓名">👤 队员丙</button>
+  </div>
+
+  <div id="cards"></div>
+
+  <div class="summary">
+    <h2>📊 汇总与推荐</h2>
+    <table id="sumtb">
+      <thead><tr>
+        <th style="width:60px">题目</th>
+        <th class="c mname" data-i="0" style="width:70px">甲</th>
+        <th class="c mname" data-i="1" style="width:70px">乙</th>
+        <th class="c mname" data-i="2" style="width:70px">丙</th>
+        <th class="c" style="width:80px">平均分</th>
+        <th class="c" style="width:90px">最低分</th><th class="c" style="width:90px">可行性</th><th>结论</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+    <div id="reco"></div>
+    <div class="btns">
+      <button class="btn p" onclick="window.print()">🖨 打印 / 存 PDF</button>
+      <button class="btn" id="btnExport">💾 导出全部内容为 .md</button>
+      <button class="btn" id="btnClear">🗑 清空重填</button>
+    </div>
+    <div style="font-size:12.2px;color:var(--tx3);margin-top:10px">
+      内容自动保存在本浏览器（localStorage），换电脑不同步 —— 定题后记得导出或打印留存。
+    </div>
+  </div>
+
+  <div class="foot">2026 全国大学生数学建模竞赛 · 9月10日 18:00 发题，9月13日 20:00 截止</div>
+</div>
+
+<script>
+const TOPICS = [
+  {id:'A', name:'A 题', tag:'通常：机理/连续'},
+  {id:'B', name:'B 题', tag:'通常：离散/优化'},
+  {id:'C', name:'C 题', tag:'通常：数据/统计'},
+];
+const MEMBERS = [
+  {id:'m1', name:'甲'},
+  {id:'m2', name:'乙'},
+  {id:'m3', name:'丙'},
+];
+const FIELDS = [
+  {k:'subs',  label:'① 子问题清单', hint:'把题目拆成 N 个小问，编号列出。列不出 = 没读懂', ph:'Q1: …\nQ2: …\nQ3: …', rows:4},
+  {k:'model', label:'② 每问的解法', hint:'点名具体算法。写不出算法名 = 没思路', ph:'Q1: ARIMA + 灰色预测对比\nQ2: 熵权 TOPSIS\nQ3: 整数规划 + 蒙特卡洛', rows:4},
+  {k:'data',  label:'③ 数据可行性', hint:'附件够不够？要不要外部数据？去哪找？', ph:'附件1 含 2019-2024 月度数据，足够；需补充天气数据，可从 …', rows:3},
+  {k:'risk',  label:'④ 卡点 + 降级预案', hint:'哪一问最可能卡住？卡住时用什么简化模型顶上？', ph:'卡点：Q3 多目标优化。降级：改为单目标 + 情景分析', rows:3},
+];
+const KEY = 'cumcm2026_topic_v1';
+
+// ---------- 渲染 ----------
+function build(){
+  const host = document.getElementById('cards');
+  MEMBERS.forEach((m, mi) => {
+    const pane = document.createElement('div');
+    pane.className = 'pane' + (mi === 0 ? ' on' : '');
+    pane.id = 'p' + (mi + 1);
+    const g = document.createElement('div');
+    g.className = 'grid3';
+    TOPICS.forEach(t => {
+      const c = document.createElement('div');
+      c.className = 'tcard';
+      c.innerHTML = `<h3><span>${t.name}</span><span class="tag">${t.tag}</span></h3>`;
+      FIELDS.forEach(f => {
+        c.innerHTML += `<div class="fld">
+          <label>${f.label} <span class="hint">${f.hint}</span></label>
+          <textarea data-m="${m.id}" data-t="${t.id}" data-k="${f.k}" rows="${f.rows}" placeholder="${f.ph}"></textarea>
+        </div>`;
+      });
+      c.innerHTML += `<div class="score">
+        <label style="font-size:12.5px;font-weight:600;color:var(--tx2);white-space:nowrap">信心分</label>
+        <input type="range" min="1" max="10" value="5" data-m="${m.id}" data-t="${t.id}" data-k="score">
+        <span class="v" id="v_${m.id}_${t.id}">5</span>
+      </div>`;
+      g.appendChild(c);
+    });
+    pane.appendChild(g);
+    host.appendChild(pane);
+  });
+}
+build();
+
+// ---------- 数据读写 ----------
+function collect(){
+  const d = {};
+  document.querySelectorAll('[data-m]').forEach(el => {
+    const k = `${el.dataset.m}|${el.dataset.t}|${el.dataset.k}`;
+    d[k] = el.value;
+  });
+  return d;
+}
+function apply(d){
+  document.querySelectorAll('[data-m]').forEach(el => {
+    const k = `${el.dataset.m}|${el.dataset.t}|${el.dataset.k}`;
+    if (d[k] !== undefined) el.value = d[k];
+    if (el.dataset.k === 'score'){
+      const v = document.getElementById(`v_${el.dataset.m}_${el.dataset.t}`);
+      if (v) v.textContent = el.value;
+    }
+  });
+}
+function save(){ localStorage.setItem(KEY, JSON.stringify(collect())); }
+
+document.addEventListener('input', e => {
+  if (!e.target.dataset.m) return;
+  if (e.target.dataset.k === 'score'){
+    const v = document.getElementById(`v_${e.target.dataset.m}_${e.target.dataset.t}`);
+    if (v) v.textContent = e.target.value;
+  }
+  save(); update();
+});
+
+// ---------- 汇总 ----------
+function getScore(m, t){
+  const el = document.querySelector(`input[data-m="${m}"][data-t="${t}"][data-k="score"]`);
+  return el ? parseInt(el.value, 10) : 5;
+}
+function getText(m, t, k){
+  const el = document.querySelector(`textarea[data-m="${m}"][data-t="${t}"][data-k="${k}"]`);
+  return el ? el.value.trim() : '';
+}
+function feasible(m, t){
+  // 可行性：子问题清单 + 解法 都填了才算"能列全"
+  return getText(m, t, 'subs').length >= 6 && getText(m, t, 'model').length >= 6;
+}
+function colorBar(v){
+  if (v >= 7) return 'var(--ok)';
+  if (v >= 5) return 'var(--wn)';
+  return 'var(--dg)';
+}
+function update(){
+  document.querySelectorAll('.mname').forEach(th => {
+    th.textContent = memberName(parseInt(th.dataset.i, 10));
+  });
+  const tb = document.querySelector('#sumtb tbody');
+  tb.innerHTML = '';
+  const rows = TOPICS.map(t => {
+    const s = MEMBERS.map(m => getScore(m.id, t.id));
+    const avg = s.reduce((a, b) => a + b, 0) / 3;
+    const min = Math.min(...s);
+    const feas = MEMBERS.filter(m => feasible(m.id, t.id)).length;
+    return {t, s, avg, min, feas};
+  });
+  const best = rows.slice().sort((a, b) => (b.min - a.min) || (b.avg - a.avg))[0];
+  rows.forEach(r => {
+    const isWin = r === best && r.min > 0;
+    const tr = document.createElement('tr');
+    if (isWin) tr.className = 'win';
+    let verdict;
+    if (r.feas === 0) verdict = '<span style="color:var(--dg)">无人列全子问题 → 淘汰</span>';
+    else if (r.min <= 3) verdict = `<span style="color:var(--dg)">有人信心过低（${r.min}分），风险高</span>`;
+    else if (r.feas < 3) verdict = `<span style="color:var(--wn)">仅 ${r.feas}/3 人列全，需讨论</span>`;
+    else verdict = '<span style="color:var(--ok)">全员有思路，可选</span>';
+    tr.innerHTML = `
+      <td><b>${r.t.name}</b></td>
+      ${r.s.map(v => `<td class="c tn">${v}</td>`).join('')}
+      <td class="c tn">${r.avg.toFixed(1)}</td>
+      <td class="c"><b class="tn" style="font-size:15px">${r.min}</b>
+        <div class="bar"><i style="width:${r.min * 10}%;background:${colorBar(r.min)}"></i></div></td>
+      <td class="c tn">${r.feas}/3</td>
+      <td>${verdict}${isWin ? ' <b style="color:var(--ok)">← 推荐</b>' : ''}</td>`;
+    tb.appendChild(tr);
+  });
+
+  const el = document.getElementById('reco');
+  if (best.min <= 3){
+    el.className = 'reco warn';
+    el.innerHTML = `<b>⚠️ 暂无稳妥选项。</b>最高最低分仅 ${best.min} 分（${best.t.name}）。
+      建议：回到该题目，用 20 分钟集中攻"卡点 + 降级预案"，把最低分抬到 5 以上再定；或直接在剩余选项中选<b>数据最充分、往年论文最多</b>的一题。
+      <b>无论如何，22:00 前必须定题。</b>`;
+  } else {
+    el.className = 'reco ok';
+    el.innerHTML = `<b>✅ 推荐：${best.t.name}</b>（最低分 ${best.min}，平均 ${best.avg.toFixed(1)}，${best.feas}/3 人列全子问题）。
+      定题后立即：① 合并三人的子问题清单去重；② 确定每问的主模型与对比模型；③ 分配谁跑哪问；④ 开始写"问题重述 + 问题分析"两节。`;
+  }
+}
+
+// ---------- 队员姓名（双击 tab 可改） ----------
+const KEYN = 'cumcm2026_names_v1';
+function memberName(i){
+  const el = document.querySelector(`.tab[data-p="p${i + 1}"]`);
+  const raw = el ? el.textContent.replace(/^\s*👤\s*/, '').trim() : '';
+  return raw || MEMBERS[i].name;
+}
+function saveNames(){
+  localStorage.setItem(KEYN, JSON.stringify(MEMBERS.map((m, i) => memberName(i))));
+}
+function loadNames(){
+  try {
+    const n = JSON.parse(localStorage.getItem(KEYN) || 'null');
+    if (Array.isArray(n) && n.length === 3){
+      n.forEach((v, i) => {
+        const el = document.querySelector(`.tab[data-p="p${i + 1}"]`);
+        if (el && v) el.textContent = '👤 ' + v;
+      });
+    }
+  } catch(e){}
+}
+document.querySelectorAll('.tab').forEach(b => {
+  b.addEventListener('dblclick', () => {
+    b.contentEditable = 'true';
+    b.style.outline = '2px solid var(--ac)';
+    b.focus();
+    document.getSelection().selectAllChildren(b);
+  });
+  const finish = () => {
+    if (b.contentEditable !== 'true') return;
+    b.contentEditable = 'false';
+    b.style.outline = '';
+    if (!b.textContent.replace(/^\s*👤\s*/, '').trim()){
+      b.textContent = '👤 ' + MEMBERS[parseInt(b.dataset.p.slice(1), 10) - 1].name;
+    }
+    saveNames(); update();
+  };
+  b.addEventListener('blur', finish);
+  b.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); b.blur(); } });
+});
+
+// ---------- 交互 ----------
+document.querySelectorAll('.tab').forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+    document.querySelectorAll('.pane').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    document.getElementById(b.dataset.p).classList.add('on');
+  };
+});
+document.getElementById('btnClear').onclick = () => {
+  if (confirm('确定清空所有填写内容？此操作不可撤销。')){
+    localStorage.removeItem(KEY);
+    location.reload();
+  }
+};
+document.getElementById('btnExport').onclick = () => {
+  let s = '# 2026 国赛选题思路卡\n\n';
+  MEMBERS.forEach((m, mi) => {
+    const nm = memberName(mi);
+    s += `## 队员 ${nm}\n\n`;
+    TOPICS.forEach(t => {
+      s += `### ${t.name}\n\n`;
+      FIELDS.forEach(f => {
+        s += `**${f.label}**\n\n${getText(m.id, t.id, f.k) || '（未填）'}\n\n`;
+      });
+      s += `**信心分**：${getScore(m.id, t.id)} / 10\n\n---\n\n`;
+    });
+  });
+  s += '## 汇总\n\n| 题目 | 甲 | 乙 | 丙 | 平均 | 最低分 | 列全人数 |\n|---|---|---|---|---|---|---|\n';
+  TOPICS.forEach(t => {
+    const sc = MEMBERS.map(m => getScore(m.id, t.id));
+    const avg = (sc.reduce((a, b) => a + b, 0) / 3).toFixed(1);
+    const fe = MEMBERS.filter(m => feasible(m.id, t.id)).length;
+    s += `| ${t.name} | ${sc.join(' | ')} | ${avg} | ${Math.min(...sc)} | ${fe}/3 |\n`;
+  });
+  const blob = new Blob([s], {type: 'text/markdown;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '2026国赛_选题思路卡.md';
+  a.click();
+};
+
+// ---------- 主题 & 倒计时 ----------
+const btn = document.getElementById('tt');
+btn.onclick = () => {
+  const d = document.documentElement;
+  const c = d.getAttribute('data-t') === 'd' ? 'l' : 'd';
+  d.setAttribute('data-t', c);
+  localStorage.setItem('mmtheme3', c);
+  btn.textContent = c === 'd' ? '☀️ 切换主题' : '🌗 切换主题';
+};
+if (localStorage.getItem('mmtheme3') === 'd'){
+  document.documentElement.setAttribute('data-t', 'd');
+  btn.textContent = '☀️ 切换主题';
+}
+const T0 = new Date('2026-09-10T18:00:00+08:00').getTime();
+function pad(n){ return String(n).padStart(2, '0'); }
+setInterval(() => {
+  const now = Date.now();
+  const box = document.getElementById('cd');
+  if (now >= T0){
+    box.innerHTML = '<div class="cd-box"><b>已开赛</b><span>快定题</span></div>';
+    return;
+  }
+  let d = T0 - now;
+  const dd = Math.floor(d / 86400000); d %= 86400000;
+  const hh = Math.floor(d / 3600000); d %= 3600000;
+  const mm = Math.floor(d / 60000); d %= 60000;
+  const ss = Math.floor(d / 1000);
+  box.innerHTML = `<div class="cd-box" style="min-width:70px"><span>距开赛</span></div>
+    <div class="cd-box"><b>${dd}</b><span>天</span></div>
+    <div class="cd-box"><b>${pad(hh)}</b><span>时</span></div>
+    <div class="cd-box"><b>${pad(mm)}</b><span>分</span></div>
+    <div class="cd-box"><b>${pad(ss)}</b><span>秒</span></div>`;
+}, 1000);
+
+// ---------- 初始化 ----------
+loadNames();
+try {
+  const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+  if (saved) apply(saved);
+} catch(e){}
+update();
+</script>
+</body>
+</html>

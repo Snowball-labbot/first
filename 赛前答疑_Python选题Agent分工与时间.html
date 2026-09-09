@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数模赛前答疑 · Python vs MATLAB / 选题 / Agent 分工 / 时间预期</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#fff; --panel2:#fbfcfd; --line:#e3e7ec;
+  --tx:#1b2027; --tx2:#5a6472; --tx3:#8b95a3;
+  --ac:#2563eb; --ac2:#eff4ff; --ac3:#dbe6ff;
+  --ok:#0f9960; --ok2:#e8f5ef;
+  --wn:#c2410c; --wn2:#fff2e8;
+  --dg:#b3261e; --dg2:#fdecea;
+  --pp:#6d28d9; --pp2:#f3edff;
+  --cy:#0e7490; --cy2:#e6f6f9;
+  --sh:0 1px 2px rgba(16,24,40,.05),0 6px 18px rgba(16,24,40,.05);
+  --r:12px;
+}
+html[data-t="d"]{
+  --bg:#0e1116; --panel:#161b22; --panel2:#1b2129; --line:#2a313c;
+  --tx:#e6edf3; --tx2:#a6b1bf; --tx3:#7d8896;
+  --ac:#5b9bff; --ac2:#16233a; --ac3:#22375a;
+  --ok:#3fb984; --ok2:#11281f;
+  --wn:#e08b4c; --wn2:#2b1f14;
+  --dg:#f2777a; --dg2:#2d1718;
+  --pp:#a78bfa; --pp2:#221c33;
+  --cy:#4dd0e1; --cy2:#0f262b;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC",system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--tx);line-height:1.78;font-size:15px;-webkit-font-smoothing:antialiased}
+a{color:var(--ac);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:212px 1fr;gap:32px}
+@media(max-width:1000px){.wrap{grid-template-columns:1fr;gap:0}nav.side{display:none}}
+header.hero{background:linear-gradient(135deg,#312e81 0%,#6d28d9 45%,#0e7490 100%);color:#fff;padding:38px 24px 30px;position:relative;overflow:hidden}
+html[data-t="d"] header.hero{background:linear-gradient(135deg,#1a1740 0%,#312e81 50%,#0b3b47 100%)}
+.hero-in{max-width:1180px;margin:0 auto;position:relative;z-index:2}
+.hero h1{font-size:26px;font-weight:800;margin-bottom:8px;letter-spacing:.4px}
+.hero .sub{opacity:.92;font-size:14.5px}
+.hero::after{content:"";position:absolute;right:-60px;top:-70px;width:330px;height:330px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.13),transparent 65%)}
+nav.side{position:sticky;top:20px;align-self:start;padding-top:26px;max-height:calc(100vh-40px);overflow:auto}
+nav.side .t{font-size:11.5px;font-weight:700;color:var(--tx3);letter-spacing:1.2px;margin:0 0 10px 12px}
+nav.side a{display:block;padding:7px 12px;margin-bottom:2px;border-radius:8px;color:var(--tx2);font-size:13.3px;
+  border-left:2px solid transparent;transition:.15s}
+nav.side a:hover{background:var(--ac2);color:var(--ac);text-decoration:none}
+nav.side a.on{background:var(--ac2);color:var(--ac);font-weight:600;border-left-color:var(--ac)}
+main{padding-top:26px}
+section{margin-bottom:48px;scroll-margin-top:20px}
+h2{font-size:21px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+h2 .n{background:var(--pp);color:#fff;width:27px;height:27px;border-radius:7px;display:inline-flex;
+  align-items:center;justify-content:center;font-size:12.5px;flex:none}
+h2+.lead{color:var(--tx2);font-size:14px;margin-bottom:18px}
+h3{font-size:16px;font-weight:700;margin:24px 0 10px;padding-left:10px;border-left:3px solid var(--ac)}
+h4{font-size:14.5px;font-weight:700;margin:16px 0 8px}
+p{margin-bottom:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--sh);margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+th{background:var(--panel2);text-align:left;padding:10px 12px;font-weight:700;border-bottom:2px solid var(--line);
+  font-size:12.8px;color:var(--tx2)}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--panel2)}
+td.c,th.c{text-align:center}
+.tn{font-variant-numeric:tabular-nums}
+.tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11.5px;font-weight:600;line-height:1.7}
+.t-blue{background:var(--ac2);color:var(--ac)} .t-green{background:var(--ok2);color:var(--ok)}
+.t-orange{background:var(--wn2);color:var(--wn)} .t-red{background:var(--dg2);color:var(--dg)}
+.t-purple{background:var(--pp2);color:var(--pp)} .t-cyan{background:var(--cy2);color:var(--cy)}
+.t-grey{background:var(--panel2);color:var(--tx3);border:1px solid var(--line)}
+.co{border-left:4px solid var(--ac);background:var(--ac2);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14px}
+.co.w{border-color:var(--wn);background:var(--wn2)} .co.d{border-color:var(--dg);background:var(--dg2)}
+.co.g{border-color:var(--ok);background:var(--ok2)} .co.p{border-color:var(--pp);background:var(--pp2)}
+.qa{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--pp);border-radius:0 var(--r) var(--r) 0;
+  padding:14px 18px;margin:14px 0;font-size:14.5px;font-weight:600;color:var(--tx)}
+.qa span{color:var(--pp);margin-right:8px}
+.ans{margin-left:6px}
+.ans p{font-weight:400}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:14px 0}
+.vs>div{padding:16px 18px}
+.vs .a{background:var(--ok2);border-right:1px solid var(--line)}
+.vs .b{background:var(--wn2)}
+html[data-t="d"] .vs .a{background:var(--ok2)} html[data-t="d"] .vs .b{background:var(--wn2)}
+.vs h4{margin-top:0;font-size:15px}
+.vs ul{padding-left:18px;font-size:13.5px;color:var(--tx2)}
+.vs li{margin-bottom:5px}
+.stack{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.layer{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:12px 15px;
+  display:flex;gap:14px;align-items:center;box-shadow:var(--sh)}
+.layer .lb{font-weight:700;font-size:13.5px;min-width:96px;color:var(--ac)}
+.layer .ct{font-size:13px;color:var(--tx2);flex:1}
+.layer .ags{font-size:11.8px;color:var(--tx3);min-width:180px}
+.case{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin:14px 0;box-shadow:var(--sh)}
+.case .hd{font-weight:700;font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.vote{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+@media(max-width:760px){.vote{grid-template-columns:1fr}}
+.vc{border:1px solid var(--line);border-radius:9px;padding:12px;background:var(--panel2)}
+.vc.win{border-color:var(--ok);background:var(--ok2);box-shadow:0 0 0 2px var(--ok2)}
+.vc .who{font-size:12.5px;color:var(--tx3);margin-bottom:6px}
+.vc .sc{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums}
+.vc .why{font-size:12.3px;color:var(--tx2);margin-top:6px;line-height:1.6}
+.bar{height:8px;border-radius:5px;background:var(--line);overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;border-radius:5px}
+.kbd{background:var(--panel2);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;
+  font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--tx)}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:13px}
+#tt{position:fixed;top:14px;right:14px;z-index:99;background:var(--panel);border:1px solid var(--line);
+  border-radius:8px;padding:7px 12px;font-size:12.5px;cursor:pointer;box-shadow:var(--sh);color:var(--tx2);font-family:inherit}
+.foot{text-align:center;color:var(--tx3);font-size:12.5px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:30px}
+.tbox{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:11px 14px;flex:1;min-width:150px;box-shadow:var(--sh)}
+.tbox b{display:block;font-size:13.5px} .tbox span{font-size:11.8px;color:var(--tx3)}
+.flow{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+</style>
+</head>
+<body>
+<button id="tt">🌗 切换主题</button>
+
+<header class="hero">
+  <div class="hero-in">
+    <h1>数模赛前答疑 · 四个关键问题</h1>
+    <div class="sub">Python 还是 MATLAB ｜ 三人怎么定题 ｜ Agent 时代分工要不要重构 ｜ 跑数据到底要多久<br>
+      附：以 2024 年国赛 A 题「板凳龙」（GPT 生成 209 页论文）为样本的时间拆解</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="side">
+    <div class="t">目录</div>
+    <a href="#q1" class="on">Q1 · Python vs MATLAB</a>
+    <a href="#q2">Q2 · 三人怎么定题</a>
+    <a href="#q3">Q3 · Agent 时代分工</a>
+    <a href="#q4">Q4 · 跑数据要多久</a>
+    <a href="#q5">案例 · 2024 A 题拆解</a>
+    <a href="#q6">结论 · 行动清单</a>
+  </nav>
+
+  <main>
+
+  <!-- ================= Q1 ================= -->
+  <section id="q1">
+    <h2><span class="n">Q1</span>Python / MATLAB：只用 Python 行不行？</h2>
+    <p class="lead">结论先行：<b>只用 Python 完全够用，赛前 24 小时不要去装 MATLAB。</b></p>
+
+    <div class="qa"><span>Q</span>MATLAB 有必要下载吗？它的意义在哪里？</div>
+    <div class="card ans">
+      <div class="vs">
+        <div class="a">
+          <h4 style="color:var(--ok)">✅ 只用 Python —— 推荐</h4>
+          <ul>
+            <li><b>规则允许</b>：国赛不限制软件，评审只看论文与结果</li>
+            <li><b>生态覆盖 95% 需求</b>：<span class="mono">numpy/scipy</span>（优化、积分、ODE、插值）、<span class="mono">pandas</span>（数据处理）、<span class="mono">statsmodels</span>（统计与时序）、<span class="mono">sklearn</span>（机器学习）、<span class="mono">networkx</span>（图论）、<span class="mono">pulp/cvxpy</span>（规划）</li>
+            <li><b>零安装成本</b>：你的 Anaconda 已带齐核心栈（已验证：numpy 2.3.5 / pandas 2.3.3 / sklearn 1.7.2 / statsmodels 0.14.5 / matplotlib 3.10.6）</li>
+            <li><b>AI 友好</b>：所有 Agent / Skill（MathModelAgent、math-modeling-skill 等）对 Python 的支持都远好于 MATLAB</li>
+            <li><b>出图更强</b>：matplotlib + seaborn 的出版级控制力优于 MATLAB</li>
+          </ul>
+        </div>
+        <div class="b">
+          <h4 style="color:var(--wn)">⚠️ MATLAB 的真实意义</h4>
+          <ul>
+            <li><b>历史惯性</b>：早期数模教材、往年优秀论文代码多为 MATLAB，抄起来方便</li>
+            <li><b>工具箱开箱即用</b>：Optimization / Global Optimization / Symbolic Toolbox 不需配环境</li>
+            <li><b>Simulink</b>：动态系统仿真，Python 无等价物（但国赛极少需要）</li>
+            <li><b>学校要求</b>：部分学校数模课以 MATLAB 授课，或机房只装了 MATLAB</li>
+            <li><b>北太天元</b>：国产 MATLAB 替代，北太振寰是 <b>2026 国赛赞助单位</b>，部分赛区在推广</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="co d"><b>为什么现在不要装 MATLAB：</b>安装包 20–40 GB，安装 + 激活通常要 1–3 小时，还可能卡在 license / 工具箱缺件上。距离开赛不到 24 小时，这个时间成本换来的收益是负的。<b>把时间花在熟悉 Python 工具包上，回报高得多。</b></div>
+
+      <h4>什么时候才真的该用 MATLAB？</h4>
+      <table>
+        <tr><th style="width:180px">情况</th><th>建议</th></tr>
+        <tr><td>队里有人 MATLAB 极熟、Python 生疏</td><td><b>就用 MATLAB</b>。赛前换语言是自杀，熟悉度 &gt; 语言优劣</td></tr>
+        <tr><td>题目需要 Simulink 仿真</td><td>国赛历史上极少，遇到再说</td></tr>
+        <tr><td>学校/赛区要求交 MATLAB 代码</td><td>先用 Python 跑出结果，最后让 AI 转写成 MATLAB 语法即可（结果对就行）</td></tr>
+        <tr><td>只是"听说数模都用 MATLAB"</td><td><b>不装</b>。这是 2010 年代的认知</td></tr>
+      </table>
+
+      <div class="co g"><b>我的建议：</b>主语言 Python（你已具备完整环境）+ 心里有数"必要时可让 AI 把代码转写成 MATLAB/北太天元格式"。<br>
+      <b>Python 真正的坑不是语言，是环境</b>——依赖冲突、中文字体变方块、路径问题。这些我已经在 <span class="mono">mmcore/style.py</span> 里处理掉了（已验证：Microsoft YaHei 自动识别，出图无方块）。</div>
+    </div>
+  </section>
+
+  <!-- ================= Q2 ================= -->
+  <section id="q2">
+    <h2><span class="n">Q2</span>三人独立读题后，到底怎么定题？</h2>
+    <p class="lead">核心原则：<b>不是"我觉得这题有意思"，而是"我能把每一问的解法列全"。</b>列不全 = 不选。</p>
+
+    <h3>标准化的"思路卡"</h3>
+    <p>每人独立读题（含附件）60–90 分钟，不许讨论，各自填一张卡：</p>
+    <div class="card">
+      <table>
+        <tr><th style="width:150px">字段</th><th>要求</th></tr>
+        <tr><td><b>① 子问题清单</b></td><td>把题目拆成 N 个小问，<b>编号列出</b>。列不出 = 没读懂</td></tr>
+        <tr><td><b>② 每问的解法</b></td><td>点名具体算法（如"Q1 用 ARIMA + 灰色预测对比，Q2 用熵权 TOPSIS"）。写不出算法名 = 没思路</td></tr>
+        <tr><td><b>③ 数据可行性</b></td><td>附件够不够？要不要外部数据？去哪找？</td></tr>
+        <tr><td><b>④ 卡点预判</b></td><td>哪一问最可能卡住？卡住的降级方案是什么？</td></tr>
+        <tr><td><b>⑤ 信心分</b></td><td>1–10 分，<b>必须写理由</b>，不许凭感觉打分</td></tr>
+      </table>
+    </div>
+
+    <h3>汇总投票：三个判据 + 三条规则</h3>
+    <div class="grid3">
+      <div class="card" style="border-top:3px solid var(--ac)">
+        <h4 style="margin-top:0">判据 ① 可行性</h4>
+        <p style="font-size:13.4px;color:var(--tx2)">子问题清单能否列全？数据是否可得？<b>权重 40%</b></p>
+        <div class="bar"><i style="width:40%;background:var(--ac)"></i></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--cy)">
+        <h4 style="margin-top:0">判据 ② 把握度</h4>
+        <p style="font-size:13.4px;color:var(--tx2)">三人信心分的<b>最低分</b>（不是平均分）——短板决定风险。<b>权重 35%</b></p>
+        <div class="bar"><i style="width:35%;background:var(--cy)"></i></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--pp)">
+        <h4 style="margin-top:0">判据 ③ 出彩空间</h4>
+        <p style="font-size:13.4px;color:var(--tx2)">是否有建模创新点、能否做出差异化。<b>权重 25%</b></p>
+        <div class="bar"><i style="width:25%;background:var(--pp)"></i></div>
+      </div>
+    </div>
+    <div class="co"><b>三条决策规则：</b><br>
+      ① <b>取最低分而非平均分</b>——一人 9 分一人 3 分的题，风险远大于两人都是 6 分的题；<br>
+      ② <b>30 分钟定不下来就选"下限稳"的那题</b>；<br>
+      ③ <b>选题总时长设死线：18:00 发题，22:00 必须定题</b>，超时就是全员失败的开始。</div>
+
+    <h3>实例演练：2024 年国赛的真实三题</h3>
+    <div class="case">
+      <div class="hd">📋 场景：某三人队，甲（数学强）、乙（编程强）、丙（写作强）</div>
+      <p style="font-size:13.8px;color:var(--tx2)">题目：A 题「板凳龙」（几何+运动学+碰撞检测）｜ B 题「碳化硅外延层厚度」（光学干涉+优化）｜ C 题「农作物种植策略」（数据+优化+风险）</p>
+      <div class="vote">
+        <div class="vc">
+          <div class="who">甲 · 数学强 · A 题</div>
+          <div class="sc" style="color:var(--wn)">7 <span style="font-size:13px;font-weight:400">/ 10</span></div>
+          <div class="why">思路：螺线参数化 → 等弦长递推 → 隐式微分求速度。<br><b>卡点：</b>问题 2 碰撞检测（板体是矩形不是点）几何复杂；问题 4 调头曲线构造没把握。</div>
+        </div>
+        <div class="vc">
+          <div class="who">乙 · 编程强 · C 题</div>
+          <div class="sc" style="color:var(--ok)">8 <span style="font-size:13px;font-weight:400">/ 10</span></div>
+          <div class="why">思路：Q1 相关性+聚类，Q2 熵权 TOPSIS 评价，Q3 随机森林预测，Q4 整数规划 + 蒙特卡洛风险。<br><b>卡点：</b>最后一问多目标优化建模难，但有降级方案（单目标 + 情景分析）。</div>
+        </div>
+        <div class="vc">
+          <div class="who">丙 · 写作强 · C 题</div>
+          <div class="sc" style="color:var(--cy)">6 <span style="font-size:13px;font-weight:400">/ 10</span></div>
+          <div class="why">A 题只能列全 3 问，信心 4；C 题能列全 4 问且有往年论文可参照，信心 6。</div>
+        </div>
+      </div>
+      <div class="co g" style="margin-bottom:0">
+        <b>决策过程：</b>A 题只有甲 1 人 7 分，乙、丙均 &lt;5 → <b>淘汰</b>（短板决定风险）。<br>
+        C 题乙 8 + 丙 6，两人都能列全子问题，且有明确降级预案 → <b>选 C 题</b>。<br>
+        <b>反向情形：</b>如果队里有物理/力学背景的人，A 题甲 8 乙 7，且能说出"用分离轴定理做矩形碰撞"——那 A 题反而更优，因为<b>出彩空间更大（做出来的人少）</b>。
+      </div>
+    </div>
+    <div class="co w"><b>一个反直觉的提醒：</b>不要因为是"数据题容易"就无脑选 C。C 题<b>做的人最多、区分度在深度</b>——人人都能跑出图，想拿国奖必须在特征工程、模型对比、稳健性分析上超出平均。而 A/B 题做的人少，<b>只要完整做完就是稀缺</b>。选题要考虑你们队的<b>比较优势</b>，不是题目的绝对难度。</div>
+  </section>
+
+  <!-- ================= Q3 ================= -->
+  <section id="q3">
+    <h2><span class="n">Q3</span>Agent 时代，分工可以改成"一人统领多 Agent"吗？</h2>
+    <p class="lead">先说一个硬性前提：<b>国赛规则要求 3 人一队</b>，所以"一人"在规则上不成立。真正的问题是：<b>3 人的角色该怎么重定义。</b></p>
+
+    <div class="qa"><span>Q</span>一个人统领几个 Agent，和传统三人分工，本质区别是什么？</div>
+
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:130px">维度</th><th>传统三人分工</th><th>一人 + 多 Agent</th></tr></thead>
+        <tbody>
+          <tr><td><b>并行方式</b></td><td><b>人脑并行</b>：三人同时独立思考，视角不同</td><td><b>执行并行</b>：Agent 并发跑代码/出图/检索，但<b>视角只有一个</b></td></tr>
+          <tr><td><b>容错机制</b></td><td>一人卡住，另外两人可接手或纠偏</td><td>主导者判断错了，<b>Agent 会顺着你错到底</b>（这是最大风险）</td></tr>
+          <tr><td><b>瓶颈</b></td><td>沟通成本、写作速度</td><td><b>主导者的注意力 + 判断力</b></td></tr>
+          <tr><td><b>体力</b></td><td>可轮休，三人接力</td><td>一人 74h 全程盯，<b>注意力崩溃比三人快得多</b></td></tr>
+          <tr><td><b>风险集中度</b></td><td>分散</td><td>API 限流 / 工具崩溃 / 账号异常 → <b>全队归零</b></td></tr>
+          <tr><td><b>产出上限</b></td><td>受限于人的编码与计算速度</td><td><b>极高</b>——见下方 209 页案例，人类 74h 做不到的计算量 AI 能做到</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="co d"><b>最关键的认知：Agent 压缩的是"执行时间"，压缩不了"判断时间"。</b><br>
+      那份 209 页的 GPT 论文里有一条真实记录：问题 3 的<b>原答案 0.42021689805 m 被自检发现"在途中穿透"，修正为 0.45033741302719266 m</b>。这种错误——数值看着极精确、推导看着极完整、但物理上不成立——<b>是 AI 最危险的失败模式，也只有懂建模的人能发现</b>。<br>
+      如果是一个人带 Agent，你既当选手又当裁判，这种错误极易漏网。</div>
+
+    <h3>推荐模式：3 人保留，角色重定义为「出题人 / 审核人 / 整合人」</h3>
+    <div class="stack">
+      <div class="layer">
+        <div class="lb">🎯 总指挥</div>
+        <div class="ct"><b>1 人</b>。负责选题拍板、子问题拆解、模型选型、<b>对 AI 输出做最终判断</b>。这是全队最累也最关键的岗位，必须由建模能力最强的人担任。</div>
+        <div class="ags">配：建模 Agent（思路建议 + 模型选择）</div>
+      </div>
+      <div class="layer">
+        <div class="lb">🔬 审校官</div>
+        <div class="ct"><b>1 人</b>。不写代码，专门<b>挑错</b>：验算关键数值、检查模型假设是否自洽、用模拟评委视角打分。传统分工里没有这个角色，Agent 时代必须有。</div>
+        <div class="ags">配：评审 Agent（BZDmathclub 的评阅细则蒸馏 Skill）</div>
+      </div>
+      <div class="layer">
+        <div class="lb">🧩 整合官</div>
+        <div class="ct"><b>1 人</b>。把 Agent 产出的代码、图、文字碎片<b>收敛成一条逻辑主线</b>，负责论文叙事与排版。Agent 最容易产出"局部正确、整体失联"的内容。</div>
+        <div class="ags">配：写作 Agent + 出图 Agent（sci-box）</div>
+      </div>
+    </div>
+
+    <h4>Agent 编队建议（4–6 个足够，不是越多越好）</h4>
+    <div class="grid2">
+      <div class="card">
+        <table style="font-size:13px">
+          <tr><th style="width:110px">Agent</th><th>职责</th></tr>
+          <tr><td>建模 Agent</td><td>读题拆解、子问题清单、模型决策树</td></tr>
+          <tr><td>编程 Agent</td><td>写代码、跑数、调参（Codex / Claude Code）</td></tr>
+          <tr><td>出图 Agent</td><td>出版级图表 + 技术路线图（sci-box）</td></tr>
+          <tr><td>写作 Agent</td><td>基于<b>真实结果</b>生成论文段落</td></tr>
+          <tr><td>评审 Agent</td><td>模拟评委挑错、打分（封稿前必跑）</td></tr>
+          <tr><td>查证 Agent</td><td>文献检索、公式核对、数值一致性检查</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div class="co w" style="margin-top:0"><b>Agent 越多越好的误区：</b>超过 6 个后，你的时间会全部消耗在"管理 Agent"而不是"做建模"。<b>4 个 Agent + 3 个人是甜点区。</b></div>
+        <div class="co d" style="margin-bottom:0"><b>三条铁律：</b><br>
+          ① <b>Agent 不能投票定题</b>——选题必须人定，AI 对"哪题更适合你们"没有信息；<br>
+          ② <b>Agent 写的结论必须人工验算一遍关键数字</b>；<br>
+          ③ <b>保留一个不用 AI 的独立验算</b>——哪怕只是用 Excel 手算一个小样本，用来交叉验证 AI 的量级。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Q4 ================= -->
+  <section id="q4">
+    <h2><span class="n">Q4</span>跑数据到底需要多久？</h2>
+    <p class="lead">给你一个可量化的预期。<b>注意：跑数据不是最耗时的，论文才是。</b></p>
+
+    <h3>通用时间预期（C 题 · 人类队 · 无 AI）</h3>
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:180px">环节</th><th style="width:90px" class="c">耗时</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>数据清洗 + EDA</td><td class="c tn"><b>4–8 h</b></td><td>盘点、缺失、异常、编码、描述统计、6–8 张探索图</td></tr>
+          <tr><td>第 1 问建模求解</td><td class="c tn"><b>6–10 h</b></td><td>第一次跑通端到端最慢，要定框架</td></tr>
+          <tr><td>后续每问</td><td class="c tn"><b>4–8 h/问</b></td><td>含"加一个对比模型"的时间</td></tr>
+          <tr><td>灵敏度 / 稳健性</td><td class="c tn"><b>3–5 h</b></td><td>别省，这是 C 题拉分项</td></tr>
+          <tr><td>正式出图</td><td class="c tn"><b>5–9 h</b></td><td>10–15 张出版级图，含改配色、改标注的反复</td></tr>
+          <tr><td><b>论文写作 + 排版</b></td><td class="c tn"><b>28–38 h</b></td><td><b>这才是大头</b>，占总时长 40–50%</td></tr>
+          <tr><td style="background:var(--panel2)"><b>合计</b></td><td class="c tn" style="background:var(--panel2)"><b>60–75 h</b></td><td style="background:var(--panel2)">刚好卡满 74 小时 —— <b>这就是为什么"完整比完美重要"</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="co"><b>时间占比规律（很重要）：</b>跑数据 + 出图 ≈ <b>30–40%</b>，论文 ≈ <b>45–50%</b>，其余是选题、讨论、休息。<br>
+      新手最常见的翻车方式：<b>在跑数据上耗掉 60 小时，最后 10 小时赶论文</b> → 论文残缺 → 直接失去评奖资格。</div>
+
+    <h3>Agent 辅助后能省多少？</h3>
+    <div class="grid3">
+      <div class="card" style="border-top:3px solid var(--cy)">
+        <h4 style="margin-top:0">代码编写</h4>
+        <p style="font-size:26px;font-weight:800;color:var(--cy);margin:2px 0">-60~70%</p>
+        <p style="font-size:13px;color:var(--tx2)">AI 写初稿 + 人调试。省得最多，也最安全</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--ac)">
+        <h4 style="margin-top:0">出图</h4>
+        <p style="font-size:26px;font-weight:800;color:var(--ac);margin:2px 0">-40~50%</p>
+        <p style="font-size:13px;color:var(--tx2)">省在样式代码，省不了"选什么图"的决策</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--pp)">
+        <h4 style="margin-top:0">建模思路</h4>
+        <p style="font-size:26px;font-weight:800;color:var(--pp);margin:2px 0">-10~20%</p>
+        <p style="font-size:13px;color:var(--tx2)"><b>几乎省不掉</b>。这是人的活，也是评分核心</p>
+      </div>
+    </div>
+    <div class="co g"><b>净效果：</b>整体压缩 <b>30–40%</b>，即从 70h 降到 <b>42–50h</b>。<br>
+      省下来的 20–28 小时<b>不要用来"多做两问"，要用来"把已做的做扎实"</b>——加对比模型、做灵敏度分析、精修图表、打磨摘要。这些才是真正拉开档次的动作。</div>
+  </section>
+
+  <!-- ================= Q5 ================= -->
+  <section id="q5">
+    <h2><span class="n">Q5</span>案例：2024 年国赛 A 题「板凳龙」时间拆解</h2>
+    <p class="lead">以你给的 209 页 GPT 论文为样本，反推时间成本。<b>这题是近十年国赛最难的 A 题之一。</b></p>
+
+    <h3>题目结构与难度</h3>
+    <div class="card">
+      <table>
+        <tr><th style="width:70px">问题</th><th style="width:200px">内容</th><th>核心难点</th></tr>
+        <tr><td><b>Q1</b></td><td>螺距 55cm 等距螺线盘入，龙头 1m/s，求 300s 内每秒 224 个把手的位置与速度</td><td>等弦长递推求孔位；<b>隐式微分</b>求速度；要保证取到"外侧物理解"而非跨圈交点</td></tr>
+        <tr><td><b>Q2</b></td><td>求不碰撞的盘入终止时刻</td><td><b>全队最难</b>。板体是 30cm 宽的矩形不是点 → 需<b>分离轴定理(SAT)</b>做矩形分离判定，且要证明"此前没有更早接触"</td></tr>
+        <tr><td><b>Q3</b></td><td>直径 9m 调头空间下的最小螺距</td><td>约束是<b>全进度最小分离裕量 ≥ 0</b>，不是终点能放下。<b>AI 在此翻车一次</b>（0.4202 → 0.4503）</td></tr>
+        <tr><td><b>Q4</b></td><td>半径比 2:1 双圆弧相切的 S 形调头路径，-100~100s 全队状态</td><td>有向相切（要保留行进方向，排除转向错误分支）；弧段径向极值检查</td></tr>
+        <tr><td><b>Q5</b></td><td>满足所有把手速率 ≤ 2m/s 的最大恒定龙头速度</td><td>全程速度<b>包络</b>分析，不是单点优化</td></tr>
+      </table>
+    </div>
+
+    <h3>人类队伍时间估算 vs Agent 辅助</h3>
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:70px">问题</th><th style="width:100px" class="c">人类队</th><th style="width:110px" class="c">Agent 辅助</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><b>Q1</b></td><td class="c tn">10 h</td><td class="c tn">3 h</td><td>建模 3 + 编码 4 + 调试 3；AI 直接给出递推 + DOP853 交叉验证</td></tr>
+          <tr><td><b>Q2</b></td><td class="c tn">14 h</td><td class="c tn">4 h</td><td>SAT + 区间 Newton，AI 检验了 <b>6379 个连续区间</b>——人手做不到</td></tr>
+          <tr><td><b>Q3</b></td><td class="c tn">8 h</td><td class="c tn">3 h</td><td>AI 产出后<b>必须人工复核</b>（这份论文里 AI 自纠了一次）</td></tr>
+          <tr><td><b>Q4</b></td><td class="c tn">10 h</td><td class="c tn">3 h</td><td>几何构造，AI 优势明显</td></tr>
+          <tr><td><b>Q5</b></td><td class="c tn">6 h</td><td class="c tn">2 h</td><td>速度包络</td></tr>
+          <tr><td>出图</td><td class="c tn">8 h</td><td class="c tn">3 h</td><td>12–15 张，含龙形轨迹动画帧</td></tr>
+          <tr><td>论文</td><td class="c tn">26 h</td><td class="c tn">14 h</td><td>209 页的 AI 稿要<b>压缩到 20 页</b>，这个压缩工作只能人做</td></tr>
+          <tr><td style="background:var(--panel2)"><b>合计</b></td><td class="c tn" style="background:var(--panel2)"><b style="color:var(--dg)">82 h</b></td><td class="c tn" style="background:var(--panel2)"><b style="color:var(--ok)">32 h</b></td><td style="background:var(--panel2)">比赛只有 <b>74 h</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="co d"><b>这张表说明三件事：</b><br>
+      ① <b>2024 A 题人类队做不完</b>（82h &gt; 74h）。实际大多数选 A 题的队伍只完成 3–4 问 —— 完成度本身就是筛选器；<br>
+      ② <b>Agent 辅助下 32h 能做完 5 问</b>，剩下 40h 可用于打磨 —— 这是代际差距；<br>
+      ③ <b>但 AI 给的 209 页 ≠ 能交的论文</b>。国赛正文 20 页左右，把 209 页压缩成 20 页、且保留全部关键推导与数值，<b>这个"压缩与取舍"是纯人工的高价值工作</b>，AI 做不好。</div>
+
+    <h3>换算到你的 C 题：74 小时时间表（Agent 辅助版）</h3>
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:110px">时段</th><th style="width:150px">人做什么</th><th style="width:150px">Agent 做什么</th><th>交付物</th></tr></thead>
+        <tbody>
+          <tr><td class="tn"><b>D0</b> 18:00–22:00<br><span class="tag t-purple">4h</span></td>
+            <td>三人独立读题、填思路卡、<b>投票定题</b>（Agent 不参与）</td>
+            <td>可并行：搜索题目背景资料、往年类似题解法</td>
+            <td>选题结论 + 子问题清单</td></tr>
+          <tr><td class="tn"><b>D0</b> 22:00–24:00<br><span class="tag t-purple">2h</span></td>
+            <td>拆子问题、定模型路线、画技术路线图草稿</td>
+            <td>建模 Agent 输出模型选型建议；出图 Agent 画路线图</td>
+            <td>论文骨架 + 技术路线图</td></tr>
+          <tr><td class="tn"><b>D1</b> 全天<br><span class="tag t-blue">16h</span></td>
+            <td><b>人审清洗规则</b>（哪些异常真删、哪些保留）；判断 EDA 结论是否合理</td>
+            <td>写清洗代码、跑 EDA、出 6–8 张探索图、攻克 Q1</td>
+            <td>清洗报告 + EDA 图 + Q1 结果</td></tr>
+          <tr><td class="tn"><b>D2</b> 全天<br><span class="tag t-orange">18h</span></td>
+            <td><b>审校官验算关键数值</b>；总指挥判断模型是否需要降级；整合官同步写作</td>
+            <td>跑剩余各问、加对比模型、出正式图、生成论文段落</td>
+            <td>全问题结果 + 正式图表 + 论文 70%</td></tr>
+          <tr><td class="tn"><b>D3</b> 08:00–14:00<br><span class="tag t-red">6h</span></td>
+            <td>补灵敏度分析、模型评价与改进、结论建议</td>
+            <td>跑灵敏度/蒙特卡洛、生成分析段落</td>
+            <td>完整论文 v1</td></tr>
+          <tr><td class="tn"><b>D3</b> 14:00–18:00<br><span class="tag t-red">4h</span></td>
+            <td><b>数值一致性四查</b>（摘要/正文/表/图）；去身份信息；支撑材料打包</td>
+            <td><b>评审 Agent 模拟打分</b>、排版、格式检查</td>
+            <td>可提交 PDF + 支撑材料</td></tr>
+          <tr><td class="tn"><b>D3</b> 18:00–20:00<br><span class="tag t-grey">2h</span></td>
+            <td><b>18:00 前首次上传</b>，留 2h 缓冲</td>
+            <td>备用</td>
+            <td>提交回执</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co w"><b>注意表里"人"这一列：</b>Agent 时代人的工作不是变少了，而是<b>从"写代码"变成了"做判断 + 做审查"</b>。如果你发现自己一整天都在改 Agent 的代码，说明分工错了——那是 Agent 的活。</div>
+  </section>
+
+  <!-- ================= Q6 ================= -->
+  <section id="q6">
+    <h2><span class="n">Q6</span>结论与行动清单</h2>
+    <div class="grid2">
+      <div class="card" style="border-top:3px solid var(--ok)">
+        <h4 style="margin-top:0">✅ 四个问题的直接回答</h4>
+        <ol style="padding-left:20px;font-size:13.8px;color:var(--tx2)">
+          <li><b>只用 Python 完全可以</b>，MATLAB 现在不用装。它的意义主要是历史惯性与教学传统，以及北太天元的国产替代场景</li>
+          <li><b>定题靠"思路卡 + 取最低分"</b>：能列全子问题 + 点名算法才算有思路，取三人中的<b>最低分</b>而非平均分，22:00 前必须定题</li>
+          <li><b>3 人保留</b>（规则要求），角色改为<b>总指挥 / 审校官 / 整合官</b>，配 4–6 个 Agent。一人统领的风险是"没人能纠正你的判断错误"</li>
+          <li><b>跑数据 + 出图 ≈ 30–40%</b>，论文 45–50%。Agent 省 30–40%，省下的时间用来<b>做扎实而非做更多</b></li>
+        </ol>
+      </div>
+      <div class="card" style="border-top:3px solid var(--pp)">
+        <h4 style="margin-top:0">🎯 今晚的行动（按优先级）</h4>
+        <ol style="padding-left:20px;font-size:13.8px;color:var(--tx2)">
+          <li>确认环境：<span class="kbd">python -c "from mmcore import env_check; env_check()"</span></li>
+          <li>跑通示例：<span class="kbd">python example_pipeline.py</span>，确认出图中文正常</li>
+          <li>三人拉群，<b>约好明晚 18:00 各自独立读题、22:00 汇总投票</b>，并把"思路卡"模板发群里</li>
+          <li>确定谁当总指挥 / 审校官 / 整合官，<b>现在就定，不要现场分</b></li>
+          <li>装好要用的 Agent / Skill（若使用），<b>并测一次 API 连通性</b></li>
+          <li>阅读当届《人工智能工具使用规定（2026 年试行）》，确认是否需声明 AI 使用情况</li>
+        </ol>
+      </div>
+    </div>
+    <div class="co"><b>最后一句：</b>Agent 能把一份 2024 年最难的 A 题做到 209 页、残差 10⁻¹³ 的水准，这是真实的代际优势。但那份论文里也留下了"0.4202 在途中穿透"这种错误——<b>它最终被修正，靠的是自检机制，而不是模型本身</b>。你要建的不是"更强的 Agent"，而是"<b>能抓住 Agent 错误的人 + 流程</b>"。这才是明晚 18:00 之后真正决定成绩的东西。</div>
+  </section>
+
+  <div class="foot">
+    生成时间 2026-09-09 · 案例样本：2024 年国赛 A 题「板凳龙」GPT 生成论文（209 页）<br>
+    时间估算基于题目难度拆解与经验量级，实际因队伍水平与题目而异；赛程与规则以官方当届文件为准
+  </div>
+
+  </main>
+</div>
+
+<script>
+const btn=document.getElementById('tt');
+btn.onclick=()=>{const d=document.documentElement;const c=d.getAttribute('data-t')==='d'?'l':'d';
+  d.setAttribute('data-t',c);localStorage.setItem('mmtheme2',c);
+  btn.textContent=c==='d'?'☀️ 切换主题':'🌗 切换主题';};
+if(localStorage.getItem('mmtheme2')==='d'){document.documentElement.setAttribute('data-t','d');btn.textContent='☀️ 切换主题';}
+const secs=[...document.querySelectorAll('section')],links=[...document.querySelectorAll('nav.side a')];
+window.addEventListener('scroll',()=>{let cur=secs[0].id;
+  for(const s of secs){if(window.scrollY+120>=s.offsetTop)cur=s.id;}
+  links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));});
+links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();
+  document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));
+</script>
+</body>
+</html>
