@@ -1,0 +1,2 @@
+# Stable Python source fingerprints across Windows and other checkouts.
+*.py text eol=lf

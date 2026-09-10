@@ -1,0 +1,55 @@
+{
+  "stage": "full",
+  "battery": {
+    "minimum": 1200.0,
+    "maximum": 10800.0,
+    "initial": 6000.0,
+    "max_power": 5000.0,
+    "eta_c": 0.9,
+    "eta_d": 0.9,
+    "dt": 0.16666666666666666
+  },
+  "time_interpretation": "interval mean power, right-end labels",
+  "alpha_load": 1.0,
+  "alpha_pv": 1.0,
+  "validation_start": "2025-01-22",
+  "validation_end": "2025-01-31",
+  "evaluation_start": "2025-02-01",
+  "evaluation_end": "2025-12-31",
+  "validation_initial_soc": 6244.256891388887,
+  "evaluation_initial_soc": 9902.811287870369,
+  "terminal_nominal_soc_minimum": 6000,
+  "refit_period_days": 7,
+  "training_window_days": 60,
+  "residual_window_days": 28,
+  "pool_halfwidth_slots": 3,
+  "seed": 2026,
+  "deterministic": true,
+  "selected_strategy": "ridge_q0.7",
+  "command": "python -m src.q12 --data-root \"D:\\国赛数学建模\\CUMCM2026Problems\\C题\" --out \"artifacts\\q12\" --stage full",
+  "total_seconds": 61.687584699999206,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.1",
+  "pandas": "2.2.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "git_head_before_run": "284bcecd365d3f8acf31cf5d5a0017c1ebe02995",
+  "source_sha256": "48a9527600cea3b9a43ed3658af6b8cc50f69ec2f97780f86b33d0b4021285bf",
+  "input_files": [
+    {
+      "path": "C题.pdf",
+      "bytes": 354389,
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "bytes": 16003,
+      "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "pass": true,
+  "inputs": "all three input fingerprints match",
+  "physical": {
+    "seasonal_q0": {
+      "max_balance_residual_kwh": 9.094947017729282e-13,
+      "max_soc_residual_kwh": 4.547473508864641e-12,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    },
+    "ridge_q0": {
+      "max_balance_residual_kwh": 8.100187187665142e-13,
+      "max_soc_residual_kwh": 4.554578936222242e-12,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    },
+    "seasonal_q0.7": {
+      "max_balance_residual_kwh": 8.242295734817162e-13,
+      "max_soc_residual_kwh": 4.547473508864641e-12,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    },
+    "ridge_q0.7": {
+      "max_balance_residual_kwh": 7.673861546209082e-13,
+      "max_soc_residual_kwh": 4.547473508864641e-12,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    },
+    "q1": {
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 2.5579538487363607e-12,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  "workbooks": {
+    "result1.xlsx": {
+      "pass": true,
+      "sha256": "95300a01e1bab4ceb92686315c52d16236d87ae294dfda81e16d2668caee74d8",
+      "sheets": [
+        "计划购电量",
+        "充放电量"
+      ]
+    },
+    "result2.xlsx": {
+      "pass": true,
+      "sha256": "e11df44cdae9f07d12c6ff88d80ea2a2fe46a6554bbba5975aa53e78c87b8a68",
+      "sheets": [
+        "计划购电量",
+        "充放电量",
+        "紧急购电量"
+      ]
+    }
+  },
+  "report": {
+    "figures": 4,
+    "tables": 17,
+    "key_numbers_match": true
+  },
+  "verifier_sha256": "e649762d5570ccc4a6ee61d80a73a2191ac8e9674b68d88fad3c5c4b3ba0517a"
+}

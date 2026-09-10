@@ -1,0 +1,9 @@
+{
+  "manuscript": "reports/Q1_Q2初稿.md",
+  "selected_strategy": "ridge_q0.7",
+  "figure_count": 4,
+  "table_count": 17,
+  "builder_sha256": "e99869b68f7e26375c8a11bafd1c179ca722155c034d2a2d21469e217041a826",
+  "skill_repo": "XiaoMaColtAI/math-modeling-skill",
+  "skill_commit": "3527fad922660397834a6167fc2b4c29ee64ba17"
+}

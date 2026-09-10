@@ -8,3 +8,8 @@
 .env
 .env.*
 !.env.example
+/node_modules/
+/.qa/
+/artifacts/q12-smoke/
+*.xlsx.inspect.ndjson
+/artifacts/q12/xlsx_payload.json

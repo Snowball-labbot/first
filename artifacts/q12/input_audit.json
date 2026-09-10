@@ -1,0 +1,74 @@
+{
+  "shapes": {
+    "attachment1": [
+      144,
+      4
+    ],
+    "load": [
+      365,
+      145
+    ],
+    "pv": [
+      365,
+      145
+    ]
+  },
+  "date_start": "2025-01-01",
+  "date_end": "2025-12-31",
+  "duplicates": 0,
+  "input_files": [
+    {
+      "path": "C题.pdf",
+      "bytes": 354389,
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "bytes": 16003,
+      "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    }
+  ],
+  "variables": {
+    "price": {
+      "count": 144,
+      "missing": 0,
+      "min": 0.3713,
+      "max": 1.3952,
+      "zero_count": 0
+    },
+    "q1_load": {
+      "count": 144,
+      "missing": 0,
+      "min": 551.5655666666667,
+      "max": 993.1616,
+      "zero_count": 0
+    },
+    "q1_pv": {
+      "count": 144,
+      "missing": 0,
+      "min": 0.0,
+      "max": 1268.7193333333332,
+      "zero_count": 55
+    },
+    "load": {
+      "count": 52560,
+      "missing": 0,
+      "min": 332.6196,
+      "max": 1329.81415,
+      "zero_count": 0
+    },
+    "pv": {
+      "count": 52560,
+      "missing": 0,
+      "min": 0.0,
+      "max": 1702.7,
+      "zero_count": 23540
+    }
+  },
+  "data_treatment": "No missing/negative values found; no observations deleted or imputed. Unusual peaks retained."
+}
