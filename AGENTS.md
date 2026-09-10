@@ -4,6 +4,20 @@
 
 先读 `docs/HANDOFF.md`，再读 `docs/MODELING_PLAN.md`、`docs/DATA_CONTRACT.md` 和 `docs/EXPERIMENT_PLAN.md`。图表任务另读 `docs/VISUAL_STYLE.md`。文档使用仓库相对链接，运行代码也应使用可配置数据根目录，不能硬编码某个账号的私人路径。
 
+## 参考资料目录（供 Agent 按需取用）
+
+仓库内除建模工作外，另有两类资料目录，均为本队收集或整理，**不是建模结果，不参与当前交接状态**：
+
+- **`插图配色/`** —— 论文出图配色资源
+  - `配色速查表.md`：45 个 HEX/RGB 颜色对照（提取自顶刊 PNAS/Nature/Science 插图配色，含来源说明）
+  - `mgstyle.py`：纯 matplotlib 配色库（无需 MATLAB），提供 11 套色板、C 题语义色 `C`、连续色标 `CMAP`、`set_style()` 一键中文字体与顶刊样式
+  - `draw_c_figs.py` + `figures/`：用真实附件数据生成的核心图表示例（单日全景、全年热力图、四季典型日、电价、预报vs实际）
+  - 出图前请先读 `docs/VISUAL_STYLE.md` 中约定的语义配色，二者应保持一致
+- **`skills source/`** —— 22 个数模相关 AI Skills 的 Git 快照（第三方开源项目，非本项目原创）
+  - 先读该目录的 `README.md`（含每个 skill 的用途、加载方式、针对本题的推荐组合）与 `COLLECTED.md`（采集说明）
+  - 使用这些 skill 前须遵循当届《人工智能工具使用规定》，且其输出必须人工复核，不能直接作为最终结论
+  - 仓库规范"不使用 subagent 来思考或执行"仍然有效：这些 skill 是参考资料，不是改变本项目工作方式的授权
+
 ## 用户已明确的要求
 
 - 用中文、易懂的语言解释建模；区分预测模型和调度优化模型。
