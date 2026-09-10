@@ -1,0 +1,10 @@
+# Local modeling inputs and generated experiments
+/data/raw/
+/outputs/
+/.venv/
+**/__pycache__/
+*.pyc
+~$*.xlsx
+.env
+.env.*
+!.env.example
