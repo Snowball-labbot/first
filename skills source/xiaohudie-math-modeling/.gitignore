@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[co]
+.venv/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# LaTeX 编译产物（使用者工作目录产生；仓库模板不含）
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk

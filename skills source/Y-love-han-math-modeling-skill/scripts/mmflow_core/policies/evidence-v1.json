@@ -1,0 +1,167 @@
+{
+  "policy_id": "evidence-v1",
+  "version": 1,
+  "stage_requirements": {
+    "P0": {
+      "evidence_types": [
+        "capability_report",
+        "competition_rules",
+        "policy_lock"
+      ],
+      "semantic_check": "p0_rules_and_capabilities"
+    },
+    "P1": {
+      "evidence_types": [
+        "input_inventory",
+        "selection_record"
+      ],
+      "semantic_check": "p1_inventory_and_selection"
+    },
+    "P2": {
+      "evidence_types": [
+        "requirement_matrix",
+        "problem_contract"
+      ],
+      "semantic_check": "p2_formalization"
+    },
+    "P3": {
+      "evidence_types": [
+        "data_lineage",
+        "data_quality_report",
+        "literature_registry",
+        "leakage_audit"
+      ],
+      "semantic_check": "p3_governance"
+    },
+    "P4": {
+      "evidence_types": [
+        "baseline_protocol",
+        "model_candidates",
+        "validation_protocol",
+        "frozen_analysis_plan"
+      ],
+      "semantic_check": "p4_frozen_design"
+    },
+    "P5": {
+      "evidence_types": [
+        "production_execution",
+        "structured_results"
+      ],
+      "semantic_check": "p5_production_outputs"
+    },
+    "P6": {
+      "evidence_types": [
+        "validation_adapter_report",
+        "degenerate_test",
+        "counterevidence_report",
+        "problem_contract"
+      ],
+      "semantic_check": "p6_validation"
+    },
+    "P7": {
+      "evidence_types": [
+        "response_matrix",
+        "claim_registry"
+      ],
+      "semantic_check": "p7_claim_coverage"
+    },
+    "P8": {
+      "evidence_types": [
+        "manuscript_source",
+        "figure_registry",
+        "citation_audit"
+      ],
+      "semantic_check": "p8_manuscript"
+    },
+    "P9": {
+      "evidence_types": [
+        "reproduction_report",
+        "production_execution"
+      ],
+      "semantic_check": "p9_reproduction"
+    },
+    "P10": {
+      "evidence_types": [
+        "review_findings",
+        "compliance_report",
+        "quality_assessment"
+      ],
+      "semantic_check": "p10_review_and_quality"
+    },
+    "P11": {
+      "evidence_types": [
+        "delivery_manifest",
+        "package_checksum"
+      ],
+      "semantic_check": "p11_delivery"
+    }
+  },
+  "redlines": [
+    "official_rules_unverified",
+    "unread_required_input",
+    "unanswered_requirement",
+    "fabricated_evidence",
+    "untraceable_core_result",
+    "reproduction_failed",
+    "known_data_leakage",
+    "hard_constraint_violation",
+    "unsupported_abstract_claim",
+    "figure_result_mismatch",
+    "submission_noncompliance",
+    "integrity_failure",
+    "open_critical_or_major_finding"
+  ],
+  "evidence_stage_matrix": {
+    "given_value": ["P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11"],
+    "capability_report": ["P0"],
+    "competition_rules": ["P0"],
+    "policy_lock": ["P0"],
+    "input_inventory": ["P1"],
+    "selection_record": ["P1"],
+    "requirement_matrix": ["P2"],
+    "problem_contract": ["P2", "P6"],
+    "data_lineage": ["P3"],
+    "data_quality_report": ["P3"],
+    "literature_registry": ["P3"],
+    "leakage_audit": ["P3"],
+    "baseline_protocol": ["P4"],
+    "model_candidates": ["P4"],
+    "validation_protocol": ["P4"],
+    "frozen_analysis_plan": ["P4"],
+    "production_execution": ["P5"],
+    "structured_results": ["P5"],
+    "validation_adapter_report": ["P6"],
+    "degenerate_test": ["P6"],
+    "counterevidence_report": ["P6"],
+    "response_matrix": ["P7"],
+    "claim_registry": ["P7"],
+    "manuscript_source": ["P8"],
+    "figure_registry": ["P8"],
+    "citation_audit": ["P8"],
+    "reproduction_report": ["P9"],
+    "review_findings": ["P10"],
+    "compliance_report": ["P10"],
+    "quality_assessment": ["P10"],
+    "review_report": ["P10"],
+    "delivery_manifest": ["P11"],
+    "package_checksum": ["P11"],
+    "privacy_scan": ["P10", "P11"],
+    "quality_profile_selection": ["P4"],
+    "theorem_application_record": ["P5"],
+    "candidate_rejection_record": ["P4"],
+    "formula_validity_record": ["P4"],
+    "innovation_ablation_record": ["P6"],
+    "counterintuitive_finding_record": ["P6"],
+    "cross_problem_framework_record": ["P6"],
+    "mechanism_explanation_record": ["P6"],
+    "negative_result_record": ["P6"],
+    "paper_depth_review": ["P8"],
+    "special_prize_quality_assessment": ["P10"]
+    ,"independent_review_provenance": ["P10"]
+  },
+  "cross_stage_evidence": {
+    "competition_rules": ["P0"],
+    "problem_contract": ["P2", "P6"],
+    "production_execution": ["P5"]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "policy_id": "stages-v1",
+  "version": 1,
+  "stages": [
+    {
+      "id": "P0",
+      "name": "启动与规则核验",
+      "reference": "references/workflow-contract.md",
+      "references": [
+        "references/workflow-contract.md",
+        "references/competition-compliance.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P1",
+      "name": "材料清点与选题",
+      "reference": "references/problem-formalization.md",
+      "references": [
+        "references/problem-formalization.md",
+        "references/data-and-literature-governance.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "赛题形式化",
+      "reference": "references/problem-formalization.md",
+      "references": [
+        "references/problem-formalization.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "数据与证据工程",
+      "reference": "references/data-and-literature-governance.md",
+      "references": [
+        "references/data-and-literature-governance.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "模型与实验设计",
+      "reference": "references/model-selection.md",
+      "references": [
+        "references/model-selection.md",
+        "references/validation-by-model-type.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P5",
+      "name": "基线、建模与求解",
+      "reference": "references/evidence-and-claims.md",
+      "references": [
+        "references/model-selection.md",
+        "references/evidence-and-claims.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P6",
+      "name": "验证、稳健性与反证",
+      "reference": "references/validation-by-model-type.md",
+      "references": [
+        "references/validation-by-model-type.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P7",
+      "name": "结论综合与主张登记",
+      "reference": "references/evidence-and-claims.md",
+      "references": [
+        "references/evidence-and-claims.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P8",
+      "name": "论文与图表生成",
+      "reference": "references/paper-and-visuals.md",
+      "references": [
+        "references/paper-and-visuals.md",
+        "references/competition-compliance.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P9",
+      "name": "隔离复现",
+      "reference": "references/review-recovery-and-defense.md",
+      "references": [
+        "references/evidence-and-claims.md",
+        "references/review-recovery-and-defense.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P10",
+      "name": "对抗审查与合规审查",
+      "reference": "references/review-recovery-and-defense.md",
+      "references": [
+        "references/review-recovery-and-defense.md",
+        "references/competition-compliance.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    },
+    {
+      "id": "P11",
+      "name": "打包与答辩材料",
+      "reference": "references/competition-compliance.md",
+      "references": [
+        "references/competition-compliance.md",
+        "references/review-recovery-and-defense.md",
+        "references/evidence-registration-cookbook.md"
+      ]
+    }
+  ]
+}

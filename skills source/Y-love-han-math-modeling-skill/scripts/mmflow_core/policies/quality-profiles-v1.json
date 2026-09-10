@@ -1,0 +1,84 @@
+{
+  "policy_id": "quality-profiles-v1",
+  "version": 1,
+  "default": "adaptive",
+  "no_fixed_quotas": true,
+  "profiles": {
+    "adaptive": {
+      "description": "按题目和证据适配，不追加固定形式配额",
+      "required_evidence_by_stage": {},
+      "core_evidence": []
+    },
+    "evidence-first": {
+      "description": "优先保证证据、结果、主张和交付闭环",
+      "required_evidence_by_stage": {},
+      "core_evidence": [],
+      "recommended_evidence_by_stage": {
+        "P1": ["input_inventory"],
+        "P3": ["data_lineage", "leakage_audit"]
+      },
+      "recommended_note": "推荐集不参与门禁聚合；用于在证据优先模式下提示最易缺失的登记项"
+    },
+    "deep-insight": {
+      "description": "启用科学深度记录，但允许题目论证后的条件性不适用",
+      "required_evidence_by_stage": {
+        "P4": ["quality_profile_selection", "candidate_rejection_record", "formula_validity_record"],
+        "P5": ["theorem_application_record"],
+        "P6": ["innovation_ablation_record", "counterintuitive_finding_record", "cross_problem_framework_record", "mechanism_explanation_record", "negative_result_record"],
+        "P8": ["paper_depth_review"],
+        "P10": ["special_prize_quality_assessment"]
+      },
+      "core_evidence": ["candidate_rejection_record", "formula_validity_record", "mechanism_explanation_record", "paper_depth_review", "special_prize_quality_assessment"]
+    },
+    "competition-sprint": {
+      "description": "时间受限时保持证据优先和可恢复交付",
+      "required_evidence_by_stage": {},
+      "core_evidence": [],
+      "recommended_evidence_by_stage": {
+        "P4": ["baseline_protocol", "frozen_analysis_plan"],
+        "P5": ["production_execution", "structured_results"],
+        "P9": ["reproduction_report"],
+        "P11": ["delivery_manifest", "package_checksum"]
+      },
+      "recommended_note": "冲刺档最小保底闭环：题目响应→基线→核心验证→复现→合规交付；推荐集不改变门禁必需集合"
+    },
+    "presentation-ready": {
+      "description": "在完整证据基础上强化论文和答辩表达",
+      "required_evidence_by_stage": {},
+      "core_evidence": [],
+      "recommended_evidence_by_stage": {
+        "P8": ["paper_depth_review"],
+        "P10": ["review_report"],
+        "P11": ["delivery_manifest"]
+      },
+      "recommended_note": "表达强化档：论文深度自审+结构化审查报告+答辩材料数据源（export-claims）；推荐集不参与门禁聚合"
+    },
+    "special-prize": {
+      "description": "严格科学深度合同；不使用固定页数、图数或算法数替代证据",
+      "no_fixed_quotas": true,
+      "required_evidence_by_stage": {
+        "P4": ["quality_profile_selection", "candidate_rejection_record", "formula_validity_record"],
+        "P5": ["theorem_application_record"],
+        "P6": ["innovation_ablation_record", "counterintuitive_finding_record", "cross_problem_framework_record", "mechanism_explanation_record", "negative_result_record"],
+        "P8": ["paper_depth_review"],
+        "P10": ["independent_review_provenance", "special_prize_quality_assessment"]
+      },
+      "core_evidence": ["candidate_rejection_record", "formula_validity_record", "mechanism_explanation_record", "paper_depth_review", "independent_review_provenance", "special_prize_quality_assessment"],
+      "conditional_evidence": ["theorem_application_record", "innovation_ablation_record", "counterintuitive_finding_record", "cross_problem_framework_record", "negative_result_record"],
+      "score_policy": {
+        "candidate_threshold": 90.0,
+        "criteria": [
+          {"id": "question_response", "maximum": 10.0, "allowed_evidence_types": ["quality_profile_selection", "candidate_rejection_record"]},
+          {"id": "mathematical_validity", "maximum": 15.0, "allowed_evidence_types": ["formula_validity_record", "theorem_application_record"]},
+          {"id": "model_selection_and_framework", "maximum": 10.0, "allowed_evidence_types": ["candidate_rejection_record", "cross_problem_framework_record"]},
+          {"id": "validation_and_ablation", "maximum": 15.0, "allowed_evidence_types": ["innovation_ablation_record", "counterintuitive_finding_record"]},
+          {"id": "mechanism_and_decision_insight", "maximum": 15.0, "allowed_evidence_types": ["mechanism_explanation_record", "counterintuitive_finding_record"]},
+          {"id": "negative_and_counterevidence", "maximum": 10.0, "allowed_evidence_types": ["negative_result_record", "counterintuitive_finding_record"]},
+          {"id": "cross_problem_transfer", "maximum": 10.0, "allowed_evidence_types": ["cross_problem_framework_record"]},
+          {"id": "manuscript_depth", "maximum": 5.0, "allowed_evidence_types": ["paper_depth_review"]},
+          {"id": "independent_review", "maximum": 10.0, "allowed_evidence_types": ["independent_review_provenance"]}
+        ]
+      }
+    }
+  }
+}

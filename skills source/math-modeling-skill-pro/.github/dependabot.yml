@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: monthly
+    # The project publishes compatibility ranges and has no lockfile, so
+    # ordinary pip version PRs only raise lower bounds without changing the
+    # versions exercised by CI. Keep security updates enabled instead.
+    open-pull-requests-limit: 0
+    labels:
+      - dependencies
+      - security
+    groups:
+      pip-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 1
+    labels:
+      - dependencies

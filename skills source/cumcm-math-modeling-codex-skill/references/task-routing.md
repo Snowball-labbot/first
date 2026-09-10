@@ -1,0 +1,63 @@
+# Task Routing
+
+Use this file to decide which references and scripts to load. Keep user-facing
+communication natural; do not expose commands unless the user asks.
+
+## Common Modes
+
+| User asks for | Use |
+| --- | --- |
+| Start a new problem or project | use paper-first outputs by default; initialize a workspace when local artifacts are needed |
+| Full CUMCM problem solving | `references/workflow.md`, `references/problem-routing.md`, `references/stage-gates.md`, `references/scoring-checklist.md` |
+| CUMCM A problem or engineering/physics problem | `references/cumcm-a-problem-patterns.md`, `references/method-cards.json`, `references/problem-routing.md` |
+| Parse problem statement | `agents/problem_parser.md`, `references/problem-parsing.md`, `scripts/problem_parser.py` |
+| Read and decompose a problem | parse first, then `scripts/build_task_plan.py`, `agents/coordinator.md`, `references/problem-routing.md` |
+| Only one subquestion | `references/task-modes.md`, `references/problem-routing.md`, `references/correctness-ladder.md` |
+| Single-question paper | `references/task-modes.md`, `references/paper-writing.md`, `references/result-tracking.md` |
+| Data attachments present | `scripts/data_profile.py`, `references/data-audit.md` |
+| Ambiguous wording, hidden cost/time/flow assumptions, or weak result logic | `references/critical-constraint-audit.md` |
+| Choose a model | `agents/modeler.md`, `references/problem-routing.md`, `references/method-cards.json`, `references/method-library.md` |
+| Write or fix solving code | `agents/coder.md`, `references/python-matlab-guide.md` |
+| Figure planning for a solved question | `references/figure-plan.md`, `references/figure-standards.md` |
+| Validate results | `references/validation.md`, `scripts/validate_results.py` when project artifacts exist |
+| Code/tables/figures to paper | `references/code-to-paper.md`, `references/result-tracking.md`, `agents/writer.md` |
+| Final abstract | `agents/abstract_writer.md`, `references/paper-writing.md`, `references/scoring-checklist.md`, `references/result-tracking.md` |
+| Conclusion or polishing | `references/paper-writing.md`, `references/scoring-checklist.md`, `references/result-tracking.md` |
+| Technical roadmap or model flowchart | `references/technical-roadmap.md`; generate with GPT-image |
+| Figure standards | `references/figure-standards.md`, or `scripts/make_paper_figures.py` |
+| Final judge review | `references/final-review.md`, `references/final-checklist.md`, `agents/reviewer.md` |
+| Safety or anti-fabrication concern | `references/safety-rules.md` |
+
+## Routing Principles
+
+- For beginners, prefer direct natural-language guidance over showing internal
+  file names.
+- Before creating files, choose the useful output set from
+  `references/output-policy.md`; include `paper/main.tex` for solved or
+  paper-facing work, not for every planning-only answer.
+- Do not confuse paper-first output with fewer figures or shallower work. For
+  solved questions, load `references/figure-plan.md` and generate the planned
+  Chinese figures; keep analysis, modeling, solving, validation, saved tables, figures, code outputs, and validation notes, and
+  paper text complete.
+- Do not initialize a full project, copy every template, or create empty files
+  for a single-question solve unless the user asks for a complete project.
+  For single-question solves or writing tasks, create/update `paper/main.tex`.
+- Do not solve a subquestion before writing its modeling idea file under
+  `modeling/`.
+- Parse the problem statement before route design when an official statement is available.
+- For A problems, treat them as engineering mechanism problems first; build
+  coordinates, units, physical constraints, and a baseline before choosing an
+  optimizer.
+- For full problems, always work subquestion by subquestion.
+- For single-question requests, write a self-contained single-question paper in
+  `paper/main.tex`; do not expand into all subquestions unless the user asks.
+- For paper text with numbers, use the saved tables, figures, code outputs, and validation notes before writing final
+  claims.
+- For route design, give three routes and choose a primary route plus fallback.
+- When a task type is clear, use `references/method-cards.json` as the compact
+  method checklist before reading the longer method library.
+- For any solved question, run a consequence-bearing-phrase pass: every phrase
+  that could change the answer must become a variable, constraint, scenario, or
+  explicit blocker before coding or paper writing.
+- For roadmap or flowchart requests, use GPT-image by default and record the
+  prompt/spec in `modeling/`.

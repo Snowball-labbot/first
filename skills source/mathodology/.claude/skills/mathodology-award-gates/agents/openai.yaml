@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathodology Review Questions"
+  short_description: "reviewing mathematical validity, evidence, reproducibility, figures or a submission draft."
+  default_prompt: "Use $mathodology-award-gates. Review the actual mathematics, evidence, code-to-paper consistency and visual readability. Return actionable findings without award scores or fixed phase gates."

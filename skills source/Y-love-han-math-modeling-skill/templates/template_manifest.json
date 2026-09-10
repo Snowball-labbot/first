@@ -1,0 +1,1441 @@
+{
+  "schema": "math-modeling-template-manifest/v1",
+  "version": 1,
+  "description": "Layered content templates for the mmflow-controlled mathematical modeling workflow. Template outputs are not evidence until registered by the controlled runner.",
+  "templates": [
+    {
+      "id": "production.artifact-class",
+      "category": "production",
+      "path": "templates/production/artifact-class.json",
+      "stages": [
+        "P5",
+        "P8",
+        "P11"
+      ],
+      "inputs": [
+        "artifact metadata"
+      ],
+      "outputs": [
+        "production artifact policy"
+      ],
+      "evidence_types": [
+        "policy_lock"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "production.result-contract",
+      "category": "production",
+      "path": "templates/production/result-contract.json",
+      "stages": [
+        "P5",
+        "P6",
+        "P7"
+      ],
+      "inputs": [
+        "model output schema"
+      ],
+      "outputs": [
+        "structured result contract"
+      ],
+      "evidence_types": [
+        "structured_results"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "production.manuscript-zh",
+      "category": "production",
+      "path": "templates/production/main.tex",
+      "stages": [
+        "P8",
+        "P9",
+        "P10",
+        "P11"
+      ],
+      "inputs": [
+        "binding-aware production results",
+        "official format rules"
+      ],
+      "outputs": [
+        "production LaTeX manuscript"
+      ],
+      "evidence_types": [
+        "manuscript_source"
+      ],
+      "optional_dependencies": [
+        "XeLaTeX"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "production.manuscript-en",
+      "category": "production",
+      "path": "templates/production/main_en.tex",
+      "stages": [
+        "P8",
+        "P9",
+        "P10",
+        "P11"
+      ],
+      "inputs": [
+        "binding-aware production results",
+        "official format rules"
+      ],
+      "outputs": [
+        "production English LaTeX manuscript"
+      ],
+      "evidence_types": [
+        "manuscript_source"
+      ],
+      "optional_dependencies": [
+        "XeLaTeX"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "production.model-entry",
+      "category": "production",
+      "path": "templates/production/model_entry.py",
+      "stages": [
+        "P5",
+        "P6",
+        "P7"
+      ],
+      "inputs": [
+        "registered source artifacts",
+        "result-contract.json"
+      ],
+      "outputs": [
+        "structured result contract"
+      ],
+      "evidence_types": [
+        "production_execution",
+        "structured_results"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "analytics.data-preprocessing",
+      "category": "analytics",
+      "path": "templates/analytics/data_preprocessing.py",
+      "stages": [
+        "P3"
+      ],
+      "inputs": [
+        "raw data path",
+        "output directory"
+      ],
+      "outputs": [
+        "data_manifest.json",
+        "preprocessed_data.csv",
+        "preprocessing_log.txt"
+      ],
+      "evidence_types": [
+        "data_lineage",
+        "data_quality_report"
+      ],
+      "optional_dependencies": [
+        "pandas",
+        "numpy",
+        "scikit-learn",
+        "chardet"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.eda",
+      "category": "analytics",
+      "path": "templates/analytics/stage4_eda.py",
+      "stages": [
+        "P3"
+      ],
+      "inputs": [
+        "preprocessed_data.csv"
+      ],
+      "outputs": [
+        "EDA figures",
+        "data_quality_report.md"
+      ],
+      "evidence_types": [
+        "data_quality_report",
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "pandas",
+        "numpy",
+        "matplotlib",
+        "scipy"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.problem-template",
+      "category": "analytics",
+      "path": "templates/analytics/problem_template.py",
+      "stages": [
+        "P5",
+        "P6"
+      ],
+      "inputs": [
+        "problem contract",
+        "registered data artifacts"
+      ],
+      "outputs": [
+        "model results",
+        "figures",
+        "CSV outputs"
+      ],
+      "evidence_types": [
+        "production_execution",
+        "structured_results",
+        "validation_adapter_report"
+      ],
+      "optional_dependencies": [
+        "numpy",
+        "pandas",
+        "scipy",
+        "matplotlib"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.problem-reference-implementation",
+      "category": "analytics",
+      "path": "templates/analytics/problem_reference_implementation.py",
+      "stages": [
+        "P5",
+        "P6"
+      ],
+      "inputs": [
+        "none (self-contained synthetic reference data)"
+      ],
+      "outputs": [
+        "reference_results.json (demonstration only, never production evidence)"
+      ],
+      "evidence_types": [],
+      "optional_dependencies": [
+        "numpy"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": false,
+      "quality_profile": "adaptive",
+      "template_role": "reference"
+    },
+    {
+      "id": "quality.special-prize-evidence",
+      "category": "quality",
+      "path": "templates/quality/special_prize_evidence_template.json",
+      "stages": [
+        "P4",
+        "P5",
+        "P6",
+        "P8",
+        "P10"
+      ],
+      "inputs": [
+        "problem contract",
+        "registered model and validation artifacts"
+      ],
+      "outputs": [
+        "scientific-depth evidence records"
+      ],
+      "evidence_types": [
+        "quality_profile_selection",
+        "theorem_application_record",
+        "candidate_rejection_record",
+        "formula_validity_record",
+        "innovation_ablation_record",
+        "counterintuitive_finding_record",
+        "cross_problem_framework_record",
+        "mechanism_explanation_record",
+        "negative_result_record",
+        "paper_depth_review",
+        "independent_review_provenance",
+        "special_prize_quality_assessment"
+      ],
+      "optional_dependencies": [
+        "numpy"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "special-prize",
+      "template_role": "reference"
+    },
+    {
+      "id": "analytics.sensitivity",
+      "category": "analytics",
+      "path": "templates/analytics/sensitivity_analysis.py",
+      "stages": [
+        "P6"
+      ],
+      "inputs": [
+        "frozen analysis plan",
+        "model output"
+      ],
+      "outputs": [
+        "sensitivity figures",
+        "sensitivity CSV"
+      ],
+      "evidence_types": [
+        "validation_adapter_report",
+        "counterevidence_report",
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "numpy",
+        "matplotlib",
+        "SALib"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.statistical-tests",
+      "category": "analytics",
+      "path": "templates/analytics/statistical_tests.py",
+      "stages": [
+        "P6"
+      ],
+      "inputs": [
+        "paired or independent result arrays"
+      ],
+      "outputs": [
+        "statistical test report"
+      ],
+      "evidence_types": [
+        "validation_adapter_report"
+      ],
+      "optional_dependencies": [
+        "numpy",
+        "scipy",
+        "statsmodels"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.extreme-test",
+      "category": "analytics",
+      "path": "templates/analytics/extreme_test.py",
+      "stages": [
+        "P6",
+        "P10"
+      ],
+      "inputs": [
+        "model function",
+        "boundary and degenerate scenarios"
+      ],
+      "outputs": [
+        "extreme test report"
+      ],
+      "evidence_types": [
+        "degenerate_test",
+        "counterevidence_report"
+      ],
+      "optional_dependencies": [
+        "numpy",
+        "scipy"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.utils",
+      "category": "analytics",
+      "path": "templates/analytics/utils.py",
+      "stages": [
+        "P3",
+        "P5",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "project paths",
+        "data and plotting configuration"
+      ],
+      "outputs": [
+        "reproducible figures and tables"
+      ],
+      "evidence_types": [],
+      "optional_dependencies": [
+        "numpy",
+        "pandas",
+        "matplotlib",
+        "scipy"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.requirements",
+      "category": "analytics",
+      "path": "templates/analytics/requirements.txt",
+      "stages": [
+        "P3",
+        "P5",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "selected analysis methods"
+      ],
+      "outputs": [
+        "optional dependency specification"
+      ],
+      "evidence_types": [],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": false,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "publication.main-zh",
+      "category": "publication",
+      "path": "templates/publication/main.tex",
+      "stages": [
+        "P8"
+      ],
+      "inputs": [
+        "binding-aware production results",
+        "figure and citation registry"
+      ],
+      "outputs": [
+        "LaTeX manuscript"
+      ],
+      "evidence_types": [
+        "manuscript_source"
+      ],
+      "optional_dependencies": [
+        "XeLaTeX"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "publication.main-en",
+      "category": "publication",
+      "path": "templates/publication/main_en.tex",
+      "stages": [
+        "P8"
+      ],
+      "inputs": [
+        "binding-aware production results",
+        "figure and citation registry"
+      ],
+      "outputs": [
+        "English LaTeX manuscript"
+      ],
+      "evidence_types": [
+        "manuscript_source"
+      ],
+      "optional_dependencies": [
+        "XeLaTeX"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "publication.ai-use-report",
+      "category": "publication",
+      "path": "templates/publication/ai_use_report_en.tex",
+      "stages": [
+        "P11"
+      ],
+      "inputs": [
+        "AI usage facts provided by the team (never inferred by AI)"
+      ],
+      "outputs": [
+        "AI use report PDF for separate submission (per current-year rules)"
+      ],
+      "evidence_types": [
+        "manuscript_source"
+      ],
+      "optional_dependencies": [
+        "XeLaTeX"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "publication.consistency",
+      "category": "publication",
+      "path": "templates/publication/verify_consistency.py",
+      "stages": [
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "inputs": [
+        "manuscript source",
+        "registered result outputs",
+        "figure directory"
+      ],
+      "outputs": [
+        "consistency report"
+      ],
+      "evidence_types": [
+        "manuscript_source",
+        "figure_registry",
+        "citation_audit"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "publication.abstract-fill",
+      "category": "publication",
+      "path": "templates/publication/check_abstract_fill.py",
+      "stages": [
+        "P8",
+        "P10"
+      ],
+      "inputs": [
+        "PDF",
+        "LaTeX auxiliary file"
+      ],
+      "outputs": [
+        "abstract fill report"
+      ],
+      "evidence_types": [
+        "manuscript_source"
+      ],
+      "optional_dependencies": [
+        "pdfplumber",
+        "PyMuPDF"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "optional-review"
+    },
+    {
+      "id": "publication.word-export",
+      "category": "publication",
+      "path": "templates/publication/create_word.py",
+      "stages": [
+        "P11"
+      ],
+      "inputs": [
+        "LaTeX or PDF manuscript"
+      ],
+      "outputs": [
+        "DOCX manuscript"
+      ],
+      "evidence_types": [
+        "delivery_manifest"
+      ],
+      "optional_dependencies": [
+        "pandoc",
+        "python-docx"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "optional-delivery"
+    },
+    {
+      "id": "presentation.defense-ppt",
+      "category": "presentation",
+      "path": "templates/presentation/create_ppt.py",
+      "stages": [
+        "P11"
+      ],
+      "inputs": [
+        "paper source",
+        "registered figures",
+        "structured results"
+      ],
+      "outputs": [
+        "defense PPTX"
+      ],
+      "evidence_types": [
+        "delivery_manifest"
+      ],
+      "optional_dependencies": [
+        "python-pptx"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "competition-applicability"
+    },
+    {
+      "id": "presentation.qa-cards",
+      "category": "presentation",
+      "path": "templates/presentation/qa_cards.py",
+      "stages": [
+        "P11"
+      ],
+      "inputs": [
+        "claim registry export"
+      ],
+      "outputs": [
+        "defense QA card markdown"
+      ],
+      "evidence_types": [
+        "delivery_manifest"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "competition-applicability"
+    },
+    {
+      "id": "quality.ai-patterns",
+      "category": "quality",
+      "path": "templates/quality/check_ai_patterns.py",
+      "stages": [
+        "P10"
+      ],
+      "inputs": [
+        "LaTeX manuscript"
+      ],
+      "outputs": [
+        "AI pattern review report"
+      ],
+      "evidence_types": [
+        "review_report"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "optional-review"
+    },
+    {
+      "id": "quality.plagiarism-proxy",
+      "category": "quality",
+      "path": "templates/quality/check_plagiarism_proxy.py",
+      "stages": [
+        "P10"
+      ],
+      "inputs": [
+        "LaTeX manuscript",
+        "reference template"
+      ],
+      "outputs": [
+        "plagiarism proxy report"
+      ],
+      "evidence_types": [
+        "review_report"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "optional-review"
+    },
+    {
+      "id": "quality.appendix-closure-check",
+      "category": "quality",
+      "path": "templates/quality/appendix_code_closure_check.py",
+      "stages": [
+        "P9",
+        "P10"
+      ],
+      "inputs": [
+        "final LaTeX manuscript appendix"
+      ],
+      "outputs": [
+        "appendix code extraction and optional replay report"
+      ],
+      "evidence_types": [
+        "review_report"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "optional-review"
+    },
+    {
+      "id": "quality.redteam-claim-drill",
+      "category": "quality",
+      "path": "templates/quality/redteam_claim_drill.py",
+      "stages": [
+        "P10"
+      ],
+      "inputs": [
+        "export-claims JSON (VALID claims with supports)"
+      ],
+      "outputs": [
+        "red-team attack-surface checklist (md/json)"
+      ],
+      "evidence_types": [
+        "review_report"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "optional-review"
+    },
+    {
+      "id": "visualization.data-overview",
+      "category": "visualization",
+      "path": "templates/visualization/data_overview.py",
+      "stages": [
+        "P3",
+        "P5",
+        "P8"
+      ],
+      "inputs": [
+        "registered production data artifact",
+        "problem contract"
+      ],
+      "outputs": [
+        "data_overview.png",
+        "data_overview.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.data-processing",
+      "category": "visualization",
+      "path": "templates/visualization/data_processing.py",
+      "stages": [
+        "P3",
+        "P5",
+        "P8"
+      ],
+      "inputs": [
+        "registered preprocessing result"
+      ],
+      "outputs": [
+        "preprocessing.png",
+        "preprocessing.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry",
+        "data_lineage"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.model-result",
+      "category": "visualization",
+      "path": "templates/visualization/model_result.py",
+      "stages": [
+        "P5",
+        "P8"
+      ],
+      "inputs": [
+        "registered Result"
+      ],
+      "outputs": [
+        "model_result.png",
+        "model_result.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry",
+        "structured_results"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.validation",
+      "category": "visualization",
+      "path": "templates/visualization/validation.py",
+      "stages": [
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered validation Result"
+      ],
+      "outputs": [
+        "validation.png",
+        "validation.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry",
+        "validation_adapter_report"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.sensitivity",
+      "category": "visualization",
+      "path": "templates/visualization/sensitivity.py",
+      "stages": [
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered sensitivity Result"
+      ],
+      "outputs": [
+        "sensitivity.png",
+        "sensitivity.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry",
+        "counterevidence_report"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.architecture",
+      "category": "visualization",
+      "path": "templates/visualization/architecture.py",
+      "stages": [
+        "P2",
+        "P8"
+      ],
+      "inputs": [
+        "problem contract DAG",
+        "data lineage"
+      ],
+      "outputs": [
+        "architecture.png",
+        "architecture.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry",
+        "problem_contract"
+      ],
+      "optional_dependencies": [
+        "matplotlib"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.matlab-contract",
+      "category": "visualization",
+      "path": "templates/visualization/matlab_backend_contract.json",
+      "stages": [
+        "P5",
+        "P8"
+      ],
+      "inputs": [
+        "declared MATLAB runtime"
+      ],
+      "outputs": [
+        "MATLAB sidecar contract"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "MATLAB"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "optional-backend"
+    },
+    {
+      "id": "visualization.plotting-common",
+      "category": "visualization",
+      "path": "templates/visualization/plotting_common.py",
+      "stages": [
+        "P3",
+        "P5",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "production-eligible figure inputs"
+      ],
+      "outputs": [
+        "shared sidecar contract and plotting helpers"
+      ],
+      "evidence_types": [],
+      "optional_dependencies": [
+        "matplotlib"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": false,
+      "quality_profile": "evidence-first",
+      "template_role": "shared-dependency"
+    },
+    {
+      "id": "visualization.heatmap",
+      "category": "visualization",
+      "path": "templates/visualization/heatmap.py",
+      "stages": [
+        "P3",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered production matrix result (correlation / interaction)"
+      ],
+      "outputs": [
+        "heatmap.png",
+        "heatmap.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.distribution",
+      "category": "visualization",
+      "path": "templates/visualization/distribution.py",
+      "stages": [
+        "P3",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered production grouped samples"
+      ],
+      "outputs": [
+        "distribution.png",
+        "distribution.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.radar",
+      "category": "visualization",
+      "path": "templates/visualization/radar.py",
+      "stages": [
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered composite-evaluation indicator comparison"
+      ],
+      "outputs": [
+        "radar.png",
+        "radar.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.generate-all",
+      "category": "visualization",
+      "path": "templates/visualization/generate_all.py",
+      "stages": [
+        "P3",
+        "P5",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "declarative figure plan (items with role/module/data)"
+      ],
+      "outputs": [
+        "batch of role-named PNG + sidecar pairs",
+        "generation report"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.pareto",
+      "category": "visualization",
+      "path": "templates/visualization/pareto.py",
+      "stages": [
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered production bi-objective candidate results"
+      ],
+      "outputs": [
+        "pareto.png",
+        "pareto.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.convergence",
+      "category": "visualization",
+      "path": "templates/visualization/convergence.py",
+      "stages": [
+        "P5",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered step-size/error scan from a refinement study"
+      ],
+      "outputs": [
+        "convergence.png",
+        "convergence.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry",
+        "validation_adapter_report"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.residual-diagnosis",
+      "category": "visualization",
+      "path": "templates/visualization/residual_diagnosis.py",
+      "stages": [
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered fitted/residual arrays from one production execution"
+      ],
+      "outputs": [
+        "residual_diagnosis.png",
+        "residual_diagnosis.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry",
+        "validation_adapter_report"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.network-graph",
+      "category": "visualization",
+      "path": "templates/visualization/network_graph.py",
+      "stages": [
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered node/edge structure with quantitative metrics"
+      ],
+      "outputs": [
+        "network_graph.png",
+        "network_graph.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "analytics.evaluation-checks",
+      "category": "analytics",
+      "path": "templates/analytics/evaluation_checks.py",
+      "stages": [
+        "P6"
+      ],
+      "inputs": [
+        "AHP judgment matrix or TOPSIS decision matrix with weights/directions"
+      ],
+      "outputs": [
+        "evaluation checks report (CR, TOPSIS sensitivity, dominated check)"
+      ],
+      "evidence_types": [
+        "validation_adapter_report",
+        "counterevidence_report"
+      ],
+      "optional_dependencies": [
+        "numpy"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.cv-backtest",
+      "category": "analytics",
+      "path": "templates/analytics/cv_backtest.py",
+      "stages": [
+        "P4",
+        "P6"
+      ],
+      "inputs": [
+        "split specification (kfold/group_kfold/expanding_window)"
+      ],
+      "outputs": [
+        "leak-free split indices and evaluation summary"
+      ],
+      "evidence_types": [
+        "validation_adapter_report",
+        "frozen_analysis_plan"
+      ],
+      "optional_dependencies": [
+        "numpy"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "analytics.convergence-scan",
+      "category": "analytics",
+      "path": "templates/analytics/convergence_scan.py",
+      "stages": [
+        "P5",
+        "P6"
+      ],
+      "inputs": [
+        "step-size solver mapping h -> solution scalar"
+      ],
+      "outputs": [
+        "convergence scan report (successive diffs, observed orders)"
+      ],
+      "evidence_types": [
+        "validation_adapter_report",
+        "degenerate_test"
+      ],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "adaptive"
+    },
+    {
+      "id": "production.paper-full",
+      "category": "production",
+      "path": "templates/production/paper_full.tex",
+      "stages": [
+        "P8",
+        "P9",
+        "P10",
+        "P11"
+      ],
+      "inputs": [
+        "binding-aware production results"
+      ],
+      "outputs": [
+        "full-section production LaTeX manuscript skeleton"
+      ],
+      "evidence_types": [
+        "manuscript_source"
+      ],
+      "optional_dependencies": [
+        "XeLaTeX",
+        "ctex"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "examples.demo-model",
+      "category": "production",
+      "path": "templates/examples/demo_model.py",
+      "stages": [
+        "P5"
+      ],
+      "inputs": [
+        "none (self-contained demo)"
+      ],
+      "outputs": [
+        "demo output (never production evidence; must not be promoted)"
+      ],
+      "evidence_types": [],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": false,
+      "quality_profile": "adaptive",
+      "template_role": "reference"
+    },
+    {
+      "id": "examples.artifact-class",
+      "category": "production",
+      "path": "templates/examples/artifact-class.json",
+      "stages": [
+        "P5"
+      ],
+      "inputs": [
+        "artifact metadata"
+      ],
+      "outputs": [
+        "reference copy of the artifact-class policy for demos"
+      ],
+      "evidence_types": [],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": false,
+      "quality_profile": "adaptive",
+      "template_role": "reference"
+    },
+    {
+      "id": "visualization.bar-chart",
+      "category": "visualization",
+      "path": "templates/visualization/bar_chart.py",
+      "stages": [
+        "P5",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered production categorical comparison result"
+      ],
+      "outputs": [
+        "bar_chart.png",
+        "bar_chart.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.scatter-fit",
+      "category": "visualization",
+      "path": "templates/visualization/scatter_fit.py",
+      "stages": [
+        "P3",
+        "P5",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered production paired x/y result"
+      ],
+      "outputs": [
+        "scatter_fit.png",
+        "scatter_fit.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.result-table",
+      "category": "visualization",
+      "path": "templates/visualization/result_table.py",
+      "stages": [
+        "P7",
+        "P8"
+      ],
+      "inputs": [
+        "registered production result rows for tabular comparison"
+      ],
+      "outputs": [
+        "result_table.png",
+        "result_table.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.model-diagram",
+      "category": "visualization",
+      "path": "templates/visualization/model_diagram.py",
+      "stages": [
+        "P4",
+        "P5",
+        "P8"
+      ],
+      "inputs": [
+        "declared model pipeline blocks and flows (real model structure)"
+      ],
+      "outputs": [
+        "model_diagram.png",
+        "model_diagram.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "visualization.spatial-map",
+      "category": "visualization",
+      "path": "templates/visualization/spatial_map.py",
+      "stages": [
+        "P3",
+        "P5",
+        "P6",
+        "P8"
+      ],
+      "inputs": [
+        "registered production spatial points or grid result"
+      ],
+      "outputs": [
+        "spatial_map.png",
+        "spatial_map.sidecar.json"
+      ],
+      "evidence_types": [
+        "figure_registry"
+      ],
+      "optional_dependencies": [
+        "matplotlib",
+        "numpy"
+      ],
+      "production_eligible": true,
+      "requires_controlled_execution": true,
+      "quality_profile": "evidence-first"
+    },
+    {
+      "id": "production.figures-style",
+      "category": "production",
+      "path": "templates/production/figures_style.py",
+      "stages": [
+        "P5",
+        "P8"
+      ],
+      "inputs": [
+        "matplotlib figure objects in production scripts"
+      ],
+      "outputs": [
+        "styled PNG with stripped Software metadata"
+      ],
+      "evidence_types": [],
+      "optional_dependencies": [
+        "matplotlib"
+      ],
+      "production_eligible": false,
+      "requires_controlled_execution": true,
+      "quality_profile": "presentation-ready"
+    },
+    {
+      "id": "publication.abstract-builder",
+      "category": "publication",
+      "path": "templates/publication/build_abstract.py",
+      "stages": [
+        "P7",
+        "P8"
+      ],
+      "inputs": [
+        "mmflow export-claims 导出的 claims JSON（mmflow-defense-cards-input/v1）"
+      ],
+      "outputs": [
+        "中英双语摘要草稿 Markdown（数值逐字来自 claim，TODO 槽位显式标记）"
+      ],
+      "evidence_types": [],
+      "optional_dependencies": [],
+      "production_eligible": false,
+      "requires_controlled_execution": false,
+      "quality_profile": "presentation-ready"
+    }
+  ]
+}

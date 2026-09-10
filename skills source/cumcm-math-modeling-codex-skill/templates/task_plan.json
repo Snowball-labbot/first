@@ -1,0 +1,30 @@
+{
+  "contest": "CUMCM",
+  "problem_id": "",
+  "question_count": 3,
+  "subquestions": [
+    {
+      "id": "Q1",
+      "task_type": "unknown",
+      "required_output": [],
+      "input_data": [],
+      "decision_object": "",
+      "constraints": [],
+      "validation": [
+        "baseline comparison"
+      ],
+      "figures_needed": [],
+      "tables_needed": [],
+      "baseline_route": "Build a simple hand-checkable baseline first.",
+      "primary_route": "Use the most transparent model that answers the required output.",
+      "fallback_route": "If evidence is insufficient, use a justified smaller-scope model with explicit assumptions, validation, and limitations.",
+      "minimum_validation": [
+        "compare with a baseline",
+        "state limitations and uncertainty"
+      ],
+      "status": "draft"
+    }
+  ],
+  "global_assumptions": [],
+  "risk_points": []
+}

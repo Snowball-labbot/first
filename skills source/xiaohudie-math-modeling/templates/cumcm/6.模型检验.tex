@@ -1,0 +1,52 @@
+% ===================== 六、模型检验与分析 =====================
+% 结构：引文 -> 二级标题分类 -> 文字 -> longtable -> 分析。
+% 子节：误差分析（优先 5 折交叉验证）+ 灵敏度分析（关键参数 ±20% 扰动）。
+% 灵敏度数据在求解阶段前置产出，此处直接引用。
+\section{模型检验与分析}
+
+为验证本文构建的模型的有效性和稳健性，进行以下检验。
+
+\subsection{误差分析}
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.22\textwidth}}
+  \caption{模型误差分析结果}
+  \label{tab:error} \\
+  \toprule
+  指标 & 训练集 & 测试集 & 说明 \\
+  \midrule
+  \endfirsthead
+  \caption{模型误差分析结果（续）} \\
+  \toprule
+  指标 & 训练集 & 测试集 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  $R^2$ & ... & ... & 决定系数 \\
+  RMSE & ... & ... & 均方根误差 \\
+  MAE & ... & ... & 平均绝对误差 \\
+  MAPE(\%) & ... & ... & 平均绝对百分比误差 \\
+\end{longtable}
+
+如表\ref{tab:error}所示，...
+
+\subsection{灵敏度分析}
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.30\textwidth}>{\centering\arraybackslash}p{0.30\textwidth}>{\centering\arraybackslash}p{0.30\textwidth}}
+  \caption{灵敏度分析结果}
+  \label{tab:sensitivity} \\
+  \toprule
+  参数变化 & 输出变化 & 灵敏度评价 \\
+  \midrule
+  \endfirsthead
+  \caption{灵敏度分析结果（续）} \\
+  \toprule
+  参数变化 & 输出变化 & 灵敏度评价 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  ... & ... & ... \\
+\end{longtable}
+
+如表\ref{tab:sensitivity}所示，...

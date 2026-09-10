@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathodology Modeling Companion"
+  short_description: "starting a modeling task or installing, backing up or maintaining the skills pack."
+  default_prompt: "Use $mathodology-whole-project. Use adaptable modeling prompts and figure presets, ask once about image2 at figure design, and preserve evidence and reproducibility. For maintenance, keep a single skill source and back up local copies before refresh. For figure work, follow the default figure guidance in $mathodology-figure-presets: use real-data code templates to generate PNG/PDF when image2 is unavailable or pending."

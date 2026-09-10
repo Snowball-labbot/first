@@ -1,0 +1,126 @@
+% paper_full.tex — 全章节生产论文骨架（P8–P11，production 层）
+% 定位：production 层的完整章节骨架（examples.demo-model 的对照约束：
+%       本文件经受控执行与 Registry 登记后才可承载生产证据）。
+% 纪律：
+%   - 每个科学数字必须经 \MMResult{...}/\MMClaim{...}/\MMGiven{...} 等
+%     绑定宏引用 Registry，禁止手抄数值；
+%   - 每张图来自登记的生产 figure（\includegraphics 引用登记的产物文件）；
+%   - 章节为结构示例：按题目增删小问，不做与题目无关的填充。
+% 宏定义与 production/main.tex 保持一致（render-bindings 依此解析）。
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,hyperref}
+\usepackage{listings}
+% 占位渲染用 detokenize：占位 ID（如 __RESQ1__）含下划线，裸排印会触发
+% 数学模式错误；detokenize 后在文本模式安全显示。
+\newcommand{\MMFLOWUnresolved}[2]{\textbf{[MMFLOW-UNRESOLVED \detokenize{#1}: \detokenize{#2}]}}
+\newcommand{\MMResult}[1]{\MMFLOWUnresolved{RESULT}{#1}}
+\newcommand{\MMResultWithUnit}[1]{\MMFLOWUnresolved{RESULT-WITH-UNIT}{#1}}
+\newcommand{\MMClaim}[2]{\MMFLOWUnresolved{CLAIM}{#1}: #2}
+\newcommand{\MMGiven}[2]{\MMFLOWUnresolved{GIVEN}{#1}: #2}
+\newcommand{\MMCitedValue}[2]{\MMFLOWUnresolved{CITED-VALUE}{#1}: #2}
+\newcommand{\MMFormulaConstant}[2]{\MMFLOWUnresolved{FORMULA-CONSTANT}{#1}: #2}
+\newcommand{\MMRuleValue}[2]{\MMFLOWUnresolved{RULE-VALUE}{#1}: #2}
+\newcommand{\MMRequiredText}[1]{\textbf{[MMFLOW-UNRESOLVED TEXT: #1]}}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,
+  keywordstyle=\color{blue!60!black},commentstyle=\color{green!45!black},
+  showstringspaces=false,frame=single,numbers=left,numberstyle=\tiny}
+
+\title{\MMRequiredText{论文标题（方法主线 + 问题对象，不写奖项暗示）}}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% 摘要六要素：背景动机 / 方法路线 / 关键结果（绑定数值）/ 验证证据 /
+% 实际含义 / 限制。每段回答一个判断；证据未支持的内容减少主张而非补写。
+\MMRequiredText{背景与方法总述}
+\MMRequiredText{问题一方法与关键结果（\MMResult{...} 绑定）}
+\MMRequiredText{问题二至问题N逐问段落}
+\MMRequiredText{验证与灵敏度概括}
+\MMRequiredText{实际含义与限制}
+\label{abstractend}
+\end{abstract}
+% 摘要篇幅用 templates/publication/check_abstract_fill.py 复核（编译后运行）
+
+\section{问题重述}
+\subsection{问题背景}
+\MMRequiredText{来自题面与一手规则的事实背景；外部信息用 \MMCitedValue{...} 绑定}
+\subsection{问题提出}
+\MMRequiredText{逐问重述：Q1/Q2/…/QN 各自要解决什么、产出什么形式}
+
+\section{问题分析}
+\MMRequiredText{逐问分析：输入—机制—输出链条、难点、与后续小问的依赖关系}
+
+\section{模型假设}
+\begin{enumerate}
+  \item \MMRequiredText{假设1：内容 + \MMGiven{...} 依据 + 合理性论证}
+  \item \MMRequiredText{假设2：…}
+\end{enumerate}
+
+\section{符号说明}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{cll}
+\toprule
+符号 & 含义 & 单位/来源 \\
+\midrule
+$x_i$ & \MMRequiredText{含义} & \MMRequiredText{单位；题面给定时 \MMGiven{...}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{问题一的建模与求解}
+\subsection{建模推导}
+\MMRequiredText{从假设到模型的完整推导；常数来源用 \MMFormulaConstant{...}；
+规则性数字用 \MMRuleValue{...}}
+\subsection{算法设计}
+\MMRequiredText{算法步骤、复杂度与停止条件；伪代码可引用登记的 production 代码}
+\subsection{结果与分析}
+\begin{figure}[htbp]
+\centering
+% 文件必须是已登记 production figure 的产物；登记信息见 figure sidecar
+\includegraphics[width=0.8\textwidth]{figures/model_result.png}
+\caption{\MMRequiredText{图注四要素：问题、观察、单位与不确定性、解读}}
+\end{figure}
+\MMRequiredText{结果解读三层：数值事实（\MMResult{...}）→ 数学结构 → 决策含义}
+
+\section{问题二至问题N的建模与求解}
+% 每问重复"建模—算法—验证—结果"结构；跨问接口（共享变量/传递结果）显式
+% 声明并与问题契约的依赖 DAG 一致
+\MMRequiredText{逐问内容}
+
+\section{模型验证与灵敏度分析}
+\subsection{多方法交叉验证}
+\MMRequiredText{题型适配验证结论（引用 validation_adapter_report 检查项）}
+\subsection{误差分析}
+\MMRequiredText{数值误差、离散化/收敛证据（可引用 convergence 扫描报告）}
+\subsection{灵敏度分析}
+\MMRequiredText{Tornado/Sobol/蒙特卡洛要点：最敏感因素、结论不变域}
+\subsection{稳健性检验}
+\MMRequiredText{退化场景、边界测试与最坏情况结论（\MMResult{...} 绑定）}
+
+\section{模型评价与推广}
+\subsection{优点}\MMRequiredText{与证据绑定的优点，不写空泛形容词}
+\subsection{不足与改进}\MMRequiredText{诚实陈述 2--3 个具体局限与量化影响}
+\subsection{推广}\MMRequiredText{适用边界内的推广路径；越界部分标为假设}
+
+\section{结论}
+\MMRequiredText{逐问最终答案汇总；只列证据充分的实质贡献}
+
+\begin{thebibliography}{9}
+\bibitem{ref1} \MMRequiredText{文献条目（GB/T 7714 或赛事指定格式）；
+登记为 citation 后以 \MMCitedValue{...} 引用数值}
+\end{thebibliography}
+
+\appendix
+\section{支撑材料清单}
+\MMRequiredText{代码、配置、数据说明、复现说明与对应 artifact 说明}
+\section{核心代码}
+% 附录代码须与登记源文件逐字一致；用 templates/quality/
+% appendix_code_closure_check.py 做闭包核验
+\begin{lstlisting}[language=Python]
+# 附录代码示例位置：替换为实际登记的生产代码文件内容
+\end{lstlisting}
+\end{document}

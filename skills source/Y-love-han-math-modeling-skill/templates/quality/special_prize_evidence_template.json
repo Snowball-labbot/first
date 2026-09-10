@@ -1,0 +1,31 @@
+{
+  "schema": "mmflow-special-prize-evidence-template/v1",
+  "template_role": "evidence-record-skeleton",
+  "production_eligible": false,
+  "instructions": [
+    "Copy into a concrete project and replace every skeleton token before registration.",
+    "Each criterion result must bind to valid evidence IDs; a self-reported score is ignored.",
+    "Use NOT_APPLICABLE only with a problem-specific reason, a structured not_applicable_detail (basis, quality_impact, alternative_required) and, when alternatives are required, valid alternative evidence IDs.",
+    "This template can document scientific depth but cannot guarantee a prize outcome."
+  ],
+  "quality_assessment": {
+    "applicability": "APPLICABLE",
+    "not_applicable_reason": "",
+    "not_applicable_detail": null,
+    "alternative_evidence_ids": [],
+    "source_entity_ids": [],
+    "supported_claim_ids": [],
+    "problem_ids": [],
+    "method": "<REPLACE_WITH_ASSESSMENT_METHOD>",
+    "checks": [],
+    "limitations": ["<REPLACE_WITH_LIMITATION>"],
+    "reviewer": "<REPLACE_WITH_REVIEWER_ROLE>",
+    "level": "NOT_READY",
+    "program_facts": [],
+    "experiment_supported": [],
+    "professional_judgments": [],
+    "cannot_guarantee": ["prize_outcome", "judge_preference"],
+    "criterion_results": [],
+    "total": 0.0
+  }
+}

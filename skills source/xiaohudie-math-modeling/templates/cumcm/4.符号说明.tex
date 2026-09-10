@@ -1,0 +1,28 @@
+% ===================== 四、符号说明 =====================
+% 全论文所有表格统一使用 longtable 样式（见下），禁用 tabular/tabularx。
+% 列宽通式（按标准版心 455pt 校准，预留 \tabcolsep 每列 12pt）：
+%   各列 p{比例\textwidth} 的比例总和 = 1 - 0.03 * 列数N
+%   2列=0.94, 3列=0.91, 4列=0.88, 5列=0.85, 6列=0.82, 7列=0.79, 8列=0.76 ...
+% 所有列必须带 >{\centering\arraybackslash}，否则报 Misplaced \noalign。
+\section{符号说明}
+
+本文使用的主要符号及其含义如表\ref{tab:符号说明}所示。
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.16\textwidth}>{\centering\arraybackslash}p{0.78\textwidth}}
+  \caption{符号说明}
+  \label{tab:符号说明} \\
+  \toprule
+  符号 & 说明 \\
+  \midrule
+  \endfirsthead
+  \caption{符号说明（续）} \\
+  \toprule
+  符号 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  $x$ & ... \\
+  $y$ & ... \\
+  $z_{ij}$ & ... \\
+\end{longtable}

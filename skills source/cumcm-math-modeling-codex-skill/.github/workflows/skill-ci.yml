@@ -1,0 +1,54 @@
+name: Skill CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  skill-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install lightweight dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pandas openpyxl
+
+      - name: Run skill evals
+        run: python3 scripts/run_skill_evals.py
+
+      - name: Check skill structure
+        run: python3 scripts/check_skill_structure.py
+
+      - name: Compile scripts
+        run: |
+          PYTHONPYCACHEPREFIX=/tmp/cumcm_pycache python3 -m py_compile \
+            scripts/*.py \
+            examples/single_question_minimal/src/*.py \
+            examples/full_problem_demo/src/*.py
+
+      - name: Validate full demo artifacts
+        run: |
+          python3 scripts/validate_results.py \
+            --project examples/full_problem_demo \
+            --no-first-prize \
+            --output results/validation_audit.md
+
+      - name: Validate single-question demo
+        run: |
+          python3 scripts/validate_results.py \
+            --mode standard \
+            --project examples/single_question_minimal \
+            --no-first-prize \
+            --output /tmp/cumcm_single_validation.md

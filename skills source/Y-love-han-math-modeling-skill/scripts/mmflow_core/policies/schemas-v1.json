@@ -1,0 +1,584 @@
+{
+  "policy_id": "schemas-v1",
+  "version": 1,
+  "artifact_classes": [
+    "production",
+    "exploratory",
+    "demo",
+    "fixture",
+    "external",
+    "unattested"
+  ],
+  "entity_statuses": [
+    "VALID",
+    "STALE",
+    "INVALID",
+    "REVOKED"
+  ],
+  "claim_strengths": [
+    "confirmed",
+    "supported",
+    "exploratory",
+    "hypothesis",
+    "unsupported"
+  ],
+  "claim_types": [
+    "computed",
+    "observational",
+    "inferential",
+    "theoretical",
+    "external",
+    "recommendation",
+    "limitation"
+  ],
+  "directions": [
+    "higher_is_better",
+    "lower_is_better",
+    "target_is_best",
+    "not_applicable"
+  ],
+  "check_statuses": [
+    "PASS",
+    "FAIL",
+    "ERROR",
+    "BLOCKED",
+    "NOT_APPLICABLE"
+  ],
+  "evidence_contracts": {
+    "given_value": [
+      "name"
+    ],
+    "capability_report": [
+      "checked_at",
+      "capabilities",
+      "limitations"
+    ],
+    "competition_rules": [
+      "competition",
+      "edition",
+      "official_sources",
+      "rule_snapshots",
+      "requirements",
+      "verification_status"
+    ],
+    "policy_lock": [
+      "policy_sha256",
+      "files"
+    ],
+    "input_inventory": [
+      "files",
+      "critical_missing"
+    ],
+    "selection_record": [
+      "applicable",
+      "candidates",
+      "selected",
+      "rationale"
+    ],
+    "requirement_matrix": [
+      "requirements"
+    ],
+    "problem_contract": [
+      "problems"
+    ],
+    "data_lineage": [
+      "sources",
+      "transforms",
+      "splits"
+    ],
+    "data_quality_report": [
+      "datasets",
+      "issues",
+      "decisions"
+    ],
+    "literature_registry": [
+      "citation_ids",
+      "unresolved"
+    ],
+    "leakage_audit": [
+      "checks",
+      "status"
+    ],
+    "baseline_protocol": [
+      "baselines",
+      "metrics"
+    ],
+    "model_candidates": [
+      "candidates",
+      "selection_rule"
+    ],
+    "validation_protocol": [
+      "adapters",
+      "metrics",
+      "stopping_rules",
+      "comparison_policies"
+    ],
+    "frozen_analysis_plan": [
+      "frozen_at",
+      "viewed_final_test",
+      "primary_metrics",
+      "split_ids"
+    ],
+    "production_execution": [
+      "execution_ids"
+    ],
+    "structured_results": [
+      "result_ids"
+    ],
+    "validation_adapter_report": [
+      "reports"
+    ],
+    "degenerate_test": [
+      "tests",
+      "status"
+    ],
+    "counterevidence_report": [
+      "tests",
+      "unsupported_claims",
+      "status"
+    ],
+    "response_matrix": [
+      "rows"
+    ],
+    "claim_registry": [
+      "claim_ids"
+    ],
+    "manuscript_source": [
+      "source_artifact_id",
+      "rendered_artifact_id",
+      "binding_manifest_artifact_id",
+      "source_closure",
+      "binding_count",
+      "unbound_number_count"
+    ],
+    "figure_registry": [
+      "figure_ids"
+    ],
+    "citation_audit": [
+      "citation_ids",
+      "unresolved"
+    ],
+    "reproduction_report": [
+      "reports"
+    ],
+    "review_findings": [
+      "finding_ids",
+      "open_by_severity",
+      "independent_review",
+      "roles"
+    ],
+    "compliance_report": [
+      "checks",
+      "status",
+      "official_rule_citations",
+      "requirement_checks"
+    ],
+    "quality_assessment": [
+      "dimensions",
+      "total",
+      "contribution_claim_ids",
+      "review_independence"
+    ],
+    "review_report": [
+      "role",
+      "scope",
+      "checks",
+      "finding_ids",
+      "reviewer_mode"
+    ],
+    "delivery_manifest": [
+      "files",
+      "excluded_prefixes"
+    ],
+    "package_checksum": [
+      "package_artifact_id",
+      "sha256",
+      "archive_test"
+    ],
+    "privacy_scan": [
+      "checker_version",
+      "status",
+      "files"
+    ],
+    "quality_profile_selection": [
+      "profile",
+      "selected_at",
+      "rationale",
+      "frozen_with_analysis_plan"
+    ],
+    "theorem_application_record": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "theorems",
+      "not_applicable_detail"
+    ],
+    "candidate_rejection_record": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "candidates",
+      "not_applicable_detail"
+    ],
+    "formula_validity_record": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "formulas",
+      "not_applicable_detail"
+    ],
+    "innovation_ablation_record": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "innovations",
+      "not_applicable_detail"
+    ],
+    "counterintuitive_finding_record": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "findings",
+      "not_applicable_detail"
+    ],
+    "cross_problem_framework_record": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "framework",
+      "problem_links",
+      "not_applicable_detail"
+    ],
+    "mechanism_explanation_record": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "explanations",
+      "not_applicable_detail"
+    ],
+    "negative_result_record": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "results",
+      "not_applicable_detail"
+    ],
+    "paper_depth_review": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "manuscript_sections",
+      "not_applicable_detail"
+    ],
+    "special_prize_quality_assessment": [
+      "applicability",
+      "not_applicable_reason",
+      "alternative_evidence_ids",
+      "source_entity_ids",
+      "supported_claim_ids",
+      "problem_ids",
+      "method",
+      "checks",
+      "limitations",
+      "reviewer",
+      "level",
+      "program_facts",
+      "experiment_supported",
+      "professional_judgments",
+      "cannot_guarantee",
+      "criterion_results",
+      "total",
+      "not_applicable_detail"
+    ],
+    "independent_review_provenance": [
+      "reviewers",
+      "limitations"
+    ]
+  },
+  "evidence_dependency_fields": {
+    "given_value": [],
+    "capability_report": [],
+    "competition_rules": [
+      "official_sources[].artifact_id",
+      "official_sources[].citation_id",
+      "rule_snapshots[].artifact_id",
+      "rule_snapshots[].citation_id"
+    ],
+    "policy_lock": [],
+    "input_inventory": [
+      "files[].artifact_id"
+    ],
+    "selection_record": [
+      "candidates[]",
+      "selected"
+    ],
+    "requirement_matrix": [],
+    "problem_contract": [],
+    "data_lineage": [
+      "sources[].artifact_id",
+      "transforms[].artifact_id",
+      "splits[]"
+    ],
+    "data_quality_report": [
+      "datasets[].artifact_id"
+    ],
+    "literature_registry": [
+      "citation_ids[]"
+    ],
+    "leakage_audit": [],
+    "baseline_protocol": [],
+    "model_candidates": [],
+    "validation_protocol": [],
+    "frozen_analysis_plan": [
+      "split_ids[]"
+    ],
+    "production_execution": [
+      "execution_ids[]"
+    ],
+    "structured_results": [
+      "result_ids[]"
+    ],
+    "validation_adapter_report": [],
+    "degenerate_test": [],
+    "counterevidence_report": [
+      "unsupported_claims[]"
+    ],
+    "response_matrix": [
+      "rows[].claim_ids[]"
+    ],
+    "claim_registry": [
+      "claim_ids[]"
+    ],
+    "manuscript_source": [
+      "source_artifact_id",
+      "rendered_artifact_id",
+      "binding_manifest_artifact_id",
+      "source_closure[].artifact_id",
+      "compile_dependencies[].artifact_id"
+    ],
+    "figure_registry": [
+      "figure_ids[]"
+    ],
+    "citation_audit": [
+      "citation_ids[]"
+    ],
+    "reproduction_report": [
+      "reports[].original_execution_id",
+      "reports[].reproduction_execution_id"
+    ],
+    "review_findings": [
+      "finding_ids[]",
+      "roles[].evidence_ids[]",
+      "roles[].finding_ids[]"
+    ],
+    "compliance_report": [
+      "official_rule_citations[]"
+    ],
+    "quality_assessment": [
+      "contribution_claim_ids[]"
+    ],
+    "review_report": [
+      "finding_ids[]"
+    ],
+    "delivery_manifest": [
+      "files[].artifact_id"
+    ],
+    "package_checksum": [
+      "package_artifact_id"
+    ],
+    "privacy_scan": [],
+    "quality_profile_selection": [],
+    "theorem_application_record": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "candidate_rejection_record": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "formula_validity_record": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "innovation_ablation_record": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "counterintuitive_finding_record": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "cross_problem_framework_record": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "mechanism_explanation_record": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "negative_result_record": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "paper_depth_review": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]"
+    ],
+    "special_prize_quality_assessment": [
+      "source_entity_ids[]",
+      "supported_claim_ids[]",
+      "alternative_evidence_ids[]",
+      "criterion_results[].evidence_ids[]"
+    ],
+    "independent_review_provenance": [
+      "reviewers[].execution_id",
+      "reviewers[].input_artifact_ids[]",
+      "reviewers[].output_artifact_ids[]"
+    ]
+  },
+  "quality_rubric": {
+    "problem_response_formalization": [
+      "problem_contract",
+      "requirement_matrix"
+    ],
+    "model_correctness": [
+      "structured_results",
+      "production_execution",
+      "degenerate_test"
+    ],
+    "data_external_evidence": [
+      "data_quality_report",
+      "literature_registry",
+      "data_lineage",
+      "input_inventory"
+    ],
+    "computation_numerics": [
+      "structured_results",
+      "validation_adapter_report"
+    ],
+    "validation_counterevidence": [
+      "counterevidence_report",
+      "degenerate_test",
+      "validation_adapter_report"
+    ],
+    "contribution_decision_value": [
+      "claim_registry",
+      "response_matrix"
+    ],
+    "reproducibility_traceability": [
+      "reproduction_report"
+    ],
+    "paper_visual_communication": [
+      "figure_registry",
+      "manuscript_source",
+      "citation_audit"
+    ]
+  },
+  "quality_dimensions": {
+    "problem_response_formalization": 12.0,
+    "model_correctness": 18.0,
+    "data_external_evidence": 12.0,
+    "computation_numerics": 12.0,
+    "validation_counterevidence": 18.0,
+    "contribution_decision_value": 12.0,
+    "reproducibility_traceability": 8.0,
+    "paper_visual_communication": 8.0
+  },
+  "evidence_content_field_notes": {
+    "response_matrix": {
+      "rows[]": [
+        "requirement_id",
+        "claim_ids",
+        "manuscript_target"
+      ],
+      "_note": "manuscript_target 是 P7 语义检查的必填字段（论文锚点，如 sec:q1）；缺失即 SEMANTIC-P7 FAIL。"
+    },
+    "delivery_manifest": {
+      "_note": "除契约键外，P11 语义检查还要求 distribution_licenses 列表与实测必填的 smoke_command 参数列表（PACKAGE_CREATED 事件要求 smoke_test=PASS）；distribution_licenses 每项含 license/distribution_allowed/artifact_id 或 relative_path。"
+    },
+    "review_findings": {
+      "_note": "roles[].evidence_ids 必须各指向恰好一条 VALID review_report；review_report 的 created_ledger_sequence 必须晚于最后一次 P8 GATE_RECORDED。"
+    },
+    "quality_assessment": {
+      "_note": "dimensions[].id 必须取自 quality_dimensions 键集且 maximum 与其值精确相等；model_correctness 与 validation_counterevidence 两维 earned/max>=0.9，其余 >=0.8；total=Σearned 且 >=90。"
+    },
+    "production_execution": {
+      "_note": "execution_ids 引用的 execution 必须由 run 命令产生（exit 0、production 类）；P9 复用本类型时不得在 P9 重复登记第二条该类型证据——跨阶段继承自 P5 即可。"
+    },
+    "frozen_analysis_plan": {
+      "_note": "frozen_at 必须为带时区 ISO 时间；viewed_final_test 必须 false；P5 门禁用账本序号证明冻结先于全部最终执行。"
+    }
+  }
+}

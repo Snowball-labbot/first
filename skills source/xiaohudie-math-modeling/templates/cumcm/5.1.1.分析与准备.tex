@@ -1,0 +1,66 @@
+% ===================== 5.1.1 分析与准备 =====================
+% 结构：具体分析（三段文字 + 固定9框流程图） + 模型准备（数据预处理 + 算法选择）
+% 禁止：讲检验、讲结果（此时尚未求解）。
+
+\subsubsection{问题一的具体分析}
+% 第1段：针对问题X + 问题类型 + 大致方法；
+% 第2段：首先...接着...然后...最后...串联完整步骤，不换段；
+% 第3段：具体分析流程如图\ref{fig:analysis1_flow}所示。
+
+\begin{figure}[ht]
+  \begin{center}
+    \begin{tikzpicture}[x=1cm, y=0.7cm]
+      \node[box] (n11) at (0, 0) {...};
+      \node[box] (n12) at (5, 0) {...};
+      \node[box] (n13) at (10, 0) {...};
+      \node[box] (n22) at (5, -3) {...};
+      \node[box] (n21) at (0, -3) {...};
+      \node[box] (n23) at (10, -3) {...};
+      \node[box] (n31) at (0, -6) {...};
+      \node[box] (n32) at (5, -6) {...};
+      \node[box] (n33) at (10, -6) {...};
+      \draw[arrow] (n11) -- (n12);
+      \draw[arrow] (n12) -- (n13);
+      \draw[arrow] (n23) -- (n22);
+      \draw[arrow] (n22) -- (n21);
+      \draw[arrow] (n13) -- ++(0,-1.0) -| (n23);
+      \draw[arrow] (n21) -- (n31);
+      \draw[arrow] (n31) -- (n32);
+      \draw[arrow] (n32) -- (n33);
+    \end{tikzpicture}
+    \caption{问题一分析流程图}
+    \label{fig:analysis1_flow}
+  \end{center}
+\end{figure}
+
+\subsubsection{数据预处理}
+% 仅问题1写本小节（数据预处理五段结构）：
+%   第1段 预处理原因（缺失/量纲/异常）；第2段 数据理解与提取（特征数、样本规模）；
+%   第3段 预处理步骤（清洗->标准化->特征衍生，公式写出）；
+%   第4段 预处理结果（处理前后 min/max/mean/std 对比）；第5段 总结。
+% Min-Max 归一化与 Z-score 标准化公式：
+% x' = (x - x_min)/(x_max - x_min)      x' = (x - mu)/sigma
+
+\subsubsection{算法选择}
+% 问题1必写。五段式：定性 -> 候选算法与评估维度 -> longtable 对比表（优/良/中/差，
+% 必须写具体算法名，禁止"算法A"）-> 对比分析 -> 总结引出。
+% 评估维度按问题类型调整（预测类可用：预测精度/训练效率/可解释性/鲁棒性）。
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}}
+  \caption{算法能力对比}
+  \label{tab:算法对比1} \\
+  \toprule
+  算法名称 & 维度一 & 维度二 & 维度三 & 维度四 \\
+  \midrule
+  \endfirsthead
+  \caption{算法能力对比（续）} \\
+  \toprule
+  算法名称 & 维度一 & 维度二 & 维度三 & 维度四 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  遗传算法（GA） & 优 & 优 & 良 & 良 \\
+  蚁群算法（ACO） & 良 & 中 & 优 & 中 \\
+  模拟退火（SA） & 中 & 良 & 良 & 中 \\
+\end{longtable}

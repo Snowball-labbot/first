@@ -1,0 +1,4 @@
+interface:
+  display_name: "Math Contest Hub"
+  short_description: "按国一候选标准锁定范围、证据和边界"
+  default_prompt: "使用 $math-hub 锁定问题、交付物、证据、验证、一致性、合规和下一模块；不默认 dispatch，paper-ready 不足时阻塞或降级。"

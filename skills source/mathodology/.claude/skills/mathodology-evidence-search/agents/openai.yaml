@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathodology Evidence Search"
+  short_description: "finding literature, datasets, domain facts, citation details or licensed figure references"
+  default_prompt: "Use $mathodology-evidence-search. Find and reconcile primary evidence with the available search channels. Verify citations and licenses, preserve useful provenance and disclose gaps without rigid handoff schemas."

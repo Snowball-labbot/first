@@ -1,0 +1,70 @@
+# Local editor and OS state
+.DS_Store
+.idea/
+.vscode/
+
+# Contest working outputs and Codex local mirror (scratch, never committed)
+/work/
+/.codex/
+
+# Env and secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Runtime and cache state
+.cache/
+.run/
+runs/
+.agents/
+skills-lock.json
+*.db
+*.sqlite*
+dump.rdb
+
+# Dependency and build outputs
+node_modules/
+target/
+.venv/
+dist/
+__pycache__/
+*.pyc
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Claude runtime state stays local, but project skills are source files.
+/.claude/*
+!/.claude/skills/
+!/.claude/skills/**
+!/.claude/agents/
+!/.claude/agents/**
+!/.claude/workflows/
+!/.claude/workflows/**
+
+# Re-apply interpreter-output exclusions after the source-tree allowlists.
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Retired non-skills project trees should not be reintroduced on this branch.
+/.github/
+/apps/
+/crates/
+/packages/
+/scripts/
+/config/
+/installer/
+/tests/
+/data/
+/Dockerfile*
+/docker-compose*.yml
+/Cargo.lock
+/Cargo.toml
+/package.json
+/pnpm-lock.yaml
+/pnpm-workspace.yaml
+/pyproject.toml
+/uv.lock
+/justfile

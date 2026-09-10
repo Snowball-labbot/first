@@ -1,0 +1,26 @@
+\documentclass[12pt,letterpaper]{article}
+% US Letter 对齐美赛官方要求与 templates/publication/main_en.tex 管线
+\usepackage[top=2.5cm,bottom=2.5cm,left=3cm,right=3cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,hyperref}
+% 占位渲染用 detokenize：占位 ID（如 __RESQ1__）含下划线，裸排印会触发
+% 数学模式错误；detokenize 后在文本模式安全显示。
+\newcommand{\MMFLOWUnresolved}[2]{\textbf{[MMFLOW-UNRESOLVED \detokenize{#1}: \detokenize{#2}]}}
+\newcommand{\MMResult}[1]{\MMFLOWUnresolved{RESULT}{#1}}
+\newcommand{\MMResultWithUnit}[1]{\MMFLOWUnresolved{RESULT-WITH-UNIT}{#1}}
+\newcommand{\MMClaim}[2]{\MMFLOWUnresolved{CLAIM}{#1}: #2}
+\newcommand{\MMGiven}[2]{\MMFLOWUnresolved{GIVEN}{#1}: #2}
+\newcommand{\MMCitedValue}[2]{\MMFLOWUnresolved{CITED-VALUE}{#1}: #2}
+\newcommand{\MMFormulaConstant}[2]{\MMFLOWUnresolved{FORMULA-CONSTANT}{#1}: #2}
+\newcommand{\MMRuleValue}[2]{\MMFLOWUnresolved{RULE-VALUE}{#1}: #2}
+\newcommand{\MMRequiredText}[1]{\textbf{[MMFLOW-UNRESOLVED TEXT: #1]}}
+\title{Mathematical Modeling Competition Paper}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+\MMRequiredText{Abstract}
+\end{abstract}
+\section{Problem, Model, and Evidence}
+\MMRequiredText{Body}
+\end{document}

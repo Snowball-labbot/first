@@ -1,0 +1,7 @@
+{
+  "artifact_class": "production",
+  "production_eligible": true,
+  "requires_controlled_execution": true,
+  "requires_explicit_implementation": true,
+  "template_outputs_are_evidence": false
+}

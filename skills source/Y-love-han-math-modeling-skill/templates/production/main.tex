@@ -1,0 +1,25 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,hyperref}
+% 占位渲染用 detokenize：占位 ID（如 __RESQ1__）含下划线，裸排印会触发
+% 数学模式错误；detokenize 后在文本模式安全显示。
+\newcommand{\MMFLOWUnresolved}[2]{\textbf{[MMFLOW-UNRESOLVED \detokenize{#1}: \detokenize{#2}]}}
+\newcommand{\MMResult}[1]{\MMFLOWUnresolved{RESULT}{#1}}
+\newcommand{\MMResultWithUnit}[1]{\MMFLOWUnresolved{RESULT-WITH-UNIT}{#1}}
+\newcommand{\MMClaim}[2]{\MMFLOWUnresolved{CLAIM}{#1}: #2}
+\newcommand{\MMGiven}[2]{\MMFLOWUnresolved{GIVEN}{#1}: #2}
+\newcommand{\MMCitedValue}[2]{\MMFLOWUnresolved{CITED-VALUE}{#1}: #2}
+\newcommand{\MMFormulaConstant}[2]{\MMFLOWUnresolved{FORMULA-CONSTANT}{#1}: #2}
+\newcommand{\MMRuleValue}[2]{\MMFLOWUnresolved{RULE-VALUE}{#1}: #2}
+\newcommand{\MMRequiredText}[1]{\textbf{[MMFLOW-UNRESOLVED TEXT: #1]}}
+\title{数学建模竞赛论文}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+\MMRequiredText{摘要}
+\end{abstract}
+\section{问题、模型与证据}
+\MMRequiredText{正文}
+\end{document}

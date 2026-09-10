@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+
+# mmflow runtime artifacts - belong inside project directories, never in the skill tree
+.mmflow/
+runs/
+deliverables/
+reports/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.log
+*.bak
+*.orig
+*.rej

@@ -1,0 +1,204 @@
+% ============================================================
+%  MCM/ICM (美赛) 论文 LaTeX 英文模板
+%  2026 官方规则要点：
+%  - 全文（含 Summary Sheet / 目录 / 参考文献 / 附录 / 代码）≤ 25 页硬上限
+%  - 字号 ≥ 12pt；每页页眉 "Team #XXXXX, Page X of 25"
+%  - Summary Sheet 为第 1 页，约 300 词，占页 1/2-2/3，严禁溢出
+%  - 附录代码计入 25 页 → 只放核心脚本，其余移入支撑材料
+%  - AI 使用报告为单独文件（不计入 25 页），须如实披露 AI 使用
+%  编译：xelatex main.tex（参考文献为内联 thebibliography，无需 bibtex；
+%        若改用 .bib + \bibliography 管线，才需要 bibtex 两轮重编译）
+% ============================================================
+\documentclass[12pt,letterpaper]{article}
+
+% ---------- 语言与字体 ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% ⚠️ 加载顺序铁律（2026 实测验证）：
+%   ① amsmath/amsthm 必须【先于】newtxmath——否则 \openbox 冲突
+%     （Command `\openbox' already defined）
+%   ② 加载 newtxmath 后【不得再加载 amssymb】——两者都定义 \Bbbk
+%     （newtxmath 已内置全部 AMS 符号）
+\usepackage{amsmath, amsthm, mathtools}
+\usepackage{newtxtext, newtxmath}  % Times 系字体（12pt 可读性优先）
+
+% ---------- 页面设置（US Letter；官方建议：上/下 2.5cm，左/右 3cm）----------
+\usepackage{geometry}
+\geometry{letterpaper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% ---------- 页眉：Team #XXXXX, Page X of N ----------
+% ⚠️ v2 修正：总页数用 \pageref{LastPage} 动态取（lastpage 宏包），
+%    旧版硬编码 "of 25"——实际页数少于 25 时页眉与真实总页数不符
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Team \#<TEAM\_ID>}          % Replace <TEAM\_ID> before delivery.
+\fancyhead[R]{\small Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- 行距 ----------
+\usepackage{setspace}
+\setstretch{1.15}
+
+% （数学宏包已在字体区按顺序加载：amsmath/amsthm → newtx，见上方注释）
+
+% ---------- 表格 ----------
+\usepackage{booktabs, longtable, multirow, multicol, array}
+\usepackage[table]{xcolor}
+
+% ---------- 图片 ----------
+\usepackage{graphicx}
+\graphicspath{{figures/}{./}}
+\usepackage{float}
+\usepackage{caption, subcaption}
+\captionsetup{font={small}, labelfont=bf}
+
+% ---------- 代码块（附录代码计入 25 页 → 精简）----------
+\usepackage{listings}
+\lstset{
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{orange},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    breaklines=true,
+    tabsize=4,
+    language=Python
+}
+
+% ---------- 算法 ----------
+\usepackage{algorithm, algpseudocode}
+
+% ---------- 超链接 ----------
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue}
+
+\begin{document}
+
+% ============================================================
+%  SUMMARY SHEET (Page 1 of 25) —— 官方建议约 300 词，占页 1/2-2/3
+% ============================================================
+\begin{center}
+  {\Large\bfseries 2026 MCM/ICM Summary Sheet}\\[6pt]
+  {\large Problem Chosen: \underline{\ \ <PROBLEM\_ID>\ \ } \quad
+   Team Control Number: \underline{\ \ <TEAM\_ID>\ \ }}\\[10pt]
+  {\LARGE\bfseries <PAPER\_TITLE>}\\[4pt]
+  {\normalsize (Team \#<TEAM\_ID>)}
+\end{center}
+
+% 摘要正文：背景(1-2句) → 核心建模方法(2句) → 主要发现(2-3句) → 模型优势(1句)
+% 必须含每问的关键数值 + 至少 1 问交叉验证；约 250-300 词
+In <PROBLEM\_BACKGROUND>, this paper develops <CORE\_MODELING\_FRAMEWORK>.
+
+For Problem 1, we propose <METHOD\_NAME> based on <THEORY>, obtaining
+<KEY\_RESULT\_WITH\_UNIT> with 95\% CI <CONFIDENCE\_INTERVAL>, validated against
+<ALTERNATIVE\_METHOD> with relative error <RELATIVE\_ERROR>.
+
+For Problem 2, <PROBLEM\_2\_RESULT\_AND\_LIMITATION>.
+
+The main contributions are: (1) <CONTRIBUTION\_1>; (2) <CONTRIBUTION\_2>;
+(3) <CONTRIBUTION\_3>. Sensitivity analysis indicates that the conclusions
+are robust within <SUPPORTED\_PARAMETER\_RANGE>.
+
+\vspace{0.5em}
+\noindent\textbf{Keywords:} <KEYWORD\_1>; <KEYWORD\_2>; <KEYWORD\_3>
+
+\newpage
+
+% ============================================================
+%  MAIN BODY —— ⛔ 全文（含本页至附录结束）合计 ≤ 25 页
+% ============================================================
+
+% ---------- 1. Problem Restatement ----------
+\section{Problem Restatement}
+\subsection{Background}
+\subsection{Problem Decomposition}
+% 逐问重述 + 数学化表述 + 已有方法局限
+
+% ---------- 2. Assumptions ----------
+\section{Model Assumptions}
+\begin{enumerate}
+  \item Assumption 1: ... (justification)
+  \item Assumption 2: ... (justification)
+\end{enumerate}
+
+% ---------- 3. Notation ----------
+\section{Notation}
+\begin{table}[H]
+  \centering
+  \caption{Notation}\label{tab:notation}
+  \begin{tabular}{clc}
+    \toprule
+    \textbf{Symbol} & \textbf{Meaning} & \textbf{Unit} \\
+    \midrule
+    $x$ & ... & ... \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ---------- 4. Models ----------
+\section{Model Formulation and Solution}
+\subsection{Problem 1: <PROBLEM\_1\_TITLE>}
+\subsubsection{Model Derivation: <MODEL\_DERIVATION\_TITLE>}
+\subsubsection{Theoretical Analysis: <THEORETICAL\_ANALYSIS\_TITLE>}
+\subsubsection{Algorithm Design: <ALGORITHM\_DESIGN\_TITLE>}
+\begin{algorithm}[H]
+\caption{<ALGORITHM\_CAPTION>}\label{alg:<ALGORITHM\_LABEL>}
+\begin{algorithmic}[1]
+\Require <ALGORITHM\_INPUT>
+\Ensure <ALGORITHM\_OUTPUT>
+\State <ALGORITHM\_STEP\_1>
+\State <ALGORITHM\_STEP\_2>
+\end{algorithmic}
+\end{algorithm}
+\subsubsection{Ablation Study: <ABLATION\_TITLE>}
+\subsubsection{Results and Uncertainty Quantification: <RESULTS\_TITLE>}
+
+\subsection{Problem 2: <PROBLEM\_2\_TITLE>}
+% Reuse the same evidence-backed structure only when it applies; otherwise
+% state the justified NOT_APPLICABLE decision and its alternative evidence.
+
+% ---------- 5. Validation & Sensitivity (美赛强制章节) ----------
+\section{Model Validation and Sensitivity Analysis}
+\subsection{Cross-Validation}
+\subsection{Sensitivity Analysis}
+\subsection{Robustness (Monte Carlo)}
+
+% ---------- 6. Strengths & Weaknesses (美赛强制章节) ----------
+\section{Strengths and Weaknesses}
+\subsection{Strengths}
+\subsection{Weaknesses}
+
+% ---------- 7. Discussion ----------
+\section{Discussion}
+\subsection{Comparison with Literature}
+\subsection{Unexpected Findings}
+\subsection{Limitations and Future Work}
+
+% ---------- 8. Conclusion ----------
+\section{Conclusion}
+\label{lastmain}  % ⛔ 与锁14同构：正文末页标记（美赛按"正文+附录≤25页"判定）
+% 核心贡献 + 数值汇总 + 决策建议
+
+% ---------- References (IEEE/APA) ----------
+% 内联 thebibliography：无需 bibtex；如切换为 .bib 管线，
+% 再取消下一行注释并删除 thebibliography 环境。
+% \bibliographystyle{IEEEtran}   % 仅在 \bibliography{refs} 管线下生效
+\begin{thebibliography}{99}
+\bibitem{ref1} Author. Title[J]. Journal, Year, Vol(Issue): Pages.
+\end{thebibliography}
+
+% ============================================================
+%  APPENDIX —— ⛔ 计入 25 页上限：只放核心脚本，其余移入支撑材料
+%  并在附录开头注明 "Full code: see supporting materials (zip)"
+% ============================================================
+\newpage
+\appendix
+\section*{Appendix: Core Code}
+% [核心脚本精简版；注释写明"对应论文 §X.X 节"与"对应公式(N)"]
+% 全量代码 → 支撑材料 zip（文件名与论文附录文件列表一致）
+
+\end{document}

@@ -1,0 +1,409 @@
+% ============================================================
+%  数学建模竞赛论文 LaTeX 模板
+%  符合《全国大学生数学建模竞赛论文格式规范（2026 年修订稿）》
+%  编译命令：xelatex main.tex（连续两次，确保交叉引用正确）
+%  ⚠️ 本模板使用内联 thebibliography 环境，无需（也不能）运行 bibtex；
+%     若改用外部 \bibliography{...}.bib 方案，才需要 xelatex → bibtex → xelatex → xelatex
+% ============================================================
+% ⚠️ 必须使用 ctexart 文档类（ctex 2.6+ 在 article+ctex 宏包模式下
+%    \ctexset 的 section 系列键不可用，编译报 unknown key；
+%    ctexart 内置中文支持，全部键可用——2026 实测验证）
+\documentclass[12pt,a4paper]{ctexart}
+
+% ---------- 章节编号格式 ----------
+% ⚠️ \section{} 中只需写标题，不要手动加编号，ctex 自动生成
+% "一、问题重述" / "1.1 问题背景" / "5.1.1 模型推导"
+\ctexset{
+    section/number = \chinese{section},
+    section/name = {,、},
+    section/aftername = \quad,
+    section/format = \zihao{4}\heiti\bfseries,
+    subsection/number = \arabic{section}.\arabic{subsection},
+    subsection/name = {},
+    subsection/aftername = \quad,
+    subsection/format = \normalsize\bfseries,
+    subsubsection/number = \arabic{section}.\arabic{subsection}.\arabic{subsubsection},
+    subsubsection/name = {},
+    subsubsection/aftername = \quad,
+    subsubsection/format = \normalsize\bfseries,
+}
+
+% ---------- 页面设置（官方要求：页边距 ≥ 2.5cm）----------
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% ---------- 页码设置（从摘要页起，页脚居中，阿拉伯数字从1开始）----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ---------- 行距与缩进 ----------
+\usepackage{setspace}
+\setstretch{1.25}
+\setlength{\parindent}{2em}
+
+% ---------- 数学公式 ----------
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+
+% ---------- 表格 ----------
+\usepackage{booktabs, longtable, multirow, multicol, array, makecell}
+\usepackage[table]{xcolor}
+
+% ---------- 图片 ----------
+\usepackage{graphicx}
+\graphicspath{{figures/}{./}}
+\usepackage{float}
+\usepackage{caption, subcaption}
+\captionsetup{font={small}, labelfont=bf}
+\captionsetup[figure]{name=图}
+\captionsetup[table]{name=表}
+
+% ---------- 代码块 ----------
+\usepackage{listings}
+\lstset{
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{orange},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    showstringspaces=false,
+    language=Python
+}
+
+% ---------- 算法伪代码 ----------
+\usepackage{algorithm, algpseudocode}
+
+% ---------- 超链接 ----------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    bookmarksopen=true
+}
+
+% ---------- 自定义命令 ----------
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+
+% ---------- mmflow 绑定宏占位定义（勿删） ----------
+% 与 templates/production/main.tex 同源：编译期显示未解析标记，
+% render-bindings 按 Registry 逐一替换并校验后标记清零（P8 unbound=0）。
+% 正文所有科学数字必须写在 \MMResult/\MMResultWithUnit/\MMClaim 等宏内。
+\newcommand{\MMFLOWUnresolved}[2]{\textbf{[MMFLOW-UNRESOLVED \detokenize{#1}: \detokenize{#2}]}}
+\newcommand{\MMResult}[1]{\MMFLOWUnresolved{RESULT}{#1}}
+\newcommand{\MMResultWithUnit}[1]{\MMFLOWUnresolved{RESULT-WITH-UNIT}{#1}}
+\newcommand{\MMClaim}[2]{\MMFLOWUnresolved{CLAIM}{#1}: #2}
+\newcommand{\MMGiven}[2]{\MMFLOWUnresolved{GIVEN}{#1}: #2}
+\newcommand{\MMCitedValue}[2]{\MMFLOWUnresolved{CITED-VALUE}{#1}: #2}
+\newcommand{\MMFormulaConstant}[2]{\MMFLOWUnresolved{FORMULA-CONSTANT}{#1}: #2}
+\newcommand{\MMRuleValue}[2]{\MMFLOWUnresolved{RULE-VALUE}{#1}: #2}
+% 极简纯绑定骨架（无承诺书页/无中文编号样式）见 templates/production/paper_full.tex；
+% 国赛提交前置页（承诺书+编号专用页+abstractend 标记联动 check_abstract_fill.py）
+% 以本模板为准。
+
+% ============================================================
+\begin{document}
+
+% ============================================================
+%  承诺书 + 编号专用页（国赛提交 PDF 必需的前置页）
+%  · 本组两页不参与页码计数（gobble），摘要页从第 1 页重新开始
+%    （check_abstract_fill.py 依赖 .aux 中 abstractend 位于第 1 页，
+%     因此不得删除下方 \pagenumbering 重置）。
+%  · 红线：队号、姓名、学校、指导教师、签名等身份字段只由参赛者本人
+%    填写或由官方系统生成；AI 与模板一律留空占位，不代填、不推测
+%    （见 references/competition-compliance.md「匿名与身份」）。
+% ============================================================
+\pagenumbering{gobble}
+\thispagestyle{empty}
+
+% ---------- 第一页：承诺书（提交时替换为签字扫描件） ----------
+\begin{center}
+    {\zihao{3}\heiti 承\quad 诺\quad 书}
+\end{center}
+\vspace{1.5em}
+
+我们仔细阅读了中国大学生数学建模竞赛章程和参赛规则（以当届官方发布版本为准），
+完全理解并同意遵守竞赛的各项规定。
+
+我们郑重承诺：
+\begin{enumerate}
+    \item 所呈交的论文是本队独立完成的成果，不存在抄袭、剽窃他人成果的行为；
+    \item 论文中所引用的文献、数据与资料均已标明出处；
+    \item 严格遵守竞赛关于 AI 工具使用的披露要求（如当届规则有此要求）；
+    \item 如有违反，愿承担由此产生的一切后果。
+\end{enumerate}
+
+\vspace{2em}
+\noindent 我们的参赛队号为：\underline{\hspace{6em}}（由报名系统分配）
+
+\vspace{1em}
+\noindent 队员姓名：\underline{\hspace{8em}}\quad
+\underline{\hspace{8em}}\quad \underline{\hspace{8em}}
+
+\vspace{1em}
+\noindent 指导教师：\underline{\hspace{8em}}
+
+\vspace{1em}
+\noindent 所属学校（完整名称）：\underline{\hspace{24em}}
+
+\vspace{1em}
+\noindent 签名：\underline{\hspace{6em}}\quad
+\underline{\hspace{6em}}\quad \underline{\hspace{6em}}\qquad 日期：\underline{\hspace{5em}}
+
+\newpage
+
+% ---------- 第二页：编号专用页（由竞赛管理系统生成后替换本占位页） ----------
+\thispagestyle{empty}
+\begin{center}
+    {\zihao{3}\heiti 编号专用页}
+\end{center}
+\vspace{2em}
+\begin{center}
+    \fbox{\parbox[c][0.5\textheight][c]{0.85\textwidth}{\centering
+      （此页由全国大学生数学建模竞赛管理系统生成，\\[0.5em]
+      打印后按官方要求随论文一并装订/合并；\\[0.5em]
+      提交前请用系统生成的正式页面替换本占位框。）}}
+\end{center}
+
+\newpage
+
+% 页码从 1 开始（阿拉伯数字）
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\thispagestyle{fancy}
+
+% ============================================================
+%  摘要专用页（第一页）
+%  篇幅由题目与当届赛规定决定：以逐问覆盖"方法+绑定数值结果+验证证据"
+%  为准，不设字数配额；严禁溢出到第 2 页（官方红线）。
+%  摘要中的每个科学数字必须经 \MMResult/\MMResultWithUnit 绑定 Registry。
+%  页边距：上下左右各 2.5cm（geometry 已全局设置）
+% ============================================================
+\begin{center}
+    {\zihao{-2}\heiti <论文标题：基于题目特定机制的建模与优化研究>\par}
+    \vspace{1em}
+    {\zihao{4}\heiti 摘\quad 要\par}
+\end{center}
+\vspace{0.5em}
+
+% 摘要正文（逐问段落组织：方法全称 → 推导/求解要点 → 绑定数值结果（含单位与
+% 置信区间）→ 与基线的定量对比；篇幅由内容决定，不注水、不撑页、不超一页）
+[开头段：2--4句问题背景概述 + 金句嵌入（"本文的核心发现是：..."）+ 1句整体方法框架]
+
+针对问题一，[方法描述（具体算法全称+模型类型，如"基于Karush-Kuhn-Tucker条件的非凸约束优化算法"）] → [推导/求解过程简述] → [\MMResultWithUnit{__RESQ1__}（含95%CI）] → [交叉验证结果（两种方法+相对误差，如"与蒙特卡洛模拟结果一致，相对误差 <1.2%"）]。
+
+针对问题二，[方法描述] → [求解过程] → [精确数值结果（含CI）] → [验证]。
+
+针对问题三，[...]
+
+针对问题四，[...]
+
+% 贡献声明段（摘要末尾，必须存在；每项贡献绑定证据，数量由真实贡献决定）
+本文的主要贡献在于：(1) [核心贡献一——提出了...]；(2) [核心贡献二——揭示了...]；(3) [核心贡献三——构建了...]。灵敏度分析表明，[关键结论——如"模型在参数 ±20% 范围内结论稳健"]。交叉验证中 [方法A] 与 [方法B] 的结果一致（相对误差 <X%），验证了本文方法的可靠性。
+
+\vspace{0.5em}
+\noindent{\heiti\textbf{关键词：}}关键词1；关键词2；关键词3；关键词4；关键词5
+\label{abstractend}  % ⛔ 摘要结束标记（check_abstract_fill.py 依据 .aux 中此 label 页码判定摘要是否溢出第2页），不可删除
+
+\newpage
+
+% ============================================================
+%  正文（页数上限以当届官方规则为准，无目录）
+% ============================================================
+
+% ---------- 一、问题重述 ----------
+\section{问题重述}
+\subsection{问题背景}  % 2--4 段，从宏观背景到具体问题，引用文献标注 [N]
+\subsection{问题提出}  % 逐问列出题目要求
+
+% ---------- 二、问题分析 ----------
+\section{问题分析}
+\subsection{问题一的分析}  % 说明解题思路和方法选择理由
+\subsection{问题二的分析}
+\subsection{问题三的分析}
+\subsection{问题四的分析}
+\subsection{问题关联性分析}  % 一等奖加分项
+
+% [技术路线图——一等奖高频特征]
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{figures/tech_route.png}
+%   \caption{本文技术路线图}
+%   \label{fig:tech_route}
+% \end{figure}
+
+% ---------- 三、模型假设 ----------
+\section{模型假设}
+\begin{enumerate}
+    \item 假设1：[假设内容]。理由：[必要性论证/合理性说明]
+    \item 假设2：...
+\end{enumerate}
+
+% ---------- 四、符号说明 ----------
+\section{符号说明}
+\begin{table}[H]
+    \centering
+    \caption{符号说明表}
+    \label{tab:symbols}
+    \begin{tabular}{clcc}
+        \toprule
+        \textbf{符号} & \textbf{含义} & \textbf{单位} & \textbf{首次出现位置} \\
+        \midrule
+        $x$ & 变量 x 的含义 & m & 第 5.1 节 \\
+        $f(x)$ & 目标函数 & — & 第 5.1 节 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ---------- 五、问题一的建模与求解 ----------
+\section{问题一的建模与求解}
+\subsection{问题建模}
+\subsubsection{模型推导}  % 完整数学推导
+\subsubsection{模型假设与适用条件}
+\subsubsection{与现有方法的区别}
+\subsubsection{渐进式建模说明}  % 一等奖特征：展示从简化到最终模型的决策过程
+
+\subsection{理论分析}  % 一等奖区分点
+\subsubsection{收敛性分析}
+\subsubsection{复杂度分析}
+\subsubsection{误差界估计}
+
+\subsection{算法设计与实现}
+\begin{algorithm}[H]
+\caption{算法名称}
+\begin{algorithmic}[1]
+\Require 输入参数
+\Ensure 输出结果
+\State 初始化
+\For{每个迭代}
+    \State 执行操作
+\EndFor
+\State \Return 结果
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{创新点与消融实验}  % 一等奖区分点
+\subsubsection{创新点一：[名称]}  % 原理 + 消融实验结果
+
+\subsection{结果分析}  % 含置信区间、多方法对比、统计显著性
+
+\subsection{不确定性量化}  % 一等奖区分点
+
+% ---------- 六/七/八、问题二/三/四的建模与求解 ----------
+% [结构同上]
+
+% ---------- N、模型验证与灵敏度分析 ----------
+\section{模型验证与灵敏度分析}
+\subsection{多方法交叉验证}
+\subsubsection{残差分析}
+\subsubsection{交叉验证（折数由数据结构与样本量决定，见 analytics/cv\_backtest.py）}
+\subsubsection{对比验证（候选方法数量由论证需要决定 + 统计检验）}
+\subsection{误差分析}  % 定量误差来源分解，一等奖区分点
+\subsubsection{误差来源分解（数据/模型/离散化/求解/舍入）}
+\subsubsection{误差界估计与传播}
+\subsubsection{总误差预算与置信区间}
+\subsection{灵敏度分析}
+\subsubsection{单因素灵敏度（Tornado 图）}
+\subsubsection{多因素交互效应（Sobol 指数）}
+\subsection{稳健性验证}
+\subsubsection{蒙特卡洛模拟（次数按 Monte Carlo 误差与停止规则决定）}
+\subsubsection{最坏情况分析}
+\subsubsection{置信区间估计}
+
+% ---------- N+1、讨论 ----------
+\section{讨论}  % 一等奖区分点
+\subsection{与已有文献的定量对比}  % ≥3 篇对比 + 差异原因分解
+\subsection{意外发现与反常结果的深度分析}
+\subsection{机理解释}  % 数学层 → 数据层 → 领域层
+\subsection{模型局限性}  % 诚实且有深度：来源→影响→合理性→消除路径
+\subsection{未来改进方向}  % 具体化：方法路径 + 预期效果 + 难点
+
+% ---------- N+2、模型评价与推广 ----------
+\section{模型评价与推广}
+\subsection{模型优点}  % 按 6 维度逐一论证
+\subsection{模型不足与改进}
+\subsection{推广应用}  % 具体场景 + 适配条件
+
+% ---------- 结论 ----------
+\section{结论}
+核心贡献总结 + 关键数值结果汇总(含 CI) + 对实际决策的建议(3-5 条)
+\label{lastmain}  % ⛔ 锁14篇幅验证：标记正文最后一页（结论末），不可删除
+
+% ---------- 参考文献 ----------
+% GB/T 7714 格式（以当届官方要求为准）；文献数量与语言构成由论证需要决定，
+% 逐条真实核验优先，宁少引不编造。
+% 推荐使用 bibtex + gbt7714 宏包自动格式化
+\begin{thebibliography}{99}
+\bibitem{ref1} 作者. 标题[J]. 期刊名, 年份, 卷(期): 起止页码.
+\bibitem{ref2} Author. Title[J]. Journal, Year, Vol(Issue): Pages.
+\end{thebibliography}
+\newpage  % ⛔ 参考文献与附录之间必须有分页符（锁14）
+% ============================================================
+%  附录（页数不限，必须与正文装订在一起）
+%  ⛔ 附录仅含：支撑材料文件列表 + 全部源程序代码（含Excel/SPSS/MATLAB等交互命令） + requirements.txt + README
+%  ⛔ 严禁放入：自批判内容、CP检查点、审稿意见、三审三校报告、模型推导
+%  ⚠️  缺源程序/程序不能运行/结果与论文不符 → 可能取消评奖资格
+%  ⚠️  非Python工具须给出完整操作命令/公式（不可仅写"使用Excel求解"）
+% ============================================================
+\appendix  % ⛔ 紧接 \newpage 之后，确保附录从新页开始
+% ⛔ 下表为结构示例：交付前必须替换为本项目 delivery manifest 的真实
+%    文件清单（文件名/类型/说明与 P11 delivery_manifest 证据一致，
+%    由 verify_consistency.py V3 与支撑材料 zip 核对），禁止保留示例名。
+\section*{附录一：支撑材料文件列表}
+\begin{table}[H]
+    \centering
+    \caption{支撑材料文件列表}
+    \begin{tabular}{llcl}
+        \toprule
+        \textbf{文件名} & \textbf{类型} & \textbf{行数} & \textbf{说明} \\
+        \midrule
+        \rowcolor{blue!5}
+        \multicolumn{4}{l}{\textbf{源代码}} \\
+        <FILE\_1>.py & Python & — & 问题一完整求解代码 \\
+        <FILE\_2>.py & Python & — & 问题二完整求解代码 \\
+        utils.py & Python & — & 公共工具函数 \\
+        sensitivity\_analysis.py & Python & — & 灵敏度分析代码 \\
+        \rowcolor{green!5}
+        \multicolumn{4}{l}{\textbf{输入数据}} \\
+        <DATA\_FILE> & Excel/CSV & — & 题目原始数据（与 input artifact 一致） \\
+        \rowcolor{orange!5}
+        \multicolumn{4}{l}{\textbf{输出结果}} \\
+        <RESULT\_1>.csv & CSV & — & 问题一结果 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section*{附录二：运行环境依赖}
+% ⛔ 以下依赖清单仅为格式示例；交付前必须以项目实际 environment_lock /
+%    requirements.txt 内容逐字替换，禁止照抄示例版本号。
+\begin{lstlisting}[language=bash, caption={requirements.txt}]
+<由本项目实际依赖清单逐字粘贴，例如 numpy>=x.y.z ...>
+\end{lstlisting}
+
+% ⛔ 附录三~七的章节标题与文件名为结构示例：交付前必须改为本项目
+%    delivery_manifest 登记的实际代码文件名（与附录一清单逐字一致），
+%    按实际文件数量增删小节；标题中的下划线须转义为 \_。
+\section*{附录三：<公共工具文件名>.py 完整代码}
+% [在此粘贴公共工具完整代码]
+
+\section*{附录四：<问题一代码文件名>.py 完整代码}
+% [在此粘贴问题一完整代码]
+
+\section*{附录五：<问题二代码文件名>.py 完整代码}
+% [在此粘贴问题二完整代码]
+
+\section*{附录六：<灵敏度分析文件名>.py 完整代码}
+% [在此粘贴灵敏度分析完整代码]
+
+\section*{附录七：<统计检验文件名>.py 完整代码}
+% [在此粘贴统计检验完整代码]
+
+\end{document}

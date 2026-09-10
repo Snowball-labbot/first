@@ -1,0 +1,725 @@
+{
+  "$schema": "../templates/method_card.schema.json",
+  "version": "1.0",
+  "cards": [
+    {
+      "id": "prediction_baseline_forecast",
+      "name": "预测：基线到主模型",
+      "task_types": [
+        "prediction"
+      ],
+      "use_when": [
+        "题目要求预测未来需求、流量、销量、人口、污染物、风险概率或时间趋势",
+        "附件包含时间字段、历史观测或可按时间排序的样本"
+      ],
+      "avoid_when": [
+        "样本极少且没有时间顺序，此时优先做情景分析或解析估计",
+        "题目只要求解释现状，不要求外推未来"
+      ],
+      "baseline": "均值、移动平均、朴素上一期或线性回归基线",
+      "primary_methods": [
+        "线性/岭回归",
+        "ARIMA/SARIMA 或指数平滑",
+        "随机森林、XGBoost 或 LightGBM",
+        "灰色 GM(1,1) 用于小样本趋势题"
+      ],
+      "required_inputs": [
+        "时间字段",
+        "目标变量",
+        "训练区间和预测区间",
+        "可能影响目标的解释变量"
+      ],
+      "required_outputs": [
+        "预测表",
+        "误差指标表",
+        "预测曲线或对比图"
+      ],
+      "validation": [
+        "留出验证或滚动验证",
+        "MAE、RMSE、MAPE 或 R2",
+        "残差图和外推合理性检查",
+        "与朴素基线比较"
+      ],
+      "minimum_validation": [
+        "至少和朴素基线比较",
+        "至少报告一个误差指标",
+        "画预测结果或残差检查图"
+      ],
+      "common_failures": [
+        "没有验证集却声称精度高",
+        "未来预测超出数据支撑范围",
+        "样本太少却直接使用复杂神经网络"
+      ],
+      "paper_outputs": [
+        "预测模型公式或算法流程",
+        "误差指标解释",
+        "预测结果表和趋势图",
+        "不确定性或敏感性说明"
+      ],
+      "starter_files": [
+        "src/qx_predict.py",
+        "tables/tab_qx_forecast.csv",
+        "figures/fig_qx_forecast.png"
+      ]
+    },
+    {
+      "id": "optimization_decision",
+      "name": "优化：变量、目标和约束",
+      "task_types": [
+        "optimization"
+      ],
+      "use_when": [
+        "题目要求最优、最小成本、最大收益、调度、分配、路径、选址或资源配置",
+        "题目中存在明确决策对象和约束条件"
+      ],
+      "avoid_when": [
+        "没有可定义的决策变量，只是评价或解释问题",
+        "约束和目标互相矛盾且数据不足，应先做可行性分析"
+      ],
+      "baseline": "人工规则、贪心策略、均分策略或最近邻方案",
+      "primary_methods": [
+        "线性规划",
+        "整数规划或 0-1 规划",
+        "动态规划",
+        "网络流或最短路",
+        "遗传算法、模拟退火或粒子群作为复杂约束下的备选"
+      ],
+      "required_inputs": [
+        "决策变量定义",
+        "目标函数参数",
+        "容量、时间、预算、需求或逻辑约束",
+        "可行域边界"
+      ],
+      "required_outputs": [
+        "最优或推荐方案表",
+        "目标函数值",
+        "约束满足情况",
+        "与基线方案的比较"
+      ],
+      "validation": [
+        "solver status 或算法收敛状态",
+        "约束违反检查",
+        "小规模精确解或基线方案比较",
+        "关键参数扰动"
+      ],
+      "minimum_validation": [
+        "记录 solver status、算法收敛状态或 best-found 声明",
+        "检查约束违反情况",
+        "和至少一个基线方案比较"
+      ],
+      "common_failures": [
+        "没有定义决策变量就写算法",
+        "报告最优值但没有可行性检查",
+        "启发式算法没有和基线比较"
+      ],
+      "paper_outputs": [
+        "变量、目标函数和约束",
+        "算法流程",
+        "方案表",
+        "可行性和敏感性分析"
+      ],
+      "starter_files": [
+        "src/qx_optimize.py",
+        "tables/tab_qx_solution.csv",
+        "tables/tab_qx_feasibility.csv"
+      ]
+    },
+    {
+      "id": "evaluation_ranking",
+      "name": "评价：指标、权重和排序",
+      "task_types": [
+        "evaluation"
+      ],
+      "use_when": [
+        "题目要求综合评价、排序、排名、优先级、风险等级或方案选择",
+        "附件包含多指标数据，需要比较对象优劣"
+      ],
+      "avoid_when": [
+        "指标方向不明确且无法解释",
+        "样本对象太少且指标高度重复，应先做指标筛选"
+      ],
+      "baseline": "等权评分或单一核心指标排序",
+      "primary_methods": [
+        "熵权法",
+        "TOPSIS",
+        "AHP",
+        "PCA",
+        "灰色关联分析",
+        "组合赋权"
+      ],
+      "required_inputs": [
+        "评价对象",
+        "指标体系",
+        "指标正负向",
+        "标准化方法",
+        "权重来源"
+      ],
+      "required_outputs": [
+        "权重表",
+        "综合得分表",
+        "排序结果",
+        "指标贡献或稳定性图"
+      ],
+      "validation": [
+        "权重扰动",
+        "删除单个指标后的排序稳定性",
+        "与等权基线比较",
+        "异常指标影响检查"
+      ],
+      "minimum_validation": [
+        "说明每个指标方向",
+        "和等权基线比较",
+        "做权重扰动或删指标稳定性检查"
+      ],
+      "common_failures": [
+        "没有说明指标方向就做 TOPSIS",
+        "机械使用 AHP 但没有专家判断依据",
+        "排序结果没有稳定性检验"
+      ],
+      "paper_outputs": [
+        "指标体系表",
+        "标准化和赋权公式",
+        "排序结果表",
+        "稳定性检验说明"
+      ],
+      "starter_files": [
+        "src/qx_evaluate.py",
+        "tables/tab_qx_weights.csv",
+        "tables/tab_qx_ranking.csv"
+      ]
+    },
+    {
+      "id": "simulation_mechanism",
+      "name": "仿真：机理和情景比较",
+      "task_types": [
+        "simulation"
+      ],
+      "use_when": [
+        "题目涉及传播、扩散、演化、排队、交通流、生态或动态过程",
+        "需要比较不同政策、干预或情景"
+      ],
+      "avoid_when": [
+        "参数没有来源且无法估计",
+        "仿真规则不能对应现实机制"
+      ],
+      "baseline": "解析简化模型、无干预情景或固定参数情景",
+      "primary_methods": [
+        "SIR/SEIR",
+        "差分方程或微分方程",
+        "蒙特卡洛仿真",
+        "元胞自动机",
+        "排队模型",
+        "Agent-based simulation"
+      ],
+      "required_inputs": [
+        "状态变量",
+        "转移规则或方程",
+        "初始条件",
+        "参数来源",
+        "情景设置"
+      ],
+      "required_outputs": [
+        "时间演化曲线",
+        "峰值、终态或稳定状态",
+        "情景对比表",
+        "参数敏感性结果"
+      ],
+      "validation": [
+        "边界条件检查",
+        "参数含义和单位检查",
+        "历史数据拟合或趋势一致性",
+        "关键参数敏感性"
+      ],
+      "minimum_validation": [
+        "检查边界条件和单位",
+        "至少做一个关键参数扰动",
+        "和无干预或简化基线比较"
+      ],
+      "common_failures": [
+        "方程复杂但参数不可估",
+        "仿真次数不足却给稳定结论",
+        "没有解释不同情景的现实含义"
+      ],
+      "paper_outputs": [
+        "状态变量和转移机制",
+        "参数表",
+        "情景对比图",
+        "敏感性分析"
+      ],
+      "starter_files": [
+        "src/qx_simulate.py",
+        "tables/tab_qx_scenarios.csv",
+        "figures/fig_qx_simulation.png"
+      ]
+    },
+    {
+      "id": "engineering_process_control",
+      "name": "A题：工程过程控制",
+      "task_types": [
+        "simulation",
+        "optimization"
+      ],
+      "use_when": [
+        "题目涉及炉温、热传导、波浪能、振动、功率、阻尼、速度或工艺窗口",
+        "需要先模拟物理过程，再优化一个或多个控制参数"
+      ],
+      "avoid_when": [
+        "题目没有明确物理量、时间过程或可控参数",
+        "只有静态评价对象，不需要状态演化"
+      ],
+      "baseline": "分段线性、一阶惯性、能量守恒或简化微分方程基线",
+      "primary_methods": [
+        "ODE 或差分方程",
+        "参数拟合",
+        "数值积分",
+        "网格搜索",
+        "单变量/多变量约束优化",
+        "工艺窗口可行性检查"
+      ],
+      "required_inputs": [
+        "时间轴和采样间隔",
+        "状态变量和控制变量",
+        "物理参数和单位",
+        "工艺窗口或功率定义",
+        "初始条件和边界条件"
+      ],
+      "required_outputs": [
+        "状态曲线",
+        "关键指标表",
+        "最优控制参数",
+        "工艺窗口或功率可行性检查表"
+      ],
+      "validation": [
+        "与解析基线或实测曲线比较",
+        "峰值、持续时间、平均功率等硬指标检查",
+        "时间步长敏感性",
+        "关键参数扰动"
+      ],
+      "minimum_validation": [
+        "检查控制参数是否落在工艺窗口内",
+        "检查峰值、持续时间或功率等硬指标",
+        "做时间步长或关键参数敏感性检查"
+      ],
+      "common_failures": [
+        "只拟合曲线不解释物理变量",
+        "优化结果违反温度、速度或功率约束",
+        "没有检查数值积分步长对结果的影响"
+      ],
+      "paper_outputs": [
+        "过程机理图",
+        "微分/差分方程",
+        "参数表",
+        "状态曲线和可行性表",
+        "优化前后对比"
+      ],
+      "starter_files": [
+        "src/qx_process_model.py",
+        "tables/tab_qx_process_metrics.csv",
+        "figures/fig_qx_process_curve.png"
+      ]
+    },
+    {
+      "id": "geometry_surface_optics_design",
+      "name": "A题：几何光学与曲面设计",
+      "task_types": [
+        "simulation",
+        "optimization"
+      ],
+      "use_when": [
+        "题目涉及三维坐标、曲面、反射、接收比、遮挡阴影、镜场或机械调整",
+        "需要把空间几何关系转成效率、覆盖率或接收效果"
+      ],
+      "avoid_when": [
+        "题目没有坐标、角度、曲面或空间布局信息",
+        "只要求普通指标排序或统计预测"
+      ],
+      "baseline": "理想曲面、单点反射、无遮挡效率或规则布局基线",
+      "primary_methods": [
+        "坐标变换",
+        "曲面拟合",
+        "法向量和反射定律",
+        "光线追踪",
+        "遮挡阴影判断",
+        "约束布局优化"
+      ],
+      "required_inputs": [
+        "坐标系定义",
+        "节点、镜面或目标位置",
+        "角度和方向向量",
+        "机械边界或布局范围",
+        "效率或接收指标定义"
+      ],
+      "required_outputs": [
+        "几何参数表",
+        "效率或接收比表",
+        "调整量或布局方案",
+        "空间布局图"
+      ],
+      "validation": [
+        "坐标和单位一致性检查",
+        "法向量、反射方向或太阳方向边界案例",
+        "机械约束或边界范围检查",
+        "与理想无遮挡基线比较"
+      ],
+      "minimum_validation": [
+        "统一坐标系和单位",
+        "检查机械约束或边界范围",
+        "和理想无遮挡或规则布局基线比较"
+      ],
+      "common_failures": [
+        "没有统一坐标系就计算角度",
+        "只算效率不检查遮挡、阴影或机械约束",
+        "图中布局和结果表不一致"
+      ],
+      "paper_outputs": [
+        "坐标系示意图",
+        "几何关系公式",
+        "效率分解表",
+        "布局或曲面调整图",
+        "约束可行性说明"
+      ],
+      "starter_files": [
+        "src/qx_geometry_optics.py",
+        "tables/tab_qx_geometry_metrics.csv",
+        "figures/fig_qx_layout.png"
+      ]
+    },
+    {
+      "id": "trajectory_coverage_optimization",
+      "name": "A题：轨迹覆盖与避碰优化",
+      "task_types": [
+        "simulation",
+        "optimization"
+      ],
+      "use_when": [
+        "题目涉及运动轨迹、速度、航向、投放、起爆、遮蔽、覆盖、碰撞或队列运动",
+        "目标是最大化覆盖/遮蔽时间，或在约束下保持不碰撞、不中断或可通行"
+      ],
+      "avoid_when": [
+        "没有时间演化、空间位置或覆盖判定",
+        "只需要静态选址或普通资源分配"
+      ],
+      "baseline": "单对象解析轨迹、规则速度方案或单时间段覆盖基线",
+      "primary_methods": [
+        "运动学方程",
+        "距离/覆盖/遮蔽判定",
+        "时间区间合并",
+        "可行性筛选",
+        "网格搜索",
+        "边际覆盖搜索",
+        "启发式或分阶段优化"
+      ],
+      "required_inputs": [
+        "初始位置和速度范围",
+        "运动方向或轨迹方程",
+        "覆盖半径、碰撞距离或遮蔽条件",
+        "投放/起爆/间隔等时序约束",
+        "目标函数和决策变量"
+      ],
+      "required_outputs": [
+        "轨迹表",
+        "覆盖或遮蔽区间表",
+        "策略参数表",
+        "约束违反检查表",
+        "多弹问题的并集遮蔽时长和重叠损失"
+      ],
+      "validation": [
+        "解析边界案例",
+        "时间步长敏感性",
+        "覆盖/碰撞判定可视化",
+        "与规则方案或单对象基线比较",
+        "多弹或多机方案的边际贡献检查"
+      ],
+      "minimum_validation": [
+        "画轨迹或覆盖判定示意图",
+        "检查时间步长或采样精度",
+        "和规则方案或单对象基线比较"
+      ],
+      "common_failures": [
+        "离散采样过粗却直接报告最优",
+        "遮蔽或碰撞判定没有几何解释",
+        "多段覆盖时间没有做区间合并",
+        "把单弹最优方案直接叠加成多弹方案",
+        "同一无人机多弹没有共享航向和速度",
+        "代表点遮蔽判据没有说明与完整目标体判据的差异"
+      ],
+      "paper_outputs": [
+        "轨迹与覆盖示意图",
+        "运动方程",
+        "判定条件",
+        "策略表",
+        "区间合并和敏感性结果"
+      ],
+      "starter_files": [
+        "src/qx_trajectory_coverage.py",
+        "tables/tab_qx_intervals.csv",
+        "figures/fig_qx_trajectory.png"
+      ]
+    },
+    {
+      "id": "advanced_physics_pde",
+      "name": "高级数学：物理动力学与 PDE",
+      "task_types": [
+        "physics",
+        "simulation",
+        "spatial"
+      ],
+      "use_when": [
+        "题目涉及飞行、阻力、扩散、流体、烟雾、污染物、热传导、场分布或连续介质演化",
+        "单纯几何、经验拟合或线性趋势无法解释主要机制"
+      ],
+      "avoid_when": [
+        "没有参数来源且无法通过题面、数据或合理边界给定参数",
+        "题目只需静态几何计算，PDE/ODE 会增加不可验证复杂度"
+      ],
+      "baseline": "匀速直线、无阻力、稳态、线性衰减或解析近似模型",
+      "primary_methods": [
+        "牛顿动力学与阻力 ODE",
+        "状态空间模型",
+        "对流-扩散 PDE",
+        "高斯烟羽或反应-扩散模型",
+        "有限差分、有限体积或网格加密求解"
+      ],
+      "required_inputs": [
+        "状态变量和空间/时间范围",
+        "初始条件和边界条件",
+        "物理参数及单位",
+        "外力、源项、扩散系数、速度场或衰减项"
+      ],
+      "required_outputs": [
+        "状态演化表或场分布结果",
+        "关键时刻、峰值、覆盖范围或边界事件",
+        "网格或时间步长敏感性表",
+        "机制示意图和结果图"
+      ],
+      "validation": [
+        "量纲和单位检查",
+        "守恒、边界条件或极限情形检查",
+        "无阻力/无扩散/稳态基线比较",
+        "网格收敛或时间步长敏感性",
+        "参数扰动"
+      ],
+      "minimum_validation": [
+        "至少做量纲和边界条件检查",
+        "至少和一个简化解析基线比较",
+        "至少做时间步长或网格敏感性"
+      ],
+      "common_failures": [
+        "写出 PDE 但没有边界条件",
+        "参数无法估计却报告精确结果",
+        "没有网格或步长检查",
+        "忽略单位导致数量级错误"
+      ],
+      "paper_outputs": [
+        "物理机制和控制方程",
+        "参数表、初值和边界条件",
+        "离散化或求解算法",
+        "结果图、守恒/边界检验和敏感性分析"
+      ],
+      "starter_files": [
+        "src/qx_physics_pde.py",
+        "tables/tab_qx_pde_validation.csv",
+        "figures/fig_qx_field.png"
+      ]
+    },
+    {
+      "id": "supply_chain_stochastic_network",
+      "name": "高级数学：供应链网络与随机优化",
+      "task_types": [
+        "optimization",
+        "supply_chain",
+        "scheduling"
+      ],
+      "use_when": [
+        "题目涉及生产、运输、库存、仓储、调拨、供应中断、服务水平或排队等待",
+        "存在多节点、多阶段、多容量约束或需求不确定性"
+      ],
+      "avoid_when": [
+        "只有单一静态排序或评价，没有流量、库存、容量或时序决策",
+        "需求和容量均确定且简单线性规划已足够表达"
+      ],
+      "baseline": "EOQ、规则补货、最近节点调拨、贪心运输或单期容量平衡",
+      "primary_methods": [
+        "最小费用流、多商品流或网络流",
+        "MILP 或混合整数随机规划",
+        "鲁棒优化和机会约束",
+        "库存控制和报童模型",
+        "排队模型或 Markov 决策过程"
+      ],
+      "required_inputs": [
+        "节点、边、容量、成本和提前期",
+        "需求分布或情景集",
+        "库存、服务水平和缺货惩罚",
+        "生产/运输/仓储约束"
+      ],
+      "required_outputs": [
+        "生产、运输、库存或调拨方案表",
+        "目标成本、服务水平和缺货量",
+        "可行性检查表",
+        "情景压力测试结果"
+      ],
+      "validation": [
+        "流量守恒、容量和库存平衡检查",
+        "solver status、目标值和约束违反检查",
+        "贪心/EOQ/松弛下界比较",
+        "需求或供应扰动情景测试",
+        "服务水平敏感性"
+      ],
+      "minimum_validation": [
+        "检查流量守恒和容量约束",
+        "记录 solver status 或算法收敛状态",
+        "和规则基线或松弛下界比较"
+      ],
+      "common_failures": [
+        "只给启发式流程，不定义库存和流量平衡",
+        "需求不确定却只报单一确定性方案",
+        "报告最优但没有 solver status 和可行性检查",
+        "忽略提前期、服务水平或缺货惩罚"
+      ],
+      "paper_outputs": [
+        "网络结构、变量和流量/库存平衡方程",
+        "目标函数和容量/服务约束",
+        "方案表、可行性表和情景测试",
+        "与基线方案的成本或服务水平比较"
+      ],
+      "starter_files": [
+        "src/qx_supply_chain.py",
+        "tables/tab_qx_supply_solution.csv",
+        "tables/tab_qx_supply_feasibility.csv"
+      ]
+    },
+    {
+      "id": "causal_statistical_modeling",
+      "name": "高级数学：统计因果推断",
+      "task_types": [
+        "causal",
+        "evaluation",
+        "prediction"
+      ],
+      "use_when": [
+        "题目要求评估政策、措施、干预、风险因素或处理效果",
+        "数据是观测数据，存在处理组/对照组、时间前后或地区差异"
+      ],
+      "avoid_when": [
+        "题目只要求预测，不要求解释干预效果",
+        "没有可定义的处理变量、结果变量或对照信息"
+      ],
+      "baseline": "相关分析、前后均值差、普通线性回归或分组描述统计",
+      "primary_methods": [
+        "DAG 因果图",
+        "倾向得分匹配或加权",
+        "双重差分",
+        "工具变量",
+        "断点回归",
+        "面板固定效应和稳健标准误"
+      ],
+      "required_inputs": [
+        "处理变量、结果变量和时间/组别字段",
+        "潜在混杂变量",
+        "识别假设",
+        "样本分组和观测窗口"
+      ],
+      "required_outputs": [
+        "因果结构图或变量关系表",
+        "处理效果估计表",
+        "平衡性或趋势检验表",
+        "稳健性检验结果"
+      ],
+      "validation": [
+        "协变量平衡检查",
+        "平行趋势或安慰剂检验",
+        "替代模型和窗口敏感性",
+        "Bootstrap 或稳健标准误",
+        "混杂敏感性分析"
+      ],
+      "minimum_validation": [
+        "明确识别假设",
+        "至少做平衡性、平行趋势或安慰剂中的一类检查",
+        "报告不确定性或稳健性"
+      ],
+      "common_failures": [
+        "把相关性直接写成因果",
+        "没有说明识别假设",
+        "控制了中介或碰撞变量",
+        "没有稳健性或安慰剂检查"
+      ],
+      "paper_outputs": [
+        "DAG 或识别逻辑",
+        "估计方程和变量定义",
+        "处理效果表",
+        "平衡性、安慰剂或稳健性检验"
+      ],
+      "starter_files": [
+        "src/qx_causal.py",
+        "tables/tab_qx_effect.csv",
+        "figures/fig_qx_causal_check.png"
+      ]
+    },
+    {
+      "id": "classification_clustering",
+      "name": "分类聚类：分组、识别和解释",
+      "task_types": [
+        "classification",
+        "clustering"
+      ],
+      "use_when": [
+        "题目要求分类、识别、等级划分、聚类、分群或区域分层",
+        "附件包含样本特征，且需要解释类别差异"
+      ],
+      "avoid_when": [
+        "没有标签却强行做监督分类",
+        "聚类后无法解释类别含义"
+      ],
+      "baseline": "规则阈值、单指标分层或 K-means 基线",
+      "primary_methods": [
+        "逻辑回归",
+        "决策树",
+        "随机森林",
+        "SVM",
+        "K-means",
+        "层次聚类",
+        "DBSCAN",
+        "PCA 辅助解释"
+      ],
+      "required_inputs": [
+        "样本特征",
+        "标签或分组目标",
+        "特征标准化方式",
+        "类别解释口径"
+      ],
+      "required_outputs": [
+        "分类或聚类结果表",
+        "类别特征解释",
+        "性能指标或稳定性指标",
+        "可视化图"
+      ],
+      "validation": [
+        "分类任务使用混淆矩阵、F1 或 ROC-AUC",
+        "聚类任务使用轮廓系数、类内差异和类别解释",
+        "类别不平衡检查",
+        "特征扰动或抽样稳定性"
+      ],
+      "minimum_validation": [
+        "分类任务至少给混淆矩阵和 F1",
+        "聚类任务至少给轮廓系数和类别解释",
+        "检查类别不平衡或抽样稳定性"
+      ],
+      "common_failures": [
+        "把 t-SNE/UMAP 展示当作结论",
+        "类别不平衡但只报告准确率",
+        "聚类数量没有依据"
+      ],
+      "paper_outputs": [
+        "特征选择说明",
+        "模型或聚类方法",
+        "类别解释表",
+        "稳定性或性能检验"
+      ],
+      "starter_files": [
+        "src/qx_classify_cluster.py",
+        "tables/tab_qx_groups.csv",
+        "figures/fig_qx_groups.png"
+      ]
+    }
+  ]
+}

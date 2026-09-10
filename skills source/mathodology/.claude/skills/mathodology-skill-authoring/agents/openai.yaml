@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathodology Skill Authoring"
+  short_description: "adding, editing or reviewing skills, role prompts or skill metadata."
+  default_prompt: "Use $mathodology-skill-authoring. Improve reusable prompts, keep metadata discoverable, remove redundant process constraints and verify links."

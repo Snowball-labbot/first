@@ -1,0 +1,4 @@
+interface:
+  display_name: "数学建模自主全流程整合版"
+  short_description: "整合证据审计、建模分析、论文复现与合规交付的全流程"
+  default_prompt: "Use $math-modeling to execute or audit this mathematical modeling competition task end to end."

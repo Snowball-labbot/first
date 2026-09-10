@@ -1,0 +1,14 @@
+# CUMCM Math Modeling Codex skill local artifacts
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+dist/
+build/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz

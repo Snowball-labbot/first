@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "search": {
+      "command": "uvx",
+      "args": ["free-search-mcp"],
+      "env": {
+        "SEARCH_MCP_DOWNLOAD_DIR": "~/.cache/search-mcp/downloads"
+      }
+    }
+  }
+}

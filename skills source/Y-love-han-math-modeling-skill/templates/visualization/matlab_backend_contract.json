@@ -1,0 +1,16 @@
+{
+  "schema": "mmflow-figure-backend-contract/v1",
+  "backend": "matlab",
+  "status_without_runtime": "NOT_APPLICABLE",
+  "required_declarations": [
+    "matlab_version",
+    "source_artifact_id",
+    "execution_id",
+    "command",
+    "input_sha256",
+    "output_sha256",
+    "sidecar_schema"
+  ],
+  "sidecar_schema": "mmflow-figure-sidecar/v2",
+  "policy": "Python remains the mandatory production baseline; MATLAB is optional and never represented as executed when unavailable."
+}

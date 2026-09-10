@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathodology Modeling Prompts"
+  short_description: "planning a modeling solution, selecting the next useful step or briefing a specialist."
+  default_prompt: "Use $mathodology-agent-pipeline. Adapt the modeling questions to the actual task. Use specialists when helpful, ordinary prose for findings, and mathodology-figure-presets for visual reasoning. For figure work, follow the default figure guidance in $mathodology-figure-presets: use real-data code templates to generate PNG/PDF when image2 is unavailable or pending."

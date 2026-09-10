@@ -1,0 +1,27 @@
+% ===================== 十、附录 =====================
+% 附件说明表：统一 longtable 两列。不写运行环境/硬件环境。
+\makeatletter
+\let\@oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\section*{附录}
+\let\addcontentsline\@oldaddcontentsline
+\makeatother
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.38\textwidth}>{\centering\arraybackslash}p{0.56\textwidth}}
+  \caption{附件说明表}
+  \label{tab:appendix} \\
+  \toprule
+  文件 & 说明 \\
+  \midrule
+  \endfirsthead
+  \caption{附件说明表（续）} \\
+  \toprule
+  文件 & 说明 \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  问题一\_求解.py & 问题1求解代码 \\
+  预处理数据.csv & 预处理后的数据 \\
+  ... & ... \\
+\end{longtable}

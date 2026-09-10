@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathodology Repository Orientation"
+  short_description: "maintaining the skills-only repository or checking whether a change belongs here."
+  default_prompt: "Use $mathodology-project-orientation. Check repository boundaries and relevant references. Keep modeling guidance prompt-driven and use the maintained skill source."
