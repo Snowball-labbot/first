@@ -1,0 +1,52 @@
+[
+  {
+    "name": "raw_q1_inputs",
+    "claim": "第一问起点采样后的共同供需与电价输入",
+    "layout": []
+  },
+  {
+    "name": "result_q1_dispatch",
+    "claim": "购电与充放电合并显示；SOC及电价共用时间轴；无平滑",
+    "layout": []
+  },
+  {
+    "name": "result_q1_efficiency",
+    "claim": "零基线条形直接显示储能收益与效率损耗",
+    "layout": []
+  },
+  {
+    "name": "result_q2_cost",
+    "claim": "计划费与紧急费堆叠，总费用直接标注",
+    "layout": []
+  },
+  {
+    "name": "result_q3_updates",
+    "claim": "同一余量下八种更新组合的成本构成",
+    "layout": []
+  },
+  {
+    "name": "process_q3_validation",
+    "claim": "验证选择与全年累计收益互相衔接",
+    "layout": [
+      [
+        "WARN",
+        "1 个子图存在刻度标签重叠。x 轴：ax.tick_params(axis='x', rotation=30) 或减少刻度/缩短标签；y 轴：增大子图高度或减少刻度数。"
+      ]
+    ]
+  },
+  {
+    "name": "result_q4_accuracy",
+    "claim": "四个发布时刻GRU误差均低于两种非神经网络基线",
+    "layout": []
+  },
+  {
+    "name": "result_q4_cost",
+    "claim": "以零为基线显示节省金额；真实电价对照与可实施预测器分列",
+    "layout": []
+  },
+  {
+    "name": "result_q4_bound",
+    "claim": "在共同名义可行域内量化GRU距已知价格最优值的差距",
+    "layout": []
+  }
+]

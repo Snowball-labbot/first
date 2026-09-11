@@ -20,3 +20,4 @@
 artifacts/q34/xlsx_payload.json
 artifacts/q34/*.xlsx.inspect.ndjson
 artifacts/q34-smoke/
+/artifacts/v3/xlsx_payload.json

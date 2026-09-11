@@ -1,0 +1,247 @@
+{
+  "pass": true,
+  "traces": {
+    "q3_m0": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 15045126.9327998,
+      "versions": 0,
+      "solver_calls": 334
+    },
+    "q3_m1": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14528625.096674023,
+      "versions": 36072,
+      "solver_calls": 668
+    },
+    "q3_m2": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14222890.475441566,
+      "versions": 24048,
+      "solver_calls": 668
+    },
+    "q3_m3": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14050850.080630995,
+      "versions": 60120,
+      "solver_calls": 1002
+    },
+    "q3_m4": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 13932356.295816248,
+      "versions": 12024,
+      "solver_calls": 668
+    },
+    "q3_m5": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 13786927.826530565,
+      "versions": 48096,
+      "solver_calls": 1002
+    },
+    "q3_m6": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 13761514.686714083,
+      "versions": 36072,
+      "solver_calls": 1002
+    },
+    "q3_m7": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 13575976.779540647,
+      "versions": 72144,
+      "solver_calls": 1336
+    },
+    "q4_2_seasonal": {
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14867653.19834084,
+      "versions": 0,
+      "solver_calls": 334
+    },
+    "q4_2_ridge": {
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14880535.049452208,
+      "versions": 0,
+      "solver_calls": 334
+    },
+    "q4_2_gru_mean": {
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14877217.553642973,
+      "versions": 0,
+      "solver_calls": 334
+    },
+    "q4_3_seasonal": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14314442.478789125,
+      "versions": 72144,
+      "solver_calls": 1336
+    },
+    "q4_3_ridge": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14320233.594256049,
+      "versions": 72144,
+      "solver_calls": 1336
+    },
+    "q4_3_gru_mean": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14312347.696725678,
+      "versions": 72144,
+      "solver_calls": 1336
+    },
+    "q4_2_oracle": {
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.5492498657040414e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14818406.372720232,
+      "versions": 0,
+      "solver_calls": 334
+    },
+    "q4_3_oracle": {
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "cost": 14212407.274292773,
+      "versions": 72144,
+      "solver_calls": 1336
+    }
+  },
+  "q1_pass": true,
+  "nominal_bound_cases": 1002,
+  "gru_saving_yuan": 2094.7820634461496,
+  "gru_saving_block95": {
+    "7": [
+      -4093.141892598638,
+      9327.160625655935
+    ],
+    "14": [
+      -4834.483562105848,
+      11107.81720246618
+    ],
+    "28": [
+      -5285.696411591673,
+      11327.318197566932
+    ]
+  },
+  "daily_series_exact_order": true
+}

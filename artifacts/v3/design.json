@@ -1,0 +1,28 @@
+{
+  "q3_quantiles": [
+    0,
+    0.5,
+    0.7
+  ],
+  "q3_masks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "q4_models": [
+    "seasonal",
+    "ridge",
+    "gru_mean"
+  ],
+  "q4_2_policy": {
+    "quantile": 0.7,
+    "terminal": 6000
+  },
+  "settlement": "final vs midnight; no fees for intermediate reversals",
+  "scope": "same-year revision; no claim of untouched external test set"
+}

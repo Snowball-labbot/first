@@ -1,0 +1,39 @@
+{
+  "cost": 35126.84858928963,
+  "no_storage_cost": 48052.046590846665,
+  "plan_kwh": 59482.69899835391,
+  "charge_kwh": 20740.66613168725,
+  "discharge_kwh": 16799.939566666668,
+  "milp": {
+    "status": 0,
+    "cost": 35126.848589289635,
+    "seconds": 0.03443200000037905,
+    "mip_gap": 0.0,
+    "dual_bound": 35126.84858928963
+  },
+  "lp": {
+    "objective": 35126.84858928963,
+    "seconds": 0.01045950000116136,
+    "status": 0,
+    "iterations": 366,
+    "physical": {
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 8.313350008393172e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  "specified": {
+    "10:00-10:10": 0.0,
+    "12:00-12:10": 486.40289999999993,
+    "14:00-14:10": 0.0,
+    "16:00-16:10": 394.9314833333333,
+    "18:00-18:10": 636.9826166666667,
+    "20:00-20:10": 0.0
+  },
+  "alignment": "Template start timestamps; Q1 periodic 24:00 sample fills 00:00 and all signals are jointly rotated; solve again with actual 00:00=24:00 SOC=6000.",
+  "historical_series": "Q2-Q4 retained interval-average/right-end convention; no same-day final sample copied into their midnight histories."
+}
