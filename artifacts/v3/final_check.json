@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "cells_compared": 585239,
+  "tables": 62,
+  "figures": 15,
+  "result2_byte_identical": true,
+  "v2_workbook_headers_preserved": true,
+  "word_sha256": "6fe575b849873b64fbe2c2ef6d31dc5e5391f830c0592ea65ba92f084770c364"
+}

@@ -1,6 +1,6 @@
 {
   "docx": "reports\\完整论文_V3.docx",
-  "sha256": "675ebfd5c65ed27962398e2a1b073cd2f3d0598558f106f421a75b61e0125e8d",
+  "sha256": "6fe575b849873b64fbe2c2ef6d31dc5e5391f830c0592ea65ba92f084770c364",
   "display_equations": 33,
   "hash_scheme": "SHA256; py/md/tex/json input line endings normalized to LF; binaries hashed verbatim",
   "native_math_objects": 45,
@@ -9,8 +9,8 @@
   "conversion_intermediate_verified": true,
   "pandoc_warnings": [],
   "inputs": {
-    "reports\\完整论文_V3.md": "603eeaa02017dc285242e785659343e6fec125fd41bb85484276af9cc044de60",
-    "src\\build_v3_word.py": "47da1243c2519c547a734a03ebcaef526e79a10503b64b21589a6696c4d8ee60",
+    "reports\\完整论文_V3.md": "81d0519dd5793d86cde5b12a0c4062bfb6773a866d29e78abee2ff562e557db1",
+    "src\\build_v3_word.py": "0d46f5a16631bd4b07d67c403e47a23d4e141a07d36062810ae47c675bdcc4e7",
     "src\\q12.py": "48a9527600cea3b9a43ed3658af6b8cc50f69ec2f97780f86b33d0b4021285bf",
     "src\\q34_data.py": "a6dee8fca0e70717044c66eb56030c16a589c04b0873772d083bdb23f3b28656",
     "src\\q4_forecast.py": "3f8cc06c6f2b14287a643a6fe82d3438cd973a9e7afe550a684f60ab13beccf8",
@@ -18,6 +18,7 @@
     "src\\v3_q1.py": "1debab98cdeef3bb92b11f69bfce6b576a637a816a9e21bf58748f7c7d78a568",
     "src\\v3_experiments.py": "5f7ddb9d26b6f291e65ca31c5317bee82323b5c71ccc50f174aa992f25aad46d",
     "src\\v3_verify.py": "8694fbb5287625764a97514588694d66b693fe885a6f649cce48a66e37286bcb",
+    "src\\deliver_q12.py": "e99869b68f7e26375c8a11bafd1c179ca722155c034d2a2d21469e217041a826",
     "src\\v3_payload.py": "c092e56ef9e944041343733ba7b7a2b457d751a4fb7999f7ea13e1405eaa2dd6",
     "scripts\\export_v3_xlsx.mjs": "2e19ee76b4eb391db3374d38ddccd039c15ba57e9e2654f7857552bbdf15fa21",
     "artifacts\\v3\\run_manifest.json": "8c5ee394eaf02a97ddbee40b7e95ca6f710164777693eeb29a91334738ab29b4",

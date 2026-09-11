@@ -1,4 +1,8 @@
-## Version 2 接力（2026-09-11，当前工作）
+## Version 3 当前入口（2026-09-11）
+
+先读 [V3_REVIEW.md](V3_REVIEW.md)。已合并其他团队V2，完成Q1时间边界重算、Q3/Q4最终合同结算重跑、GRU名义费用改进上界、图表与文字打磨。最新Word为[完整论文_V3.docx](../reports/完整论文_V3.docx)，结果在artifacts/v3。保留现有模板，不使用subagent，不使用未经授权的额度重置。下方V1/V2状态均为历史。
+
+## Version 2 接力（历史）
 
 先读 [V2_AUDIT.md](V2_AUDIT.md)。本轮已重新核验四问数据与已保存结果，开始模型改进；V1完整结果保留。V2在 `codex/model-audit-v2` 分支开展，`artifacts/v2/` 是新增结果目录，下方为历史交付记录。
 

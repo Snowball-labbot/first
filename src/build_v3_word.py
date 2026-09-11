@@ -174,7 +174,7 @@ def main():
                     for run in p.runs:pf.set_run_font(run,size=9.5)
         for cell in table.rows[0].cells:pf._set_cell_bottom(cell,'single','6')
     # Include complete computational sources, with natural Word line wrapping.
-    code_files=['src/q12.py','src/q34_data.py','src/q4_forecast.py','src/v3_model.py','src/v3_q1.py','src/v3_experiments.py','src/v3_verify.py','src/v3_payload.py','scripts/export_v3_xlsx.mjs']
+    code_files=['src/q12.py','src/q34_data.py','src/q4_forecast.py','src/v3_model.py','src/v3_q1.py','src/v3_experiments.py','src/v3_verify.py','src/deliver_q12.py','src/v3_payload.py','scripts/export_v3_xlsx.mjs']
     for filename in code_files:
         heading=doc.add_paragraph(filename,style='Heading 2')
         heading.paragraph_format.page_break_before=True

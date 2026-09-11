@@ -98,7 +98,7 @@ def main():
     p('原计划100 kWh、调整为80 kWh、电价1元/kWh时，总费用为80＋0.5×20＝90元；调整为120 kWh时，费用为100＋1.5×20＝130元。前式按保留量计普通费用，后式按原计划记账，两种表达完全等价。多次预报更新均相对同一午夜计划确定偏差；中途计划用于运行与追溯，不重复累计尚未交付区间的修改费用。')
     p('''### 8.3 滚动优化模型与风险校准
 
-记Tτ为当前尚未执行的区间集合，Ω为第一问的物理可行域。以更新后的光伏预测、负载预测和对应误差余量作为供需输入，求解：''')
+记Tτ为当前尚未执行的区间集合，Ω为第一问去除首末状态等式后的物理可行域。以更新后的光伏预测、负载预测和对应误差余量作为供需输入，求解：''')
     eq(r'\boxed{\left\{\begin{aligned}\min_{y,c,d,w,S,u,v}\quad&\sum_{t\in T_\tau}\hat p_{\tau,t}(1.5v_t-0.5u_t)\\\mathrm{s.t.}\quad&y_t=x_t+v_t-u_t,\quad0\le u_t\le x_t,\quad v_t\ge0,\\&y_t+\hat V_{\tau,t}+d_t=\hat L_{\tau,t}+r_{\tau,t}+c_t+w_t,\\&(y,c,d,w,S)\in\Omega,\quad S_\tau=S_\tau^{\mathrm{actual}},\quad S_{145}\ge6000.\end{aligned}\right.}')
     p('''目标函数省略了与当前决策无关的午夜合同常数项。第一至三问的p由附件1给定；第四问替换为当时可获得的价格预测。名义规划满足供电需求，实际执行按第二问的实时平衡规则应对残余预测误差。
 
@@ -187,6 +187,11 @@ GRU以门控结构选择保留的历史信息[6]。本文采用单层32维隐藏
 ''')
     delivery.OUT=out;delivery.SOURCES={'1':str(out/'q1_intervals.csv'),'2':'artifacts/q12/ridge_q0.7_intervals.csv.gz','3':str(out/f'q3_m{sel["q3"]["mask"]}_intervals.csv.gz'),'4-2':str(out/f'q4_2_{sel["prices"]["2"]}_intervals.csv.gz'),'4-3':str(out/f'q4_3_{sel["prices"]["3"]}_intervals.csv.gz')}
     appendix=delivery.specified_tables();shift=ti+1-16;appendix=re.sub(r'表 (\d+)',lambda m:'表 '+str(int(m.group(1))+shift),appendix)
+    caption=ti+1
+    for item in json.loads((out/'specified_tables_manifest.json').read_text(encoding='utf8')):
+        for _ in range(2 if item['question']=='1' else 3):
+            appendix=appendix.replace(f'表 {caption} ',f'表 {caption} 问题{item["question"]}（{item["date"]}） ',1)
+            caption+=1
     p(appendix)
     p('''## 附录 B 支撑文件与完整程序
 
