@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "workbooks": {
+    "3": {
+      "cells_compared": 211801,
+      "sha256": "ae201a0a215cf9cd8388f3511a3e2cb36acba24848ebe02f4c6a8c863243653f"
+    },
+    "4-2": {
+      "cells_compared": 64593,
+      "sha256": "b78e6d19e799673e940999d3c5fdec4b9928c023beb393bb2ecfc324b9359e6e"
+    },
+    "4-3": {
+      "cells_compared": 211795,
+      "sha256": "909d42e3d193c07e545f532d70a90ac63b304c08c787cc07e1cb04749eb733cd"
+    }
+  },
+  "word": {
+    "pages": 53,
+    "pages_before_appendices": 25,
+    "figures": 16,
+    "tables": 29,
+    "numbered_equations": 30,
+    "complete_source_files": 10,
+    "sha256": "f317d855990bab23d04d1df7237ce11ebd4fbb4c4c3198eddf506e9e81ecc260"
+  }
+}

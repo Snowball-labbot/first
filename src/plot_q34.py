@@ -44,6 +44,7 @@ def main():
     val=pd.read_csv(out/'q3_validation.csv');mat=val.pivot(index='quantile',columns='mask',values='total_cost_yuan')/1e4
     fig,ax=plt.subplots(figsize=(6.25,2.5),layout='constrained')
     im=ax.pcolormesh(np.arange(9)-.5,np.arange(4)-.5,mat.to_numpy(),cmap='Blues',shading='flat',rasterized=False)
+    ax.grid(False)
     ax.invert_yaxis();ax.set_yticks(range(3),['0','70%','90%']);ax.set_xticks(range(8),['无','06','12','06+12','18','06+18','12+18','全部'])
     ax.set(xlabel='日内更新时刻',ylabel='余量分位数')
     for i in range(3):

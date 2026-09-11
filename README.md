@@ -40,3 +40,10 @@ Agent 还应首先遵循根目录 [AGENTS.md](AGENTS.md)。原有入口：[讲�
 换账号后可以直接发送：
 
 > 请读取 Snowball-labbot/first 仓库的 AGENTS.md、docs/HANDOFF.md 和 docs/MODELING_PLAN.md，接续 C 题建模工作。先核对当前状态与数据可用性，不要把方案当成已完成实验；本次是否执行模型以我的新指令为准。
+
+## 四问完整初稿
+
+[完整 Word](reports/完整论文.docx) · [完整 Markdown](reports/完整论文.md) · [复查与交接](docs/FULL_REVIEW.md)
+
+[第三问 Excel](artifacts/q34/result3.xlsx) · [第四问日前 Excel](artifacts/q34/result4-2.xlsx) · [第四问滚动 Excel](artifacts/q34/result4-3.xlsx)
+

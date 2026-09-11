@@ -178,10 +178,12 @@ def main():
     for filename in code_files:
         heading=doc.add_paragraph(filename,style='Heading 2')
         heading.paragraph_format.page_break_before=True
-        for line in (ROOT/filename).read_text(encoding='utf-8').splitlines():
+        source_lines=(ROOT/filename).read_text(encoding='utf-8').splitlines()
+        for line_index,line in enumerate(source_lines):
             cp=doc.add_paragraph();cp.paragraph_format.first_line_indent=Pt(0)
             cp.paragraph_format.space_before=Pt(0);cp.paragraph_format.space_after=Pt(0)
             cp.paragraph_format.line_spacing=1.0;cp.paragraph_format.widow_control=False
+            cp.paragraph_format.keep_with_next=len(source_lines)-5<=line_index<len(source_lines)-1
             run=cp.add_run(line or ' ');pf.set_run_font(run,size=7.5)
             run.font.name='Consolas'
     footer=sec.footer.paragraphs[0];footer.alignment=WD_ALIGN_PARAGRAPH.CENTER
@@ -202,7 +204,9 @@ def main():
     expected=json.loads((ROOT/'artifacts/q34/paper_manifest.json').read_text(encoding='utf-8'))
     assert len(doc.tables)==expected['tables'] and len(doc.inline_shapes)==expected['figures'] and eqnum==expected['equations']
     files=[*(ROOT/'figures/full').glob('*.png'),source,ROOT/'reports/完整论文公式.tex',Path(__file__),*sorted((ROOT/'figures/q12_revision').glob('*.png')),
-           ROOT/'artifacts/q12/run_manifest.json',ROOT/'src/q12.py']
+           ROOT/'artifacts/q12/run_manifest.json',*[ROOT/f for f in code_files],
+           ROOT/'artifacts/q34/q3_run_manifest.json',ROOT/'artifacts/q34/q4_run_manifest.json',
+           ROOT/'artifacts/q34/q4_summary.json',ROOT/'artifacts/q34/q3_selection.json']
     manifest={'docx':str(final.relative_to(ROOT)),'sha256':sha(final),'display_equations':eqnum,
         'hash_scheme':'SHA256; py/md/tex/json input line endings normalized to LF; binaries hashed verbatim',
         'native_math_objects':len(doc._element.findall('.//'+qn('m:oMath'))),'figures':len(doc.inline_shapes),'tables':len(doc.tables),
