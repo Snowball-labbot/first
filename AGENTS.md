@@ -1,5 +1,9 @@
 # 协作约定
 
+## 当前权威入口：Version 2
+
+用户本轮要求核验四问并改进V2；已完成的修订、采用/拒绝候选与复现见 `docs/RUN_V2.md`。论文为 `reports/完整论文_V2.docx`，新结果为 `artifacts/v2/`；旧段落中的未实现状态仅记录历史。保留Q1/Q2/Q4-2原策略，Q3/Q4-3采用一月选定的0.5余量；不要把全年更优的β=1或GRU消融偷偷替换为主模型。本轮仍不使用subagent。
+
 ## 阅读顺序
 
 先读 `docs/HANDOFF.md`，再读 `docs/MODELING_PLAN.md`、`docs/DATA_CONTRACT.md` 和 `docs/EXPERIMENT_PLAN.md`。图表任务另读 `docs/VISUAL_STYLE.md`。文档使用仓库相对链接，运行代码也应使用可配置数据根目录，不能硬编码某个账号的私人路径。

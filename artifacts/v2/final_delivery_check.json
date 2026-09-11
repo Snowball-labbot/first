@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "word_sha256": "6a714dbe0d30d095dc7f2afc80ca4281be043ff0960cb83ed949d1eb5ee201c2",
+  "pdf_sha256": "975dd94cbe92b10b504da3d2692522862a1c6982b412d0a0a1249dac6ff32c1b",
+  "pages": 56,
+  "pages_before_appendix": 25,
+  "tables": 65,
+  "figures": 12,
+  "native_math_objects": 45,
+  "display_equations": 33,
+  "specified_day_combinations": 17,
+  "render_backend": "Microsoft Word native PDF + PyMuPDF 100dpi",
+  "renderer_recovery": "Packaged render_docx raster stage failed because Poppler absent; native Word PDF succeeded, all same PDF pages rendered with PyMuPDF.",
+  "deterministic_checks": "PASS",
+  "visual_review": "See docs/RUN_V2.md; contact sheets and selected pages reviewed separately",
+  "independent_subagent_review": "Not used under repository single-agent instructions"
+}

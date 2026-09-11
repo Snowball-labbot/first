@@ -1,0 +1,33 @@
+{
+  "docx": "reports\\完整论文_V2.docx",
+  "sha256": "6a714dbe0d30d095dc7f2afc80ca4281be043ff0960cb83ed949d1eb5ee201c2",
+  "display_equations": 33,
+  "hash_scheme": "SHA256; py/md/tex/json input line endings normalized to LF; binaries hashed verbatim",
+  "native_math_objects": 45,
+  "figures": 12,
+  "tables": 65,
+  "conversion_intermediate_verified": true,
+  "pandoc_warnings": [],
+  "inputs": {
+    "reports\\完整论文_V2.md": "9c0f99ee8cd547d4c75742ca3deae7147aac35726d71b847d7bda5d7dbc7e74b",
+    "src\\build_v2_word.py": "dc8a7b8956cdf34f19a70bbd58f46b4303f7dff07bbed7281633e96b92d9d954",
+    "src\\v2_model.py": "caf5fa667b96995cda9092053f459b2634bca56ccfc36f0509eb0f6df95ca12d",
+    "src\\v2_experiments.py": "3f173de2526be261ce15cdbfec87949dc8f850917c3e3a96164533cdcba04bbf",
+    "src\\v2_verify.py": "2b8e6d0f77264d9daa19bbc9a5ccb3063f955e41ebe4a6a3b21f40c76429bdf6",
+    "src\\v2_delivery.py": "201d8072eac0eb223b5c9e31c0e267864534bf94a7a9c65f2517aa6a15882559",
+    "src\\q12.py": "48a9527600cea3b9a43ed3658af6b8cc50f69ec2f97780f86b33d0b4021285bf",
+    "src\\q34_data.py": "a6dee8fca0e70717044c66eb56030c16a589c04b0873772d083bdb23f3b28656",
+    "src\\q4_forecast.py": "3f8cc06c6f2b14287a643a6fe82d3438cd973a9e7afe550a684f60ab13beccf8",
+    "artifacts\\v2\\run_manifest.json": "60697e48687a281534c08728054044f319a98165f48d8ccb3839b7326f01757f",
+    "artifacts\\v2\\summary.json": "00ee9e1d2706095876fc6fb2a51a8db7c216e1c928e88d5c432996034e63be89",
+    "artifacts\\v2\\delivery_selection.json": "5d2496a398e79bbb7b5ebea9f836beff0d0db2b90a03d4913163fc121625061a",
+    "figures\\v2\\q1_efficiency_points.png": "27f374ab4d987e5652167fe95c7964a6c8484d83c48d1fee3efbdfdcd777e21f",
+    "figures\\v2\\q1_efficiency_points_grayscale.png": "441cf5c52fea495402468bba2525be6f8532b69d828a6e2ce55e7a6d920532e9",
+    "figures\\v2\\q2_cost_points.png": "47e39c4efe448087d2722c191145a786e46b70224691ea6b3977c8ddc6bf4bb5",
+    "figures\\v2\\q2_cost_points_grayscale.png": "204f4109045a5411262d31810c5cc2ae0ce0e39a30ce42ec1d3c318bf804a826",
+    "figures\\v2\\rolling_savings.png": "739e186eec686b8fd08aeeca71f153d04fadcc7a39ccf61552fbd8f5271f9d84",
+    "figures\\v2\\rolling_savings_grayscale.png": "33f95c3b1a7c61c74bbd8c75bf5c345b015d963921c3b6c9f555662aa16cdbcb"
+  },
+  "layout": "A4; 2.54 cm vertical and 2.6 cm horizontal margins; editable OMML; three-line tables",
+  "scope": "Four-question draft with full computational code appendix; team review required"
+}

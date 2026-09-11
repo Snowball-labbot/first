@@ -1,0 +1,17 @@
+[
+  {
+    "name": "q1_efficiency_points",
+    "claim": "保持绝对费用口径，区分储能收益与效率解释",
+    "layout": []
+  },
+  {
+    "name": "q2_cost_points",
+    "claim": "计划费增加可减少更昂贵的紧急购电费",
+    "layout": []
+  },
+  {
+    "name": "rolling_savings",
+    "claim": "两项滚动策略收益在全年累计形成，不仅来自某个有利日期",
+    "layout": []
+  }
+]

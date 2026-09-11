@@ -1,0 +1,799 @@
+{
+  "stage": "full",
+  "seconds": 132.08075999998255,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.1",
+  "input_files": [
+    {
+      "path": "C题.pdf",
+      "bytes": 354389,
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "bytes": 16003,
+      "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    },
+    {
+      "path": "附件/附件3.xlsx",
+      "sha256": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843"
+    },
+    {
+      "path": "附件/附件4.xlsx",
+      "sha256": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71"
+    }
+  ],
+  "source_sha256": {
+    "src/v2_model.py": "caf5fa667b96995cda9092053f459b2634bca56ccfc36f0509eb0f6df95ca12d",
+    "src/v2_experiments.py": "3f173de2526be261ce15cdbfec87949dc8f850917c3e3a96164533cdcba04bbf"
+  },
+  "forecast_archive_sha256": "331d00d56d2bb730035a06002c1c791e82eda25a5b12f9cc83a7a944b9840886",
+  "load_pv_forecast_fits": [
+    {
+      "variable": "load",
+      "decision_date": "2025-01-15",
+      "fit_until": "2025-01-14",
+      "alpha": 1.0,
+      "training_rows": 1008
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-01-22",
+      "fit_until": "2025-01-21",
+      "alpha": 1.0,
+      "training_rows": 2016
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-01-29",
+      "fit_until": "2025-01-28",
+      "alpha": 1.0,
+      "training_rows": 3024
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-02-05",
+      "fit_until": "2025-02-04",
+      "alpha": 1.0,
+      "training_rows": 4032
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-02-12",
+      "fit_until": "2025-02-11",
+      "alpha": 1.0,
+      "training_rows": 5040
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-02-19",
+      "fit_until": "2025-02-18",
+      "alpha": 1.0,
+      "training_rows": 6048
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-02-26",
+      "fit_until": "2025-02-25",
+      "alpha": 1.0,
+      "training_rows": 7056
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-03-05",
+      "fit_until": "2025-03-04",
+      "alpha": 1.0,
+      "training_rows": 8064
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-03-12",
+      "fit_until": "2025-03-11",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-03-19",
+      "fit_until": "2025-03-18",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-03-26",
+      "fit_until": "2025-03-25",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-04-02",
+      "fit_until": "2025-04-01",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-04-09",
+      "fit_until": "2025-04-08",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-04-16",
+      "fit_until": "2025-04-15",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-04-23",
+      "fit_until": "2025-04-22",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-04-30",
+      "fit_until": "2025-04-29",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-05-07",
+      "fit_until": "2025-05-06",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-05-14",
+      "fit_until": "2025-05-13",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-05-21",
+      "fit_until": "2025-05-20",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-05-28",
+      "fit_until": "2025-05-27",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-06-04",
+      "fit_until": "2025-06-03",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-06-11",
+      "fit_until": "2025-06-10",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-06-18",
+      "fit_until": "2025-06-17",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-06-25",
+      "fit_until": "2025-06-24",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-07-02",
+      "fit_until": "2025-07-01",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-07-09",
+      "fit_until": "2025-07-08",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-07-16",
+      "fit_until": "2025-07-15",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-07-23",
+      "fit_until": "2025-07-22",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-07-30",
+      "fit_until": "2025-07-29",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-08-06",
+      "fit_until": "2025-08-05",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-08-13",
+      "fit_until": "2025-08-12",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-08-20",
+      "fit_until": "2025-08-19",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-08-27",
+      "fit_until": "2025-08-26",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-09-03",
+      "fit_until": "2025-09-02",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-09-10",
+      "fit_until": "2025-09-09",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-09-17",
+      "fit_until": "2025-09-16",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-09-24",
+      "fit_until": "2025-09-23",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-10-01",
+      "fit_until": "2025-09-30",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-10-08",
+      "fit_until": "2025-10-07",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-10-15",
+      "fit_until": "2025-10-14",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-10-22",
+      "fit_until": "2025-10-21",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-10-29",
+      "fit_until": "2025-10-28",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-11-05",
+      "fit_until": "2025-11-04",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-11-12",
+      "fit_until": "2025-11-11",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-11-19",
+      "fit_until": "2025-11-18",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-11-26",
+      "fit_until": "2025-11-25",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-12-03",
+      "fit_until": "2025-12-02",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-12-10",
+      "fit_until": "2025-12-09",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-12-17",
+      "fit_until": "2025-12-16",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-12-24",
+      "fit_until": "2025-12-23",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "load",
+      "decision_date": "2025-12-31",
+      "fit_until": "2025-12-30",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-01-15",
+      "fit_until": "2025-01-14",
+      "alpha": 1.0,
+      "training_rows": 1008
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-01-22",
+      "fit_until": "2025-01-21",
+      "alpha": 1.0,
+      "training_rows": 2016
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-01-29",
+      "fit_until": "2025-01-28",
+      "alpha": 1.0,
+      "training_rows": 3024
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-02-05",
+      "fit_until": "2025-02-04",
+      "alpha": 1.0,
+      "training_rows": 4032
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-02-12",
+      "fit_until": "2025-02-11",
+      "alpha": 1.0,
+      "training_rows": 5040
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-02-19",
+      "fit_until": "2025-02-18",
+      "alpha": 1.0,
+      "training_rows": 6048
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-02-26",
+      "fit_until": "2025-02-25",
+      "alpha": 1.0,
+      "training_rows": 7056
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-03-05",
+      "fit_until": "2025-03-04",
+      "alpha": 1.0,
+      "training_rows": 8064
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-03-12",
+      "fit_until": "2025-03-11",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-03-19",
+      "fit_until": "2025-03-18",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-03-26",
+      "fit_until": "2025-03-25",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-04-02",
+      "fit_until": "2025-04-01",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-04-09",
+      "fit_until": "2025-04-08",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-04-16",
+      "fit_until": "2025-04-15",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-04-23",
+      "fit_until": "2025-04-22",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-04-30",
+      "fit_until": "2025-04-29",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-05-07",
+      "fit_until": "2025-05-06",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-05-14",
+      "fit_until": "2025-05-13",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-05-21",
+      "fit_until": "2025-05-20",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-05-28",
+      "fit_until": "2025-05-27",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-06-04",
+      "fit_until": "2025-06-03",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-06-11",
+      "fit_until": "2025-06-10",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-06-18",
+      "fit_until": "2025-06-17",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-06-25",
+      "fit_until": "2025-06-24",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-07-02",
+      "fit_until": "2025-07-01",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-07-09",
+      "fit_until": "2025-07-08",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-07-16",
+      "fit_until": "2025-07-15",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-07-23",
+      "fit_until": "2025-07-22",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-07-30",
+      "fit_until": "2025-07-29",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-08-06",
+      "fit_until": "2025-08-05",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-08-13",
+      "fit_until": "2025-08-12",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-08-20",
+      "fit_until": "2025-08-19",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-08-27",
+      "fit_until": "2025-08-26",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-09-03",
+      "fit_until": "2025-09-02",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-09-10",
+      "fit_until": "2025-09-09",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-09-17",
+      "fit_until": "2025-09-16",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-09-24",
+      "fit_until": "2025-09-23",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-10-01",
+      "fit_until": "2025-09-30",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-10-08",
+      "fit_until": "2025-10-07",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-10-15",
+      "fit_until": "2025-10-14",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-10-22",
+      "fit_until": "2025-10-21",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-10-29",
+      "fit_until": "2025-10-28",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-11-05",
+      "fit_until": "2025-11-04",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-11-12",
+      "fit_until": "2025-11-11",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-11-19",
+      "fit_until": "2025-11-18",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-11-26",
+      "fit_until": "2025-11-25",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-12-03",
+      "fit_until": "2025-12-02",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-12-10",
+      "fit_until": "2025-12-09",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-12-17",
+      "fit_until": "2025-12-16",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-12-24",
+      "fit_until": "2025-12-23",
+      "alpha": 1.0,
+      "training_rows": 8640
+    },
+    {
+      "variable": "pv",
+      "decision_date": "2025-12-31",
+      "fit_until": "2025-12-30",
+      "alpha": 1.0,
+      "training_rows": 8640
+    }
+  ],
+  "design": {
+    "q2_quantiles": [
+      0.0,
+      0.5,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "q2_terminals": [
+      1200.0,
+      6000.0,
+      9000.0
+    ],
+    "q3_quantiles": [
+      0.0,
+      0.5,
+      0.7
+    ],
+    "q3_betas": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "q3_masks": [
+      6,
+      7
+    ],
+    "q3_terminal": 6000.0,
+    "bias_lookback_slots": 18,
+    "bias_decay_slots": 36,
+    "price_models": [
+      "seasonal",
+      "ridge",
+      "gru_mean"
+    ],
+    "validation": [
+      21,
+      31
+    ],
+    "evaluation": [
+      31,
+      365
+    ],
+    "selection": "January realized total cost; ties use smaller complexity, no evaluation-based retuning",
+    "scope": "Within-dataset revision; old full-year metrics were already inspected. Not new external validation."
+  }
+}

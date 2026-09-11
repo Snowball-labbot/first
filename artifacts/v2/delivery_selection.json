@@ -1,0 +1,17 @@
+{
+  "sources": {
+    "1": "artifacts/q12/q1_intervals.csv",
+    "2": "artifacts/q12/ridge_q0.7_intervals.csv.gz",
+    "3": "artifacts/v2/q3_v2_intervals.csv.gz",
+    "4-2": "artifacts/q34/q4_2_ridge_intervals.csv.gz",
+    "4-3": "artifacts/v2/q4_3_seasonal_intervals.csv.gz"
+  },
+  "decisions": {
+    "1": "V1 retained (same optimal cost)",
+    "2": "V1 retained: new terminal candidate deteriorated",
+    "3": "January-selected q=.5, terminal=6000, mask=6, beta=0",
+    "4-2": "V1 retained: new terminal candidate deteriorated",
+    "4-3": "January-selected rolling q=.5 with seasonal prices"
+  },
+  "interpretation": "V2 release retains V1 where revision failed; release acceptance is not a new untouched test-set selection."
+}

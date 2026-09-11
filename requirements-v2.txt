@@ -1,0 +1,13 @@
+numpy==2.3.5
+scipy==1.17.1
+pandas==3.0.1
+openpyxl==3.1.5
+matplotlib==3.10.9
+# Original price archive is reused by V2. For original GRU training/tests:
+torch==2.14.0
+# Document build/verification:
+python-docx
+pypandoc-binary==1.17
+pymupdf==1.28.2
+defusedxml
+pywin32; sys_platform == 'win32'

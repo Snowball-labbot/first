@@ -1,0 +1,213 @@
+{
+  "pass": true,
+  "traces": {
+    "q2_lp_control": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 334,
+      "revision_rows": 0,
+      "cost": 14132615.697923703
+    },
+    "q2_v2": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 334,
+      "revision_rows": 0,
+      "cost": 14142959.632268474
+    },
+    "q3_bias_ablation": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.561684363579843e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 1002,
+      "revision_rows": 36072,
+      "cost": 13714319.424858887
+    },
+    "q3_lp_control": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 1002,
+      "revision_rows": 36072,
+      "cost": 14088571.351604696
+    },
+    "q3_no_refund": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 1002,
+      "revision_rows": 36072,
+      "cost": 13825450.938107312
+    },
+    "q3_v2": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 1002,
+      "revision_rows": 36072,
+      "cost": 13765317.698261587
+    },
+    "q4_2_gru_mean": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 334,
+      "revision_rows": 0,
+      "cost": 14887526.969745472
+    },
+    "q4_2_ridge": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 334,
+      "revision_rows": 0,
+      "cost": 14896043.619336639
+    },
+    "q4_2_seasonal": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 334,
+      "revision_rows": 0,
+      "cost": 14887016.718958497
+    },
+    "q4_3_gru_mean": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 1002,
+      "revision_rows": 36072,
+      "cost": 14477646.379705444
+    },
+    "q4_3_ridge": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 1002,
+      "revision_rows": 36072,
+      "cost": 14485242.952755913
+    },
+    "q4_3_seasonal": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "solves": 1002,
+      "revision_rows": 36072,
+      "cost": 14486341.421540348
+    }
+  },
+  "q1_pass": true,
+  "input_files": [
+    {
+      "path": "C题.pdf",
+      "bytes": 354389,
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "bytes": 16003,
+      "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    },
+    {
+      "path": "附件/附件3.xlsx",
+      "sha256": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843"
+    },
+    {
+      "path": "附件/附件4.xlsx",
+      "sha256": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71"
+    }
+  ],
+  "uncertainty_note": "Circular paired-day bootstrap; assumes block exchangeability, not an external-year confidence guarantee; length sensitivity 7/14/28 days.",
+  "verifier_sha256": "2b8e6d0f77264d9daa19bbc9a5ccb3063f955e41ebe4a6a3b21f40c76429bdf6"
+}

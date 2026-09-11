@@ -1,0 +1,46 @@
+{
+  "q2_quantiles": [
+    0.0,
+    0.5,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "q2_terminals": [
+    1200.0,
+    6000.0,
+    9000.0
+  ],
+  "q3_quantiles": [
+    0.0,
+    0.5,
+    0.7
+  ],
+  "q3_betas": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "q3_masks": [
+    6,
+    7
+  ],
+  "q3_terminal": 6000.0,
+  "bias_lookback_slots": 18,
+  "bias_decay_slots": 36,
+  "price_models": [
+    "seasonal",
+    "ridge",
+    "gru_mean"
+  ],
+  "validation": [
+    21,
+    31
+  ],
+  "evaluation": [
+    31,
+    365
+  ],
+  "selection": "January realized total cost; ties use smaller complexity, no evaluation-based retuning",
+  "scope": "Within-dataset revision; old full-year metrics were already inspected. Not new external validation."
+}

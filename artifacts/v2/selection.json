@@ -1,0 +1,29 @@
+{
+  "policies": {
+    "2": {
+      "quantile": 0.7,
+      "terminal": 1200.0,
+      "mask": 0,
+      "beta": 0.0,
+      "refund": true,
+      "lookback": 18,
+      "decay": 36
+    },
+    "3": {
+      "quantile": 0.5,
+      "terminal": 6000.0,
+      "mask": 6,
+      "beta": 0.0,
+      "refund": true,
+      "lookback": 18,
+      "decay": 36
+    }
+  },
+  "prices": {
+    "2": "seasonal",
+    "3": "seasonal"
+  },
+  "frozen_before_evaluation": true,
+  "validation_initial_soc": 6244.256891388887,
+  "evaluation_initial_soc": 9902.811287870369
+}

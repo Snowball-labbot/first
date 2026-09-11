@@ -1,0 +1,33 @@
+{
+  "strategy": "q3_bias_ablation",
+  "policy": {
+    "quantile": 0.5,
+    "terminal": 6000.0,
+    "mask": 6,
+    "beta": 1.0,
+    "refund": true,
+    "lookback": 18,
+    "decay": 36
+  },
+  "days": 334,
+  "initial_soc": 9902.811287870369,
+  "final_soc": 5907.692451922437,
+  "solver_seconds": 5.421982400439447,
+  "solver_calls": 1002,
+  "physical": {
+    "max_balance_residual_kwh": 2.2737367544323206e-13,
+    "max_soc_residual_kwh": 9.094947017729282e-13,
+    "max_soc_discontinuity_kwh": 0.0,
+    "simultaneous_intervals": 0,
+    "min_soc_kwh": 1200.0,
+    "max_soc_kwh": 10800.0,
+    "pass": true
+  },
+  "emergency_kwh": 151040.78751179922,
+  "spill_kwh": 1464551.5584040894,
+  "original_cost_yuan": 12531426.871013898,
+  "increase_cost_yuan": 597094.6523953865,
+  "decrease_cost_yuan": -192239.44361138417,
+  "emergency_cost_yuan": 778037.3450609841,
+  "total_cost_yuan": 13714319.424858887
+}

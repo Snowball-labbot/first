@@ -1,0 +1,24 @@
+{
+  "1": {
+    "copied_verified_v1": true,
+    "sha256": "95300a01e1bab4ceb92686315c52d16236d87ae294dfda81e16d2668caee74d8"
+  },
+  "2": {
+    "copied_verified_v1": true,
+    "sha256": "e11df44cdae9f07d12c6ff88d80ea2a2fe46a6554bbba5975aa53e78c87b8a68"
+  },
+  "3": {
+    "cells_compared": 212058,
+    "pass": true,
+    "sha256": "a6f822544fe4625d35d2abb7aa53c4e7700ae934f643e88fcc88a4c062291ab0"
+  },
+  "4-2": {
+    "copied_verified_v1": true,
+    "sha256": "b78e6d19e799673e940999d3c5fdec4b9928c023beb393bb2ecfc324b9359e6e"
+  },
+  "4-3": {
+    "cells_compared": 212046,
+    "pass": true,
+    "sha256": "77e1b9f1f8098511873fbde787ccc09b9e1aac4877dba5b0f653b8aedad4db0d"
+  }
+}

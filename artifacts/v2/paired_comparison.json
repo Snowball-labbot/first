@@ -1,0 +1,114 @@
+[
+  {
+    "question": "q2",
+    "candidate": "q2_v2",
+    "v1_cost": 14132612.159246247,
+    "candidate_cost": 14142959.632268474,
+    "saving_yuan": -10347.473022224916,
+    "saving_percent": -0.0732169885200953,
+    "v1_final_soc": 5903.652893156119,
+    "candidate_final_soc": 1311.0787419565156,
+    "terminal_inventory_stress_yuan": 7119.510506392985,
+    "saving_after_inventory_stress": -17466.9835286179,
+    "block_bootstrap_95pct": {
+      "7": [
+        -30640.585525256876,
+        7881.256895002685
+      ],
+      "14": [
+        -30893.768382812406,
+        8001.124823647225
+      ],
+      "28": [
+        -23788.83667213186,
+        3035.093270982443
+      ]
+    },
+    "winning_days": 180,
+    "losing_days": 154
+  },
+  {
+    "question": "q3",
+    "candidate": "q3_v2",
+    "v1_cost": 14088564.926667297,
+    "candidate_cost": 13765317.698261587,
+    "saving_yuan": 323247.2284057096,
+    "saving_percent": 2.2943942842173843,
+    "v1_final_soc": 5903.652893156119,
+    "candidate_final_soc": 5903.652893156119,
+    "terminal_inventory_stress_yuan": 0.0,
+    "saving_after_inventory_stress": 323247.2284057096,
+    "block_bootstrap_95pct": {
+      "7": [
+        224299.27983902066,
+        434641.36342751124
+      ],
+      "14": [
+        195472.5935806778,
+        463325.3844446626
+      ],
+      "28": [
+        167271.06512773037,
+        495927.9853544249
+      ]
+    },
+    "winning_days": 258,
+    "losing_days": 76
+  },
+  {
+    "question": "q4-2",
+    "candidate": "q4_2_seasonal",
+    "v1_cost": 14880535.049452208,
+    "candidate_cost": 14887016.718958497,
+    "saving_yuan": -6481.669506289858,
+    "saving_percent": -0.043558040653440516,
+    "v1_final_soc": 5939.920378648023,
+    "candidate_final_soc": 1311.0787419565156,
+    "terminal_inventory_stress_yuan": 9224.767066188764,
+    "saving_after_inventory_stress": -15706.436572478622,
+    "block_bootstrap_95pct": {
+      "7": [
+        -38135.38979119346,
+        25477.77041221438
+      ],
+      "14": [
+        -40486.4760784833,
+        30367.522679815156
+      ],
+      "28": [
+        -38571.73174005985,
+        27749.510429500344
+      ]
+    },
+    "winning_days": 160,
+    "losing_days": 174
+  },
+  {
+    "question": "q4-3",
+    "candidate": "q4_3_seasonal",
+    "v1_cost": 14790501.422366856,
+    "candidate_cost": 14486341.421540348,
+    "saving_yuan": 304160.0008265076,
+    "saving_percent": 2.0564549648502335,
+    "v1_final_soc": 5952.822906221048,
+    "candidate_final_soc": 5952.822906221048,
+    "terminal_inventory_stress_yuan": 0.0,
+    "saving_after_inventory_stress": 304160.0008265076,
+    "block_bootstrap_95pct": {
+      "7": [
+        214698.67080319638,
+        405954.99615097354
+      ],
+      "14": [
+        184778.6787522068,
+        439933.75084170664
+      ],
+      "28": [
+        160265.81461445667,
+        474847.75716443674
+      ]
+    },
+    "winning_days": 249,
+    "losing_days": 85
+  }
+]
