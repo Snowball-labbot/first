@@ -1,3 +1,9 @@
+## 最新论文：Version 4
+
+[Word](reports/完整论文_V4.docx) · [PDF](reports/完整论文_V4.pdf) · [Markdown](reports/完整论文_V4.md) · [修订与核验说明](docs/V4_REVIEW.md)
+
+V4更新摘要、问题重述、逐题分析和全文语言，增加整体建模思路图。计算结果沿用已核验的V3，位于 `artifacts/v3/`。
+
 # C 题建模方案与协作交接
 
 **当前入口：V3。[Word](reports/完整论文_V3.docx)、[Markdown](reports/完整论文_V3.md)、[修改结果、验证及接力](docs/V3_REVIEW.md)。** 保留模板，修正第一问时间边界与第三四问结算，重跑全年结果，优化图文并给出GRU名义费用改进上界。以下V1/V2内容为历史记录。

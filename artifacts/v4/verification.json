@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "abstract_numeric_claims": [
+    {
+      "claim": "Q1 purchase",
+      "value": 59482.69899835391,
+      "display": "59,482.70",
+      "source": "artifacts/v3/q1_summary.json#plan_kwh"
+    },
+    {
+      "claim": "Q1 cost",
+      "value": 35126.84858928963,
+      "display": "35,126.85",
+      "source": "artifacts/v3/q1_summary.json#cost"
+    },
+    {
+      "claim": "Q1 saving",
+      "value": 26.898329870551507,
+      "display": "26.90",
+      "source": "artifacts/v3/q1_summary.json"
+    },
+    {
+      "claim": "Q2 cost",
+      "value": 14132612.15924625,
+      "display": "14,132,612.16",
+      "source": "artifacts/q12/q2_summary.json#ridge_q0.7"
+    },
+    {
+      "claim": "Q2 saving vs seasonal_q0",
+      "value": 26.499217554507048,
+      "display": "26.50",
+      "source": "artifacts/q12/q2_summary.json"
+    },
+    {
+      "claim": "Q2 saving vs ridge_q0",
+      "value": 10.014352927095727,
+      "display": "10.01",
+      "source": "artifacts/q12/q2_summary.json"
+    },
+    {
+      "claim": "Q3 cost",
+      "value": 13575976.779540649,
+      "display": "13,575,976.78",
+      "source": "artifacts/v3/summary.json#q3_m7"
+    },
+    {
+      "claim": "Q3 saving yuan",
+      "value": 1469150.1532591507,
+      "display": "1,469,150.15",
+      "source": "artifacts/v3/summary.json#q3_m0,q3_m7"
+    },
+    {
+      "claim": "Q3 saving percent",
+      "value": 9.764956851618612,
+      "display": "9.76",
+      "source": "artifacts/v3/summary.json#q3_m0,q3_m7"
+    },
+    {
+      "claim": "q4_2_ridge cost",
+      "value": 14880535.049452208,
+      "display": "14,880,535.05",
+      "source": "artifacts/v3/summary.json#q4_2_ridge"
+    },
+    {
+      "claim": "q4_3_seasonal cost",
+      "value": 14314442.478789123,
+      "display": "14,314,442.48",
+      "source": "artifacts/v3/summary.json#q4_3_seasonal"
+    },
+    {
+      "claim": "q4_3_gru_mean cost",
+      "value": 14312347.696725678,
+      "display": "14,312,347.70",
+      "source": "artifacts/v3/summary.json#q4_3_gru_mean"
+    },
+    {
+      "claim": "GRU saving",
+      "value": 2094.7820634450763,
+      "display": "2,094.78",
+      "source": "artifacts/v3/summary.json"
+    },
+    {
+      "claim": "GRU price MAE",
+      "value": 0.04365960079619622,
+      "display": "0.04366",
+      "source": "artifacts/v2/price_errors_by_issue.csv"
+    },
+    {
+      "claim": "GRU MAE decrease vs ridge",
+      "value": 8.09466589461717,
+      "display": "8.09",
+      "source": "artifacts/v2/price_errors_by_issue.csv"
+    },
+    {
+      "claim": "GRU nominal regret",
+      "value": 136842.63811090856,
+      "display": "136,842.64",
+      "source": "artifacts/v3/nominal_price_bound.csv"
+    },
+    {
+      "claim": "GRU nominal relative regret",
+      "value": 1.0020434816955706,
+      "display": "1.002",
+      "source": "artifacts/v3/nominal_price_bound.csv"
+    }
+  ],
+  "word_tables_preserved": 62,
+  "display_equations_preserved": 33,
+  "native_math_objects_preserved": 45,
+  "inherited_images_preserved": 15,
+  "new_overview_images": 1,
+  "appendix_and_code_paragraphs_preserved": true,
+  "abstract_methods_bold": [
+    "确定性多期线性规划模型",
+    "岭回归预测与分位数风险校准模型",
+    "非对称结算下的滚动时域线性规划模型",
+    "残差GRU集成电价预测模型",
+    "真实电价名义最优下界"
+  ],
+  "figure_numbering_and_references": "1–16, continuous and cited",
+  "main_table_references": "1–12, all cited",
+  "abstract_characters": 877,
+  "pages": 62,
+  "pages_before_appendix": 25,
+  "body_and_references_pages": 24,
+  "docx_sha256": "9608fa22d3dc0be1e74e98d09a1baf0e3ae1db0224fcc509a5280049df5da799",
+  "pdf_sha256": "d0d5c8f83cefe05417ba9fecf6dcd51fa7e6d9e7b47afe06d60d83a431184d06",
+  "result_workbooks": {
+    "artifacts\\v3\\result1.xlsx": "3eafbcaf3c8953948f841efbd1bc77507c878dc199eb413a6dd4d5e8fb148ff8",
+    "artifacts\\v3\\result2.xlsx": "e11df44cdae9f07d12c6ff88d80ea2a2fe46a6554bbba5975aa53e78c87b8a68",
+    "artifacts\\v3\\result3.xlsx": "a64bc86e3da9949222ee5bf324acbd284e5bfc2b781632360e8bdc1c2ae707a4",
+    "artifacts\\v3\\result4-2.xlsx": "29845834e4e9099e388a741ca3644fe099cb26fd992bdf7816f25e7bd6514285",
+    "artifacts\\v3\\result4-3.xlsx": "7a4759589a8579cb252adcf1205e5e110e35225d0a2766f0b4f5e085c4533a95"
+  }
+}
