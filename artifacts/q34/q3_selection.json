@@ -1,0 +1,8 @@
+{
+  "quantile": 0.0,
+  "mask": 6,
+  "validation_days": "2025-01-22/2025-01-31",
+  "selection": "minimum validation total cost, then smaller q and mask",
+  "initial_evaluation_soc_kwh": 9902.811287870369,
+  "refund": true
+}

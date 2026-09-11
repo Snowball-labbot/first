@@ -1,0 +1,19 @@
+{
+  "strategy": "q3_no_refund_m0",
+  "mask": 0,
+  "refund": false,
+  "days": 334,
+  "initial_soc": 9902.811287870369,
+  "final_soc": 5903.652893156119,
+  "solver_seconds": 13.661998100127676,
+  "physical": null,
+  "original_cost_yuan": 12291654.146747787,
+  "increase_cost_yuan": 0.0,
+  "decrease_cost_yuan": 0.0,
+  "emergency_cost_yuan": 3516267.21280717,
+  "total_cost_yuan": 15807921.359554958,
+  "increase_kwh": 0.0,
+  "decrease_kwh": 0.0,
+  "emergency_kwh": 570669.8250610398,
+  "spill_kwh": 1736607.6413352564
+}

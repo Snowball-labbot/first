@@ -1,0 +1,10 @@
+{
+  "stage": "full",
+  "seconds": 308.9707517999923,
+  "source_sha256": {
+    "src/q34.py": "a65b3a8c3b5ab4c373175e60ce699cb63a36d0d10a4dd50c40cbcb9198424a21",
+    "src/q34_data.py": "a6dee8fca0e70717044c66eb56030c16a589c04b0873772d083bdb23f3b28656",
+    "src/q4_forecast.py": "3f8cc06c6f2b14287a643a6fe82d3438cd973a9e7afe550a684f60ab13beccf8",
+    "src/q4_run.py": "41988e34834815cd8f4182dd89fe287ab4906d063603061f8e295d480a93eef3"
+  }
+}

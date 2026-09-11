@@ -1,0 +1,27 @@
+{
+  "strategy": "q4_2_ridge",
+  "mask": 0,
+  "refund": true,
+  "days": 334,
+  "initial_soc": 9902.811287870369,
+  "final_soc": 5939.920378648023,
+  "solver_seconds": 11.431730399970547,
+  "physical": {
+    "max_balance_residual_kwh": 2.2737367544323206e-13,
+    "max_soc_residual_kwh": 9.094947017729282e-13,
+    "max_soc_discontinuity_kwh": 0.0,
+    "simultaneous_intervals": 0,
+    "min_soc_kwh": 1200.0,
+    "max_soc_kwh": 10800.0,
+    "pass": true
+  },
+  "original_cost_yuan": 13663504.908273837,
+  "increase_cost_yuan": 0.0,
+  "decrease_cost_yuan": 0.0,
+  "emergency_cost_yuan": 1217030.1411783705,
+  "total_cost_yuan": 14880535.049452208,
+  "increase_kwh": 0.0,
+  "decrease_kwh": 0.0,
+  "emergency_kwh": 194980.06706918456,
+  "spill_kwh": 2190011.652978701
+}

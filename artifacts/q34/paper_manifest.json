@@ -1,0 +1,10 @@
+{
+  "figures": 16,
+  "tables": 29,
+  "equations": 30,
+  "q3_selected": "q3_m6",
+  "q4_selected": {
+    "2": "ridge",
+    "3": "seasonal"
+  }
+}

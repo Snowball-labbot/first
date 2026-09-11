@@ -1,0 +1,38 @@
+{
+  "raw_q2_annual": {
+    "layout": [],
+    "png": "figures\\full\\raw_q2_annual.png"
+  },
+  "raw_q3_forecasts": {
+    "layout": [],
+    "png": "figures\\full\\raw_q3_forecasts.png"
+  },
+  "process_q3_validation": {
+    "layout": [],
+    "png": "figures\\full\\process_q3_validation.png"
+  },
+  "result_q3_cost": {
+    "layout": [],
+    "png": "figures\\full\\result_q3_cost.png"
+  },
+  "result_q3_dispatch": {
+    "layout": [],
+    "png": "figures\\full\\result_q3_dispatch.png"
+  },
+  "raw_q4_price": {
+    "layout": [],
+    "png": "figures\\full\\raw_q4_price.png"
+  },
+  "process_q4_learning": {
+    "layout": [],
+    "png": "figures\\full\\process_q4_learning.png"
+  },
+  "result_q4_forecast": {
+    "layout": [],
+    "png": "figures\\full\\result_q4_forecast.png"
+  },
+  "result_q4_cost": {
+    "layout": [],
+    "png": "figures\\full\\result_q4_cost.png"
+  }
+}

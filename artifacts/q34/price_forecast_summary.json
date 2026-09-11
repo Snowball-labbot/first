@@ -1,0 +1,106 @@
+{
+  "validation": {
+    "seasonal": {
+      "mae": 0.05821331988403532,
+      "rmse": 0.07830094040740374,
+      "targets": 3600
+    },
+    "ridge1": {
+      "mae": 0.03831005887455457,
+      "rmse": 0.04891326382814075,
+      "targets": 3600
+    },
+    "ridge10": {
+      "mae": 0.03837296026481466,
+      "rmse": 0.04900225911860921,
+      "targets": 3600
+    },
+    "ridge100": {
+      "mae": 0.039282201609746666,
+      "rmse": 0.050055968131776186,
+      "targets": 3600
+    },
+    "gru17": {
+      "mae": 0.0564114688103199,
+      "rmse": 0.07564223813996813,
+      "targets": 3600
+    },
+    "gru42": {
+      "mae": 0.052961599722716544,
+      "rmse": 0.06837587843000145,
+      "targets": 3600
+    },
+    "gru2026": {
+      "mae": 0.05612618593784174,
+      "rmse": 0.0751990550312845,
+      "targets": 3600
+    },
+    "gru_mean": {
+      "mae": 0.05452037169800865,
+      "rmse": 0.07231763939227799,
+      "targets": 3600
+    }
+  },
+  "evaluation": {
+    "seasonal": {
+      "mae": 0.056482155963479476,
+      "rmse": 0.07709130173164848,
+      "targets": 120240
+    },
+    "ridge": {
+      "mae": 0.047504969348279816,
+      "rmse": 0.06503561807566631,
+      "targets": 120240
+    },
+    "gru17": {
+      "mae": 0.04350983709927449,
+      "rmse": 0.05879686183421993,
+      "targets": 120240
+    },
+    "gru42": {
+      "mae": 0.043753212224529416,
+      "rmse": 0.05920885252045778,
+      "targets": 120240
+    },
+    "gru2026": {
+      "mae": 0.04544918549892153,
+      "rmse": 0.06206143819289625,
+      "targets": 120240
+    },
+    "gru_mean": {
+      "mae": 0.043659600796196275,
+      "rmse": 0.05928405776045548,
+      "targets": 120240
+    }
+  },
+  "ridge_selected": "ridge1",
+  "selected_by_validation_price_mae": "ridge",
+  "seeds": [
+    17,
+    42,
+    2026
+  ],
+  "torch_version": "2.14.0+cpu",
+  "epochs_max": 50,
+  "fit_days": [
+    14,
+    21,
+    31,
+    59,
+    90,
+    120,
+    151,
+    181,
+    212,
+    243,
+    273,
+    304,
+    334
+  ],
+  "elapsed_seconds": 126.5649138000008,
+  "source_sha256": "3f8cc06c6f2b14287a643a6fe82d3438cd973a9e7afe550a684f60ab13beccf8",
+  "evaluation_note": "Same-day suffix only, at each issue time; repeated targets at different origins counted separately.",
+  "training_rule": "Whole 24h targets end before fit; last 3 days internal validation; refit monthly from scratch, last 60 days; Jan15/22 initialization.",
+  "clip_floor": 0.001,
+  "architecture": "Direct aligned day/week lag sequences plus known calendar; residual GRU(6,32), no future teacher forcing"
+}

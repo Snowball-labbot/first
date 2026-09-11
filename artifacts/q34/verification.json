@@ -1,0 +1,347 @@
+{
+  "pass": true,
+  "traces": {
+    "q3_m0": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.5492498657040414e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 0,
+      "total_cost_yuan": 15807921.359554958,
+      "trace_sha256": "57b22bc6c2f7d15592399ec062ac039bba6528e291da66d30852c005ed7fee6a"
+    },
+    "q3_m1": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 15177116.017535478,
+      "trace_sha256": "7542fe0852b2c4df386495f051cc0f3ba24b8f7202bd49ef4b0283a457bff558"
+    },
+    "q3_m2": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.561684363579843e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 24048,
+      "total_cost_yuan": 15104366.233242856,
+      "trace_sha256": "c608c2fff939d25df999e39a014fc89b4107b789ea06a9a4549edc7951808e23"
+    },
+    "q3_m3": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.561684363579843e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 60120,
+      "total_cost_yuan": 14998522.60159861,
+      "trace_sha256": "8f1238333a12cb23e45fb6f405faecff17963b11eb3c2cc802f426c58b822f19"
+    },
+    "q3_m4": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.5492498657040414e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 12024,
+      "total_cost_yuan": 14228865.370099042,
+      "trace_sha256": "3aee6b8a6209df06e5822336e54cec883f1179b450c0ea820fb315aad7fd10a1"
+    },
+    "q3_m5": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 48096,
+      "total_cost_yuan": 13987826.332465589,
+      "trace_sha256": "f3795e14bfb486dcd601b183c0b8836df678681acdf9078a381dc6c32fe4ce00"
+    },
+    "q3_m6": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.561684363579843e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 14088564.926667297,
+      "trace_sha256": "47f0c72eb8f900993aaeb7d2edc376a22fe46dd9aaf33693cabd56fe6d551e99"
+    },
+    "q3_m7": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.561684363579843e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 72144,
+      "total_cost_yuan": 13964470.837594792,
+      "trace_sha256": "86b414f79a32a6959dd6f499b016e0b05d75172e6d66f49eccfdac0edba5aed1"
+    },
+    "q3_no_refund_m6": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 14074210.924031831,
+      "trace_sha256": "9a5f71be0e27497f7f9d9799cd15567842cef858ea7cbf3aff81b8f3bd8c449a"
+    },
+    "q4_2_gru17": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 0,
+      "total_cost_yuan": 14876436.30190823,
+      "trace_sha256": "9a305c54034feed068e2ed04f9cd080f8eb22bb252f58b5ca1bb88adc540d7d3"
+    },
+    "q4_2_gru2026": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 0,
+      "total_cost_yuan": 14879062.537503976,
+      "trace_sha256": "4c1db3bb6e9cbf51e1387c9ef999fff49fdca5d61dd88fdc8966e392701f24e2"
+    },
+    "q4_2_gru42": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 0,
+      "total_cost_yuan": 14878191.949412972,
+      "trace_sha256": "bac8ba82af821c850fbcca324bc2e0a1a7c87ddc1dcf561264375a6babe61de8"
+    },
+    "q4_2_gru_mean": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 0,
+      "total_cost_yuan": 14877217.553642973,
+      "trace_sha256": "f269a6eb81fb72645cd33ecfa06be02daae7b941c669149018920c56c1a4a38b"
+    },
+    "q4_2_ridge": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 0,
+      "total_cost_yuan": 14880535.049452208,
+      "trace_sha256": "abec684f9a2492c600d496d5f048f1ca6d69e0eb29dd70973b772ad2f80e7f56"
+    },
+    "q4_2_seasonal": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 0,
+      "total_cost_yuan": 14867653.181953078,
+      "trace_sha256": "a2a17bd6e77287eebaec4621a05d755a086537a564a32401392c89ae8b20172d"
+    },
+    "q4_3_gru17": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 14778704.432181444,
+      "trace_sha256": "1817118438c9f0d30620dfa4071f6b4f6f70476f30ee180981bff1bcf8fba737"
+    },
+    "q4_3_gru2026": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 14786888.070629494,
+      "trace_sha256": "4423116245160d7b990262ac26d858ff3407cde11380a4b9f57eadb2cd99c2f8"
+    },
+    "q4_3_gru42": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 14783036.9830684,
+      "trace_sha256": "75baf7baf56d0b6c06aa89af34c56291b0e52bfa5ff9e754c8f62632743edb90"
+    },
+    "q4_3_gru_mean": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 14779796.514201824,
+      "trace_sha256": "8bfb8399c24ec671a9284b2ecd3984915a9ca82caac31b4886ac849ded5f83b9"
+    },
+    "q4_3_ridge": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 14787748.31893509,
+      "trace_sha256": "37768652c14b3a8bde9e751b7829aa90964e85ee5d6a48e9fe6fb31cd9c646a0"
+    },
+    "q4_3_seasonal": {
+      "pass": true,
+      "physical": {
+        "max_balance_residual_kwh": 8.100187187665142e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "revision_rows": 36072,
+      "total_cost_yuan": 14790501.422366856,
+      "trace_sha256": "0d6a78af5b1f28a4b1ce1b1c293711b27636cbcf8bfc8764cb51aebee49c8898"
+    }
+  },
+  "price_model_fits": 39,
+  "input_files": [
+    {
+      "path": "C题.pdf",
+      "bytes": 354389,
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "bytes": 16003,
+      "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    },
+    {
+      "path": "附件/附件3.xlsx",
+      "sha256": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843"
+    },
+    {
+      "path": "附件/附件4.xlsx",
+      "sha256": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71"
+    }
+  ],
+  "verifier_sha256": "9363085453390f92fb9c7342ded17395f664d2230b96c22f876d93fc9a95ab20"
+}

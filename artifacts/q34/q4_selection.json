@@ -1,0 +1,10 @@
+{
+  "selected": {
+    "2": "ridge",
+    "3": "seasonal"
+  },
+  "basis": "January validation total realized cost separately by policy",
+  "q3_mask": 6,
+  "q3_quantile": 0.0,
+  "q2_quantile": 0.7
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "key": "3",
+    "errors": {
+      "recordCount": 1,
+      "truncated": false,
+      "metadata": {
+        "revision": "zu7qkz",
+        "target": {
+          "id": "wb/xqvkq0",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "match",
+          "tokens": [
+            "match"
+          ]
+        },
+        "include": {
+          "tokens": []
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    },
+    "selection": "q3_m6"
+  },
+  {
+    "key": "4-2",
+    "errors": {
+      "recordCount": 1,
+      "truncated": false,
+      "metadata": {
+        "revision": "wwue6v",
+        "target": {
+          "id": "wb/tbsiek",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "match",
+          "tokens": [
+            "match"
+          ]
+        },
+        "include": {
+          "tokens": []
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    },
+    "selection": "q4_2_ridge"
+  },
+  {
+    "key": "4-3",
+    "errors": {
+      "recordCount": 1,
+      "truncated": false,
+      "metadata": {
+        "revision": "cv7vqb",
+        "target": {
+          "id": "wb/kpqd87",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "match",
+          "tokens": [
+            "match"
+          ]
+        },
+        "include": {
+          "tokens": []
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    },
+    "selection": "q4_3_seasonal"
+  }
+]

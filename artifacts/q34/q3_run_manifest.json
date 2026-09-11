@@ -1,0 +1,42 @@
+{
+  "stage": "full",
+  "elapsed_seconds": 525.8836708000017,
+  "selection": {
+    "quantile": 0.0,
+    "mask": 6,
+    "validation_days": "2025-01-22/2025-01-31",
+    "selection": "minimum validation total cost, then smaller q and mask",
+    "initial_evaluation_soc_kwh": 9902.811287870369,
+    "refund": true
+  },
+  "input_files": [
+    {
+      "path": "C题.pdf",
+      "bytes": 354389,
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "bytes": 16003,
+      "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    },
+    {
+      "path": "附件/附件3.xlsx",
+      "sha256": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843"
+    },
+    {
+      "path": "附件/附件4.xlsx",
+      "sha256": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71"
+    }
+  ],
+  "source_sha256": {
+    "src/q12.py": "48a9527600cea3b9a43ed3658af6b8cc50f69ec2f97780f86b33d0b4021285bf",
+    "src/q34.py": "a65b3a8c3b5ab4c373175e60ce699cb63a36d0d10a4dd50c40cbcb9198424a21",
+    "src/q34_data.py": "a6dee8fca0e70717044c66eb56030c16a589c04b0873772d083bdb23f3b28656"
+  }
+}
