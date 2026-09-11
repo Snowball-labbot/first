@@ -48,6 +48,6 @@
 
 ## 当前实现边界
 
-`src/q12.py` 已实现前两问，`src/deliver_q12.py` 生成初稿及绘图资料，`scripts/export_xlsx.mjs` 填写前两问结果副本。第三、四问、GRU 和完整四问论文尚未实现。正式图表精修是下一阶段；不得把初稿描述成已经通过队伍人工复核的最终参赛作品。
+`src/q12.py` 已实现前两问，`src/deliver_q12.py` 生成原初稿及绘图资料，`scripts/export_xlsx.mjs` 填写结果副本。`src/revise_q12.py` 与 `src/build_q12_word.py` 已生成 18 页 Word 修订稿及 8 幅精修图；检查和重建入口见 `docs/WORD_REVIEW.md`。第三、四问、GRU 和完整四问论文尚未实现；不得把初稿描述成已经通过队伍人工复核的最终参赛作品。
 
 结果和图表的权威来源是 `artifacts/q12/`。修改模型后重新运行受影响实验，再重新生成文字、表格和图片；不要直接手工修改结果数值。图表 Agent 先读 `docs/FIGURE_HANDOFF.md`，只按用户当次授权处理。

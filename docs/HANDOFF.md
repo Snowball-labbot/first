@@ -1,6 +1,22 @@
 # C 题协作交接记录
 
-更新日期：2026-09-10。仓库：<https://github.com/Snowball-labbot/first>。
+更新日期：2026-09-11。仓库：<https://github.com/Snowball-labbot/first>。
+
+## 最新 Word 修订（优先于下方历史初稿状态）
+
+已完成 [Word 修订初稿](../reports/Q1_Q2修订初稿.docx)：18 页、22 个编号公式（原生可编辑 OMML）、8 图、16 表；来源为 [修订 Markdown](../reports/Q1_Q2修订稿.md)，公式源为 [LaTeX 片段](../reports/Q1_Q2公式.tex)。这是前两问稿，第三、四问未执行，也不是最终参赛提交版。
+
+按用户指定下载并读取仓库 `skills source/cumcm-c-problem-lfs`，以其题意、数据、模型、结果、格式与复现门禁复查。复查结论、限制和重建命令见 [WORD_REVIEW.md](WORD_REVIEW.md)。全程单 Agent，没有虚构独立评审团结论。
+
+数据确认：附件 1 共 144 时段，附件 2 两类序列各 52,560 点；未发现缺失、非有限数、负数、重复日期或完全重复日曲线。实际执行时间格式与单位规范化，没有删点、插补、缩尾或平滑。保存结果中的实际值与原表一致，未来数据改动不影响此前预测与余量。检查结果保存在 `artifacts/q12_revision/data_cleaning_audit.json`。
+
+用户质疑图 2 的尖峰：核对发现主要为低价时段满功率充电，不是原始负载突然暴涨。22:00 负载 3309.39 kW 加充电 5000 kW 对应购电 8309.39 kW。模型不惩罚切换／爬坡，图已加电价与正净负载参照并保留真实十分钟决策。固定放电等变量的同成本次级诊断未找到实质不同的平滑方案，不能声称尖峰仅因多解任取。没有修改原调度、Excel 或最优费用。
+
+新代码：`src/audit_q12_data.py`、`src/audit_q1_spikes.py`、`src/revise_q12.py`、`src/build_q12_word.py`、`src/verify_q12_word.py`、`scripts/render_word.py`。原始模型与 `artifacts/q12/` 保持一致。通过 7 项原测试、四组全年物理／费用复核、两份 Excel 读回、Word OOXML 校验、图表文件检查和 18 页渲染目视检查。检查器对热力图 SVG 的嵌入位图给出 WARN（正文 PNG 为 320 dpi），不是未报告的失败。
+
+本机无 LibreOffice，实际使用隐藏的独立 Word COM 实例导出 QA PDF，再调用打包的 DOCX 渲染器生成检查页；QA 文件在忽略目录 `.qa/word_revision/`，不作为论文交付。原共享配色文件与远端内容一致，备份后已安全快进合并远端；`figures/q12_addon/` 和 `scripts/plot_addon_q12.py` 属于已有其他工作，未纳入本轮提交。
+
+后续先核对时间标签与效率解释，再由用户决定是否增加实际操作平稳性目标。重建 Word 后须重新渲染和核对，不能沿用旧 `word_review.json`。以下内容记录 9 月 10 日原初稿实验，数字仍有效，关于“尚无 Word”的描述仅为历史状态。
 
 ## 当前已完成
 

@@ -1,0 +1,101 @@
+{
+  "pass": true,
+  "docx_sha256": "27f005aa2ed4500b4485b2c743f3067a8f7ddcee5b91d76bf84791cf32030bac",
+  "display_equations": 22,
+  "tables_values_checked": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "embedded_figures_equal_sources": true,
+  "rendered_pages": [
+    {
+      "page": 1,
+      "images": 0
+    },
+    {
+      "page": 2,
+      "images": 0
+    },
+    {
+      "page": 3,
+      "images": 0
+    },
+    {
+      "page": 4,
+      "images": 0
+    },
+    {
+      "page": 5,
+      "images": 1
+    },
+    {
+      "page": 6,
+      "images": 1
+    },
+    {
+      "page": 7,
+      "images": 0
+    },
+    {
+      "page": 8,
+      "images": 1
+    },
+    {
+      "page": 9,
+      "images": 0
+    },
+    {
+      "page": 10,
+      "images": 0
+    },
+    {
+      "page": 11,
+      "images": 1
+    },
+    {
+      "page": 12,
+      "images": 1
+    },
+    {
+      "page": 13,
+      "images": 1
+    },
+    {
+      "page": 14,
+      "images": 2
+    },
+    {
+      "page": 15,
+      "images": 0
+    },
+    {
+      "page": 16,
+      "images": 0
+    },
+    {
+      "page": 17,
+      "images": 0
+    },
+    {
+      "page": 18,
+      "images": 0
+    }
+  ],
+  "paper_format_issues": [],
+  "scope_override": "User requested Q1/Q2 Word draft, not full four-question 20/25-page or 15000-word paper. No minimum length imposed.",
+  "verifier_sha256": "5f52b742447bf0959f4e16d36ed37253d6d24efe56daf88f60f9956059669055"
+}

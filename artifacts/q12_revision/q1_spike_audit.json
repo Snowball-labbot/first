@@ -1,0 +1,190 @@
+{
+  "original_cost_yuan": 35126.948589289634,
+  "alternative_cost_yuan": 35126.94858928963,
+  "original_charge_variation_kw": 77078.07172345679,
+  "alternative_charge_variation_kw": 77078.07172378083,
+  "maximum_grid_change_kw": 1.6200579011638183e-07,
+  "alternative_audit": {
+    "max_balance_residual_kwh": 4.547473508864641e-13,
+    "max_soc_residual_kwh": 1.6200374375330284e-12,
+    "max_soc_discontinuity_kwh": 0.0,
+    "simultaneous_intervals": 0,
+    "min_soc_kwh": 1200.0000000000082,
+    "max_soc_kwh": 10800.000000000007,
+    "pass": true
+  },
+  "full_charge_intervals": [
+    {
+      "index": 0,
+      "hour": 0.0,
+      "price": 0.4248,
+      "grid_kw": 8439.846599999999,
+      "load_kw": 3439.8465999999994,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 1,
+      "hour": 0.16666666666666666,
+      "price": 0.4245,
+      "grid_kw": 8437.979199999998,
+      "load_kw": 3437.9791999999998,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 2,
+      "hour": 0.3333333333333333,
+      "price": 0.4269,
+      "grid_kw": 8444.3031,
+      "load_kw": 3444.3031,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 3,
+      "hour": 0.5,
+      "price": 0.4272,
+      "grid_kw": 8454.4437,
+      "load_kw": 3454.4437,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 4,
+      "hour": 0.6666666666666666,
+      "price": 0.4271,
+      "grid_kw": 8458.827299999999,
+      "load_kw": 3458.8272999999995,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 33,
+      "hour": 5.5,
+      "price": 0.3713,
+      "grid_kw": 8301.9587,
+      "load_kw": 3486.1189999999997,
+      "pv_kw": 184.1603,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 66,
+      "hour": 11.0,
+      "price": 0.4662,
+      "grid_kw": 3451.025499999999,
+      "load_kw": 5838.710299999999,
+      "pv_kw": 7387.6848,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 70,
+      "hour": 11.666666666666666,
+      "price": 0.4662,
+      "grid_kw": 3120.747099999999,
+      "load_kw": 5712.901,
+      "pv_kw": 7592.153899999999,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 71,
+      "hour": 11.833333333333334,
+      "price": 0.4432,
+      "grid_kw": 2918.4173999999994,
+      "load_kw": 5519.4607,
+      "pv_kw": 7601.043299999999,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 72,
+      "hour": 12.0,
+      "price": 0.4411,
+      "grid_kw": 2882.4746999999998,
+      "load_kw": 5494.7907,
+      "pv_kw": 7612.315999999999,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 73,
+      "hour": 12.166666666666666,
+      "price": 0.4551,
+      "grid_kw": 2911.8,
+      "load_kw": 5514.4524,
+      "pv_kw": 7602.652399999999,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 74,
+      "hour": 12.333333333333334,
+      "price": 0.4463,
+      "grid_kw": 2931.6417999999994,
+      "load_kw": 5485.829,
+      "pv_kw": 7554.187199999999,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 75,
+      "hour": 12.5,
+      "price": 0.4113,
+      "grid_kw": 2989.6243999999992,
+      "load_kw": 5462.362800000001,
+      "pv_kw": 7472.7384,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 131,
+      "hour": 21.833333333333332,
+      "price": 0.4209,
+      "grid_kw": 8362.741899999999,
+      "load_kw": 3362.7418999999995,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 132,
+      "hour": 22.0,
+      "price": 0.3859,
+      "grid_kw": 8309.393399999999,
+      "load_kw": 3309.3934,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 134,
+      "hour": 22.333333333333332,
+      "price": 0.4198,
+      "grid_kw": 8381.9313,
+      "load_kw": 3381.9313,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 135,
+      "hour": 22.5,
+      "price": 0.4186,
+      "grid_kw": 8386.559199999998,
+      "load_kw": 3386.5591999999997,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 137,
+      "hour": 22.833333333333332,
+      "price": 0.4237,
+      "grid_kw": 8399.2426,
+      "load_kw": 3399.2426,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    },
+    {
+      "index": 140,
+      "hour": 23.333333333333332,
+      "price": 0.422,
+      "grid_kw": 8421.981099999999,
+      "load_kw": 3421.9810999999995,
+      "pv_kw": 0.0,
+      "charge_kw": 5000.0
+    }
+  ],
+  "interpretation": "With discharge and spill fixed, a same-cost charge-variation LP changes the schedule only at numerical precision. This does not establish nonuniqueness or uniqueness of the full MILP. Spikes align with charging at low prices; switching/ramp costs are absent. Original report/Excel schedule is retained."
+}

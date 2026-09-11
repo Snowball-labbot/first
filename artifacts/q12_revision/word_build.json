@@ -1,0 +1,28 @@
+{
+  "docx": "reports\\Q1_Q2修订初稿.docx",
+  "sha256": "27f005aa2ed4500b4485b2c743f3067a8f7ddcee5b91d76bf84791cf32030bac",
+  "display_equations": 22,
+  "hash_scheme": "SHA256; py/md/tex/json input line endings normalized to LF; binaries hashed verbatim",
+  "native_math_objects": 34,
+  "figures": 8,
+  "tables": 16,
+  "conversion_intermediate_verified": true,
+  "pandoc_warnings": [],
+  "inputs": {
+    "reports\\Q1_Q2修订稿.md": "78c988027eac98ae915c59e965907d044d2e1bc83a80648039f3c412d694589b",
+    "reports\\Q1_Q2公式.tex": "9f8d424f9821ee4627eb7ea5fbfe1e5aaecc3c63ff8a8b3478171f17fb8936e2",
+    "src\\build_q12_word.py": "f67d0a26f86cb7b35125c3fa7d07559be2e72708fd2e4d6afc13206639d43ce0",
+    "figures\\q12_revision\\fig01_inputs.png": "063033ffe601c2c4353358cfec044e81d55bc6ac62b29b72dc299df113707f5e",
+    "figures\\q12_revision\\fig02_dispatch.png": "e08c1350119bafdfaca03c2bcd2c8988055271771ca62fc3790ecfe9c22c95fd",
+    "figures\\q12_revision\\fig03_efficiency.png": "7f7474500f429856ca5346e690ff8cc0fd0fe7f15729769655d9cac1931d03f8",
+    "figures\\q12_revision\\fig04_validation.png": "42c84688fdf472f3500a7198b9b433e047e4b239cd76ba46f07bc7336b559695",
+    "figures\\q12_revision\\fig05_forecasts.png": "dd0493ac8ad410007d28f96cf5e9a85f69205756500f6b9b25b9ce38861bbe38",
+    "figures\\q12_revision\\fig06_cost.png": "af476674bacf9874e6856cd033b1183e1404e5e8c110aebca857f5b3a1995b72",
+    "figures\\q12_revision\\fig07_monthly_cost.png": "3fe369b28b06d08c6f2c6195bad2b2a2c0f2dfa14279fee79ef21cf0c323fdb9",
+    "figures\\q12_revision\\fig08_errors.png": "0718ff1f8b27e4338fd55d086b79da5b5584cb592ab88a70c6c920eb16e9f5ee",
+    "artifacts\\q12\\run_manifest.json": "679cb1e9bb5fdb3543972eb3872e8cd3ff8e5fe3bfdcbc71f01aee1612f114cc",
+    "src\\q12.py": "48a9527600cea3b9a43ed3658af6b8cc50f69ec2f97780f86b33d0b4021285bf"
+  },
+  "layout": "A4; 2.54 cm vertical and 2.6 cm horizontal margins; editable OMML; three-line tables",
+  "scope": "First two questions only; not a complete competition submission"
+}

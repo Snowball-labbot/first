@@ -1,0 +1,113 @@
+{
+  "pass": true,
+  "raw_checks": {
+    "price": {
+      "count": 144,
+      "missing_nonfinite": 0,
+      "negative": 0,
+      "zeros": 0,
+      "min": 0.3713,
+      "max": 1.3952,
+      "unit": "yuan/kWh",
+      "global_IQR_flags_only": 0,
+      "raw_to_model_max_absolute_difference": 0.0,
+      "removed_values": 0,
+      "imputed_values": 0,
+      "winsorized_values": 0,
+      "smoothed_values": 0
+    },
+    "q1_load": {
+      "count": 144,
+      "missing_nonfinite": 0,
+      "negative": 0,
+      "zeros": 0,
+      "min": 3309.3934,
+      "max": 5958.9696,
+      "unit": "kW",
+      "global_IQR_flags_only": 0,
+      "raw_to_model_max_absolute_difference": 1.1368683772161603e-13,
+      "removed_values": 0,
+      "imputed_values": 0,
+      "winsorized_values": 0,
+      "smoothed_values": 0
+    },
+    "q1_pv": {
+      "count": 144,
+      "missing_nonfinite": 0,
+      "negative": 0,
+      "zeros": 55,
+      "min": 0.0,
+      "max": 7612.316,
+      "unit": "kW",
+      "global_IQR_flags_only": 0,
+      "raw_to_model_max_absolute_difference": 2.2737367544323206e-13,
+      "removed_values": 0,
+      "imputed_values": 0,
+      "winsorized_values": 0,
+      "smoothed_values": 0
+    },
+    "load": {
+      "count": 52560,
+      "missing_nonfinite": 0,
+      "negative": 0,
+      "zeros": 0,
+      "min": 1995.7176,
+      "max": 7978.8849,
+      "unit": "kW",
+      "global_IQR_flags_only": 0,
+      "raw_to_model_max_absolute_difference": 2.2737367544323206e-13,
+      "removed_values": 0,
+      "imputed_values": 0,
+      "winsorized_values": 0,
+      "smoothed_values": 0
+    },
+    "pv": {
+      "count": 52560,
+      "missing_nonfinite": 0,
+      "negative": 0,
+      "zeros": 23540,
+      "min": 0.0,
+      "max": 10216.2,
+      "unit": "kW",
+      "global_IQR_flags_only": 0,
+      "raw_to_model_max_absolute_difference": 2.2737367544323206e-13,
+      "removed_values": 0,
+      "imputed_values": 0,
+      "winsorized_values": 0,
+      "smoothed_values": 0
+    }
+  },
+  "attachment1_time_cell_types": {
+    "time": 60,
+    "str": 84
+  },
+  "date_count": 365,
+  "date_duplicates": 0,
+  "complete_time_slots_per_day": 144,
+  "load_identical_day_pairs": 0,
+  "pv_identical_day_pairs": 0,
+  "operations_applied": [
+    "time representation normalization",
+    "right-end interval mapping assumption",
+    "kW multiplied by 1/6 hour"
+  ],
+  "operations_not_needed": [
+    "missing value imputation",
+    "negative value correction",
+    "duplicate date removal"
+  ],
+  "operations_not_applied": [
+    "statistical outlier deletion",
+    "winsorization",
+    "smoothing"
+  ],
+  "notes": [
+    "Global IQR flags are descriptive only; time-series regimes are not corruption evidence.",
+    "Forecast clipping is a prediction rule, not cleaning observed data.",
+    "Ridge standardization is fit on training history only, not on the whole year."
+  ],
+  "saved_actuals_match_raw": true,
+  "whole_forecast_and_reserve_causal_prefix_test": true,
+  "original_fingerprints_match_run": true,
+  "auditor_sha256": "fcc9c9055947242d4de11b808113ba58d26b5ba8a827b1cdadb7537aed6ae4c5"
+}

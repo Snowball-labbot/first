@@ -4,7 +4,9 @@
 
 **当前阶段：第一、二问初稿与实验已实现，第三、四问仍为方案。** 第一问已求解，第二问已进行四组 334 天顺序回测。本仓库保留原有 HTML 讲解页面，用于三人协作，以及更换账号、电脑或 Agent 后继续工作。
 
-新增入口：[第一二问初稿](reports/Q1_Q2初稿.md)、[运行与结果说明](docs/RUN_Q12.md)、[交给图表 Agent 的说明](docs/FIGURE_HANDOFF.md)。结果副本位于 [artifacts/q12](artifacts/q12/)，含 `result1.xlsx`、`result2.xlsx`、逐时记录、验证表和审计记录。
+最新交付（2026-09-11）：[第一二问 Word 修订初稿](reports/Q1_Q2修订初稿.docx)、[对应 Markdown](reports/Q1_Q2修订稿.md)、[LaTeX 公式源](reports/Q1_Q2公式.tex)、[格式／算法／数据复查与重建说明](docs/WORD_REVIEW.md)。Word 共 18 页、22 个编号公式、8 图、16 表，仍为前两问初稿。
+
+历史入口：[第一二问原初稿](reports/Q1_Q2初稿.md)、[运行与结果说明](docs/RUN_Q12.md)、[交给图表 Agent 的说明](docs/FIGURE_HANDOFF.md)。结果副本位于 [artifacts/q12](artifacts/q12/)，含 `result1.xlsx`、`result2.xlsx`、逐时记录、验证表和审计记录。
 
 ## 先读什么
 

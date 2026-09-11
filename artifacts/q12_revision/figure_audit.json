@@ -1,0 +1,42 @@
+{
+  "fig01_inputs": {
+    "issues": [],
+    "width_inches": 6.25,
+    "dpi": 320
+  },
+  "fig02_dispatch": {
+    "issues": [],
+    "width_inches": 6.25,
+    "dpi": 320
+  },
+  "fig03_efficiency": {
+    "issues": [],
+    "width_inches": 6.25,
+    "dpi": 320
+  },
+  "fig04_validation": {
+    "issues": [],
+    "width_inches": 6.25,
+    "dpi": 320
+  },
+  "fig05_forecasts": {
+    "issues": [],
+    "width_inches": 6.25,
+    "dpi": 320
+  },
+  "fig06_cost": {
+    "issues": [],
+    "width_inches": 6.25,
+    "dpi": 320
+  },
+  "fig07_monthly_cost": {
+    "issues": [],
+    "width_inches": 6.25,
+    "dpi": 320
+  },
+  "fig08_errors": {
+    "issues": [],
+    "width_inches": 6.25,
+    "dpi": 320
+  }
+}
