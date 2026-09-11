@@ -14,6 +14,7 @@
 *.xlsx.inspect.ndjson
 /artifacts/q12/xlsx_payload.json
 .venv-q34/
+.venv-v2/
 .qa/q34/
 artifacts/q34/xlsx_payload.json
 artifacts/q34/*.xlsx.inspect.ndjson
