@@ -13,3 +13,8 @@
 /artifacts/q12-smoke/
 *.xlsx.inspect.ndjson
 /artifacts/q12/xlsx_payload.json
+.venv-q34/
+.qa/q34/
+artifacts/q34/xlsx_payload.json
+artifacts/q34/*.xlsx.inspect.ndjson
+artifacts/q34-smoke/

@@ -1,0 +1,103 @@
+{
+  "pass": true,
+  "checks": {
+    "hourly_pv_kw": {
+      "shape": [
+        365,
+        4,
+        24
+      ],
+      "count": 35040,
+      "missing_nonfinite": 0,
+      "negative": 0,
+      "zero": 17525,
+      "min": 0.0,
+      "max": 9995.8875,
+      "iqr_flags_retained": 0,
+      "deleted": 0,
+      "imputed_numeric": 0,
+      "winsorized": 0,
+      "smoothed_observations": 0
+    },
+    "actual_price": {
+      "shape": [
+        365,
+        144
+      ],
+      "count": 52560,
+      "missing_nonfinite": 0,
+      "negative": 0,
+      "zero": 0,
+      "min": 0.0076,
+      "max": 1.7936,
+      "iqr_flags_retained": 0,
+      "deleted": 0,
+      "imputed_numeric": 0,
+      "winsorized": 0,
+      "smoothed_observations": 0
+    }
+  },
+  "date_forward_fills_structural_only": 1095,
+  "dates": 365,
+  "unique_issues": 1460,
+  "issue_hours": [
+    0,
+    6,
+    12,
+    18
+  ],
+  "forecast_horizons_hours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "alignment": "Hourly lead endpoints; piecewise-linear integration over 10-minute cells; lead-zero anchor from last completed observed PV interval; only current-day suffix traded.",
+  "input_files": [
+    {
+      "path": "C题.pdf",
+      "bytes": 354389,
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "bytes": 16003,
+      "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    },
+    {
+      "path": "附件/附件3.xlsx",
+      "sha256": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843"
+    },
+    {
+      "path": "附件/附件4.xlsx",
+      "sha256": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71"
+    }
+  ],
+  "unusable_past_slots": "NaN intentionally marks targets before each issue; never supplied to a solver",
+  "auditor_sha256": "a6dee8fca0e70717044c66eb56030c16a589c04b0873772d083bdb23f3b28656"
+}
