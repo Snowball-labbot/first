@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "source_commit": "6ea382b",
-  "docx_sha256": "e28a28aef6062ef77d7180c30fa31e3fdab7dfb8cfc448bdba8a2961b7ed243f",
+  "docx_sha256": "b5b37087f030e8b6b48a36dbc96de9d4c7f3118497910aba0bee511ce78936d7",
   "source_sha256": "a66f8a724a87e1cb82e8d094aa1bcacb3c4ec1895d84a72172e8e76dbc4561d6",
   "changed_parts": [
     "word/document.xml",
@@ -33,6 +33,6 @@
     "16": "q4_bound"
   },
   "unchanged_template_parts": 21,
-  "editorial_paragraphs": 24,
+  "editorial_paragraphs": 27,
   "all_equations_tables_and_sections_identical": true
 }

@@ -1,3 +1,9 @@
+## 最新交付：V6 图文精修
+
+[Word](reports/完整论文_V6.docx) · [PDF](reports/完整论文_V6.pdf) · [Markdown](reports/完整论文_V6.md) · [重绘图与可编辑FIG](figures/v6) · [修订与复现说明](docs/V6_REVIEW.md)
+
+基于最终V5，使用MATLAB重绘10幅图，重点重做效率、验证费用权衡和逐层节费三图；27处文字更新，数据和模型结果不变。保留原模板、63张表与37个编号公式；Word/PDF共87页，正文及参考文献27页（不含摘要），附录从第29页开始。核验见[验证记录](artifacts/v6/verification.json)，模型结果仍为[artifacts/v5b](artifacts/v5b)。以下各版本入口为历史。
+
 ## 当前V5增量：截图复核与库存价值控制（2026-09-12）
 
 最新完整论文仍为 `reports/完整论文_V5.docx`／PDF，最新结果目录为 `artifacts/v5b/`。请先读 `docs/V5_UPDATE_RUN.md`、`docs/V5_SCREENSHOT_COMPARISON.md`、`docs/V5_SAVINGS_EXPLAINED.md` 与 `artifacts/v5b/final_check.json`。Q2、Q3、Q4日前、Q4滚动费用分别为13,991,392.60、13,479,283.32、14,765,492.68、14,210,881.01元。新增连续状态DP与历史路径价值控制；滚动须计入下次调单机会。普通按合同量计费、紧急五倍价不变，紧急仅补负载而不可充电。允许为高价后续缺口留电，不再强制所有策略先尽量放电；旧贪心控制器只作基线。截图/Modex的费用未经同管线重现，不得作为我们的实验值或直接排名。全年84日窗口等更低消融不作事后回选；所有改进属同年开发验证。全程单Agent；图形修订留V6。旧v5发布脚本会覆盖本次报告，当前使用v5b管线。下文为历史记录。

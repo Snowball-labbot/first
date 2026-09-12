@@ -50,7 +50,7 @@ scatter(a,xx,vals,42,[B;C;C;G],'filled');
 for k=1:4
 text(a,k,vals(k)+28,sprintf('%.2f',vals(k)),'HorizontalAlignment','center','VerticalAlignment','bottom','FontSize',9);
 end
-set(a,'XLim',[.8 4.2],'YLim',[1320 2050],'YTick',[1400 1600 1800 2000],'XTick',1:4,'XTickLabel',{'同期无余量','岭回归预测','增加70%余量','库存价值控制'},'FontSize',8);
+set(a,'XLim',[.7 4.4],'YLim',[1320 2050],'YTick',[1400 1600 1800 2000],'XTick',1:4,'XTickLabel',{'同期无余量','岭回归预测','增加70%余量','库存价值控制'},'FontSize',8);
 ylabel(a,'334天购电费用 / 万元');
 text(a,.02,1.12,'a  逐层改进的实际费用','Units','normalized','FontWeight','bold','FontSize',9);
 b=axes(f,'Position',[.12 .10 .83 .15]);axis(b,[0 1 0 1]);axis(b,'off');hold(b,'on');

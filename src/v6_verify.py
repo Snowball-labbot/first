@@ -48,6 +48,12 @@ def main():
         'docx_sha256':sha(ROOT/'reports/完整论文_V6.docx')}
     if (ROOT/'reports/完整论文_V6.pdf').exists():
         pdf=fitz.open(ROOT/'reports/完整论文_V6.pdf');texts=[p.get_text() for p in pdf]
+        joined=re.sub(r'\s+','', ''.join(texts))
+        edits=json.loads((a/'editorial_changes.json').read_text(encoding='utf8'))
+        for edit in edits:
+            expected=re.sub(r'\s+','',edit['new'])
+            assert expected in joined,('PDF does not contain the latest text',edit['new'][:70])
+        result['checks']['all_edited_paragraphs_present_in_final_pdf']=len(edits)
         start=next(i+1 for i,t in enumerate(texts) if re.search(r'^附录\s*A\s+四问',t,re.M))
         assert '关键词' in texts[0] and '问题重述' in texts[1] and start-2<=30
         result['render']={'pages':len(pdf),'appendix_a_starts':start,'body_excluding_abstract':start-2,'pdf_sha256':sha(ROOT/'reports/完整论文_V6.pdf')}
