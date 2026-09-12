@@ -1,0 +1,194 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source_V5_unchanged": true,
+    "input_fingerprints": 13,
+    "monthly_sums_match_selected_savings": true,
+    "all_markdown_tables_and_formulas_identical": true,
+    "all_Word_tables_math_styles_sections_preserved": true,
+    "figures_redrawn": 10,
+    "figures_retained": 6,
+    "all_edited_paragraphs_present_in_final_pdf": 27
+  },
+  "figures": {
+    "modeling_overview": {
+      "width_px": 2033,
+      "height_px": 1060,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "46ca7ba9f33961ade57e674d65b39452ba7e40607ef1a70450dab4e46214686e",
+        "svg": "866b9656aff79995120a82406fda184d722db7f46e525d493dfa96e2e8f80632",
+        "pdf": "f560b02984db8d0fe81277c7a60ce94d685b2555d0bb56002446b2f39bbe95e4",
+        "fig": "157e3d960f1cbdc4a498eedc91c79bd77d7eb6bba1c7d6c2a482079206607b6b"
+      },
+      "matlab_layout_issues": []
+    },
+    "q1_efficiency": {
+      "width_px": 2039,
+      "height_px": 839,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "a7a20e2c2212ef056d7f4100793d94d91cfd255b4a26fb0f82b26347f0d9ba3d",
+        "svg": "743f1ebd039dd17013b05e4e1176460971820c7487456d6c94c93350cf8975ec",
+        "pdf": "4ebd15408deb2971b9870b34136cf5f3b98e23d2aa0dc70d6705782ae0c50f1c",
+        "fig": "6b3208812abda63fb6e103ff45b6938a40b23b0bd6f16e699916ae74b340fdbf"
+      },
+      "matlab_layout_issues": []
+    },
+    "q2_validation": {
+      "width_px": 2028,
+      "height_px": 978,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "585c7f4145d01b85cc2b552439c9f84cad4bcf0da0794523fd637a315dcb4007",
+        "svg": "0a462a02163595ee5b13af5cee7ac2a1f7d5453ba080e9a3986e82250c1998a0",
+        "pdf": "c13a0baede808bb8d7f21db3395d24af11bc8c8a15081284b2698687f227869a",
+        "fig": "561da72a7fa61fb375c74157887e0fd37c8e06fbb0daf951cd77c5b6f520a8cd"
+      },
+      "matlab_layout_issues": []
+    },
+    "q2_cost": {
+      "width_px": 2063,
+      "height_px": 1072,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "765733bd45c81251ff2860ff92ec78aa2c957d0cfdd82722cfe4299a0593bcb8",
+        "svg": "ec8822dfbb0b7481f5ce59d281c560b615dc446b4b9bdf2afbd5449734ddb907",
+        "pdf": "9fa8b80e0cb3cc3507b5c89901794dec1594c5c43a455545358aef342e66d34a",
+        "fig": "9faf266dd6a06ae4858f2e4e611283a327833a684bb4dc9314c799a009c36068"
+      },
+      "matlab_layout_issues": []
+    },
+    "q3_validation": {
+      "width_px": 2142,
+      "height_px": 766,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "0ddd1c62426112f9535a6671edf81dc168451e00bf26396fd1919360510c2f81",
+        "svg": "4aa7d24c158ba6e36f822d269010aa4bcf7b651edec494421cc2087cbbbef169",
+        "pdf": "07855981d4f1806deb467793cedca672d99b54d721d00004a54cd795af0ce4a3",
+        "fig": "d1ee8b188939a628985a87b9a3e5ba468c618077eaab2efa323849a787ab474c"
+      },
+      "matlab_layout_issues": []
+    },
+    "q3_updates": {
+      "width_px": 2061,
+      "height_px": 1126,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "8a825d418347c7ec9eb12284402b4113f697f514b2794546ceec6e2f199caf28",
+        "svg": "2f54032b9a4fd935b2c74e6f65fd0fdab5ee7ec7f33dbabc6a789bbbed04edb9",
+        "pdf": "549390e058516d81d8f4c94809b103ab5046fcb632faee8210eb80e744285753",
+        "fig": "3accc40d959b2c08a4c621a358fbc97cba65c04f35fab0af59038eecd58dd718"
+      },
+      "matlab_layout_issues": "第 1 个坐标轴的标题、标签或刻度可能超出画布"
+    },
+    "annual_price": {
+      "width_px": 2164,
+      "height_px": 1236,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "05fae9ebd9e5373d707ff7dc9372068ca0117a7cdb949c9d339641c88be6b34e",
+        "svg": "2eb7166c024d1d35729e9ee5d064f37fef1ac56aa3d97271101d53b56c3798b2",
+        "pdf": "dd5157e209a2daf5a236c690c064e060c10a07cb866db3da2a5bb77145d730ab",
+        "fig": "8073e5b076f2233d0c72ea6b3f5a9b46f7768e0ff838d8cc3d4124372ed883f7"
+      },
+      "matlab_layout_issues": []
+    },
+    "q4_accuracy": {
+      "width_px": 2140,
+      "height_px": 764,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "863c8ca03b2f52968b183d9e683e5957cfaa8ec08884970c78273dd992e4da07",
+        "svg": "480a13b04bc9884c6688937d0e0321fc9ba3328b59b6fb9e40ceafce2f5e5cbb",
+        "pdf": "d5e4e0081ece694012913793184370704d79b376c24641cf66da1675d02d35a1",
+        "fig": "5b2ca95aff20503fa7853cdfe0b8518e2eeb9d21d0de7db44d146b5b02e5cebe"
+      },
+      "matlab_layout_issues": []
+    },
+    "q4_cost": {
+      "width_px": 2060,
+      "height_px": 1171,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "91ae877d65f7a02d0f96e6130c6061e3523c9a57a0b2bb983f61d65f50815c89",
+        "svg": "67c8caeabeb07b693d60e8cd41aab1d2d1508dda152fc94ddb1ab02f241c3ca2",
+        "pdf": "fb1554e7bf739ffdbd1cb766cad52cd428afc6899df658f845d98b7af669d693",
+        "fig": "d7ff2f1aee3ca280b73a811bf40da6d240aa8e4146d5aa575d7223dc113c5c04"
+      },
+      "matlab_layout_issues": []
+    },
+    "q4_bound": {
+      "width_px": 2026,
+      "height_px": 782,
+      "dpi": [
+        359.9942,
+        359.9942
+      ],
+      "hashes": {
+        "png": "cf6477bb1e3c0d20fa16fee78e10bf831a5e2ed72d178c5a72633975e06164e7",
+        "svg": "53066959215bdc4814417fd235f1a1e7eec088840cc27bd387d7ce5055bbcd41",
+        "pdf": "0a0a4e029976060fc60c788627e3b463420a5277cf698235b61baef87ededc00",
+        "fig": "3c31c02ad0465b071df8031a24658b5c72003133e2ac393ca6dcecd1bfd944f1"
+      },
+      "matlab_layout_issues": []
+    }
+  },
+  "delivery_workbooks": {
+    "1": {
+      "path": "artifacts/v5b/result1.xlsx",
+      "sha256": "3eafbcaf3c8953948f841efbd1bc77507c878dc199eb413a6dd4d5e8fb148ff8"
+    },
+    "2": {
+      "path": "artifacts/v5b/result2.xlsx",
+      "sha256": "4638fb895230115e50fbce5d2fd584e764f2d63df81319f2131c7afcc66a0ce7"
+    },
+    "3": {
+      "path": "artifacts/v5b/result3.xlsx",
+      "sha256": "7867dfed1bf8515cdbc2ee13b0d3d249aea89d5dc253f0cf7a7e43986dd44106"
+    },
+    "4-2": {
+      "path": "artifacts/v5b/result4-2.xlsx",
+      "sha256": "972a01e3e3628f23462d44f9af5fcbe70300505b7d38520b8e5495bf04edefcd"
+    },
+    "4-3": {
+      "path": "artifacts/v5b/result4-3.xlsx",
+      "sha256": "dce1ecfcccbfda6881cbd15683741a224cb2a70688ff7b5b07781458037ad73e"
+    }
+  },
+  "docx_sha256": "b5b37087f030e8b6b48a36dbc96de9d4c7f3118497910aba0bee511ce78936d7",
+  "render": {
+    "pages": 87,
+    "appendix_a_starts": 29,
+    "body_excluding_abstract": 27,
+    "pdf_sha256": "425ec9dd46c15c098e151e7d93bab04cd6a07708d77ef151d3d246d172db58f6"
+  }
+}
