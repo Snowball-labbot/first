@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "backend": "Microsoft Word native PDF + PyMuPDF",
+  "pages": 84,
+  "abstract_pages": 1,
+  "appendix_a_starts": 21,
+  "body_and_references_pages_excluding_abstract": 19,
+  "pages_before_appendix": 20,
+  "docx_sha256": "2d2e493d87932dd921a4185da9997647d3ed47cc903ce28e213de96b3ae9d0a3",
+  "pdf_sha256": "61130f11361c23d755f72475d02ae8d5451101bdb55df829ca4ba536733104a6",
+  "all_pages_rasterized": 84
+}

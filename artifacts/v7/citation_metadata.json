@@ -1,0 +1,219 @@
+[
+  {
+    "DOI": "10.1080/00401706.1970.10488634",
+    "title": [
+      "Ridge Regression: Biased Estimation for Nonorthogonal Problems"
+    ],
+    "author": [
+      {
+        "given": "Arthur E.",
+        "family": "Hoerl",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "University of Delaware and E. 1. du Pont de Nemours & Co"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Robert W.",
+        "family": "Kennard",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Delaware and E. 1. du Pont de Nemours & Co"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Technometrics"
+    ],
+    "volume": "12",
+    "issue": "1",
+    "page": "55-67",
+    "published": {
+      "date-parts": [
+        [
+          1970,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "DOI": "10.1016/s0005-1098(99)00214-9",
+    "title": [
+      "Constrained model predictive control: Stability and optimality"
+    ],
+    "author": [
+      {
+        "given": "D.Q.",
+        "family": "Mayne",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "J.B.",
+        "family": "Rawlings",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "C.V.",
+        "family": "Rao",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "P.O.M.",
+        "family": "Scokaert",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Automatica"
+    ],
+    "volume": "36",
+    "issue": "6",
+    "page": "789-814",
+    "published": {
+      "date-parts": [
+        [
+          2000,
+          6
+        ]
+      ]
+    }
+  },
+  {
+    "DOI": "10.1007/s12532-017-0130-5",
+    "title": [
+      "Parallelizing the dual revised simplex method"
+    ],
+    "author": [
+      {
+        "given": "Q.",
+        "family": "Huangfu",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "J. A. J.",
+        "family": "Hall",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Mathematical Programming Computation"
+    ],
+    "volume": "10",
+    "issue": "1",
+    "page": "119-142",
+    "published": {
+      "date-parts": [
+        [
+          2017,
+          12,
+          14
+        ]
+      ]
+    }
+  },
+  {
+    "DOI": "10.1080/14697680902946514",
+    "title": [
+      "Valuation of energy storage: an optimal switching approach"
+    ],
+    "author": [
+      {
+        "given": "René",
+        "family": "Carmona",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michael",
+        "family": "Ludkovski",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Quantitative Finance"
+    ],
+    "volume": "10",
+    "issue": "4",
+    "page": "359-374",
+    "published": {
+      "date-parts": [
+        [
+          2010,
+          4
+        ]
+      ]
+    }
+  }
+]

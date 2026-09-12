@@ -1,0 +1,11 @@
+{
+  "sources": {
+    "1": "artifacts\\v7\\q1_intervals.csv",
+    "2": "artifacts/v5b/q2_value_zero_selected_intervals.csv.gz",
+    "3": "artifacts/v5b/q3_value_release_selected_intervals.csv.gz",
+    "4-2": "artifacts/v5b/q42_value_selected_intervals.csv.gz",
+    "4-3": "artifacts/v5b/q43_value_release_selected_intervals.csv.gz"
+  },
+  "Q1": "Unified right-end interval means; unchanged template start labels map slots 1..143 then repeated slot0",
+  "other_questions": "byte-identical V5b selected workbooks"
+}
