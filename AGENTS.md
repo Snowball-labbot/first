@@ -1,7 +1,3 @@
-## 当前权威入口：V7（2026-09-12）
-
-最终论文为 `reports/完整论文_V7.docx` / PDF，核验见 `docs/V7_REVIEW.md`、`artifacts/v7/final_check.json`，复现见 `docs/RUN_V7.md`。第一问统一为区间终点均值，不旋转输入，费用35,126.95元；模板起点标签仅做周期输出映射。Q2/Q3/Q4日前/Q4滚动分别为13,991,392.60、13,479,283.32、14,765,492.68、14,210,881.01元，沿用V5b策略并重核数据与账本。普通按合同量收费，紧急五倍价且不用于充电，滚动以午夜与最终合同净差结算。正文重写为统一库存价值框架；截图比较留外部核验说明；结尾合并为模型评价与推广，含运行灵活性与容量配置。随机策略不宣称全局最优。全程单Agent。以下旧版本段落仅为历史，不得覆盖本段。
-
 ## 当前权威交付：V6（2026-09-12）
 
 最新图文为`reports/完整论文_V6.docx`、同名PDF和Markdown；先读`docs/V6_REVIEW.md`、`artifacts/v6/verification.json`及`visual_review.json`。V6以6ea382b的最终V5为底稿，实际运行MATLAB重绘10图、保留6图，按最新反馈再次重做图4、5、7。63表、49个原生数学对象、37个编号公式与模板均保留；最终PDF87页，附录自29页开始。模型与五份结果工作簿仍以`artifacts/v5b/`为准，费用口径与数值不变。禁止使用旧发布脚本覆盖V6。重建入口为`src/v6_prepare.py`、`scripts/v6_figures.m`（会调用`v6_focus_figures.m`）、`src/v6_document.py`、`scripts/render_word.py`和`src/v6_verify.py`。图或文字改后必须重建Word、重新导出PDF再核验。继续单Agent、固定配色、保留模板。以下为历史记录。

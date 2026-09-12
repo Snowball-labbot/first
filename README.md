@@ -1,9 +1,3 @@
-[V7 Word](reports/完整论文_V7.docx) · [V7 PDF](reports/完整论文_V7.pdf) · [核验说明](docs/V7_REVIEW.md) · [五份结果](artifacts/v7)
-
-## 当前权威入口：V7（2026-09-12）
-
-最终论文为 `reports/完整论文_V7.docx` / PDF，核验见 `docs/V7_REVIEW.md`、`artifacts/v7/final_check.json`，复现见 `docs/RUN_V7.md`。第一问统一为区间终点均值，不旋转输入，费用35,126.95元；模板起点标签仅做周期输出映射。Q2/Q3/Q4日前/Q4滚动分别为13,991,392.60、13,479,283.32、14,765,492.68、14,210,881.01元，沿用V5b策略并重核数据与账本。普通按合同量收费，紧急五倍价且不用于充电，滚动以午夜与最终合同净差结算。正文重写为统一库存价值框架；截图比较留外部核验说明；结尾合并为模型评价与推广，含运行灵活性与容量配置。随机策略不宣称全局最优。全程单Agent。以下旧版本段落仅为历史，不得覆盖本段。
-
 ## 最新交付：V6 图文精修
 
 [Word](reports/完整论文_V6.docx) · [PDF](reports/完整论文_V6.pdf) · [Markdown](reports/完整论文_V6.md) · [重绘图与可编辑FIG](figures/v6) · [修订与复现说明](docs/V6_REVIEW.md)
