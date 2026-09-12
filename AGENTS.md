@@ -1,3 +1,7 @@
+## V9 视觉修订（2026-09-12）
+
+当前视觉交付为 reports/完整论文_V9.docx、PDF、MD。以远端 f4cdab0 的V8冻结内容，参考 f8d78c1 新版V7图3、6、8的原比例，三图按用户指令保留V7原色。14图重绘、61表、52个原生公式；仅获准更改图6布局说明一句，其余段落与数据不变。见 docs/V9_REVIEW.md、V9_VISUAL_AUDIT.md、V9_DESIGN_SYSTEM.md 和 artifacts/v9/verification.json。V9使用Python统一绘图，Word嵌SVG及PNG回退；后续不得用旧V8生成器覆盖V9。继续单Agent。V8仍是数值与模型基准。
+
 ## V8 最新修订（2026-09-12）
 
 当前权威图文为 reports/完整论文_V8.docx、PDF、Markdown。先读 docs/V8_REVIEW.md、artifacts/v8/verification.json 和 visual_review.json。第一问取消V3—V7单独采用的输入循环平移，按原始记录终点对应十分钟区间，LP/MILP重算为35,126.9485892896元，正文报告35,126.95元。result1模板仅在写出时按标签查找周期计划，不能为适配模板再次平移求解输入。第一问所有表格、效率分析与图形已同步，其他四问分支结果工作簿与V7字节一致。

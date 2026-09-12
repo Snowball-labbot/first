@@ -1,0 +1,18 @@
+{
+  "base_commit": "f4cdab0",
+  "v7_layout_reference": "f8d78c1",
+  "paragraphs": 1287,
+  "tables": 61,
+  "native_math": 52,
+  "figures": 14,
+  "text_unchanged_except_approved_sentence": true,
+  "tables_identical": true,
+  "native_math_identical": true,
+  "svg_embedded": 14,
+  "color_exceptions": [
+    3,
+    6,
+    8
+  ],
+  "docx_sha256": "ffc41184d69fceff97510bf280304385aad6a840e6fdbd0fb5ffa8951695b15b"
+}

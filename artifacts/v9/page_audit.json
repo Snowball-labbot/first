@@ -1,0 +1,386 @@
+[
+  {
+    "page": 1,
+    "characters": 813,
+    "drawings": 0,
+    "images": 0,
+    "head": "1 \n考虑供需与电价不确定性的微网购电调度 \n摘 要 \n针对微网计划购电、储能运行与日内调单的耦合关系，本文以实际总购电费用最\n小",
+    "tail": "量配置给成本更高的后续缺口。四问在同一决策结构下逐层扩展，实现计划、\n调单与实时储能运行的协同。 \n关键词：微网调度；线性规划；风险校准；库存价值；滚动优化 \n"
+  },
+  {
+    "page": 2,
+    "characters": 1100,
+    "drawings": 0,
+    "images": 0,
+    "head": "2 \n一 问题重述 \n1.1 研究背景 \n光伏出力与小区负载在时间上存在差异。并网微网通过外部电网补充电力，并利用\n储能在低价或光",
+    "tail": "电费用最小为\n目标，联立能量平衡、容量、功率及日周期约束，得到多期调度模型；自由弃电条件下\n可用等价线性化处理充放电互斥。该物理可行域在后续各问中保持一致。 \n"
+  },
+  {
+    "page": 3,
+    "characters": 495,
+    "drawings": 199,
+    "images": 0,
+    "head": "3 \n2.2 问题二的分析 \n本问在确定性调度中引入供需预测误差。欠购触发五倍补购，多购仍按计划付费，\n因此先用历史残差校准日前供",
+    "tail": "一步继承已有调度结构，只扩展可见信息或合同权限；预测为调度提供输入，线性规划\n生成合同计划，库存价值决定实时放电。 \n \n图 1 整体建模思路与四问递进关系 \n"
+  },
+  {
+    "page": 4,
+    "characters": 1064,
+    "drawings": 16,
+    "images": 0,
+    "head": "4 \n三 模型假设与数据处理 \n3.1 参数及工作假设 \n储能与时间参数见表 1。功率上限定义在微网母线侧，所有决策电量统一使用k",
+    "tail": "0、…、1440。功率与电量按下式换算： \n \n𝐿𝑑,𝑡= 𝑃𝑑,𝑡\nloadΔ𝑡,  𝑉𝑑,𝑡= 𝑃𝑑,𝑡\nPVΔ𝑡,   Δ𝑡=\n1\n6 h. \n(1) \n"
+  },
+  {
+    "page": 5,
+    "characters": 864,
+    "drawings": 15,
+    "images": 0,
+    "head": "5 \n数据核查表明：附件1 含60 个时间类型单元格和84 个字符串，统一转换后得到完整\n时间序列；附件2 两类序列均无缺失、非有",
+    "tail": "峰谷价差转移购电时段。两种作用共同决定购电与充放\n电计划。 \n目标是最小化全天计划购电费： \n \nmin𝐶1 = ∑\n𝑝𝑡\n144\n𝑡=1\n𝑔𝑡. \n(2) \n"
+  },
+  {
+    "page": 6,
+    "characters": 798,
+    "drawings": 101,
+    "images": 0,
+    "head": "6 \n以母线侧收支写能量守恒，将允许的富余供电显式记为未利用电量： \n \n𝑔𝑡+ 𝑉𝑡+ 𝑑𝑡= 𝐿𝑡+ 𝑐𝑡+ 𝑤𝑡,  𝑔𝑡,",
+    "tail": " 𝜌= 𝜂𝑐𝜂𝑑，对任一松弛解令 𝑥𝑡=\nmin{𝑐𝑡,𝑑𝑡/𝜌}，以 𝑐𝑡−𝑥𝑡、𝑑𝑡−𝜌𝑥𝑡 和 𝑤𝑡+ (1 −𝜌)𝑥𝑡 分别替代充电、放电与弃电。该变\n"
+  },
+  {
+    "page": 7,
+    "characters": 511,
+    "drawings": 184,
+    "images": 0,
+    "head": "7 \n换保持储能递推、母线平衡和购电费用，且充放电至少一项为零。因此可先用HiGHS 求\n解线性规划[2]，再逐时消去循环充放电；",
+    "tail": ":00-18:10 \n531.89 \n20:00-20:10 \n0.00 \n全天购电量  59,482.70 kWh \n全天购电费  35,126.95 元 \n"
+  },
+  {
+    "page": 8,
+    "characters": 835,
+    "drawings": 165,
+    "images": 0,
+    "head": "8 \n表 4 按四小时汇总充放电量，并列出各块边界储电量。 \n表 4 第一问四小时充放电及边界储电量 \n时间段 \n充电量 \n放电量",
+    "tail": "的训练、验证与评价划分：1 月22—31 日选择参数与执行器，2 月1\n日至12 月31 日开展顺序回测。模型每七天更新，使用最近至多60 个已结束日期。此次\n"
+  },
+  {
+    "page": 9,
+    "characters": 1162,
+    "drawings": 4,
+    "images": 0,
+    "head": "9 \n模型修订属于同年度数据上的开发复核；各时点决策遵守历史可见性，评价区间不作为\n从未接触的外部测试集。 \n各候选策略从1 月1",
+    "tail": "节同一物理模型： \n \n𝐿𝑡\nnom = 𝐿̂𝑑,𝑡+ 𝑟𝑑,𝑡(𝑞),  𝑉𝑡\nnom = 𝑉̂𝑑,𝑡,  𝑆𝑑,145\nnom ≥6000. \n(14) \n"
+  },
+  {
+    "page": 10,
+    "characters": 1048,
+    "drawings": 2,
+    "images": 0,
+    "head": "10 \n风险校准通过历史误差分位数提高名义需求，在一月验证中按计划费与五倍紧急费\n之和选择余量。70%表示误差样本池的分位水平；模",
+    "tail": "规则作为结果分析中的参照，以识别库存配\n置带来的收益。主策略使用上述价值控制；零终端附加价值由一月验证选定，名义计划\n仍保持日末6,000 kWh 的下限。 \n"
+  },
+  {
+    "page": 11,
+    "characters": 764,
+    "drawings": 222,
+    "images": 0,
+    "head": "11 \n七 第二问的结果分析 \n7.1 验证期选择与紧急购电权衡 \n表 5 与图 5 比较相同初始储电量下的验证费用及期末状态。随",
+    "tail": "%余量，说明额外\n多购支出已超过进一步压缩紧急购电的收益。两方案期末储电量相差约2,416 kWh，相关\n存量同时列于表 5；费用按题设结算，不计期末残值。 \n"
+  },
+  {
+    "page": 12,
+    "characters": 311,
+    "drawings": 440,
+    "images": 0,
+    "head": "12 \n7.2 全期预测误差与季节变化 \n按表 6 比较 334 天共 48,096 个十分钟区间的功率预测误差，岭回归在负载预测",
+    "tail": "伏RMSE \n同期 \n372.26 \n585.91 \n171.98 \n343.38 \n岭回归 \n179.86 \n234.59 \n155.28 \n306.74 \n"
+  },
+  {
+    "page": 13,
+    "characters": 816,
+    "drawings": 210,
+    "images": 0,
+    "head": "13 \n表 6 的误差单位为kW，光伏统计覆盖全天并包含夜间零值，表示全时段平均预测水\n平。 \n7.3 购电费用与储能配置 \n表 ",
+    "tail": "历史路径价值控制使334 天费\n用由14,132,612.16 元降至13,991,392.60 元，节省141,219.56 元（0.999%）。其中紧急购\n"
+  },
+  {
+    "page": 14,
+    "characters": 668,
+    "drawings": 114,
+    "images": 0,
+    "head": "14 \n电费减少141,170.39 元，而紧急电量由197,465.10 增至198,137.46 kWh。由此可见，收益\n来自",
+    "tail": "t。取消量\nu_t 与新增量v_t 分别定义为： \n \n𝑢𝑡= (𝑥𝑡−𝑦𝑡)+,  𝑣𝑡= (𝑦𝑡−𝑥𝑡)+,  𝑦𝑡= 𝑥𝑡+ 𝑣𝑡−𝑢𝑡. \n(19) \n"
+  },
+  {
+    "page": 15,
+    "characters": 959,
+    "drawings": 4,
+    "images": 0,
+    "head": "15 \n保留购电按原价结算，取消部分按半价支付违约费，新增部分按1.5 倍价格购买。因\n此每个区间的完整费用为： \n \n𝐹𝑡= 𝑝",
+    "tail": "。左图给出24 组候选的费用矩阵，黑\n框标出50%余量、三次日内更新的选定方案；右图沿0、6、12、18 点的顺序增加预报，\n展示信息更新对验证费用的影响。 \n"
+  },
+  {
+    "page": 16,
+    "characters": 172,
+    "drawings": 494,
+    "images": 0,
+    "head": "16 \n \n图 9 风险余量与预报更新频次的验证比较 \n8.4 基础滚动策略的更新时间收益 \n图10 左侧按启用的预报组合列出全年",
+    "tail": "经济价值；右侧给出基础滚动、负载修正及库存价值控制的费用。两部分分\n别对应预报选择与执行策略的递进。 \n \n图 10 预报更新组合的全年收益与第三问最终费用 \n"
+  },
+  {
+    "page": 17,
+    "characters": 1297,
+    "drawings": 37,
+    "images": 0,
+    "head": "17 \n表 8 将两方案费用分解为午夜计划、净调整及紧急补购三部分。 \n表 8 第三问基础策略与仅午夜预报的费用分解 \n费用或运行",
+    "tail": "则：2 月使用一月选定的基础预测；3 月起，每月首日分别回放此前28 天的基础与\n修正方案，两者从该窗口起点的实际储电量出发，按历史真实费用选择下月方案，平局\n"
+  },
+  {
+    "page": 18,
+    "characters": 1180,
+    "drawings": 0,
+    "images": 0,
+    "head": "18 \n保留基础方案。候选模型、窗口、收缩系数与费用口径在全年评价前固定，月底真实数\n据仅在次月选择时可见。 \n两类电价情景均在3",
+    "tail": "惩\n罚系数取1，1 月15 日、22 日及后续每月首日重新拟合，训练窗口最多60 日，所有训练\n目标在拟合前已经发生。预测价格下限为0.001 元/kWh。 \n"
+  },
+  {
+    "page": 19,
+    "characters": 326,
+    "drawings": 153,
+    "images": 2,
+    "head": "19 \n滚动分支采用昨日与上周同目标时段价格的均值，并在0、6、12、18 点按最新可见\n历史生成预测。两个分支的价格输入规则由一",
+    "tail": "位范围。区间端点只使用该日之前的数据；全\n期48,096 个午夜预测目标的实际覆盖率为74.36%，因此该范围用来展示预测风险，不作\n为未来价格的保证边界。 \n"
+  },
+  {
+    "page": 20,
+    "characters": 644,
+    "drawings": 231,
+    "images": 0,
+    "head": "20 \n \n图 12 波动价格的预测偏差与历史残差范围 \n实线为实际价格，虚线为午夜预测；阴影为点预测加此前28 日对应残差的10",
+    "tail": "。计划层采用预测价格的确定性等价近似，并以历史验证选择规则；供需\n误差继续由风险余量处理。本文未将价格误差区间设为硬约束，也未假定点预测能够消\n除价格风险。 \n"
+  },
+  {
+    "page": 21,
+    "characters": 611,
+    "drawings": 361,
+    "images": 0,
+    "head": "21 \n实时执行沿用第6.4 节的库存价值决策。当前缺口成本使用已揭示的实际价格p；未\n来路径费用使用 𝑝̂𝜏,𝑡。日前合同锁定时",
+    "tail": "2 月31 日逐时执行，并保持实际储电量跨日连续。\n表10 按保留合同、取消、新增及紧急补购四项归集实际费用；日前策略不能主动调单，\n后两类合同调整项为零。 \n"
+  },
+  {
+    "page": 22,
+    "characters": 729,
+    "drawings": 233,
+    "images": 0,
+    "head": "22 \n表 10 波动电价下两类策略的实际费用构成 \n费用项目 \n日前策略/元 \n滚动策略/元 \n保留合同购电费 \n13,663,",
+    "tail": "59,151.20，186,368.40]元，滚动为[1,953.22，10,500.59]\n元。区间反映同年固定轨迹的条件波动，不校正模型开发与选择偏差。 \n"
+  },
+  {
+    "page": 23,
+    "characters": 970,
+    "drawings": 21,
+    "images": 0,
+    "head": "23 \n表11 汇总四问的最终结果，指定日期的购电与储能表保留于附录A。第二问到第三\n问扩展合同权限，第四问在这两条分支中引入波动",
+    "tail": "展计\n划层，再用多年度数据检验风险与经济性的权衡。 \n（3）可在目标中加入电池吞吐量、循环寿命、碳成本及峰值需量费用，在经济性之\n外评价设备寿命与减排效果。 \n"
+  },
+  {
+    "page": 24,
+    "characters": 730,
+    "drawings": 0,
+    "images": 0,
+    "head": "24 \n十一 参考文献 \n[1] 全国大学生数学建模竞赛组委会. 2026 年高教社杯全国大学生数学建模竞赛C 题 微网与外部电网",
+    "tail": "n. Cambridge University Press, 2004. \nhttps://web.stanford.edu/~boyd/cvxbook/. \n"
+  },
+  {
+    "page": 25,
+    "characters": 1254,
+    "drawings": 117,
+    "images": 0,
+    "head": "25 \n附录 A 四问指定日期完整结果 \n电量单位为kWh，费用单位为元。普通购电与紧急购电分列。滚动问题的指定时段\n和全天购电量",
+    "tail": "储电 \n6,382.68 \n对应结果见表 16。 \n表 16 问题2（2025-03-20） 紧急购电 \n时段 \n电量 \n17:20-17:30 \n5.19 \n"
+  },
+  {
+    "page": 26,
+    "characters": 1194,
+    "drawings": 126,
+    "images": 0,
+    "head": "26 \n对应结果见表 17。 \n表 17 问题2（2025-06-21） 指定时段购电及全天费用 \n时间段 \n购电量 \n时间段 \n",
+    "tail": " \n对应结果见表 22。 \n表 22 问题2（2025-09-23） 紧急购电 \n时段 \n电量 \n20:20-20:30 \n0.33 \n对应结果见表 23。 \n"
+  },
+  {
+    "page": 27,
+    "characters": 1245,
+    "drawings": 126,
+    "images": 0,
+    "head": "27 \n表 23 问题2（2025-12-21） 指定时段购电及全天费用 \n时间段 \n购电量 \n时间段 \n购电量 \n时间段 \n购电",
+    "tail": "题3（2025-03-20） 紧急购电 \n时段 \n电量 \n09:40-10:00 \n79.05 \n21:40-21:50 \n4.66 \n对应结果见表 29。 \n"
+  },
+  {
+    "page": 28,
+    "characters": 1203,
+    "drawings": 126,
+    "images": 0,
+    "head": "28 \n表 29 问题3（2025-06-21） 指定时段购电及全天费用 \n时间段 \n购电量 \n时间段 \n购电量 \n时间段 \n购电",
+    "tail": "3（2025-09-23） 紧急购电 \n时段 \n电量 \n09:00-09:50 \n220.76 \n20:20-20:30 \n6.37 \n对应结果见表 35。 \n"
+  },
+  {
+    "page": 29,
+    "characters": 1227,
+    "drawings": 126,
+    "images": 0,
+    "head": "29 \n表 35 问题3（2025-12-21） 指定时段购电及全天费用 \n时间段 \n购电量 \n时间段 \n购电量 \n时间段 \n购电",
+    "tail": "6,409.05 \n对应结果见表 40。 \n表 40 问题4-2（2025-03-20） 紧急购电 \n时段 \n电量 \n无 \n0.00 \n对应结果见表 41。 \n"
+  },
+  {
+    "page": 30,
+    "characters": 1427,
+    "drawings": 151,
+    "images": 0,
+    "head": "30 \n表 41 问题4-2（2025-06-21） 指定时段购电及全天费用 \n时间段 \n购电量 \n时间段 \n购电量 \n时间段 \n",
+    "tail": ":00-18:10 \n739.98 \n20:00-20:10 \n0.00 \n全天购电量  97,314.24 kWh \n全天购电费  73,263.64 元 \n"
+  },
+  {
+    "page": 31,
+    "characters": 1252,
+    "drawings": 126,
+    "images": 0,
+    "head": "31 \n对应结果见表 48。 \n表 48 问题4-2（2025-12-21） 储能运行 \n时间段 \n充电量 \n放电量 \n时间段 \n",
+    "tail": "\n0.00 \n20:00-20:10 \n0.00 \n全天购电量  34,998.69 kWh \n全天购电费  17,375.08 元 \n对应结果见表 54。 \n"
+  },
+  {
+    "page": 32,
+    "characters": 1243,
+    "drawings": 126,
+    "images": 0,
+    "head": "32 \n表 54 问题4-3（2025-06-21） 储能运行 \n时间段 \n充电量 \n放电量 \n时间段 \n充电量 \n放电量 \n00",
+    "tail": "39.98 \n20:00-20:10 \n0.00 \n全天购电量  95,641.71 kWh \n全天购电费  72,890.05 元 \n对应结果见表 60。 \n"
+  },
+  {
+    "page": 33,
+    "characters": 361,
+    "drawings": 38,
+    "images": 0,
+    "head": "33 \n表 60 问题4-3（2025-12-21） 储能运行 \n时间段 \n充电量 \n放电量 \n时间段 \n充电量 \n放电量 \n00",
+    "tail": "\n6,420.72 \n对应结果见表 61。 \n表 61 问题4-3（2025-12-21） 紧急购电 \n时段 \n电量 \n07:50-08:00 \n33.89 \n"
+  },
+  {
+    "page": 34,
+    "characters": 1560,
+    "drawings": 0,
+    "images": 0,
+    "head": "34 \n附录 B 支撑文件与计算程序 \n五份结果工作簿分别为result1.xlsx 、result2.xlsx 、result3",
+    "tail": "val_label(i): \n    def clock(m): \n        return f\"{m // 60:02d}:{m % 60:02d}\" \n"
+  },
+  {
+    "page": 35,
+    "characters": 3730,
+    "drawings": 0,
+    "images": 0,
+    "head": "35 \n    return f\"{clock(i * 10)}-{clock((i + 1) * 10)}\" \n  \n  \nde",
+    "tail": "initial \n    lb[si+n] = target \n    if eq_terminal: \n        ub[si+n] = target \n"
+  },
+  {
+    "page": 36,
+    "characters": 4245,
+    "drawings": 0,
+    "images": 0,
+    "head": "36 \n    ub[zi:] = 1 \n    integrality = np.zeros(size) \n    integr",
+    "tail": "rics[\"max_balance_residual_kwh\"] < TOL, metrics[\"max_soc_residual_kwh\"] < TOL, \n"
+  },
+  {
+    "page": 37,
+    "characters": 3461,
+    "drawings": 0,
+    "images": 0,
+    "head": "37 \n              metrics[\"max_soc_discontinuity_kwh\"] < TOL, met",
+    "tail": "x(0.0, float(np.quantile(errors[:,max(0,t-3):min(N,t+4)], quantile))) for t in \n"
+  },
+  {
+    "page": 38,
+    "characters": 4349,
+    "drawings": 0,
+    "images": 0,
+    "head": "38 \nrange(N)]) \n  \n  \ndef summarize_day(f, date, name, seconds, g",
+    "tail": " \n    pd.DataFrame(tuning).to_csv(args.out/\"ridge_validation.csv\",index=False) \n"
+  },
+  {
+    "page": 39,
+    "characters": 4626,
+    "drawings": 0,
+    "images": 0,
+    "head": "39 \n    _, _, validation_soc = backtest(data,seasonal,0,21,B.init",
+    "tail": "st alignment.\"\"\" \nfrom pathlib import Path \nimport hashlib \nimport numpy as np \n"
+  },
+  {
+    "page": 40,
+    "characters": 3916,
+    "drawings": 0,
+    "images": 0,
+    "head": "40 \nimport pandas as pd \nimport openpyxl \nfrom src.q12 import rea",
+    "tail": "v3_model.py \n\"\"\"Exact LP reformulation and causal forecast-corrected dispatch. \n"
+  },
+  {
+    "page": 41,
+    "characters": 3243,
+    "drawings": 0,
+    "images": 0,
+    "head": "41 \n  \nEnergy in kWh. Same settlement, time axis and realtime reg",
+    "tail": "     iterations=int(fit.nit),physical=physical) \n  \n  \n@dataclass(frozen=True) \n"
+  },
+  {
+    "page": 42,
+    "characters": 3916,
+    "drawings": 0,
+    "images": 0,
+    "head": "42 \nclass Policy: \n    quantile:float=.7 \n    terminal:float=6000",
+    "tail": "und else .5)*down \n        f['emergency_cost_yuan']=realized*5*f.emergency_kwh \n"
+  },
+  {
+    "page": 43,
+    "characters": 3361,
+    "drawings": 0,
+    "images": 0,
+    "head": "43 \n        \nf['total_cost_yuan']=f[['original_cost_yuan','increa",
+    "tail": "diff(self.y)/np.diff(self.x) \n  \n  \ndef restrict(f,lo=B.minimum,hi=B.maximum): \n"
+  },
+  {
+    "page": 44,
+    "characters": 3442,
+    "drawings": 0,
+    "images": 0,
+    "head": "44 \n    lo=max(lo,float(f.x[0]));hi=min(hi,float(f.x[-1])) \n    a",
+    "tail": "            c=min(-net,B.limit,(B.maximum-s)/B.eta_c);w=-net-c;end=s+B.eta_c*c \n"
+  },
+  {
+    "page": 45,
+    "characters": 3422,
+    "drawings": 0,
+    "images": 0,
+    "head": "45 \n        else: \n            lo=max(B.minimum,s-min(net,B.limit",
+    "tail": "pper[day, start:] = np.maximum(.001, point + q[1]) \n    return lower, upper \n  \n"
+  },
+  {
+    "page": 46,
+    "characters": 3939,
+    "drawings": 0,
+    "images": 0,
+    "head": "46 \n  \ndef main(): \n    parser = argparse.ArgumentParser() \n    p",
+    "tail": "oot);pred,_=forecasts(data,'ridge',(1.,1.));base=np.repeat(pred['load'][:,None,\n"
+  },
+  {
+    "page": 47,
+    "characters": 4887,
+    "drawings": 0,
+    "images": 0,
+    "head": "47 \n:],4,axis=1) \n    loads={'baseline':base,'adaptive':adaptive_",
+    "tail": "tion.json',{'validation':val,'selected':chosen});print(case,'January',val,chose\n"
+  },
+  {
+    "page": 48,
+    "characters": 300,
+    "drawings": 0,
+    "images": 0,
+    "head": "48 \nn,flush=True) \n    prior=json.loads((OUT/f'{case}_summary.jso",
+    "tail": ".json',results);print(case,results,flush=True) \nif __name__=='__main__':main() \n"
+  }
+]
