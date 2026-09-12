@@ -34,11 +34,12 @@ def main():
         srid=d.part.relate_to(svg,RT.IMAGE)
         extlst=OxmlElement('a:extLst');ext=OxmlElement('a:ext');ext.set('uri','{96DAC541-7B7A-43D3-8B79-37D633B846F1}')
         sb=etree.Element('{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip',nsmap={'asvg':'http://schemas.microsoft.com/office/drawing/2016/SVG/main'});sb.set(qn('r:embed'),srid);ext.append(sb);extlst.append(ext);blip.append(extlst)
-    in_body=False;appendix=False
+    in_body=False;appendix=False;code_appendix=False
     for p in d.paragraphs:
         t=p.text.strip();fmt=p.paragraph_format
         if t=='一 问题重述':in_body=True
         if t.startswith('附录 '):appendix=True
+        if t.startswith('附录 B'):code_appendix=True
         if not in_body:continue # Abstract typography is preserved exactly.
         if p.style.name.startswith('Heading'):
             fmt.keep_with_next=True;fmt.keep_together=True;fmt.space_before=Pt(9);fmt.space_after=Pt(5)
@@ -48,7 +49,9 @@ def main():
             fmt.keep_with_next=False;fmt.keep_together=True;fmt.space_before=Pt(4);fmt.space_after=Pt(7)
         elif re.match(r'^表\s*\d+',t):fmt.keep_with_next=True;fmt.keep_together=True
         elif not appendix and not p._element.findall('.//'+qn('m:oMath')):
-            fmt.line_spacing=1.17;fmt.space_after=Pt(4);fmt.widow_control=True
+            fmt.line_spacing=1.12;fmt.space_after=Pt(3);fmt.widow_control=True
+        elif code_appendix and p.style.name=='Normal':
+            fmt.line_spacing=.98;fmt.space_after=Pt(0)
     for t in d.tables:
         pr=t._tbl.tblPr
         borders=pr.find(qn('w:tblBorders'))
@@ -67,6 +70,8 @@ def main():
                     cb=OxmlElement('w:tcBorders');n=OxmlElement('w:bottom');n.set(qn('w:val'),'single');n.set(qn('w:sz'),'4');n.set(qn('w:color'),'30353B');cb.append(n);cp.insert_element_before(cb,'w:shd','w:noWrap','w:tcMar','w:textDirection','w:tcFitText','w:vAlign','w:hideMark','w:headers','w:cellIns','w:cellDel','w:cellMerge','w:tcPrChange')
                 for p in cell.paragraphs:
                     p.paragraph_format.space_before=Pt(2);p.paragraph_format.space_after=Pt(2)
+                    if ri==0 or len(t.rows)<=8:
+                        p.paragraph_format.keep_with_next=ri<len(t.rows)-1
     assert [p.text for p in d.paragraphs]==[p.text.replace(OLD,NEW) for p in base.paragraphs]
     assert tables(d)==tables(base);assert maths(d)==maths(base)
     dest=ROOT/'reports/完整论文_V9.docx';d.save(dest)

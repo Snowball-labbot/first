@@ -8,13 +8,15 @@
     "all_figure_source_arrays_equal": true,
     "restored_three_v7_proportions": true,
     "svg_for_all_figures": true,
+    "all_figure_text_inside_canvas": true,
+    "all_14_figures_and_captions_share_page": true,
     "ooxml_and_svg_well_formed": true,
     "abstract_text_and_layout_preserved": true,
     "single_column_a4": true,
     "docx_pdf_under_20mb": true
   },
   "passed": true,
-  "pages": 48,
+  "pages": 47,
   "counts": {
     "paragraphs": 1287,
     "tables": 61,

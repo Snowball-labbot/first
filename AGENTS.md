@@ -1,6 +1,6 @@
-## V9 视觉修订（2026-09-12）
+## V9 重新制作（2026-09-13）
 
-当前视觉交付为 reports/完整论文_V9.docx、PDF、MD。以远端 f4cdab0 的V8冻结内容，参考 f8d78c1 新版V7图3、6、8的原比例，三图按用户指令保留V7原色。14图重绘、61表、52个原生公式；仅获准更改图6布局说明一句，其余段落与数据不变。见 docs/V9_REVIEW.md、V9_VISUAL_AUDIT.md、V9_DESIGN_SYSTEM.md 和 artifacts/v9/verification.json。V9使用Python统一绘图，Word嵌SVG及PNG回退；后续不得用旧V8生成器覆盖V9。继续单Agent。V8仍是数值与模型基准。
+当前视觉交付为重新制作的 reports/完整论文_V9.docx、PDF、MD，覆盖用户否定的5689115旧V9。以远端 f4cdab0 的V8冻结内容，参考 f8d78c1 新版V7图3、6、8的原比例，三图按用户指令保留V7原色。其余图遵循本轮用户提供的顶刊美工指南。47页PDF已逐页总览并放大复核主要图页，摘要1页、正文及参考文献23页、附录A自25页、程序自34页。14图、61表、52个原生公式；仅获准更改图6布局说明一句，其余段落与数据不变。见 docs/V9_REVIEW.md、V9_VISUAL_AUDIT.md、V9_DESIGN_SYSTEM.md 和 artifacts/v9/verification.json。V9使用Python统一绘图，Word嵌SVG及PNG回退；后续不得用旧V8生成器覆盖V9。继续单Agent。V8仍是数值与模型基准。
 
 ## V8 最新修订（2026-09-12）
 

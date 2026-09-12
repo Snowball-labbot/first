@@ -4,11 +4,20 @@ import sys,json
 import fitz,win32com.client
 root=Path(__file__).resolve().parents[1];sys.path.insert(0,str(root))
 from src.v9_inventory import sheets
-out=root/'.qa/v9/final';out.mkdir(parents=True,exist_ok=True)
+out=root/'.qa/v9_rebuild/final';out.mkdir(parents=True,exist_ok=True)
+for pattern in ['page-*.png','contact-*.jpg']:
+ for old in out.glob(pattern):
+  if old.is_file() and old.resolve().parent==out.resolve():old.unlink()
 app=win32com.client.DispatchEx('Word.Application');app.Visible=False;app.DisplayAlerts=0;app.AutomationSecurity=3;doc=None
 try:
  print('Opening V9',flush=True);doc=app.Documents.Open(str(root/'reports/完整论文_V9.docx'),ReadOnly=True,AddToRecentFiles=False)
- doc.Repaginate();print('Exporting PDF',flush=True);doc.ExportAsFixedFormat(str(root/'reports/完整论文_V9.pdf'),17)
+ doc.Repaginate()
+ pairs=[]
+ for i in range(1,doc.InlineShapes.Count+1):
+  shape=doc.InlineShapes.Item(i);paragraph=shape.Range.Paragraphs.First;caption=paragraph.Next(1)
+  pairs.append(dict(figure=i,figure_page=shape.Range.Information(3),caption_page=caption.Range.Information(3),caption=caption.Range.Text.strip()))
+ (root/'artifacts/v9/figure_page_pairs.json').write_text(json.dumps(pairs,ensure_ascii=False,indent=2),encoding='utf8')
+ print('Exporting PDF',flush=True);doc.ExportAsFixedFormat(str(root/'reports/完整论文_V9.pdf'),17)
 finally:
  if doc is not None:doc.Close(False)
  app.Quit()

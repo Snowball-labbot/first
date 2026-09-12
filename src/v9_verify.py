@@ -21,6 +21,9 @@ def main():
  checks['all_figure_source_arrays_equal']=all(hashlib.sha256(np.asarray(d[k]).tobytes()).hexdigest()==v for f in mf['figures'] for k,v in f['source_hashes'].items())
  checks['restored_three_v7_proportions']=all(abs(b.inline_shapes[i-1].height/360000-inv['7']['figures'][i-1]['height_cm'])<1e-4 for i in [3,6,8])
  checks['svg_for_all_figures']=len(b.part._element.findall('.//{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip'))==14
+ checks['all_figure_text_inside_canvas']=all(not f['outside_text'] for f in mf['figures'])
+ pairs=json.loads((ROOT/'artifacts/v9/figure_page_pairs.json').read_text(encoding='utf8'))
+ checks['all_14_figures_and_captions_share_page']=len(pairs)==14 and all(f['figure_page']==f['caption_page'] for f in pairs)
  with zipfile.ZipFile(ROOT/'reports/完整论文_V9.docx') as z:
   for name in z.namelist():
    if name.endswith(('.xml','.rels','.svg')):etree.fromstring(z.read(name))

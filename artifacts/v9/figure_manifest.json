@@ -1,29 +1,8 @@
 {
+  "edition": "V9 rebuild 2026-09-13",
   "backend": "Python Matplotlib",
   "source_sha256": "811187cfa71bf5f31e2411902fb84ca2169a17044117dbafba3bf99a98d153ce",
   "figures": [
-    {
-      "name": "modeling_overview",
-      "width_cm": 15.5,
-      "height_cm": 10.8,
-      "source_keys": [],
-      "source_hashes": {}
-    },
-    {
-      "name": "raw_q1_inputs",
-      "width_cm": 15.5,
-      "height_cm": 7.8,
-      "source_keys": [
-        "q1_pv_kwh",
-        "q1_load_kwh",
-        "q1_price"
-      ],
-      "source_hashes": {
-        "q1_pv_kwh": "f71be05802bcf384e14e05d1d4bfa599be3a1ad424b33f1da548ddf35593fe95",
-        "q1_load_kwh": "97315b8aca4758f3e3f78710ebb1d966cee289900095b823bd8b9c5484ba63c2",
-        "q1_price": "bc833f72404c9ab5b10d56d7a47c66ab23f2c19d86a15f00ecb53e5dffd678b6"
-      }
-    },
     {
       "name": "result_q1_dispatch",
       "width_cm": 15.5,
@@ -47,35 +26,8 @@
         "q1_soc_start_kwh": "c2fdcf796ce54859f95bde53b90285ce426264965163a624ff78b7e2aca3f7f0",
         "q1_soc_end_kwh": "07d7a2321867ad0265f8bc38aa1d140cbaf6eefec31f4fbf47dbab4244d66431",
         "q1_price": "bc833f72404c9ab5b10d56d7a47c66ab23f2c19d86a15f00ecb53e5dffd678b6"
-      }
-    },
-    {
-      "name": "q1_efficiency",
-      "width_cm": 15.5,
-      "height_cm": 7.5,
-      "source_keys": [
-        "q1_waterfall",
-        "q1_efficiency",
-        "q1_sensitivity"
-      ],
-      "source_hashes": {
-        "q1_waterfall": "f04d1172b7fe804316e6732b78e88cd4f7535e471c00d21adb48619570832c3a",
-        "q1_efficiency": "8ed01f62f0ac273405b2fc82a24d071bb957682ceba9f6e3399d5c15c3dafd23",
-        "q1_sensitivity": "8128b8940405f4052c077f716d50ca470a1818af2fb15a9ae20c1e4e8a4d292c"
-      }
-    },
-    {
-      "name": "q2_validation",
-      "width_cm": 15.5,
-      "height_cm": 7.6000000000000005,
-      "source_keys": [
-        "validation_cost",
-        "validation_emergency"
-      ],
-      "source_hashes": {
-        "validation_cost": "d5f8c52862433b33f12ce7723686a6660bf4cc4aa754cc5a2b2f2389813024fa",
-        "validation_emergency": "224be76c2acbf18542df9b4600f541b02d9d982addede84f9ea8fe0f1d2839bc"
-      }
+      },
+      "outside_text": []
     },
     {
       "name": "q2_forecasts",
@@ -92,18 +44,8 @@
         "q2_forecast_load_kwh": "decb60a00b99209d0be44d693dce30e739509baf10a1f90e7025889b11540890",
         "q2_pv_kwh": "fd58547717fc758bc71820663a9bea8f17e9b848d5008b5d8d383ab146d1af95",
         "q2_forecast_pv_kwh": "6592a525841207b80983c28de793cff182c6d2232c534e0fdb75ecb7b36f6681"
-      }
-    },
-    {
-      "name": "q2_cost",
-      "width_cm": 15.5,
-      "height_cm": 8.1,
-      "source_keys": [
-        "q2_cost"
-      ],
-      "source_hashes": {
-        "q2_cost": "5454a614d6dcfa2278c1284517834c8fcc99064156a9e33b7435192cf172d84e"
-      }
+      },
+      "outside_text": []
     },
     {
       "name": "q3_forecasts",
@@ -116,47 +58,71 @@
       "source_hashes": {
         "q3_pv_actual": "3495bb6a1038fb286636d250a44bf7e048fb055892d585ddc71631e0dff83a59",
         "q3_pv_issued": "8145f8d8883330c9240a01295e83bc9584c596efac6960f28e75079d3b8539bc"
-      }
+      },
+      "outside_text": []
+    },
+    {
+      "name": "raw_q1_inputs",
+      "width_cm": 15.5,
+      "height_cm": 7.9,
+      "source_keys": [
+        "q1_load_kwh",
+        "q1_pv_kwh",
+        "q1_price"
+      ],
+      "source_hashes": {
+        "q1_load_kwh": "97315b8aca4758f3e3f78710ebb1d966cee289900095b823bd8b9c5484ba63c2",
+        "q1_pv_kwh": "f71be05802bcf384e14e05d1d4bfa599be3a1ad424b33f1da548ddf35593fe95",
+        "q1_price": "bc833f72404c9ab5b10d56d7a47c66ab23f2c19d86a15f00ecb53e5dffd678b6"
+      },
+      "outside_text": []
+    },
+    {
+      "name": "q1_efficiency",
+      "width_cm": 15.5,
+      "height_cm": 7.8,
+      "source_keys": [
+        "q1_waterfall",
+        "q1_efficiency",
+        "q1_sensitivity"
+      ],
+      "source_hashes": {
+        "q1_waterfall": "f04d1172b7fe804316e6732b78e88cd4f7535e471c00d21adb48619570832c3a",
+        "q1_efficiency": "8ed01f62f0ac273405b2fc82a24d071bb957682ceba9f6e3399d5c15c3dafd23",
+        "q1_sensitivity": "8128b8940405f4052c077f716d50ca470a1818af2fb15a9ae20c1e4e8a4d292c"
+      },
+      "outside_text": []
+    },
+    {
+      "name": "q2_validation",
+      "width_cm": 15.5,
+      "height_cm": 7.999999999999999,
+      "source_keys": [
+        "validation_cost",
+        "validation_emergency"
+      ],
+      "source_hashes": {
+        "validation_cost": "d5f8c52862433b33f12ce7723686a6660bf4cc4aa754cc5a2b2f2389813024fa",
+        "validation_emergency": "224be76c2acbf18542df9b4600f541b02d9d982addede84f9ea8fe0f1d2839bc"
+      },
+      "outside_text": []
     },
     {
       "name": "q3_validation",
       "width_cm": 15.5,
-      "height_cm": 7.199999999999999,
+      "height_cm": 8.6,
       "source_keys": [
         "q3_validation"
       ],
       "source_hashes": {
         "q3_validation": "abab6782dfb07b3eded674fb6a88e53512d34a32e492e8d924e0243236427129"
-      }
-    },
-    {
-      "name": "q3_updates",
-      "width_cm": 15.5,
-      "height_cm": 9.4,
-      "source_keys": [
-        "q3_cost",
-        "q3_evolution"
-      ],
-      "source_hashes": {
-        "q3_cost": "27b6a51a7998d8b3f740b99b391becc33382ec2d379c805db0cc3afe075100a5",
-        "q3_evolution": "a398aef5da6ed62475e9f03bd36e6b1cc70b1a03495647816662df2574eaf0a2"
-      }
-    },
-    {
-      "name": "annual_price",
-      "width_cm": 15.5,
-      "height_cm": 9.0,
-      "source_keys": [
-        "price"
-      ],
-      "source_hashes": {
-        "price": "3e8585fb3e2fb1d16b9ded4b638cc49c014bdf8d33b66e729c3bcfb589355e07"
-      }
+      },
+      "outside_text": []
     },
     {
       "name": "price_uncertainty",
       "width_cm": 15.5,
-      "height_cm": 10.4,
+      "height_cm": 10.7,
       "source_keys": [
         "specified_lower",
         "specified_upper",
@@ -168,12 +134,13 @@
         "specified_upper": "40b37ad13ea5c519b5682d585b009aab979c09ae263bbb4a2124a51075848c4e",
         "specified_price": "cfec046a974172f06ab089b9c2b3ba35f87d5fc980539ba055f6b4fa6c11aec3",
         "specified_forecast": "1a315d6e83090718d57374fa69697cb5bbf38fa32d8c26e2d04f52ced9a93d27"
-      }
+      },
+      "outside_text": []
     },
     {
       "name": "price_dispatch",
       "width_cm": 15.5,
-      "height_cm": 12.3,
+      "height_cm": 12.0,
       "source_keys": [
         "specified_price",
         "specified_forecast",
@@ -189,12 +156,51 @@
         "rolling_soc_start_kwh": "af22bde03ef26463d6fcc0baa9329e4d0192186a322f357499a9c09d1cc658f8",
         "dayahead_emergency_kwh": "24616b655756907f824dcd4dafedbc7236304f28d7a92b133b8becc0311d1647",
         "rolling_emergency_kwh": "5f807a8bbe6d27bb521abb4dfefa508032f4e89bc8a371fa6a90af73b64a4456"
-      }
+      },
+      "outside_text": []
+    },
+    {
+      "name": "q2_cost",
+      "width_cm": 15.5,
+      "height_cm": 10.4,
+      "source_keys": [
+        "q2_cost"
+      ],
+      "source_hashes": {
+        "q2_cost": "5454a614d6dcfa2278c1284517834c8fcc99064156a9e33b7435192cf172d84e"
+      },
+      "outside_text": []
+    },
+    {
+      "name": "q3_updates",
+      "width_cm": 15.5,
+      "height_cm": 10.0,
+      "source_keys": [
+        "q3_cost",
+        "q3_evolution"
+      ],
+      "source_hashes": {
+        "q3_cost": "27b6a51a7998d8b3f740b99b391becc33382ec2d379c805db0cc3afe075100a5",
+        "q3_evolution": "a398aef5da6ed62475e9f03bd36e6b1cc70b1a03495647816662df2574eaf0a2"
+      },
+      "outside_text": []
+    },
+    {
+      "name": "annual_price",
+      "width_cm": 15.5,
+      "height_cm": 9.9,
+      "source_keys": [
+        "price"
+      ],
+      "source_hashes": {
+        "price": "3e8585fb3e2fb1d16b9ded4b638cc49c014bdf8d33b66e729c3bcfb589355e07"
+      },
+      "outside_text": []
     },
     {
       "name": "inventory_savings",
       "width_cm": 15.5,
-      "height_cm": 9.0,
+      "height_cm": 9.5,
       "source_keys": [
         "q4_month_savings",
         "q4_savings",
@@ -204,7 +210,16 @@
         "q4_month_savings": "b2b46da8289bfc5c049da4ce18a1a7cb739a10a85be1f8cf07bde27873b59938",
         "q4_savings": "c217c9e3917da04b9f4617add668d1c41999a986def81c0ebac067ff7b061b38",
         "q4_ci": "c7ed6fe885c05215ebe83a8357dde95f96e7f06b056c76c5c1ef0a8e10f0890e"
-      }
+      },
+      "outside_text": []
+    },
+    {
+      "name": "modeling_overview",
+      "width_cm": 15.5,
+      "height_cm": 11.5,
+      "source_keys": [],
+      "source_hashes": {},
+      "outside_text": []
     }
   ]
 }

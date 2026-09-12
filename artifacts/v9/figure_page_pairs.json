@@ -1,0 +1,86 @@
+[
+  {
+    "figure": 1,
+    "figure_page": 3,
+    "caption_page": 3,
+    "caption": "图 1 整体建模思路与四问递进关系"
+  },
+  {
+    "figure": 2,
+    "figure_page": 6,
+    "caption_page": 6,
+    "caption": "图 2 第一问供需曲线与分时电价"
+  },
+  {
+    "figure": 3,
+    "figure_page": 7,
+    "caption_page": 7,
+    "caption": "图 3 第一问电价驱动的购电与储能运行"
+  },
+  {
+    "figure": 4,
+    "figure_page": 8,
+    "caption_page": 8,
+    "caption": "图 4 储能的净收益及效率对最优费用的影响"
+  },
+  {
+    "figure": 5,
+    "figure_page": 11,
+    "caption_page": 11,
+    "caption": "图 5 验证期风险余量与费用的权衡"
+  },
+  {
+    "figure": 6,
+    "figure_page": 12,
+    "caption_page": 12,
+    "caption": "图 6 四个指定日期的负载与光伏日前预测"
+  },
+  {
+    "figure": 7,
+    "figure_page": 13,
+    "caption_page": 13,
+    "caption": "图 7 第二问逐层优化的费用变化与节费来源"
+  },
+  {
+    "figure": 8,
+    "figure_page": 14,
+    "caption_page": 14,
+    "caption": "图 8 四个发布版本的光伏预报"
+  },
+  {
+    "figure": 9,
+    "figure_page": 16,
+    "caption_page": 16,
+    "caption": "图 9 风险余量与预报更新频次的验证比较"
+  },
+  {
+    "figure": 10,
+    "figure_page": 16,
+    "caption_page": 16,
+    "caption": "图 10 预报更新组合的全年收益与第三问最终费用"
+  },
+  {
+    "figure": 11,
+    "figure_page": 19,
+    "caption_page": 19,
+    "caption": "图 11 波动电价的日内结构与月度分布"
+  },
+  {
+    "figure": 12,
+    "figure_page": 20,
+    "caption_page": 20,
+    "caption": "图 12 波动价格的预测偏差与历史残差范围"
+  },
+  {
+    "figure": 13,
+    "figure_page": 21,
+    "caption_page": 21,
+    "caption": "图 13 波动电价下日前与滚动策略的运行过程"
+  },
+  {
+    "figure": 14,
+    "figure_page": 22,
+    "caption_page": 22,
+    "caption": "图 14 库存价值控制在波动电价下的收益"
+  }
+]
