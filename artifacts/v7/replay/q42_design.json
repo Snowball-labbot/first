@@ -1,0 +1,14 @@
+{
+  "candidates": [
+    "greedy",
+    "value"
+  ],
+  "selection": "January cost; greedy wins ties",
+  "quantile": 0.7,
+  "terminal": 6000,
+  "scenario_days": 28,
+  "terminal_value_rate": 0.0,
+  "load_selector": "Retain earlier V5 causal monthly load selections as a shared forecast input",
+  "price_information": "Only the executed slot sees actual prices; future value uses current-release price forecast",
+  "release_extension": "Added after January frozen-contract value performed poorly; assumes future shortage can enter a 1.5p adjusted contract after next issue. Actual bills unchanged."
+}

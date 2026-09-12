@@ -1,3 +1,6 @@
+## V7 最新修订（2026-09-12）
+
+用户最新要求覆盖历史GRU试验指令：新版彻底移除该方法及其补充对照。交付 reports/完整论文_V7.docx、PDF、Markdown；详见 docs/V7_REVIEW.md 与 artifacts/v7/verification.json。原始费用策略保留，价格预测重新计算，第四问两分支完整复跑逐时一致。54页PDF，正文及参考文献24页（不含摘要），附录26页起；14图、61表、52个原生数学对象、27条编号公式。MATLAB七图重绘。额度已用99%时依用户要求立即保存上传；最终分页尚未全页复看，继续工作先完成该视觉检查。单Agent，保留原模板与固定配色。
 ## 当前权威交付：V6（2026-09-12）
 
 最新图文为`reports/完整论文_V6.docx`、同名PDF和Markdown；先读`docs/V6_REVIEW.md`、`artifacts/v6/verification.json`及`visual_review.json`。V6以6ea382b的最终V5为底稿，实际运行MATLAB重绘10图、保留6图，按最新反馈再次重做图4、5、7。63表、49个原生数学对象、37个编号公式与模板均保留；最终PDF87页，附录自29页开始。模型与五份结果工作簿仍以`artifacts/v5b/`为准，费用口径与数值不变。禁止使用旧发布脚本覆盖V6。重建入口为`src/v6_prepare.py`、`scripts/v6_figures.m`（会调用`v6_focus_figures.m`）、`src/v6_document.py`、`scripts/render_word.py`和`src/v6_verify.py`。图或文字改后必须重建Word、重新导出PDF再核验。继续单Agent、固定配色、保留模板。以下为历史记录。
@@ -75,3 +78,4 @@
 `src/q12.py` 已实现前两问，`src/deliver_q12.py` 生成原初稿及绘图资料，`scripts/export_xlsx.mjs` 填写结果副本。`src/revise_q12.py` 与 `src/build_q12_word.py` 已生成 18 页 Word 修订稿及 8 幅精修图；检查和重建入口见 `docs/WORD_REVIEW.md`。第三、四问、GRU 和完整四问论文尚未实现；不得把初稿描述成已经通过队伍人工复核的最终参赛作品。
 
 结果和图表的权威来源是 `artifacts/q12/`。修改模型后重新运行受影响实验，再重新生成文字、表格和图片；不要直接手工修改结果数值。图表 Agent 先读 `docs/FIGURE_HANDOFF.md`，只按用户当次授权处理。
+

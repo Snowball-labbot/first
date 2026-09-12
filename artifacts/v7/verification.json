@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "pdf_pages": 54,
+  "body_and_references_excluding_abstract": 24,
+  "appendix_starts": 26,
+  "figures": 14,
+  "tables": 61,
+  "native_math": 52,
+  "numbered_equations": 27,
+  "price_reconstructed": true,
+  "q4_two_full_year_replays_equal": true,
+  "workbooks_byte_identical": true,
+  "removed_content_absent": true,
+  "single_footer_page_field": true,
+  "hashes": {
+    "reports\\完整论文_V7.md": "8515267f9a6d8ecc31b5ac0f1d8c3145b05fceec5f5e76eeeace43b7c65c7407",
+    "reports\\完整论文_V7.docx": "21bb147033461088fad39107af5fb5afe8c2fc5404c57574a0fc2157fb671e9a",
+    "reports\\完整论文_V7.pdf": "e6b67e8a82f622985b68617150f3ac174c4f70f18fd01a13525385de8f35aafb"
+  },
+  "visual_review": "All seven new source figures inspected; first render pages 1-30 inspected. Final pagination after footer/caption fixes not fully reinspected due to user quota stop.",
+  "generic_skill_validator": "OOXML validator passed. Generic paper_format parser reported false positives: appendix Python comments, numbered reference heading, and total pages including appendices; artifact-specific checks handle those boundaries."
+}

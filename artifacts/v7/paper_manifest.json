@@ -1,0 +1,15 @@
+{
+  "figures": 14,
+  "tables": 61,
+  "display_equations": 27,
+  "removed_sections": [
+    "3.3",
+    "5.3",
+    "5.4",
+    "5.5",
+    "original 9.2-9.5",
+    "original 10-11"
+  ],
+  "inherited_results": "artifacts/v5b",
+  "manuscript": "reports/完整论文_V7.md"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "ridge_refits": 13,
+  "max_cache_difference": {
+    "seasonal": 0.0,
+    "ridge": 0.0
+  },
+  "information": "All feature prices and training targets precede issue time",
+  "models": [
+    "seasonal",
+    "ridge"
+  ],
+  "alpha": 1.0,
+  "training_days": 60
+}

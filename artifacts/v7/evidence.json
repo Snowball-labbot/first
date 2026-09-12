@@ -1,0 +1,213 @@
+{
+  "status": "PASS",
+  "dispatch": {
+    "1": {
+      "cost_yuan": 35126.84858928963,
+      "rows": 144,
+      "physical": {
+        "max_balance_residual_kwh": 3.410605131648481e-13,
+        "max_soc_residual_kwh": 2.5579538487363607e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "initial": 6000.0,
+      "final": 6000.0
+    },
+    "2": {
+      "cost_yuan": 13991392.603988541,
+      "rows": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 7.474909580196254e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "initial": 9902.811287870369,
+      "final": 5903.652893156119
+    },
+    "3": {
+      "cost_yuan": 13479283.31613424,
+      "rows": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.3642420526593924e-12,
+        "max_soc_residual_kwh": 7.702283255639486e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "initial": 9902.811287870369,
+      "final": 5903.652893156119
+    },
+    "4-2": {
+      "cost_yuan": 14765492.68144737,
+      "rows": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 6.160405519040069e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "initial": 9902.811287870369,
+      "final": 5939.920378648023
+    },
+    "4-3": {
+      "cost_yuan": 14210881.010117684,
+      "rows": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.3642420526593924e-12,
+        "max_soc_residual_kwh": 8.071765478234738e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      },
+      "initial": 9902.811287870369,
+      "final": 5952.822906221048
+    }
+  },
+  "price_band_coverage": 0.7435961410512308,
+  "bill_components_yuan": [
+    [
+      13663460.938276967,
+      0.0,
+      0.0,
+      1102031.7431704006
+    ],
+    [
+      12764260.61080274,
+      234774.1491643345,
+      765937.2276343212,
+      445909.02251628804
+    ]
+  ],
+  "q4_rolling_saving": 554611.6713296864,
+  "input_hashes": {
+    "artifacts/v3/q1_intervals.csv": "a5c0daf831da3cff668b8f4147b3389fceb3015fc3d3106469b7e4ad965a4833",
+    "artifacts/v5b/q2_value_zero_selected_intervals.csv.gz": "999d225c6c86914f54aa58bf919f440c6e985f73cbd2acd8582a2e942d965850",
+    "artifacts/v5b/q3_value_release_selected_intervals.csv.gz": "b37a842051d50413ad2a443ec8246dbcdc90d11f3bc3616b6ff41aeab2794815",
+    "artifacts/v5b/q42_value_selected_intervals.csv.gz": "03f0af7dcf9c4da612a25511f39f9a44fdbb0f16275115b874a8150f4b5b6b66",
+    "artifacts/v5b/q43_value_release_selected_intervals.csv.gz": "a6a32b0c3017bed9d9cd45ba306649a80643c4a1bd861f16ea74179eb5757949",
+    "artifacts/v3/q1_summary.json": "dc5b52ccd3704f175d0f20310a7864ce77256176e8a814f314b4405e73cb13ae",
+    "artifacts/v3/q1_efficiency.csv": "8db9639a415489fe2694e11164766903aa60e6d4602b2343dceb30f49f2db91c",
+    "artifacts/v3/summary.json": "18a3c7e438d113c7ffcd2efa1f9403fb347ffb69d3f52fc6165d1fd88a9a9004",
+    "artifacts/v5b/improvement.json": "73cbc7deb6a15458a3e94c1f7ec86b170b6fc67f9482558d29d1cffaa981b45a",
+    "artifacts/v5b/monthly_savings.csv": "3a3b8c7ea27f79778ac3b86bdeeb1416222ce3ca5a3f10a9be2b1aecd1510539",
+    "artifacts/v7/price_forecasts.npz": "1a0d26dbefa21fb83646d287266d44ac7cfe773f9fc29000d27719f16f0696bd"
+  },
+  "uncertainty": "Point forecasts drive decisions; trailing 28-day residual ranges diagnose forecast uncertainty. No coverage guarantee or stochastic optimality claim.",
+  "raw_audit": {
+    "pass": true,
+    "checks": {
+      "hourly_pv_kw": {
+        "shape": [
+          365,
+          4,
+          24
+        ],
+        "count": 35040,
+        "missing_nonfinite": 0,
+        "negative": 0,
+        "zero": 17525,
+        "min": 0.0,
+        "max": 9995.8875,
+        "iqr_flags_retained": 0,
+        "deleted": 0,
+        "imputed_numeric": 0,
+        "winsorized": 0,
+        "smoothed_observations": 0
+      },
+      "actual_price": {
+        "shape": [
+          365,
+          144
+        ],
+        "count": 52560,
+        "missing_nonfinite": 0,
+        "negative": 0,
+        "zero": 0,
+        "min": 0.0076,
+        "max": 1.7936,
+        "iqr_flags_retained": 0,
+        "deleted": 0,
+        "imputed_numeric": 0,
+        "winsorized": 0,
+        "smoothed_observations": 0
+      }
+    },
+    "date_forward_fills_structural_only": 1095,
+    "dates": 365,
+    "unique_issues": 1460,
+    "issue_hours": [
+      0,
+      6,
+      12,
+      18
+    ],
+    "forecast_horizons_hours": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "alignment": "Hourly lead endpoints; piecewise-linear integration over 10-minute cells; lead-zero anchor from last completed observed PV interval; only current-day suffix traded.",
+    "input_files": [
+      {
+        "path": "C题.pdf",
+        "bytes": 354389,
+        "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+      },
+      {
+        "path": "附件/附件1.xlsx",
+        "bytes": 16003,
+        "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+      },
+      {
+        "path": "附件/附件2.xlsx",
+        "bytes": 907128,
+        "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+      },
+      {
+        "path": "附件/附件3.xlsx",
+        "sha256": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843"
+      },
+      {
+        "path": "附件/附件4.xlsx",
+        "sha256": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71"
+      }
+    ],
+    "unusable_past_slots": "NaN intentionally marks targets before each issue; never supplied to a solver",
+    "auditor_sha256": "a6dee8fca0e70717044c66eb56030c16a589c04b0873772d083bdb23f3b28656"
+  }
+}

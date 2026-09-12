@@ -1,0 +1,29 @@
+{
+  "validation": [
+    {
+      "case": "q43",
+      "control": "greedy",
+      "cost": 548321.5134573409,
+      "final_soc": 5954.129536877634,
+      "emergency_kwh": 499.90226727857953,
+      "seconds": 0.40503829999943264
+    },
+    {
+      "case": "q43",
+      "control": "value",
+      "cost": 551997.3952125078,
+      "final_soc": 5954.129536877634,
+      "emergency_kwh": 2110.9360201216186,
+      "seconds": 4.153682299976936
+    },
+    {
+      "case": "q43",
+      "control": "value_release",
+      "cost": 548221.9596839681,
+      "final_soc": 5954.129536877634,
+      "emergency_kwh": 500.4170960848649,
+      "seconds": 4.402538399997866
+    }
+  ],
+  "selected": "value_release"
+}
