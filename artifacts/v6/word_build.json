@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "source_commit": "6ea382b",
+  "docx_sha256": "e28a28aef6062ef77d7180c30fa31e3fdab7dfb8cfc448bdba8a2961b7ed243f",
+  "source_sha256": "a66f8a724a87e1cb82e8d094aa1bcacb3c4ec1895d84a72172e8e76dbc4561d6",
+  "changed_parts": [
+    "word/document.xml",
+    "word/media/rId77.png",
+    "word/media/rId47.png",
+    "word/media/rId66.png",
+    "word/media/rId34.png",
+    "word/media/rId55.png",
+    "word/media/rId70.png",
+    "word/media/rId85.png",
+    "word/media/rId96.png",
+    "word/media/rId92.png",
+    "word/media/rId16.png"
+  ],
+  "preserved_tables": 63,
+  "preserved_math": 49,
+  "native_numbered_equations": 37,
+  "figures": 16,
+  "redrawn_figures": {
+    "1": "modeling_overview",
+    "4": "q1_efficiency",
+    "5": "q2_validation",
+    "7": "q2_cost",
+    "9": "q3_validation",
+    "10": "q3_updates",
+    "11": "annual_price",
+    "13": "q4_accuracy",
+    "15": "q4_cost",
+    "16": "q4_bound"
+  },
+  "unchanged_template_parts": 21,
+  "editorial_paragraphs": 24,
+  "all_equations_tables_and_sections_identical": true
+}

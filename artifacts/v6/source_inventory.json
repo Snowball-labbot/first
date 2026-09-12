@@ -1,0 +1,219 @@
+{
+  "source": "D:\\国赛数学建模\\first\\reports\\完整论文_V5.docx",
+  "docx_sha256": "a66f8a724a87e1cb82e8d094aa1bcacb3c4ec1895d84a72172e8e76dbc4561d6",
+  "images": [
+    {
+      "paragraph": 29,
+      "rid": "rId16",
+      "part": "word/media/rId16.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "4672683"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "rid": "rId26",
+      "part": "word/media/rId26.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2709042"
+        }
+      ]
+    },
+    {
+      "paragraph": 74,
+      "rid": "rId30",
+      "part": "word/media/rId30.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "4101021"
+        }
+      ]
+    },
+    {
+      "paragraph": 87,
+      "rid": "rId34",
+      "part": "word/media/rId34.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2361048"
+        }
+      ]
+    },
+    {
+      "paragraph": 146,
+      "rid": "rId47",
+      "part": "word/media/rId47.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2589119"
+        }
+      ]
+    },
+    {
+      "paragraph": 154,
+      "rid": "rId51",
+      "part": "word/media/rId51.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "5892479"
+        }
+      ]
+    },
+    {
+      "paragraph": 160,
+      "rid": "rId55",
+      "part": "word/media/rId55.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2535045"
+        }
+      ]
+    },
+    {
+      "paragraph": 174,
+      "rid": "rId61",
+      "part": "word/media/rId61.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2906420"
+        }
+      ]
+    },
+    {
+      "paragraph": 188,
+      "rid": "rId66",
+      "part": "word/media/rId66.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2448046"
+        }
+      ]
+    },
+    {
+      "paragraph": 192,
+      "rid": "rId70",
+      "part": "word/media/rId70.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2796041"
+        }
+      ]
+    },
+    {
+      "paragraph": 215,
+      "rid": "rId77",
+      "part": "word/media/rId77.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2555787"
+        }
+      ]
+    },
+    {
+      "paragraph": 227,
+      "rid": "rId81",
+      "part": "word/media/rId81.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2555787"
+        }
+      ]
+    },
+    {
+      "paragraph": 231,
+      "rid": "rId85",
+      "part": "word/media/rId85.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2535045"
+        }
+      ]
+    },
+    {
+      "paragraph": 237,
+      "rid": "rId88",
+      "part": "word/media/rId88.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "4308953"
+        }
+      ]
+    },
+    {
+      "paragraph": 244,
+      "rid": "rId92",
+      "part": "word/media/rId92.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2535045"
+        }
+      ]
+    },
+    {
+      "paragraph": 255,
+      "rid": "rId96",
+      "part": "word/media/rId96.png",
+      "extent": [
+        {
+          "cx": "5580000",
+          "cy": "2448046"
+        }
+      ]
+    }
+  ],
+  "package": {
+    "[Content_Types].xml": "3009beb719f125fe87497d6acedb359975d3d5f5dcb8b827f2e17382f0a419bd",
+    "_rels/.rels": "9fb69a7357ad13f8012595979e7f7d7e3c1fe0107a3ac6b1c41180168fd43253",
+    "word/document.xml": "87e09459e564a045807660d2643402e159ab7ab5f1019a4b65b72810618683ef",
+    "word/_rels/document.xml.rels": "3e265a4bc7205c6ab6bfc8bd7531ee8fb850552b17814e2982c84617481ee983",
+    "word/numbering.xml": "c353c1c44ce8dc68a680a4bf9975f038e2edeccee5f2fb92c57384cd5da49723",
+    "word/styles.xml": "88fd8e71550bb696f1be744f90b1d197c529a3430968d15ed8df91241ced38ed",
+    "word/settings.xml": "8ce7201f2ab7c223918c8d80655a2b422d603b040abb1a8bdc491b45ddf43b8f",
+    "word/webSettings.xml": "349d36de7434d09f86987ff671d8814964a0588c1e630c06e562cda7e75e9f95",
+    "word/fontTable.xml": "79385fb7f60247507ecaffc292e9ebd52ea0657b8634f629ba6fccc54011d6bb",
+    "word/theme/theme1.xml": "e3a8ab7db9ca7afca56f5f2820a56e8b660016c647773555b060b0a02ac76941",
+    "word/footnotes.xml": "0862050ac498039adcb369c821645a486c0dd66d3edf3ed464eb7da29ca4b67a",
+    "word/comments.xml": "753eda214b682a0cab96d3464231583c464f576373ef587a75179b00a70ad156",
+    "word/media/rId81.png": "99a7f4e7c856cc7a1a332a1e516cca250e838df36aeff857fafcbc1ed80372d0",
+    "word/media/rId61.png": "b875667fd8f789e06c1d55a7fc672543a18559e1375040e340731013accf56c9",
+    "word/media/rId77.png": "553f9a208a255905e4180832b779d030e8363ca817b6747e89045203b7891e8d",
+    "word/media/rId88.png": "f35a4f8d4b13d4a2024eea02b7e1fca94006ed5322d932eae29b8304811eaf83",
+    "word/media/rId47.png": "42c84688fdf472f3500a7198b9b433e047e4b239cd76ba46f07bc7336b559695",
+    "word/media/rId51.png": "dd0493ac8ad410007d28f96cf5e9a85f69205756500f6b9b25b9ce38861bbe38",
+    "word/media/rId66.png": "7dfe2b7f218d6f76f4062ed4c8bb218ae5256510b51fc71e27fdf228591b4dea",
+    "word/media/rId26.png": "5bbdb852eb3d594b3367c9ed0be58a7349ab7763eb71a43012dea5b32dc36e44",
+    "word/media/rId30.png": "a0a1d9142146057c55ae6c904779cc59cebb8563bc5d0e4a61319005c8239d0f",
+    "word/media/rId34.png": "967ba12e90fc2e584156a9765c3fb22279c2c03861f0be6e0193e00291455118",
+    "word/media/rId55.png": "9d7cd5766e3fc53931ff88eaf81ff2c8f62e8489da52c5427cf54fb017a26c01",
+    "word/media/rId70.png": "5224d3ca7d2523ae3dd039831ffebc8e3978b9ac90b3408564be71f7f9f57b36",
+    "word/media/rId85.png": "7e0c264a413c564dd5a6e18a10e5e82dc3b59ab5bd48e15608bdca11f46d6242",
+    "word/media/rId96.png": "9108f41c7df7eb6e4a08d398fa3763f7f40d501ba1d484bc537d3feb9cf09152",
+    "word/media/rId92.png": "6dec707a3df1d4c137a505fa3ef6e9b6e142b07637da649b38f8b6c8e30a05c5",
+    "word/media/rId16.png": "b6f21782ed6c3ea122d980c6b2edb77f281cd6305d8120fad3626753e5d5fc59",
+    "word/footer1.xml": "976f6f0e8068d79837cfdabcbc35ddd8453bf365e1c505e388fa70e58605a31e",
+    "docProps/app.xml": "be664981c3141cddfc59362beb287ebf20d0773660e2dd6faac5968a5930a081",
+    "docProps/core.xml": "ddb445c4441013435b9ded83717e846c962b9810b02d69c8f105ac7dbf057f23",
+    "docProps/custom.xml": "9c2a5541f9dd5d568d7c5841e795e575e874ea07adb07acc8bc6fb188f8755c3"
+  },
+  "sections": [
+    "<w:sectPr xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" xmlns:pic=\"http://schemas.openxmlformats.org/drawingml/2006/picture\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\" w:rsidR=\"00FC693F\" w:rsidRPr=\"0006063C\" w:rsidSect=\"00034616\"><w:footerReference w:type=\"default\" r:id=\"rId9\"/><w:pgSz w:h=\"16838\" w:w=\"11906\"/><w:pgMar w:bottom=\"1440\" w:footer=\"680\" w:gutter=\"0\" w:header=\"720\" w:left=\"1474\" w:right=\"1474\" w:top=\"1440\"/><w:cols w:space=\"720\"/><w:docGrid w:linePitch=\"360\"/></w:sectPr>"
+  ]
+}
