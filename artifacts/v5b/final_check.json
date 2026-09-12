@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "tables": 63,
+  "figures": 16,
+  "native_math_objects": 49,
+  "old_native_math_preserved": 45,
+  "display_equations": 37,
+  "unique_numeric_table_values_checked": 376,
+  "updated_workbook_cells_checked": 649041,
+  "unit_tests_passed": 27,
+  "full_year_traces": 11,
+  "intervals_audited": 529056,
+  "new_independent_lp_certificates": 24,
+  "body_pages": 27,
+  "total_pages": 87,
+  "figures_byte_identical_to_v4": true,
+  "sources": {
+    "src\\build_v5b_word.py": "d769bbeff32651cffd1e5a35c53aecc9f24c1bf6e3e7582027c982e9163c41d1",
+    "src\\v5b_analysis.py": "e88093c96d64feeb6b9cbdef8a500660bc667c59f2defc4c0c736cb06cb28815",
+    "src\\v5b_delivery.py": "e4f2dab1d9813583e6af1ba446af1f7b7a698af4458703ddefebc7aa408b94e6",
+    "src\\v5b_experiments.py": "073ee0826fa69053f54b19065247a31a65094c186e7eb37d9726944e867be4d9",
+    "src\\v5b_final_check.py": "0c76b07dca89a08d41760820c64a1f8bc00657ed57f7577c43b5f335a8351c39",
+    "src\\v5b_render.py": "1e920565b2bc3c6a2c39f389f7de420c2735ce9374b8b80feaab60635ab8a851",
+    "src\\v5b_report.py": "6ee27b2a43a26425b70e854ad89fadc4260964fe54354f5f7d9b2bddcbfa590f",
+    "src\\v5b_rolling.py": "422aada120b0c884748e7328adbfa3fbed90122ba653625ad9ac342b132131f5",
+    "src\\v5b_value.py": "8b7a66a224aa7d31dff0f0bd27f9600af055cfdbeb4db4a23dd530e8888ed96f",
+    "src\\v5b_windows.py": "0712c5935408654b4504b4103318a6fcd7ce68f1703f97ef304ee5749d1df2bb"
+  },
+  "outputs": {
+    "reports\\完整论文_V5.docx": "fd62aef614bd734a3b4638a60d1a104b8c0ca37f06ac7c59291e1741fac14c16",
+    "reports\\完整论文_V5.md": "4e07244b55c0257394dfdef6d34e82e51e3b0a68c88b4ab9b2cf6138b6ede9d4",
+    "reports\\完整论文_V5.pdf": "b4bfbb30229361f4e2a7b344d796dd355a9f66ad912b32af5a68b9eeb4c9025e",
+    "reports\\完整论文_V5公式.tex": "457bacb2c27d887a230472598c56c4ff439e6c4ab4c33b340c56b0c7f38f0dc7"
+  }
+}

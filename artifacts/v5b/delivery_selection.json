@@ -1,0 +1,13 @@
+{
+  "sources": {
+    "1": "artifacts/v3/q1_intervals.csv",
+    "2": "artifacts\\v5b\\q2_value_zero_selected_intervals.csv.gz",
+    "3": "artifacts\\v5b\\q3_value_release_selected_intervals.csv.gz",
+    "4-2": "artifacts\\v5b\\q42_value_selected_intervals.csv.gz",
+    "4-3": "artifacts\\v5b\\q43_value_release_selected_intervals.csv.gz"
+  },
+  "main": "January-selected historical-path value controllers; Q1 unchanged",
+  "copied_byte_identical": [
+    "1"
+  ]
+}

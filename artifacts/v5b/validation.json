@@ -1,0 +1,23 @@
+[
+  {
+    "candidate": "greedy",
+    "cost": 509757.46832152444,
+    "emergency_kwh": 1318.279538539453,
+    "final_soc": 6623.170006023588,
+    "seconds": 0.443408899998758
+  },
+  {
+    "candidate": "value_zero",
+    "cost": 509140.5275410608,
+    "emergency_kwh": 1318.2795385395168,
+    "final_soc": 6623.170006023588,
+    "seconds": 1.7592211000155658
+  },
+  {
+    "candidate": "value_night",
+    "cost": 509140.5275410608,
+    "emergency_kwh": 1318.2795385395168,
+    "final_soc": 6623.170006023588,
+    "seconds": 1.7861178000166547
+  }
+]

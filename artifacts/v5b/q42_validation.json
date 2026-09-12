@@ -1,0 +1,21 @@
+{
+  "validation": [
+    {
+      "case": "q42",
+      "control": "greedy",
+      "cost": 566647.3611601441,
+      "final_soc": 6677.031792067271,
+      "emergency_kwh": 1209.7166374389044,
+      "seconds": 0.11292519999551587
+    },
+    {
+      "case": "q42",
+      "control": "value",
+      "cost": 566054.1061708203,
+      "final_soc": 6677.031792067271,
+      "emergency_kwh": 1209.71663743897,
+      "seconds": 1.4499975999933667
+    }
+  ],
+  "selected": "value"
+}

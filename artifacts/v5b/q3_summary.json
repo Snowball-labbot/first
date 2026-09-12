@@ -1,0 +1,53 @@
+[
+  {
+    "case": "q3",
+    "control": "greedy",
+    "cost": 13489127.936012384,
+    "final_soc": 5903.652893156119,
+    "emergency_kwh": 79317.87137151798,
+    "seconds": 11.744495099992491,
+    "physical": {
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  {
+    "case": "q3",
+    "control": "value",
+    "cost": 13638621.010483248,
+    "final_soc": 5903.652893156119,
+    "emergency_kwh": 164926.80958051857,
+    "seconds": 186.1343690000067,
+    "physical": {
+      "max_balance_residual_kwh": 9.094947017729282e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  {
+    "case": "q3",
+    "control": "value_release",
+    "cost": 13479283.316134242,
+    "final_soc": 5903.652893156119,
+    "emergency_kwh": 79340.34020755943,
+    "seconds": 185.29531889999635,
+    "physical": {
+      "max_balance_residual_kwh": 9.094947017729282e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  }
+]

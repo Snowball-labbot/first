@@ -1,0 +1,50 @@
+[
+  {
+    "candidate": "greedy",
+    "cost": 14132612.15924625,
+    "emergency_kwh": 197465.1048975655,
+    "final_soc": 5903.652893156119,
+    "seconds": 15.943144300021231,
+    "physical": {
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  {
+    "candidate": "value_zero",
+    "cost": 13991392.603988543,
+    "emergency_kwh": 198137.4631357635,
+    "final_soc": 5903.652893156119,
+    "seconds": 84.47235720002209,
+    "physical": {
+      "max_balance_residual_kwh": 9.094947017729282e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  {
+    "candidate": "value_night",
+    "cost": 13991341.665780347,
+    "emergency_kwh": 198137.4631357635,
+    "final_soc": 5903.652893156119,
+    "seconds": 84.55864780000411,
+    "physical": {
+      "max_balance_residual_kwh": 9.094947017729282e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  }
+]

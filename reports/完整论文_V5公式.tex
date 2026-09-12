@@ -39,6 +39,10 @@ C_{\mathrm{LP}}^{*}\le C_{\mathrm{MILP}}^{*}\le C_{\mathrm{transformed\ LP}}=C_{
 
 
 
+h_t(v)=p_t\max\{n_t-\phi(v),0\},\quad \phi(v)=\begin{cases}\eta_dv,&v\geq0,\\v/\eta_c,&v<0,\end{cases}\qquad J_t(s)=\min_{s'\in\mathcal S_t(s)}\{h_t(s-s')+J_{t+1}(s')\}.
+
+
+
 \hat y_{d,t}^{\mathrm{seasonal}}=\frac{y_{d-1,t}+y_{d-7,t}}{2}.
 
 
@@ -92,6 +96,10 @@ C_2=\sum_{d,t}p_tg_{d,t}+5\sum_{d,t}p_te_{d,t}.
 
 
 \boxed{\left\{\begin{aligned}(g^{\mathrm{plan}},\ldots)&\in\arg\min_{(g,c,d,w,S,z)\in\Omega}\sum_t p_tg_t,\\L^{\mathrm{nom}}&=\hat L+r(q),\quad V^{\mathrm{nom}}=\hat V,\\S_1^{\mathrm{nom}}&=S_1^{\mathrm{actual}},\quad S_{145}^{\mathrm{nom}}\geq6000,\\(c_t,d_t,e_t,w_t)&=\mathcal G(g_t^{\mathrm{plan}},L_t,V_t,S_t),\\C_2&=\sum_{d,t}p_t(g_{d,t}^{\mathrm{plan}}+5e_{d,t}).\end{aligned}\right.}
+
+
+
+s_{t+1}^{*}\in\arg\min_{z\in[\max\{S_{\min},s_t-\min(n_t,M)/\eta_d\},s_t]}\left\{5p_t[n_t-\eta_d(s_t-z)]+\frac1K\sum_{k=1}^{K}J_{t+1}^{(k)}(z)\right\}.
 
 
 

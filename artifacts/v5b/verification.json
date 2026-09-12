@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "traces": [
+    {
+      "name": "q2_greedy",
+      "cost": 14132612.15924625,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q2_value_night",
+      "cost": 13991341.665780347,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q2_value_zero",
+      "cost": 13991392.603988543,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 4.547473508864641e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q3_greedy",
+      "cost": 13489127.936012384,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q3_value",
+      "cost": 13638621.010483246,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q3_value_release",
+      "cost": 13479283.316134244,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q42_greedy",
+      "cost": 14880535.049452208,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 7.673861546209082e-13,
+        "max_soc_residual_kwh": 4.661160346586257e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q42_value",
+      "cost": 14765492.68144737,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 4.551026222543442e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q43_greedy",
+      "cost": 14216325.976703221,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 7.958078640513122e-13,
+        "max_soc_residual_kwh": 4.554578936222242e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q43_value",
+      "cost": 14359139.899408469,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 4.526157226791838e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    },
+    {
+      "name": "q43_value_release",
+      "cost": 14210881.010117685,
+      "intervals": 48096,
+      "physical": {
+        "max_balance_residual_kwh": 1.1368683772161603e-12,
+        "max_soc_residual_kwh": 4.526157226791838e-12,
+        "max_soc_discontinuity_kwh": 0.0,
+        "simultaneous_intervals": 0,
+        "min_soc_kwh": 1200.0,
+        "max_soc_kwh": 10800.0,
+        "pass": true
+      }
+    }
+  ],
+  "total_intervals": 529056,
+  "new_independent_lp_cases": 24,
+  "max_duality_gap": 1.2960299500264227e-11,
+  "inputs": {
+    "..\\附件\\附件1.xlsx": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377",
+    "..\\附件\\附件2.xlsx": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72",
+    "..\\附件\\附件3.xlsx": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843",
+    "..\\附件\\附件4.xlsx": "20e9c93aeab5e8e21ae4dd15587f9e190f7408692504c1319598461cd654fe71"
+  },
+  "sources": {
+    "src\\v5b_analysis.py": "e88093c96d64feeb6b9cbdef8a500660bc667c59f2defc4c0c736cb06cb28815",
+    "src\\v5b_experiments.py": "073ee0826fa69053f54b19065247a31a65094c186e7eb37d9726944e867be4d9",
+    "src\\v5b_rolling.py": "422aada120b0c884748e7328adbfa3fbed90122ba653625ad9ac342b132131f5",
+    "src\\v5b_value.py": "8b7a66a224aa7d31dff0f0bd27f9600af055cfdbeb4db4a23dd530e8888ed96f",
+    "src\\v5b_windows.py": "0712c5935408654b4504b4103318a6fcd7ce68f1703f97ef304ee5749d1df2bb"
+  }
+}

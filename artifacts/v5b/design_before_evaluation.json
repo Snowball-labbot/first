@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    "greedy",
+    "value_zero",
+    "value_night"
+  ],
+  "scenario_days": 28,
+  "risk_quantile": 0.7,
+  "terminal_rates": {
+    "value_zero": 0,
+    "value_night": "first-slot fixed price / charging efficiency"
+  },
+  "validation": [
+    21,
+    31
+  ],
+  "evaluation": [
+    31,
+    365
+  ],
+  "selection": "January realized fee; greedy wins ties",
+  "scenario": "Paired historical load and PV residuals from completed days; nonnegative reconstructed levels",
+  "note": "Mean historical perfect-information path values approximate continuation cost; causal action is not exact stochastic DP"
+}

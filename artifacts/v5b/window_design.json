@@ -1,0 +1,10 @@
+{
+  "windows_days": [
+    28,
+    56,
+    60,
+    84
+  ],
+  "same_model": "ridge alpha 1; weekly refit; all other features unchanged",
+  "interpretation": "Sensitivity only; January cannot distinguish these windows because training starts on day 7. Do not pick lowest annual result as a validated policy."
+}
