@@ -1,0 +1,15 @@
+{
+  "sources": {
+    "1": "artifacts/v3/q1_intervals.csv",
+    "2": "artifacts/q12/ridge_q0.7_intervals.csv.gz",
+    "3": "artifacts\\v5\\q3_online_intervals.csv.gz",
+    "4-2": "artifacts/v3/q4_2_ridge_intervals.csv.gz",
+    "4-3": "artifacts\\v5\\q4_online_intervals.csv.gz"
+  },
+  "main": "Q3 and Q4 rolling use causal monthly selection; Q1/Q2/Q4 ahead retained",
+  "copied_byte_identical": [
+    "1",
+    "2",
+    "4-2"
+  ]
+}

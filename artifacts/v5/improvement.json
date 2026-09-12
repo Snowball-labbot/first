@@ -1,0 +1,58 @@
+[
+  {
+    "mode": 3,
+    "baseline_cost": 13575976.779540649,
+    "v5_cost": 13489127.936012384,
+    "saving": 86848.84352826362,
+    "saving_percent": 0.6397244554745195,
+    "baseline_emergency": 101019.31953039809,
+    "v5_emergency": 79317.87137151798,
+    "initial_soc_difference": 0.0,
+    "final_soc_difference": 0.0,
+    "bootstrap": [
+      {
+        "block_days": 7,
+        "low": -3691.0492754351017,
+        "high": 193720.68215290492
+      },
+      {
+        "block_days": 14,
+        "low": -11465.74450406693,
+        "high": 210957.5092742827
+      },
+      {
+        "block_days": 28,
+        "low": -4654.220261283315,
+        "high": 190032.83918117647
+      }
+    ]
+  },
+  {
+    "mode": 4,
+    "baseline_cost": 14314442.478789123,
+    "v5_cost": 14216325.97670322,
+    "saving": 98116.5020859029,
+    "saving_percent": 0.6854371187092345,
+    "baseline_emergency": 104300.85378382177,
+    "v5_emergency": 82185.17254284443,
+    "initial_soc_difference": 0.0,
+    "final_soc_difference": 0.0,
+    "bootstrap": [
+      {
+        "block_days": 7,
+        "low": -222.8518836639039,
+        "high": 210423.23126000311
+      },
+      {
+        "block_days": 14,
+        "low": -5244.790568423611,
+        "high": 221675.5209239741
+      },
+      {
+        "block_days": 28,
+        "low": -713.5146374587238,
+        "high": 209980.91662668128
+      }
+    ]
+  }
+]

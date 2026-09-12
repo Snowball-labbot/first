@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "updated": [
+    {
+      "key": "3",
+      "cells_compared": 260205,
+      "headers_preserved": true,
+      "formula_cells": 0,
+      "sha256": "8b576229a504a7cbe6d71ec968d4a0db0af0ecb5ece06a6e9b84e1a6ac23818c"
+    },
+    {
+      "key": "4-3",
+      "cells_compared": 260208,
+      "headers_preserved": true,
+      "formula_cells": 0,
+      "sha256": "1da86892375e7aae09e63f77f0daf3c587d8a89d228af8d8e18e3d1bb05abeb1"
+    }
+  ],
+  "copied": {
+    "1": "3eafbcaf3c8953948f841efbd1bc77507c878dc199eb413a6dd4d5e8fb148ff8",
+    "2": "e11df44cdae9f07d12c6ff88d80ea2a2fe46a6554bbba5975aa53e78c87b8a68",
+    "4-2": "29845834e4e9099e388a741ca3644fe099cb26fd992bdf7816f25e7bd6514285"
+  }
+}

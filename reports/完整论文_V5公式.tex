@@ -1,0 +1,138 @@
+
+L_{d,t}=P^{\mathrm{load}}_{d,t}\Delta t,\qquad V_{d,t}=P^{\mathrm{PV}}_{d,t}\Delta t,\qquad \Delta t=\frac{1}{6}\ \mathrm{h}.
+
+
+
+\min C_1=\sum_{t=1}^{144}p_tg_t.
+
+
+
+g_t+V_t+d_t=L_t+c_t+w_t,\qquad g_t,w_t\geq0.
+
+
+
+S_{t+1}=S_t+\eta_c c_t-\frac{d_t}{\eta_d},\qquad 1200\leq S_t\leq10800.
+
+
+
+0\leq c_t\leq Mz_t,\qquad 0\leq d_t\leq M(1-z_t),\qquad z_t\in\{0,1\}.
+
+
+
+S_1=S_{145}=6000.
+
+
+
+\boxed{\left\{\begin{aligned}\min_{g,c,d,w,S,z}\quad &\sum_{t=1}^{144}p_tg_t\\\mathrm{s.t.}\quad &g_t+V_t+d_t=L_t+c_t+w_t,\\&S_{t+1}=S_t+\eta_c c_t-d_t/\eta_d,\\&1200\leq S_t\leq10800,\quad g_t,w_t\geq0,\\&0\leq c_t\leq Mz_t,\quad0\leq d_t\leq M(1-z_t),\\&z_t\in\{0,1\},\quad S_1=S_{145}=6000.\end{aligned}\right.}
+
+
+
+g_t^{(0)}=\max(L_t-V_t,0),\qquad C_1^{(0)}=\sum_t p_tg_t^{(0)}.
+
+
+
+x_t=\min\{c_t,d_t/\rho\},\quad c'_t=c_t-x_t,\quad d'_t=d_t-\rho x_t,\quad w'_t=w_t+(1-\rho)x_t.
+
+
+
+C_{\mathrm{LP}}^{*}\le C_{\mathrm{MILP}}^{*}\le C_{\mathrm{transformed\ LP}}=C_{\mathrm{LP}}^{*}.
+
+
+
+\hat y_{d,t}^{\mathrm{seasonal}}=\frac{y_{d-1,t}+y_{d-7,t}}{2}.
+
+
+
+\min_{\beta,b}\sum_{i\in\mathcal T_d}(y_i-b-\widetilde{x}_i^{\mathsf T}\beta)^2+\lambda\|\beta\|_2^2.
+
+
+
+\mathrm{MAE}=\frac{1}{n}\sum_i|P_i-\widehat P_i|,\qquad\mathrm{RMSE}=\sqrt{\frac{1}{n}\sum_i(P_i-\widehat P_i)^2}.
+
+
+
+\varepsilon_{j,s}=(L_{j,s}-V_{j,s})-(\hat L_{j,s}-\hat V_{j,s}).
+
+
+
+\mathcal E_{d,t}=\{\varepsilon_{j,s}:\max(2,d-28)\leq j<d,\ 1\leq s\leq144,\ |s-t|\leq3\}.
+
+
+
+r_{d,t}(q)=\max\{0,Q_q(\mathcal E_{d,t})\}.
+
+
+
+L_t^{\mathrm{nom}}=\hat L_{d,t}+r_{d,t}(q),\qquad V_t^{\mathrm{nom}}=\hat V_{d,t},\qquad S_{d,145}^{\mathrm{nom}}\geq6000.
+
+
+
+u_t=g_t+V_t-L_t.
+
+
+
+c_t=\min\left\{\max(u_t,0),M,\frac{10800-S_t}{\eta_c}\right\}.
+
+
+
+d_t=\min\left\{\max(-u_t,0),M,\eta_d(S_t-1200)\right\}.
+
+
+
+e_t=\max(-u_t-d_t,0),\qquad w_t=\max(u_t-c_t,0).
+
+
+
+S_{d+1,1}=S_{d,145}.
+
+
+
+C_2=\sum_{d,t}p_tg_{d,t}+5\sum_{d,t}p_te_{d,t}.
+
+
+
+\boxed{\left\{\begin{aligned}(g^{\mathrm{plan}},\ldots)&\in\arg\min_{(g,c,d,w,S,z)\in\Omega}\sum_t p_tg_t,\\L^{\mathrm{nom}}&=\hat L+r(q),\quad V^{\mathrm{nom}}=\hat V,\\S_1^{\mathrm{nom}}&=S_1^{\mathrm{actual}},\quad S_{145}^{\mathrm{nom}}\geq6000,\\(c_t,d_t,e_t,w_t)&=\mathcal G(g_t^{\mathrm{plan}},L_t,V_t,S_t),\\C_2&=\sum_{d,t}p_t(g_{d,t}^{\mathrm{plan}}+5e_{d,t}).\end{aligned}\right.}
+
+
+
+u_t=(x_t-y_t)^+,\qquad v_t=(y_t-x_t)^+,\qquad y_t=x_t+v_t-u_t.
+
+
+
+F_t=p_t\min(x_t,y_t)+0.5p_tu_t+1.5p_tv_t+5p_te_t=p_tx_t-0.5p_tu_t+1.5p_tv_t+5p_te_t.
+
+
+
+\boxed{\left\{\begin{aligned}\min_{y,c,d,w,S,u,v}\quad&\sum_{t\in T_\tau}\hat p_{\tau,t}(1.5v_t-0.5u_t)\\\mathrm{s.t.}\quad&y_t=x_t+v_t-u_t,\quad0\le u_t\le x_t,\quad v_t\ge0,\\&y_t+\hat V_{\tau,t}+d_t=\hat L_{\tau,t}+r_{\tau,t}+c_t+w_t,\\&(y,c,d,w,S)\in\Omega,\quad S_\tau=S_\tau^{\mathrm{actual}},\quad S_{145}\ge6000.\end{aligned}\right.}
+
+
+
+\hat\beta_{d,v,h}=\operatorname{clip}_{[0,1.5]}\left(\frac{\sum_{i\in H_d}x_{i,v}y_{i,v,h}}{1.2\sum_{i\in H_d}x_{i,v}^{2}}\right),\qquad H_d=\{\max(7,d-28),\ldots,d-1\}.
+
+
+
+\hat L^{A}_{d,v,t}=\max\{0,\hat L^{0}_{d,t}+\hat\beta_{d,v,h(t)}x_{d,v}\}.
+
+
+
+\hat p^{\mathrm{seasonal}}_{\tau,j}=\frac{p_{\tau+j-144}+p_{\tau+j-1008}}2,\qquad j=0,\ldots,143.
+
+
+
+r_j=\sigma(W_{ir}x_j+b_{ir}+W_{hr}h_{j-1}+b_{hr}),\quad z_j=\sigma(W_{iz}x_j+b_{iz}+W_{hz}h_{j-1}+b_{hz}).
+
+
+
+n_j=\tanh(W_{in}x_j+b_{in}+r_j\odot(W_{hn}h_{j-1}+b_{hn})),\quad h_j=(1-z_j)\odot n_j+z_j\odot h_{j-1}.
+
+
+
+\hat p_{\tau,j}=\max\{0.001,\hat p^{\mathrm{seasonal}}_{\tau,j}+s_y(w^\mathsf{T}h_j+b)\}.
+
+
+
+J_d^*=\min_{g\in\mathcal F_d}p_d^\mathsf{T}g,\qquad J_{m,d}=p_d^\mathsf{T}g_{m,d},\qquad g_{m,d}\in\mathcal F_d.
+
+
+
+0\le\Delta_m\le R_m=\sum_d(J_{m,d}-J_d^*),\qquad \gamma_m=\frac{R_m}{\sum_dJ_{m,d}}\times100\%.

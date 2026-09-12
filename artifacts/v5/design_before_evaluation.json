@@ -1,0 +1,28 @@
+{
+  "candidates": [
+    "baseline",
+    "adaptive"
+  ],
+  "validation_days": [
+    21,
+    31
+  ],
+  "evaluation_days": [
+    31,
+    365
+  ],
+  "window_days": 28,
+  "shrink": 0.2,
+  "slope_bounds": [
+    0,
+    1.5
+  ],
+  "observation_slots": 18,
+  "target_block_slots": 6,
+  "quantile": 0.5,
+  "mask": 7,
+  "terminal": 6000,
+  "price_model": "seasonal",
+  "selection": "January 22-31 realized cost separately for Q3 and Q4 rolling; baseline wins ties",
+  "scope": "Same-dataset development; previous annual results known; no untouched-test claim"
+}

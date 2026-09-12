@@ -1,0 +1,15 @@
+{
+  "update": "first day of every month",
+  "validation_days": 28,
+  "candidates": [
+    "baseline",
+    "adaptive"
+  ],
+  "risk": 0.5,
+  "terminal": 6000,
+  "mask": 7,
+  "selection": "common initial SOC from live state at start of historical validation window; realized historical costs; baseline wins ties",
+  "february": "January selection, unchanged",
+  "price_model": "seasonal",
+  "scope": "Predefined online selection extension; not an untouched external test"
+}

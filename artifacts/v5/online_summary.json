@@ -1,0 +1,38 @@
+[
+  {
+    "strategy": "q3_online",
+    "days": 334,
+    "initial_soc": 9902.811287870369,
+    "final_soc": 5903.652893156119,
+    "total_cost_yuan": 13489127.936012384,
+    "emergency_kwh": 79317.87137151798,
+    "emergency_cost_yuan": 447134.22796976985,
+    "physical": {
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  {
+    "strategy": "q4_online",
+    "days": 334,
+    "initial_soc": 9902.811287870369,
+    "final_soc": 5952.822906221047,
+    "total_cost_yuan": 14216325.97670322,
+    "emergency_kwh": 82185.17254284443,
+    "emergency_cost_yuan": 451344.2642770773,
+    "physical": {
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  }
+]

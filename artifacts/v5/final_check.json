@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "tables": 65,
+  "figures": 16,
+  "old_native_math_preserved": 45,
+  "new_native_equations": 2,
+  "unique_numeric_table_values_checked": 374,
+  "copied_workbooks_byte_identical": 3,
+  "updated_workbook_cells_checked": 520413,
+  "pages": 77,
+  "body_pages": 27,
+  "figures_byte_identical_to_v4": true,
+  "sources": {
+    "src\\build_v5_word.py": "5311b1988b15f565f652d89064e7802ba100123e4dfedec9809406d6ef997acf",
+    "src\\v5_audit.py": "5a1c171fa1ecf45b39cfa9ba08adfbb87895b86811e256ff71478f96860412a8",
+    "src\\v5_delivery.py": "0a965eae2335d977eb79bca227dac1696e692d5dae3775a686f559af1a417141",
+    "src\\v5_experiments.py": "ad6cfa80294f70cc8446efd9668668897c93c0947ab35aa4c0a6e4ee24c49996",
+    "src\\v5_final_check.py": "9833b6c25aed5446ebba3d3b4b89363492c2f7f29b1fc00bb44530390861ef03",
+    "src\\v5_model.py": "cd13761e68dc4ec6174075740b37cb53b7adfe5187f7807100a5b1efef813ee0",
+    "src\\v5_online.py": "724beb6e3ae95670c425a89c538a55fa6e87adf5cb964663a9fe06702ad1d1f3",
+    "src\\v5_price_audit.py": "f4b4c28d85e91798cc36c2848e4086ad53a04f3dfa247b57f3b21344b497bb09",
+    "src\\v5_render.py": "746730844519cdb34a6f8c5335ff36137a1b216be53d2c0861a535c926ea4e8a",
+    "src\\v5_report.py": "0ef47b54366cdfc85c2bc537fc90add80af203619abc669a48d3d78b05b9a483",
+    "src\\v5_retained_audit.py": "94596bd8eb5e77f442168e7552a692eed2e7122bb3a3a2e8f6d674e11cb0c7f9",
+    "src\\v5_summary.py": "8075a9ed48f70ca26c82fdc447b44d0fc8f6985f4b5270b88035a394468a4bf7"
+  },
+  "outputs": {
+    "reports\\完整论文_V5.docx": "b02e9fc17a759c621b8ae46473086dd6c9a171c905c044e3ec2713651c857775",
+    "reports\\完整论文_V5.md": "a6fe39516e3cf930d1ffccf298b7011ceba3189394b71515b9299df70206c89f",
+    "reports\\完整论文_V5.pdf": "441f184acee65b0d627eafbe387df1752101a8e53d9576c32c5a6139c7bbda07",
+    "reports\\完整论文_V5公式.tex": "c07195e98999fa2022127da12a17cd7f6d33f1b5d50d8e4bed45c437433f3230"
+  }
+}

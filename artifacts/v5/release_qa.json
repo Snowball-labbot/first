@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "word_schema_validation": "PASS",
+  "unit_tests_passed": 23,
+  "rendered_pages": 77,
+  "abstract_pages": 1,
+  "body_and_references_pages": 27,
+  "visual_review": "Contact sheets reviewed during generation; final page 6 and result/conclusion pages checked after pagination change. Figures retained as baseline evidence.",
+  "native_equations": 47,
+  "figures": 16,
+  "tables": 65,
+  "visual_redesign_deferred_to": "V6",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scipy": "1.17.1",
+    "torch": "2.14.0+cpu"
+  }
+}

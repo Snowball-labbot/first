@@ -1,3 +1,9 @@
+## 最新交付：V5（2026-09-12）
+
+[完整论文 Word](reports/完整论文_V5.docx) · [PDF](reports/完整论文_V5.pdf) · [模型与数据核验](docs/V5_REVIEW.md) · [五份结果及审计记录](artifacts/v5)
+
+V5新增按历史28天月度选择的负载修正，第三问节省86,848.84元，第四问滚动节省98,116.50元；初末SOC分别相同。截图所述功率/电量、供给富余、计划计费三项均已专项核验。图形保留基础对照，V6再作视觉优化。以下为历史版本介绍。
+
 ## 最新论文：Version 4
 
 [Word](reports/完整论文_V4.docx) · [PDF](reports/完整论文_V4.pdf) · [Markdown](reports/完整论文_V4.md) · [修订与核验说明](docs/V4_REVIEW.md)

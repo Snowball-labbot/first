@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "q1_milp_cost": 35126.848589289635,
+  "q2_cost": 14132612.15924625,
+  "q2_max_daily_difference": 1.4551915228366852e-11,
+  "q4_ahead_cost": 14880535.049452208,
+  "q4_max_daily_difference": 1.4551915228366852e-11,
+  "recomputed_days_per_stochastic_policy": 334
+}

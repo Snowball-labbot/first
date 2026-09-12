@@ -1,0 +1,284 @@
+{
+  "status": "PASS",
+  "seasonal_release_vectors": 1432,
+  "ridge_refits": 13,
+  "gru_checkpoint_replays": 39,
+  "seed_reporting_correction": "17,42,2026 are base seeds; actual seed is base seed plus fit-day index",
+  "max_replay_error": 0.0,
+  "records": [
+    {
+      "fit_day": 14,
+      "base_seed": 17,
+      "actual_seed": 31,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "bc35a963cbf63413538ac91768df885da82fc3d8c582f0f9baafba9408fb61cc"
+    },
+    {
+      "fit_day": 14,
+      "base_seed": 42,
+      "actual_seed": 56,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "a160d91ec471e5e9e131a2714c814ab49756aaec758b3ed56231f7cb2e2ede7b"
+    },
+    {
+      "fit_day": 14,
+      "base_seed": 2026,
+      "actual_seed": 2040,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "2337f8e0e36645b18c010bede53c428bd2b5c31bd9849d9ba2c8075ca4905cb6"
+    },
+    {
+      "fit_day": 21,
+      "base_seed": 17,
+      "actual_seed": 38,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "e9529a7ed9f7ddf9089df759af6722069f4c1cdd01a5e2c15cf83b7601e03aab"
+    },
+    {
+      "fit_day": 21,
+      "base_seed": 42,
+      "actual_seed": 63,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "0acd80371bb5b82b8dc006d62c9ac13b38667a68fb0fe7ae94232dac51f797f8"
+    },
+    {
+      "fit_day": 21,
+      "base_seed": 2026,
+      "actual_seed": 2047,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "06904d4fc6b5b21e0ff2a9f4555552550adf59b8702c9510493ca11d22c539c2"
+    },
+    {
+      "fit_day": 31,
+      "base_seed": 17,
+      "actual_seed": 48,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "f0fa31e2aba3138b3bf6c9855d375dc79842f76759bf52956c2c886381bca284"
+    },
+    {
+      "fit_day": 31,
+      "base_seed": 42,
+      "actual_seed": 73,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "9c22b3772c66ca5ae4398817416e61a0169f8e799576e68880f5ebbe0b93d1fb"
+    },
+    {
+      "fit_day": 31,
+      "base_seed": 2026,
+      "actual_seed": 2057,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "6d4283b532abe35cf0dc7c4361982690f90876396eaffa6eda76af31c05cb4b2"
+    },
+    {
+      "fit_day": 59,
+      "base_seed": 17,
+      "actual_seed": 76,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "5298a3c092092b5ace54f1907e214b35cfee3921d34ceb143ac914055486102d"
+    },
+    {
+      "fit_day": 59,
+      "base_seed": 42,
+      "actual_seed": 101,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "a0cb630891dad07669530dd14a04edbb98ea0d640b9064505c1ce235a70024d7"
+    },
+    {
+      "fit_day": 59,
+      "base_seed": 2026,
+      "actual_seed": 2085,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "02789d7965b5cb75d3aa95cdf666cdc075fc1588efdafc5354fc1090b17f227b"
+    },
+    {
+      "fit_day": 90,
+      "base_seed": 17,
+      "actual_seed": 107,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "58b7f791c8e38b7a9dbc1d5230444af25a6ad6799368c73ed868f1b196715a82"
+    },
+    {
+      "fit_day": 90,
+      "base_seed": 42,
+      "actual_seed": 132,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "dc11f5a1b2c46343269b11163c08459f4df484efc1304b0c55f7f005c51e5557"
+    },
+    {
+      "fit_day": 90,
+      "base_seed": 2026,
+      "actual_seed": 2116,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "06c48137510a030a1ae6302309e189c7d9910448aa470f189d310f2fcfea8919"
+    },
+    {
+      "fit_day": 120,
+      "base_seed": 17,
+      "actual_seed": 137,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "3a6392b6a83e0dccc2ccd1faa5f04c0220a9fb3a2d391038acdea89211aff3a8"
+    },
+    {
+      "fit_day": 120,
+      "base_seed": 42,
+      "actual_seed": 162,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "d732bf63b6cb4f56aaba4712fbaab9a739cb4f0df9e1e0071749c3f79d21208e"
+    },
+    {
+      "fit_day": 120,
+      "base_seed": 2026,
+      "actual_seed": 2146,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "5adff36221f7d5760b69eafd4cb1c22cac3955198df2b44c69ab0e75feec8941"
+    },
+    {
+      "fit_day": 151,
+      "base_seed": 17,
+      "actual_seed": 168,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "f414408537e5a1653a03f7e40cd9c4794809eb9d64f811fe0442e3663e4620cc"
+    },
+    {
+      "fit_day": 151,
+      "base_seed": 42,
+      "actual_seed": 193,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "0b3e0adf310f24f6badec695b1c1c17ffd2aacd0167547d833a6aa884133d1fd"
+    },
+    {
+      "fit_day": 151,
+      "base_seed": 2026,
+      "actual_seed": 2177,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "1aa8f75268e542aa0a93f3274cfbdcf269a33c34442a273135f091d448bae00f"
+    },
+    {
+      "fit_day": 181,
+      "base_seed": 17,
+      "actual_seed": 198,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "c3c5b1d038668a40c73e8b7ec581334c968e300a070b7dd5b370cafa684f873e"
+    },
+    {
+      "fit_day": 181,
+      "base_seed": 42,
+      "actual_seed": 223,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "47120ced2f9e6601a51b7fa8e1fa786de8b57b6d3eb9f24e0950f5c487858931"
+    },
+    {
+      "fit_day": 181,
+      "base_seed": 2026,
+      "actual_seed": 2207,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "85f5892418bd6dc6f3356d089786f1d6dbb434c13dad7416795b3d29333e3a23"
+    },
+    {
+      "fit_day": 212,
+      "base_seed": 17,
+      "actual_seed": 229,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "5e6fda9e1361909f7b5f5eda8a514071f68b2760a89d611ea6bdb978f2ea505e"
+    },
+    {
+      "fit_day": 212,
+      "base_seed": 42,
+      "actual_seed": 254,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "6baef3309cfb4082bb2a272bdf930c4f4087722bde4509cd20ddd9491878007d"
+    },
+    {
+      "fit_day": 212,
+      "base_seed": 2026,
+      "actual_seed": 2238,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "e2e069d4806ded476ebda08e4abade1dbe4e5cd8605befad34f009f18834bd59"
+    },
+    {
+      "fit_day": 243,
+      "base_seed": 17,
+      "actual_seed": 260,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "39f8ab6b9425edd3d43ba93949960cafc53104c3ca274332ebfacb193d1b8004"
+    },
+    {
+      "fit_day": 243,
+      "base_seed": 42,
+      "actual_seed": 285,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "17d4f70271cc1609381003e0fdcc133a6f5354c767547e29d38ca3011a7a3967"
+    },
+    {
+      "fit_day": 243,
+      "base_seed": 2026,
+      "actual_seed": 2269,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "f2520e35477b5acd918c057195703986a8ed12776df0fc085b2f02875354cde0"
+    },
+    {
+      "fit_day": 273,
+      "base_seed": 17,
+      "actual_seed": 290,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "e5c01be0db831ff6c51f07cf95d1844fae1f8263d3ebbfc767b922cf4dc2025e"
+    },
+    {
+      "fit_day": 273,
+      "base_seed": 42,
+      "actual_seed": 315,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "142917c8029ab7e21b0e8ca472f59869f056073188f0ce25240cb34ab11e6217"
+    },
+    {
+      "fit_day": 273,
+      "base_seed": 2026,
+      "actual_seed": 2299,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "a6b0ecf4f5a1b0910dcf46eee221bbff8905f92a09da22756ffb85490334d324"
+    },
+    {
+      "fit_day": 304,
+      "base_seed": 17,
+      "actual_seed": 321,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "4132f7d95a8d3355b8c7a14f207f9939b4d18d26e7f3aaed559b443d25789c21"
+    },
+    {
+      "fit_day": 304,
+      "base_seed": 42,
+      "actual_seed": 346,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "81d209af09edc689d1f5b84fd61e023eeea4bf22f3b8c8fe1b9d0a7822f26941"
+    },
+    {
+      "fit_day": 304,
+      "base_seed": 2026,
+      "actual_seed": 2330,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "a2c5a7bb591c5838f894d1e6df8bbc50327d6bad717d9633a8a5aae8d38db825"
+    },
+    {
+      "fit_day": 334,
+      "base_seed": 17,
+      "actual_seed": 351,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "9747692f3bc7ba583654d9e4b1e85f95351f8ed3c9ec4901b7a2ac5c592af36f"
+    },
+    {
+      "fit_day": 334,
+      "base_seed": 42,
+      "actual_seed": 376,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "ecc288d4078f59bb1bcbdae4f7bcc24d46ea183b5703d3752cce7f8985f3ac27"
+    },
+    {
+      "fit_day": 334,
+      "base_seed": 2026,
+      "actual_seed": 2360,
+      "max_replay_error": 0.0,
+      "checkpoint_sha256": "de7d465a85867b2873620c7f957f272f75f9d305ec1e05f3911fdda1016a1e7c"
+    }
+  ],
+  "cache_sha256": "331d00d56d2bb730035a06002c1c791e82eda25a5b12f9cc83a7a944b9840886"
+}
