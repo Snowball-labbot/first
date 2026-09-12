@@ -1,0 +1,107 @@
+\[
+L_{d,t}=P^{\mathrm{load}}_{d,t}\Delta t,\qquad V_{d,t}=P^{\mathrm{PV}}_{d,t}\Delta t,\qquad \Delta t=\frac{1}{6}\ \mathrm{h}.
+\]
+
+\[
+\min C_1=\sum_{t=1}^{144}p_tg_t.
+\]
+
+\[
+g_t+V_t+d_t=L_t+c_t+w_t,\qquad g_t,w_t\geq0.
+\]
+
+\[
+S_{t+1}=S_t+\eta_c c_t-\frac{d_t}{\eta_d},\qquad 1200\leq S_t\leq10800.
+\]
+
+\[
+0\leq c_t\leq Mz_t,\qquad 0\leq d_t\leq M(1-z_t),\qquad z_t\in\{0,1\}.
+\]
+
+\[
+S_1=S_{145}=6000.
+\]
+
+\[
+\boxed{\left\{\begin{aligned}\min_{g,c,d,w,S,z}\quad &\sum_{t=1}^{144}p_tg_t\\\mathrm{s.t.}\quad &g_t+V_t+d_t=L_t+c_t+w_t,\\&S_{t+1}=S_t+\eta_c c_t-d_t/\eta_d,\\&1200\leq S_t\leq10800,\quad g_t,w_t\geq0,\\&0\leq c_t\leq Mz_t,\quad0\leq d_t\leq M(1-z_t),\\&z_t\in\{0,1\},\quad S_1=S_{145}=6000.\end{aligned}\right.}
+\]
+
+\[
+\hat y_{d,t}^{\mathrm{seasonal}}=\frac{y_{d-1,t}+y_{d-7,t}}{2}.
+\]
+
+\[
+\min_{\beta,b}\sum_{i\in\mathcal T_d}(y_i-b-\widetilde{x}_i^{\mathsf T}\beta)^2+\lambda\|\beta\|_2^2.
+\]
+
+\[
+\mathrm{MAE}=\frac{1}{n}\sum_i|P_i-\widehat P_i|,\qquad\mathrm{RMSE}=\sqrt{\frac{1}{n}\sum_i(P_i-\widehat P_i)^2}.
+\]
+
+\[
+\varepsilon_{j,s}=(L_{j,s}-V_{j,s})-(\hat L_{j,s}-\hat V_{j,s}).
+\]
+
+\[
+\mathcal E_{d,t}=\{\varepsilon_{j,s}:\max(2,d-28)\leq j<d,\ 1\leq s\leq144,\ |s-t|\leq3\}.
+\]
+
+\[
+r_{d,t}(q)=\max\{0,Q_q(\mathcal E_{d,t})\}.
+\]
+
+\[
+L_t^{\mathrm{nom}}=\hat L_{d,t}+r_{d,t}(q),\qquad V_t^{\mathrm{nom}}=\hat V_{d,t},\qquad S_{d,145}^{\mathrm{nom}}\geq6000.
+\]
+
+\[
+c_t=\min\left\{\max(-n_t,0),M,\frac{10800-S_t}{\eta_c}\right\},\qquad w_t=\max(-n_t-c_t,0).
+\]
+
+\[
+J_t^{(k)}(s)=\min_{a\in\mathcal A_t^{(k)}(s)}\left\{5p_t e_t^{(k)}(a)+J_{t+1}^{(k)}(s')\right\},\qquad J_{145}^{(k)}(s)=0.
+\]
+
+\[
+s_{t+1}^{*}\in\arg\min_{z\in[\max\{S_{\min},s_t-\min(n_t,M)/\eta_d\},s_t]}\left\{5p_t[n_t-\eta_d(s_t-z)]+\frac1K\sum_{k=1}^{K}J_{t+1}^{(k)}(z)\right\}.
+\]
+
+\[
+S_{d+1,1}=S_{d,145},\qquad C_2=\sum_{d,t}p_t\left(g_{d,t}^{\mathrm{plan}}+5e_{d,t}\right).
+\]
+
+\[
+u_t=(x_t-y_t)^+,\qquad v_t=(y_t-x_t)^+,\qquad y_t=x_t+v_t-u_t.
+\]
+
+\[
+F_t=p_t\min(x_t,y_t)+0.5p_tu_t+1.5p_tv_t+5p_te_t=p_tx_t-0.5p_tu_t+1.5p_tv_t+5p_te_t.
+\]
+
+\[
+\boxed{\left\{\begin{aligned}\min_{y,c,d,w,S,u,v}\quad&\sum_{t\in T_\tau}\hat p_{\tau,t}(1.5v_t-0.5u_t)\\\mathrm{s.t.}\quad&y_t=x_t+v_t-u_t,\quad0\le u_t\le x_t,\quad v_t\ge0,\\&y_t+\hat V_{\tau,t}+d_t=\hat L_{\tau,t}+r_{\tau,t}+c_t+w_t,\\&(y,c,d,w,S)\in\Omega,\quad S_\tau=S_\tau^{\mathrm{actual}},\quad S_{145}\ge6000.\end{aligned}\right.}
+\]
+
+\[
+\hat\beta_{d,v,h}=\operatorname{clip}_{[0,1.5]}\left(\frac{\sum_{i\in H_d}x_{i,v}y_{i,v,h}}{1.2\sum_{i\in H_d}x_{i,v}^{2}}\right),\qquad H_d=\{\max(7,d-28),\ldots,d-1\}.
+\]
+
+\[
+\hat L^{A}_{d,v,t}=\max\{0,\hat L^{0}_{d,t}+\hat\beta_{d,v,h(t)}x_{d,v}\}.
+\]
+
+\[
+p_j=\hat p_{\tau,j}+\varepsilon_{\tau,j}.
+\]
+
+\[
+g_d^{0}\in\arg\min_{(g,c,d,w,S)\in\mathcal F_d}\sum_{t=1}^{144}\hat p_{d,0,t}g_t.
+\]
+
+\[
+\min\sum_{t\in R_\tau}\hat p_{\tau,t}\left(k_t+0.5a_t+1.5b_t\right).
+\]
+
+\[
+C_{4,2}=\sum_{d,t}p_{d,t}\left(g^0_{d,t}+5e_{d,t}\right),\qquad C_{4,3}=\sum_{d,t}p_{d,t}\left(k_{d,t}+0.5a_{d,t}+1.5b_{d,t}+5e_{d,t}\right).
+\]

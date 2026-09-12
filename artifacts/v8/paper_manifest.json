@@ -1,0 +1,9 @@
+{
+  "figures": 14,
+  "tables": 61,
+  "display_equations": 27,
+  "manuscript": "reports/完整论文_V8.md",
+  "q1": "artifacts/v8/q1_intervals.csv",
+  "other_results": "artifacts/v5b",
+  "abstract_style": "V6 method-result emphasis, V7 unified model"
+}

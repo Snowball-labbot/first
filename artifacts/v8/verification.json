@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "pdf_pages": 44,
+  "body_and_references_excluding_abstract": 20,
+  "appendix_starts": 22,
+  "program_appendix_starts": 31,
+  "figures": 14,
+  "tables": 61,
+  "native_math": 52,
+  "numbered_equations": 27,
+  "q1_cost_yuan": 35126.948589289634,
+  "q1_physical": {
+    "max_balance_residual_kwh": 3.410605131648481e-13,
+    "max_soc_residual_kwh": 2.5579538487363607e-12,
+    "max_soc_discontinuity_kwh": 0.0,
+    "simultaneous_intervals": 0,
+    "min_soc_kwh": 1200.0,
+    "max_soc_kwh": 10800.0,
+    "pass": true
+  },
+  "q1_lp_milp_agree": true,
+  "q1_workbook_all_144_cells_checked": true,
+  "q1_body_and_appendix_tables_equal": true,
+  "other_four_workbooks_byte_identical": true,
+  "single_footer_page_field": true,
+  "all_pdf_text_black": true,
+  "removed_content_absent": true,
+  "figure_pages": {
+    "1": 3,
+    "2": 6,
+    "3": 7,
+    "4": 8,
+    "5": 10,
+    "6": 11,
+    "7": 12,
+    "8": 13,
+    "9": 14,
+    "10": 14,
+    "11": 17,
+    "12": 17,
+    "13": 19,
+    "14": 20
+  },
+  "image_quality": {
+    "modeling_overview": {
+      "pixels": [
+        3278,
+        1543
+      ],
+      "effective_dpi_at_15_5cm": 537.1690322580645
+    },
+    "raw_q1_inputs": {
+      "pixels": [
+        3339,
+        1534
+      ],
+      "effective_dpi_at_15_5cm": 547.1651612903225
+    },
+    "result_q1_dispatch": {
+      "pixels": [
+        3455,
+        2002
+      ],
+      "effective_dpi_at_15_5cm": 566.1741935483872
+    },
+    "q1_efficiency": {
+      "pixels": [
+        3265,
+        1357
+      ],
+      "effective_dpi_at_15_5cm": 535.0387096774193
+    },
+    "q2_validation": {
+      "pixels": [
+        3383,
+        1358
+      ],
+      "effective_dpi_at_15_5cm": 554.3754838709677
+    },
+    "q2_forecasts": {
+      "pixels": [
+        3489,
+        1757
+      ],
+      "effective_dpi_at_15_5cm": 571.7458064516129
+    },
+    "q2_cost": {
+      "pixels": [
+        3350,
+        1389
+      ],
+      "effective_dpi_at_15_5cm": 548.9677419354839
+    },
+    "q3_forecasts": {
+      "pixels": [
+        3401,
+        1356
+      ],
+      "effective_dpi_at_15_5cm": 557.3251612903226
+    },
+    "q3_validation": {
+      "pixels": [
+        3500,
+        1251
+      ],
+      "effective_dpi_at_15_5cm": 573.5483870967743
+    },
+    "q3_updates": {
+      "pixels": [
+        3314,
+        1706
+      ],
+      "effective_dpi_at_15_5cm": 543.0683870967742
+    },
+    "annual_price": {
+      "pixels": [
+        3504,
+        1839
+      ],
+      "effective_dpi_at_15_5cm": 574.203870967742
+    },
+    "price_uncertainty": {
+      "pixels": [
+        3329,
+        1973
+      ],
+      "effective_dpi_at_15_5cm": 545.5264516129032
+    },
+    "price_dispatch": {
+      "pixels": [
+        3559,
+        2270
+      ],
+      "effective_dpi_at_15_5cm": 583.2167741935484
+    },
+    "inventory_savings": {
+      "pixels": [
+        3372,
+        1683
+      ],
+      "effective_dpi_at_15_5cm": 552.5729032258065
+    }
+  },
+  "hashes": {
+    "reports/完整论文_V8.md": "29c786e42521075f5d6aea278aff7fb79596a7bfb7b8c74ab166d52d0acbc9aa",
+    "reports/完整论文_V8.docx": "826157e20a3403b765450485c73ab807bc347838ac80dcf71a32f2c31db2cbae",
+    "reports/完整论文_V8.pdf": "ed1451ac54d335cc01af282be48ad18a7ae2718f30702d4b9639767c4089ae8d"
+  },
+  "visual_review": "See visual_review.json for final rendered-page inspection; deterministic checks do not replace it."
+}

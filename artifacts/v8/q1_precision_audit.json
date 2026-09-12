@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "cost_yuan": 35126.948589289634,
+  "rounded_total_yuan": 35126.95,
+  "user_reference_yuan": 35126.95,
+  "difference_yuan": 0.0014107103634160012,
+  "linear_program": {
+    "objective": 35126.94858928963,
+    "seconds": 0.011541200000010576,
+    "status": 0,
+    "iterations": 369,
+    "physical": {
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 8.313350008393172e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  "mixed_integer_program": {
+    "status": 0,
+    "cost": 35126.948589289634,
+    "seconds": 0.025968200000079378,
+    "mip_gap": 0.0,
+    "dual_bound": 35126.94858928963
+  },
+  "max_balance_error_kwh": 2.2737367544323206e-13,
+  "initial_kwh": 6000.0,
+  "final_kwh": 6000.0,
+  "rounding_and_alignment_experiments": {
+    "purchase_rounded_2dp_then_billed": 35126.923645,
+    "input_energy_rounded_2dp_then_optimized": 35126.972635888895,
+    "purchase_rounded_3dp_then_billed": 35126.9510239,
+    "input_energy_rounded_3dp_then_optimized": 35126.947450774074,
+    "purchase_rounded_4dp_then_billed": 35126.94837236,
+    "input_energy_rounded_4dp_then_optimized": 35126.948255230745,
+    "each_interval_bill_rounded_to_cents": 35126.89,
+    "old_v7_rotated_midnight_boundary": 35126.84858928963
+  },
+  "source_hashes": [
+    {
+      "path": "C题.pdf",
+      "bytes": 354389,
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "bytes": 16003,
+      "sha256": "66b87134f5ecccd68184d3539bb1293ef039f9e0fdd955a589b9bfa7f227c377"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    }
+  ],
+  "diagnosis": "The V7 Q1-only circular shift moved the fixed midnight state boundary. Original row order gives 35126.94858928963. This is alignment, not rounding.",
+  "convention": "All four questions treat an input timestamp as the right endpoint of its ten-minute interval. Template labels only control output row lookup; they do not reorder optimization inputs."
+}
