@@ -113,6 +113,10 @@ M为单时段放电上限；最优解只需比较可达区间端点和路径价�
 
 '''
     delivery.OUT=OUT;delivery.SOURCES=SOURCES;appendix=delivery.specified_tables()
+    caption=16
+    for item in json.loads((OUT/'specified_tables_manifest.json').read_text(encoding='utf-8')):
+        for _ in range(2 if item['question']=='1' else 3):
+            appendix=appendix.replace(f'表 {caption} ',f'表 {caption} 问题{item["question"]}（{item["date"]}） ',1);caption+=1
     # Unique temporary labels allow robust renumbering after removing old tables.
     appendix=re.sub(r'表 (\d+)',lambda m:'表 APP'+m[1],appendix)
     ending='''## 附录 B 支撑文件与完整程序
