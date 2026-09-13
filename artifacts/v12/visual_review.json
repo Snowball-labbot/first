@@ -1,11 +1,17 @@
 {
   "status": "PASS",
-  "pages_reviewed": 52,
+  "pages_reviewed": 53,
   "body_reference_pages": 22,
-  "all_12_figure_media_byte_identical": true,
-  "abstract_and_all_contact_sheets_inspected": true,
-  "table_and_figure_caption_pairs_checked": true,
-  "original_screenshot_large_gaps_removed": true,
+  "changed_figure_media": [
+    11
+  ],
+  "other_11_figure_media_byte_identical": true,
+  "all_figure_dimensions_unchanged": true,
+  "all_contact_sheets_inspected": true,
+  "figure11_page18_legend_fully_visible": true,
   "office_xml_validation": "PASS",
-  "isolated_support_export": "PASS"
+  "excel_native_preview": "five representative worksheet ranges",
+  "excel_no_decorative_fill": true,
+  "all_result_cell_values_unchanged": true,
+  "all_61_paper_tables_including_appendix_unchanged": true
 }

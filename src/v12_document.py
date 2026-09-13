@@ -16,7 +16,8 @@ from src.v9_document import maths, tables
 ROOT=Path(__file__).resolve().parents[1]
 PROGRAMS=['src/q12.py','src/q34_data.py','src/v3_model.py','src/v5_model.py',
     'src/v5b_value.py','src/v7_price.py','src/v7_dispatch.py','src/v12_reproduce.py',
-    'src/v12_results.py','src/v10_prepare.py','scripts/v10_figures.m',
+    'src/v12_results.py','src/v12_excel_style.py','src/v10_prepare.py',
+    'scripts/v10_figures.m','scripts/v12_figure11.m',
     'support/V12/references/roles/编程手/scripts/export_publication_figure.m',
     'support/V12/references/roles/编程手/scripts/audit_publication_figure.m']
 
@@ -185,7 +186,7 @@ def main():
         '（3）artifacts/v5/online_selection.csv保存历史月度选择结果；artifacts/v8/figure_data.mat与artifacts/v10/dispatch_distribution.mat保存本文图形的数值输入。',
         '（4）src/与scripts/内的完整程序见下文；MATLAB图形导出与检查函数置于support/V12/。运行依赖及命令见压缩包根目录README.md。',
         '复算入口为python -m src.v12_reproduce --data-root <C题目录>。省略--days时计算334天；--days 1只执行首日核验。该入口复算论文已选定策略，采用保存的历史月度选择结果，不重新开展参数搜索。Result填写入口为python -m src.v12_results --templates <附件5目录>，只生成原模板包含的工作表。',
-        '绘图先运行python -m src.v10_prepare，再在MATLAB中加入scripts路径并调用v10_figures(pwd,fullfile(pwd,\'support\',\'V12\'))。以下列出全部计算和绘图源程序，代码中的路径均相对于工作目录。'
+        '绘图先运行python -m src.v10_prepare，再在MATLAB中加入scripts路径并调用v10_figures(pwd,fullfile(pwd,\'support\',\'V12\'))；图11另调用v12_figure11(pwd)，使顶部图例完整位于画布内。以下列出全部计算和绘图源程序，代码中的路径均相对于工作目录。'
     ]
     md=md[:md.index('## 附录 B')]+ '## 附录 B 支撑文件与计算程序\n\n'+'\n\n'.join(inventory)+'\n\n'
     for text in inventory:
@@ -211,6 +212,10 @@ def main():
     assert tables(d)==tables(base) and maths(d)==maths(base)
     assert [etree.tostring(x._inline,method='c14n') for x in d.inline_shapes]==[
         etree.tostring(x._inline,method='c14n') for x in base.inline_shapes]
+    shape=d.inline_shapes[10]
+    rid=shape._inline.find('.//'+qn('a:blip')).get(qn('r:embed'))
+    d.part.related_parts[rid]._blob=(ROOT/'figures/v12/price_uncertainty.png').read_bytes()
+    md=md.replace('../figures/v10/price_uncertainty.png','../figures/v12/price_uncertainty.png')
     # Chinese hanging punctuation must not protrude into the required margin.
     successors=['w:topLinePunct','w:autoSpaceDE','w:autoSpaceDN','w:bidi',
         'w:adjustRightInd','w:snapToGrid','w:spacing','w:ind','w:contextualSpacing',

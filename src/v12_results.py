@@ -16,6 +16,7 @@ import pandas as pd
 import openpyxl
 from openpyxl.styles import Alignment, Font, PatternFill
 from src.q12 import audit_trace, interval_label
+from src.v12_excel_style import format_sheet
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = {
@@ -185,6 +186,7 @@ def write_book(template, dest, payload):
             for row in ws:
                 row[1].alignment=Alignment(wrap_text=True,vertical='center')
                 ws.row_dimensions[row[0].row].height=36
+    for ws in wb:format_sheet(ws)
     assert wb.sheetnames == original_sheets
     wb.properties.creator = 'Modeling'
     wb.properties.lastModifiedBy = 'Modeling'

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "workbooks": {
+    "1": {
+      "cells_identical": 325,
+      "groups_checked": true
+    },
+    "2": {
+      "cells_identical": 63351,
+      "groups_checked": true
+    },
+    "3": {
+      "cells_identical": 112284,
+      "groups_checked": true
+    },
+    "4-2": {
+      "cells_identical": 63417,
+      "groups_checked": true
+    },
+    "4-3": {
+      "cells_identical": 112311,
+      "groups_checked": true
+    }
+  },
+  "all_61_paper_tables_including_appendix_data_unchanged": true,
+  "changed_figure_media": [
+    11
+  ],
+  "all_figure_dimensions_preserved": true
+}

@@ -9,3 +9,5 @@
 | 2026-09-13 | 基准与参考阅读 | Codex、Git、Python | 读取远端V10、安装指定skill、参考两篇本地PDF | 章节、字体、图表和文字审计 | 用于本轮修订 | 用户已授权编辑，未作终稿验收 | 固定源提交及文档哈希 | artifacts/v11/source_audit.json |
 | 2026-09-13 | 文字与排版 | Codex、python-docx | 严谨表达优先，不机械压缩；图片宽高不变 | 35处段落修订、字体和分页调整 | 写入V11，保留原V10 | 用户补充要求已纳入，终稿待审阅 | 原文差异、表格、公式和媒体逐项对比 | reports/完整论文_V11.docx；artifacts/v11/editorial_changes.json |
 | 2026-09-13 | 导出与检查 | Word、PDF渲染、技能检查脚本 | 核查实际字体、分页与科学内容一致性 | PDF、内容保护核验、视觉复核 | 保存交付与复现记录 | 不冒称用户已确认 | 检查结论及通用门禁误报解释见复核说明 | artifacts/v11/verification.json；docs/V11_REVIEW.md |
+
+| 2026-09-13 | V12模板排布与图11修正 | Codex、openpyxl、Excel、MATLAB、Word | 用户要求原模板黑白格式、日期分组、图例完整，全部数据不变 | 延续原模板分组框线，修复图11图例裁切，同步修正源码 | 已撤去用户否定的装饰配色，未新增说明页 | 按用户明确修正执行，尚未终稿验收 | 351688单元格及61张表逐项不变、其他11图不变、53页总览及OOXML通过 | artifacts/v12/correction_audit.json；results/V12/附件5 |

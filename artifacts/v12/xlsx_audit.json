@@ -11,7 +11,7 @@
         "计划购电量": 144,
         "充放电量": 6
       },
-      "sha256": "e7a6abe579852339e183886b2f494b02f2e9c5d251511cf88e07de978b7b9fa7",
+      "sha256": "f07359ec07ce8366f047f6f4a077c914246866c9ec7ce89b17ac430760ec9ca1",
       "cost_yuan": 35126.948589289634,
       "physical": {
         "max_balance_residual_kwh": 3.410605131648481e-13,
@@ -37,7 +37,7 @@
         "充放电量": 2004,
         "紧急购电量": 691
       },
-      "sha256": "5c815a60204a0b1973f904bc58c5005c4d35d33a0f135a9dbde85a8bbad9b888",
+      "sha256": "92d61afa15b036941eb1903b2a436726f4ed9868c88ebab5a2022482e73d3f4e",
       "cost_yuan": 13991392.603988541,
       "physical": {
         "max_balance_residual_kwh": 1.1368683772161603e-12,
@@ -65,7 +65,7 @@
         "充放电量": 2004,
         "紧急购电量": 587
       },
-      "sha256": "6ec09bab0feeb5b4bc7d0d7e4e2bd1cfbe373aaad076a6e4c76ef04d25df8e3d",
+      "sha256": "9c7170c8174a1ece191e3f05ff40aa7917c17991ae9cf16549db4c7dcb6eb272",
       "cost_yuan": 13479283.31613424,
       "physical": {
         "max_balance_residual_kwh": 1.3642420526593924e-12,
@@ -91,7 +91,7 @@
         "充放电量": 2004,
         "紧急购电量": 713
       },
-      "sha256": "bb058a88826a288c52e1d03f481552977316452395cfe7815e03dba68f6bc65d",
+      "sha256": "8793fb253091f1233080272f8bc1ec8ca41c90b53a0c47f37294faf3704b4d79",
       "cost_yuan": 14765492.68144737,
       "physical": {
         "max_balance_residual_kwh": 1.1368683772161603e-12,
@@ -119,7 +119,7 @@
         "充放电量": 2004,
         "紧急购电量": 596
       },
-      "sha256": "764a5942f4c5e287190b2fd3f9fd61fb5a3683b73f5412632e870f511cf19555",
+      "sha256": "eff16b28c914f81d210c2b90d7a843cbcaabaab2e20715916e3c0133be163728",
       "cost_yuan": 14210881.010117684,
       "physical": {
         "max_balance_residual_kwh": 1.3642420526593924e-12,

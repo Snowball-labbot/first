@@ -17,7 +17,7 @@ def main():
     stage=ROOT/'.qa/v12/support'
     stage.mkdir(parents=True,exist_ok=True)
     paths=[*PROGRAMS,*SOURCES.values(),'artifacts/v5/online_selection.csv',
-           'artifacts/v10/dispatch_distribution.mat']
+           'artifacts/v10/dispatch_distribution.mat','figures/v10/price_uncertainty.fig']
     paths += [str(p.relative_to(ROOT)).replace('\\','/') for p in
               (ROOT/'results/V12/附件5').glob('result*.xlsx')]
     for name in paths:
@@ -52,6 +52,7 @@ python -m src.v12_reproduce --data-root "<C题目录>"
 ~~~matlab
 addpath('scripts');
 v10_figures(pwd,fullfile(pwd,'support','V12'));
+v12_figure11(pwd);
 ~~~
 
 12张图沿用论文已经核验的MATLAB版本；图名中的v10表示图形来源，文稿版本为V12。重新汇总价格—储能功率分布可先执行 python -m src.v10_prepare。
@@ -59,14 +60,14 @@ v10_figures(pwd,fullfile(pwd,'support','V12'));
 artifacts/v5b 中的 selected_intervals 文件保留全部执行轨迹；versions 文件保留日期、发布时间版本、有效起点、目标区间、修改前后计划，未重复打包可由原始附件与程序生成的预测输入列。文件散列和长度见 MANIFEST.json。
 '''
     (stage/'README.md').write_text(readme,encoding='utf8')
-    manifest={str(p.relative_to(stage)).replace('\\','/'):
-        {'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
-        for p in stage.rglob('*') if p.is_file() and p.name!='MANIFEST.json'}
+    included=sorted(set(paths+list(VERSIONS.values())+
+        ['artifacts/v8/figure_data.mat','requirements.txt','README.md']))
+    manifest={name:{'bytes':(stage/name).stat().st_size,
+        'sha256':hashlib.sha256((stage/name).read_bytes()).hexdigest()} for name in included}
     (stage/'MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
     archive=ROOT/'results/V12/支撑材料_V12.zip'
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
-        for p in sorted(stage.rglob('*')):
-            if p.is_file():z.write(p,p.relative_to(stage))
+        for name in [*included,'MANIFEST.json']:z.write(stage/name,name)
     assert archive.stat().st_size<20_000_000,archive.stat().st_size
     with zipfile.ZipFile(archive) as z:
         assert z.testzip() is None

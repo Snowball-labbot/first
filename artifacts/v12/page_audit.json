@@ -225,7 +225,7 @@
   },
   {
     "page": 29,
-    "characters": 1905,
+    "characters": 1943,
     "drawings": 38,
     "images": 0,
     "head": "29 \n表 60 问题4-3（2025-12-21） 储能运行 \n时间段 \n充电量 \n放电量 \n时间段 \n充电量 \n放电量 \n00",
@@ -345,74 +345,82 @@
   },
   {
     "page": 44,
-    "characters": 2981,
+    "characters": 2971,
     "drawings": 0,
     "images": 0,
     "head": "44 \n\"\"\" \nfrom pathlib import Path \nfrom copy import copy \nfrom da",
-    "tail": "1e-7 \n    if key=='1': \n        assert abs(f.soc_end_kwh.iloc[-1]-6000) < 1e-7 \n"
+    "tail": "4-2']: \n        assert np.max(np.abs(final-original)) < 1e-7 \n    if key=='1': \n"
   },
   {
     "page": 45,
-    "characters": 4056,
+    "characters": 4075,
     "drawings": 0,
     "images": 0,
-    "head": "45 \n    return f, physical \n  \ndef make_payload(key, f): \n    tim",
-    "tail": "         for j,value in enumerate(row,1): \n                cell = ws.cell(i,j) \n"
+    "head": "45 \n        assert abs(f.soc_end_kwh.iloc[-1]-6000) < 1e-7 \n    r",
+    "tail": " for i,row in enumerate(rows,1): \n            for j,value in enumerate(row,1): \n"
   },
   {
     "page": 46,
-    "characters": 3672,
+    "characters": 3731,
     "drawings": 0,
     "images": 0,
-    "head": "46 \n                cell.value = value \n                if i>old_",
-    "tail": " as pd \nfrom scipy.io import savemat \nROOT=Path(__file__).resolve().parents[1] \n"
+    "head": "46 \n                cell = ws.cell(i,j) \n                cell.val",
+    "tail": "order, Font, PatternFill, Side \nfrom openpyxl.utils import get_column_letter \n \n"
   },
   {
     "page": 47,
-    "characters": 4459,
+    "characters": 3674,
     "drawings": 0,
     "images": 0,
-    "head": "47 \ndef main(): \n out=ROOT/'artifacts/v10';out.mkdir(exist_ok=Tru",
-    "tail": "rrow(a,[22 y],[24 y]);end \n for k=1:3,arrow(a,[84 ys(k)-8],[84 ys(k+1)+8]);end \n"
+    "head": "47 \n \ndef format_sheet(ws): \n    rows, cols = ws.max_row, ws.max_",
+    "tail": "ors. \n% Former figures 10 and 14 were removed; old figure 13 is now figure 12. \n"
   },
   {
     "page": 48,
-    "characters": 4093,
+    "characters": 4664,
     "drawings": 0,
     "images": 0,
-    "head": "48 \n saveout(f,out,'modeling_overview'); \nend \n \nif wanted(only,'",
-    "tail": "6]; \n saveout(f,out,'q2_validation'); \nend \n \nif wanted(only,'q2_forecasts') \n \n"
+    "head": "48 \n% Optional ONLY is a cell array of figure names for targeted ",
+    "tail": "ck',0:4:24,'XTickLabel',[],'YLim',[0 12],'YTick',[1.2 6 10.8]);ylabel(b,'储电量 / \n"
   },
   {
     "page": 49,
-    "characters": 3841,
+    "characters": 3748,
     "drawings": 0,
     "images": 0,
-    "head": "49 \n f=fig(16.368/2.54); \n for k=1:4 \n  for j=1:2 \n   a=ax(f,[.11",
-    "tail": "egend');lg.Position=[.18 .97 .70 .05]; \n  end \n  saveout(f,out,name{1}); \n end \n"
+    "head": "49 \nMWh'); \n c=ax(f,[.105 .11 .85 .115]);panel(c,'c','价格信号'); \n s",
+    "tail": "库存价值控制','最终费用'}); \n ylabel(a,'334 天费用 / 万元'); \n saveout(f,out,'q2_cost'); \nend \n"
   },
   {
     "page": 50,
-    "characters": 4017,
+    "characters": 3778,
     "drawings": 0,
     "images": 0,
-    "head": "50 \nend \n \nif wanted(only,'price_dispatch') \n \n R=load('artifacts",
-    "tail": "xport_publication_figure(fig, outputStem, dpi, grayscalePreview, strictDesign) \n"
+    "head": "50 \n \nif wanted(only,'q3_forecasts') \n f=fig(8.07339/2.54);a=ax(f",
+    "tail": "er','none','DefaultAxesTickLabelInterpreter','none'); \nend \nfunction a=ax(f,p) \n"
   },
   {
     "page": 51,
-    "characters": 2483,
+    "characters": 3981,
     "drawings": 0,
     "images": 0,
-    "head": "51 \n%EXPORT_PUBLICATION_FIGURE 通过设计门禁后输出 SVG、PNG 与灰度质检图。 \nargumen",
-    "tail": "\" + k + ... \n            \" 个坐标轴标题过长；完整论述应移到图注，面板内只保留短标题\"; %#ok<AGROW> \n    end \n"
+    "head": "51 \na=axes(f,'Position',p);hold(a,'on'); \nset(a,'FontSize',8,'Lin",
+    "tail": " \n    dpi (1,1) double {mustBeInteger,mustBeGreaterThanOrEqual(dpi,300)} = 300 \n"
   },
   {
     "page": 52,
-    "characters": 2232,
+    "characters": 2451,
     "drawings": 0,
     "images": 0,
-    "head": "52 \n \n    lineList = findall(ax, \"Type\", \"line\"); \n    for line =",
+    "head": "52 \n    grayscalePreview (1,1) logical = true \n    strictDesign (",
+    "tail": "    marker = string(line.Marker); \n        if marker == \"none\" || marker == \"\" \n"
+  },
+  {
+    "page": 53,
+    "characters": 2060,
+    "drawings": 0,
+    "images": 0,
+    "head": "53 \n            continue; \n        end \n        hasSparseMarkers ",
     "tail": "GROW> \n        break; \n    end \nend \n \nissues = unique(issues, \"stable\"); \nend \n"
   }
 ]

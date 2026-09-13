@@ -106,7 +106,8 @@ def main():
     result={'status':'PASS','pdf_pages':len(pdf),'through_references_including_abstract':reference_page,
         'body_and_references_excluding_abstract':reference_page-1,'appendix_A_page':appendix,
         'appendix_B_page':source_page,'figures':12,'tables':61,'native_math':52,
-        'figure_media_and_sizes_unchanged':True,'source_programs_complete':len(PROGRAMS),
+        'all_figure_sizes_unchanged':True,'figure11_legend_corrected':True,
+        'other_11_figure_media_unchanged':True,'source_programs_complete':len(PROGRAMS),
         'digital_format':'A4; margins >=2.5cm; abstract one page; centered page numbers; no TOC; anonymous; PDF and ZIP each <20MB',
         'layout':layouts,'horizontal_overflow':horizontal,'workbooks':xlsx,'support':support}
     (OUT/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8')
