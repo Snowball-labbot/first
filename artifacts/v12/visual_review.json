@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "pages_reviewed": 52,
+  "body_reference_pages": 22,
+  "all_12_figure_media_byte_identical": true,
+  "abstract_and_all_contact_sheets_inspected": true,
+  "table_and_figure_caption_pairs_checked": true,
+  "original_screenshot_large_gaps_removed": true,
+  "office_xml_validation": "PASS",
+  "isolated_support_export": "PASS"
+}

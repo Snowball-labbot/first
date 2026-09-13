@@ -1,0 +1,418 @@
+[
+  {
+    "page": 1,
+    "characters": 873,
+    "drawings": 0,
+    "images": 0,
+    "head": "1 \n考虑供需与电价不确定性的微网购电调度 \n摘 要 \n针对微网计划购电、储能运行与日内调单的耦合关系，本文以实际总购电费用最\n小",
+    "tail": "量配置给成本更高的后续缺口。四问在同一决策结构下逐层扩展，实现计\n划、调单与实时储能运行的协同。 \n关键词：微网调度；线性规划；风险校准；库存价值；滚动优化 \n"
+  },
+  {
+    "page": 2,
+    "characters": 1101,
+    "drawings": 0,
+    "images": 0,
+    "head": "2 \n一 问题重述 \n1.1 研究背景 \n光伏出力与小区负载在时间上存在差异。并网微网通过外部电网补充电力，并利\n用储能在低价或光",
+    "tail": "电费用最小\n为目标，联立能量平衡、容量、功率及日周期约束，得到多期调度模型；自由弃电条\n件下可用等价线性化处理充放电互斥。该物理可行域在后续各问中保持一致。 \n"
+  },
+  {
+    "page": 3,
+    "characters": 581,
+    "drawings": 0,
+    "images": 1,
+    "head": "3 \n2.2 问题二的分析 \n本问在确定性调度中引入供需预测误差。欠购触发五倍补购，多购仍按计划付\n费，因此先用历史残差校准日前供",
+    "tail": "，形成图1\n所示的统一调度框架。其中，预测提供供需和价格输入，线性规划生成购电计划，库\n存价值控制确定实时放电量。 \n \n图 1 整体建模思路与四问递进关系 \n"
+  },
+  {
+    "page": 4,
+    "characters": 1163,
+    "drawings": 16,
+    "images": 0,
+    "head": "4 \n三 模型假设与数据处理 \n3.1 参数及工作假设 \n储能与时间参数见表 1。功率上限定义在微网母线侧，所有决策电量统一使用\n",
+    "tail": "符串，统一转换后得到\n完整时间序列；附件2 两类序列均无缺失、非有限值、负数、重复日期或完全重复日\n曲线。全局四分位距检验未检出超界观测，原始样本全部保留。 \n"
+  },
+  {
+    "page": 5,
+    "characters": 983,
+    "drawings": 16,
+    "images": 0,
+    "head": "5 \n预处理仅规范时间格式与计量单位，无须填补、删点、缩尾或平滑。光伏序列中\n的23,540 个零值按零发电记录保留。训练集标准化",
+    "tail": "充放电量 M＝5000/6 kWh，用二元变量直接限制互斥： \n \n0 ≤𝑐𝑡≤𝑀𝑧𝑡,   0 ≤𝑑𝑡≤𝑀(1 −𝑧𝑡),  𝑧𝑡∈{0,1}. \n(5) \n"
+  },
+  {
+    "page": 6,
+    "characters": 768,
+    "drawings": 4,
+    "images": 1,
+    "head": "6 \n第一问要求日末储电量恢复至日初水平： \n \n𝑆1 = 𝑆145 = 6000. \n(6) \n以购电量、充放电量、未利用电量、",
+    "tail": "分别见表 3、表 4。 \n低价时段的外网购电同时满足负载与充电，形成集中购电峰值；高价时段由储能\n放电补充供电，减少外网购电量。储能由此实现购电时段的转移。 \n"
+  },
+  {
+    "page": 7,
+    "characters": 869,
+    "drawings": 54,
+    "images": 1,
+    "head": "7 \n储电量接近上限时，继续低价购电的可利用空间受限；接近下限时，后续负载缺\n口需要外网补足。因此图中的充放电切换既受价格驱动，也",
+    "tail": "将充放电损耗设为零后，费用进一步降至32,377.09 元。往返效率从64%提\n高到100%时，最优费用由38,223.65 元降至32,377.09 元。 \n"
+  },
+  {
+    "page": 8,
+    "characters": 600,
+    "drawings": 1,
+    "images": 1,
+    "head": "8 \n \n图 4 储能的净收益及效率对最优费用的影响 \n三种储能条件采用相同供需与日初、日末状态。效率敏感性分析对五组参数分别\n重",
+    "tail": "\n对负载或光伏电量序列 y，同期基线取昨日与上周同日相同时间槽的均值： \n \n𝑦̂𝑑,𝑡\nseasonal =\n𝑦𝑑−1,𝑡+𝑦𝑑−7,𝑡\n2\n. \n(8) \n"
+  },
+  {
+    "page": 9,
+    "characters": 1156,
+    "drawings": 3,
+    "images": 0,
+    "head": "9 \n岭回归采用 21 个特征：昨日、前日、上周同日的同槽值，三日和七日同槽均\n值、七日同槽标准差、昨日全天均值和近三日全天均值共",
+    "tail": "通购电和储能预安排；执行阶段仍使用实际\n供需，不把余量当成必须消耗的实体负载。余量不足可能增加五倍价补购，余量过大\n则可能形成无法利用但仍需付费的合同电量。 \n"
+  },
+  {
+    "page": 10,
+    "characters": 1161,
+    "drawings": 2,
+    "images": 0,
+    "head": "10 \n6.4 库存价值驱动的实时执行 \n零点生成计划后，普通购电费已由合同确定，执行阶段的任务是分配储能以减少\n后续紧急补购。若",
+    "tail": "选择与紧急购电权衡 \n表 5 与图 5 比较相同初始储电量下的验证费用及期末状态。随余量增加，紧急补\n购支出下降，普通购电支出上升；两者的折中决定余量选择。 \n"
+  },
+  {
+    "page": 11,
+    "characters": 1004,
+    "drawings": 54,
+    "images": 1,
+    "head": "11 \n表 5 一月份十天验证结果 \n预测器 \n余量 \n总费/元 \n紧急费/元 \n期末SOC/kWh \n同期 \n无 \n661,83",
+    "tail": "71.98 \n343.38 \n岭回归 \n179.86 \n234.59 \n155.28 \n306.74 \n注：误差单位为kW；光伏统计覆盖全天，包含夜间零值。 \n"
+  },
+  {
+    "page": 12,
+    "characters": 474,
+    "drawings": 27,
+    "images": 1,
+    "head": "12 \n \n图 6 四个指定日期的负载与光伏日前预测 \n7.3 购电费用与储能配置 \n表7 列出基础策略结果。图7 按预测器、风险",
+    "tail": "回归无余\n量降低10.01%。岭回归两组的期末储电量同为5,903.65 kWh，在相同预测器及初末状\n态下，10.01%的费用降幅直接反映风险余量的价值。 \n"
+  },
+  {
+    "page": 13,
+    "characters": 786,
+    "drawings": 0,
+    "images": 1,
+    "head": "13 \n基础策略紧急购电累计197,465.10 kWh，分布于1,132 个十分钟区间；连续区间\n合并后统计为紧急购电事件。未利",
+    "tail": "以最近完成区间的\n光伏观测衔接。 \n每次更新均以当时真实储电量为起点，固定已执行的购电与充放电量，重新优化\n剩余区间，构成模型预测控制的滚动决策过程[4]。 \n"
+  },
+  {
+    "page": 14,
+    "characters": 663,
+    "drawings": 0,
+    "images": 1,
+    "head": "14 \n例如，6 点更新时，0—6 点已经执行的结果保持固定，以6 点实际储电量为新的\n边界条件，对6—24 点重新规划，只执行至",
+    "tail": "，同一未来区间即使经历多次修订，也仅在执行时\n确定最终保留、取消和新增量。这样可以使计划优化中的目标与实际账单一致，避免\n把尚未交付的中间计划变化重复计费。 \n"
+  },
+  {
+    "page": 15,
+    "characters": 783,
+    "drawings": 4,
+    "images": 1,
+    "head": "15 \n8.3 滚动优化模型与风险校准 \n记Tτ为当前尚未执行的区间集合，Ω为第一问去除首末状态等式后的物理可行\n域。以更新后的光",
+    "tail": "行器，比较三次日内更新和仅午\n夜预报的运行费用，以评价新增预报信息在可调单条件下的经济价值。 \n表 8 将两方案费用分解为午夜计划、净调整及紧急补购三部分。 \n"
+  },
+  {
+    "page": 16,
+    "characters": 1387,
+    "drawings": 37,
+    "images": 0,
+    "head": "16 \n表 8 第三问基础策略与仅午夜预报的费用分解 \n费用或运行量 \n仅午夜预报 \n日内滚动 \n原计划费/元 \n12,530,1",
+    "tail": "口起点的实际储电量出发，\n以历史实际费用选择当月方案，费用相同时保留基础方案。候选模型、窗口、收缩系\n数和费用定义在全年评价前固定，月底数据仅用于次月选择。 \n"
+  },
+  {
+    "page": 17,
+    "characters": 1178,
+    "drawings": 0,
+    "images": 0,
+    "head": "17 \n两类电价情景均在3、6、7、8、9、10 月启用修正，其余月份使用基础预测。实\n际储电量连续跨月传递，历史回放的末状态不覆",
+    "tail": "格。惩罚系数取1，1 月15 日、22 日及后续每月首日重新拟合，训练窗口最多60\n日，所有训练目标在拟合前已经发生。预测价格下限为0.001 元/kWh。 \n"
+  },
+  {
+    "page": 18,
+    "characters": 333,
+    "drawings": 0,
+    "images": 2,
+    "head": "18 \n滚动分支采用昨日与上周同目标时段价格的均值，并在0、6、12、18 点按最新\n可见历史生成预测。两个分支的价格输入规则由一",
+    "tail": "8,096 个午夜预测目标的实际覆盖率为74.36%，该\n范围用于描述预测误差，不作为未来价格的保证边界。 \n \n图 11 波动价格的预测偏差与历史残差范围 \n"
+  },
+  {
+    "page": 19,
+    "characters": 1145,
+    "drawings": 0,
+    "images": 0,
+    "head": "19 \n9.2 日前与滚动模型的价格扩展 \n第四问继承第二问的供需预测、70%风险余量和固定合同价值控制，以及第三问\n的滚动光伏预",
+    "tail": "1 日至12 月31 日逐时执行，实际储电量连续跨日传\n递。表10 按保留合同、取消、新增和紧急补购归集费用；日前策略不能主动调单，\n取消与新增费用均为零。 \n"
+  },
+  {
+    "page": 20,
+    "characters": 918,
+    "drawings": 15,
+    "images": 1,
+    "head": "20 \n表 10 波动电价下两类策略的实际费用构成 \n费用项目 \n日前策略/元 \n滚动策略/元 \n保留合同购电费 \n13,663,",
+    "tail": "性。该统计量用于衡量现有年度轨迹上的收益波动，不能替代跨\n年度、不同市场条件下的独立检验。 \n表11 汇总四问的最终结果，指定日期的购电与储能结果见附录A。 \n"
+  },
+  {
+    "page": 21,
+    "characters": 1077,
+    "drawings": 21,
+    "images": 0,
+    "head": "21 \n表 11 四问最终策略与购电费用 \n问题 \n新增信息或权限 \n最终策略 \n购电费用/元 \n一 \n供需与电价已知 \n确定性线",
+    "tail": "，先依据当地交易规则\n确定可调整的合同范围，再利用独立历史时段校准预测与风险参数。新增成本或约束\n应进入优化和结算两端，并用相同边界条件比较实施前后的效果。 \n"
+  },
+  {
+    "page": 22,
+    "characters": 1631,
+    "drawings": 79,
+    "images": 0,
+    "head": "22 \n十一 参考文献 \n[1] 全国大学生数学建模竞赛组委会. 2026 年高教社杯全国大学生数学建模竞赛C 题 微网与外\n部电",
+    "tail": "20.76 \n20:00-20:10 \n0.00 \n全天购电量  68,036.47 kWh \n全天购电费  41,302.44 元 \n对应结果见表 15。 \n"
+  },
+  {
+    "page": 23,
+    "characters": 1549,
+    "drawings": 164,
+    "images": 0,
+    "head": "23 \n表 15 问题2（2025-03-20） 储能运行 \n时间段 \n充电量 \n放电量 \n时间段 \n充电量 \n放电量 \n00:0",
+    "tail": " \n对应结果见表 22。 \n表 22 问题2（2025-09-23） 紧急购电 \n时段 \n电量 \n20:20-20:30 \n0.33 \n对应结果见表 23。 \n"
+  },
+  {
+    "page": 24,
+    "characters": 1479,
+    "drawings": 151,
+    "images": 0,
+    "head": "24 \n表 23 问题2（2025-12-21） 指定时段购电及全天费用 \n时间段 \n购电量 \n时间段 \n购电量 \n时间段 \n购电",
+    "tail": "\n0.00 \n20:00-20:10 \n0.00 \n全天购电量  34,874.69 kWh \n全天购电费  19,723.09 元 \n对应结果见表 30。 \n"
+  },
+  {
+    "page": 25,
+    "characters": 1564,
+    "drawings": 164,
+    "images": 0,
+    "head": "25 \n表 30 问题3（2025-06-21） 储能运行 \n时间段 \n充电量 \n放电量 \n时间段 \n充电量 \n放电量 \n00:0",
+    "tail": "电 \n6,395.64 \n对应结果见表 37。 \n表 37 问题3（2025-12-21） 紧急购电 \n时段 \n电量 \n07:50-08:00 \n33.89 \n"
+  },
+  {
+    "page": 26,
+    "characters": 1459,
+    "drawings": 151,
+    "images": 0,
+    "head": "26 \nA.4-2 问题4-2 \n对应结果见表 38。 \n表 38 问题4-2（2025-03-20） 指定时段购电及全天费用 \n",
+    "tail": "16.70 \n20:00-20:10 \n0.00 \n全天购电量  71,436.45 kWh \n全天购电费  46,451.24 元 \n对应结果见表 45。 \n"
+  },
+  {
+    "page": 27,
+    "characters": 1600,
+    "drawings": 164,
+    "images": 0,
+    "head": "27 \n表 45 问题4-2（2025-09-23） 储能运行 \n时间段 \n充电量 \n放电量 \n时间段 \n充电量 \n放电量 \n00",
+    "tail": "\n6,123.41 \n对应结果见表 52。 \n表 52 问题4-3（2025-03-20） 紧急购电 \n时段 \n电量 \n09:40-10:00 \n79.05 \n"
+  },
+  {
+    "page": 28,
+    "characters": 1491,
+    "drawings": 151,
+    "images": 0,
+    "head": "28 \n对应结果见表 53。 \n表 53 问题4-3（2025-06-21） 指定时段购电及全天费用 \n时间段 \n购电量 \n时间段",
+    "tail": "39.98 \n20:00-20:10 \n0.00 \n全天购电量  95,641.71 kWh \n全天购电费  72,890.05 元 \n对应结果见表 60。 \n"
+  },
+  {
+    "page": 29,
+    "characters": 1905,
+    "drawings": 38,
+    "images": 0,
+    "head": "29 \n表 60 问题4-3（2025-12-21） 储能运行 \n时间段 \n充电量 \n放电量 \n时间段 \n充电量 \n放电量 \n00",
+    "tail": "\"OMP_NUM_THREADS\", \"1\") \nimport numpy as np \nimport pandas as pd \nimport scipy \n"
+  },
+  {
+    "page": 30,
+    "characters": 3517,
+    "drawings": 0,
+    "images": 0,
+    "head": "30 \nfrom scipy.optimize import Bounds, LinearConstraint, milp \nfr",
+    "tail": "\"No missing/negative values found; no observations deleted or imputed. Unusual \n"
+  },
+  {
+    "page": 31,
+    "characters": 3836,
+    "drawings": 0,
+    "images": 0,
+    "head": "31 \npeaks retained.\" \n    return data, audit \n  \ndef optimize_day",
+    "tail": " \n    audit_trace(frame, battery=battery, initial=initial) \n    return frame \n \n"
+  },
+  {
+    "page": 32,
+    "characters": 4311,
+    "drawings": 0,
+    "images": 0,
+    "head": "32 \n \ndef audit_trace(frame, battery=B, initial=None): \n    \"\"\"In",
+    "tail": "k == \"pv\" and d: \n                out[d, values[max(0,d-7):d].max(0) == 0] = 0 \n"
+  },
+  {
+    "page": 33,
+    "characters": 4384,
+    "drawings": 0,
+    "images": 0,
+    "head": "33 \n        pred[k] = out \n    return pred, fit_dates \n  \ndef res",
+    "tail": "ha),stop=31) \n        row = {\"alpha\":alpha} \n        for key in (\"load\",\"pv\"): \n"
+  },
+  {
+    "page": 34,
+    "characters": 5022,
+    "drawings": 0,
+    "images": 0,
+    "head": "34 \n            row[key+\"_mae_kw\"] = float(np.abs(pred[key][21:31",
+    "tail": ".py \n\"\"\"Strict attachment 3/4 parsing and causal hourly forecast alignment.\"\"\" \n"
+  },
+  {
+    "page": 35,
+    "characters": 4217,
+    "drawings": 0,
+    "images": 0,
+    "head": "35 \nfrom pathlib import Path \nimport hashlib \nimport numpy as np ",
+    "tail": "v3_model.py \n\"\"\"Exact LP reformulation and causal forecast-corrected dispatch. \n"
+  },
+  {
+    "page": 36,
+    "characters": 3440,
+    "drawings": 0,
+    "images": 0,
+    "head": "36 \n \nEnergy in kWh. Same settlement, time axis and realtime regu",
+    "tail": " \n    mask:int=0 \n    beta:float=0. \n    refund:bool=True \n    lookback:int=18 \n"
+  },
+  {
+    "page": 37,
+    "characters": 4666,
+    "drawings": 0,
+    "images": 0,
+    "head": "37 \n    decay:int=36 \n  \ndef corrected_load(data,pred,beta,lookba",
+    "tail": "mergency_kwh>TOL).sum());days.append(item) \n        if retain:frames.append(f) \n"
+  },
+  {
+    "page": 38,
+    "characters": 3445,
+    "drawings": 0,
+    "images": 0,
+    "head": "38 \n    daily=pd.DataFrame(days);trace=pd.concat(frames,ignore_in",
+    "tail": "0],f.y[0]+h.y[0]+np.cumsum(lengths*slopes)] \n    return restrict(Value(x,y)) \n \n"
+  },
+  {
+    "page": 39,
+    "characters": 3802,
+    "drawings": 0,
+    "images": 0,
+    "head": "39 \n \ndef purchase_stage(net,p): \n    # v=s_before-s_after; negat",
+    "tail": "- 144 < origin).all() and origin >= 1008 \n    hour = (target % 144 + .5) / 144 \n"
+  },
+  {
+    "page": 40,
+    "characters": 3863,
+    "drawings": 0,
+    "images": 0,
+    "head": "40 \n    dow = (target // 144 + 2) % 7 \n    return np.column_stack",
+    "tail": "src.v3_model import solve,risk_buffers \nfrom src.v5_model import adaptive_load \n"
+  },
+  {
+    "page": 41,
+    "characters": 4958,
+    "drawings": 0,
+    "images": 0,
+    "head": "41 \nfrom src.v5b_value import recourse_values \n \nOUT=Path('artifa",
+    "tail": "st:]+data['pv'][left:day,first:]-pv[left:day,ver,first:]) \n                    \n"
+  },
+  {
+    "page": 42,
+    "characters": 4285,
+    "drawings": 0,
+    "images": 0,
+    "head": "42 \nf=execute_prefix(plan[first:],data['load'][day,first:],data['",
+    "tail": "    q1,meta=solve(data['q1_load'],data['q1_pv'],data['price'],6000,equal=True) \n"
+  },
+  {
+    "page": 43,
+    "characters": 4775,
+    "drawings": 0,
+    "images": 0,
+    "head": "43 \n    assert abs(q1.plan_kwh@data['price']-EXPECTED['1'])<1e-6 ",
+    "tail": "H/附件5 \nNo solver inputs, decisions, or original attachment files are modified. \n"
+  },
+  {
+    "page": 44,
+    "characters": 2981,
+    "drawings": 0,
+    "images": 0,
+    "head": "44 \n\"\"\" \nfrom pathlib import Path \nfrom copy import copy \nfrom da",
+    "tail": "1e-7 \n    if key=='1': \n        assert abs(f.soc_end_kwh.iloc[-1]-6000) < 1e-7 \n"
+  },
+  {
+    "page": 45,
+    "characters": 4056,
+    "drawings": 0,
+    "images": 0,
+    "head": "45 \n    return f, physical \n  \ndef make_payload(key, f): \n    tim",
+    "tail": "         for j,value in enumerate(row,1): \n                cell = ws.cell(i,j) \n"
+  },
+  {
+    "page": 46,
+    "characters": 3672,
+    "drawings": 0,
+    "images": 0,
+    "head": "46 \n                cell.value = value \n                if i>old_",
+    "tail": " as pd \nfrom scipy.io import savemat \nROOT=Path(__file__).resolve().parents[1] \n"
+  },
+  {
+    "page": 47,
+    "characters": 4459,
+    "drawings": 0,
+    "images": 0,
+    "head": "47 \ndef main(): \n out=ROOT/'artifacts/v10';out.mkdir(exist_ok=Tru",
+    "tail": "rrow(a,[22 y],[24 y]);end \n for k=1:3,arrow(a,[84 ys(k)-8],[84 ys(k+1)+8]);end \n"
+  },
+  {
+    "page": 48,
+    "characters": 4093,
+    "drawings": 0,
+    "images": 0,
+    "head": "48 \n saveout(f,out,'modeling_overview'); \nend \n \nif wanted(only,'",
+    "tail": "6]; \n saveout(f,out,'q2_validation'); \nend \n \nif wanted(only,'q2_forecasts') \n \n"
+  },
+  {
+    "page": 49,
+    "characters": 3841,
+    "drawings": 0,
+    "images": 0,
+    "head": "49 \n f=fig(16.368/2.54); \n for k=1:4 \n  for j=1:2 \n   a=ax(f,[.11",
+    "tail": "egend');lg.Position=[.18 .97 .70 .05]; \n  end \n  saveout(f,out,name{1}); \n end \n"
+  },
+  {
+    "page": 50,
+    "characters": 4017,
+    "drawings": 0,
+    "images": 0,
+    "head": "50 \nend \n \nif wanted(only,'price_dispatch') \n \n R=load('artifacts",
+    "tail": "xport_publication_figure(fig, outputStem, dpi, grayscalePreview, strictDesign) \n"
+  },
+  {
+    "page": 51,
+    "characters": 2483,
+    "drawings": 0,
+    "images": 0,
+    "head": "51 \n%EXPORT_PUBLICATION_FIGURE 通过设计门禁后输出 SVG、PNG 与灰度质检图。 \nargumen",
+    "tail": "\" + k + ... \n            \" 个坐标轴标题过长；完整论述应移到图注，面板内只保留短标题\"; %#ok<AGROW> \n    end \n"
+  },
+  {
+    "page": 52,
+    "characters": 2232,
+    "drawings": 0,
+    "images": 0,
+    "head": "52 \n \n    lineList = findall(ax, \"Type\", \"line\"); \n    for line =",
+    "tail": "GROW> \n        break; \n    end \nend \n \nissues = unique(issues, \"stable\"); \nend \n"
+  }
+]

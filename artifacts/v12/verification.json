@@ -1,0 +1,182 @@
+{
+  "status": "PASS",
+  "pdf_pages": 52,
+  "through_references_including_abstract": 22,
+  "body_and_references_excluding_abstract": 21,
+  "appendix_A_page": 22,
+  "appendix_B_page": 29,
+  "figures": 12,
+  "tables": 61,
+  "native_math": 52,
+  "figure_media_and_sizes_unchanged": true,
+  "source_programs_complete": 13,
+  "digital_format": "A4; margins >=2.5cm; abstract one page; centered page numbers; no TOC; anonymous; PDF and ZIP each <20MB",
+  "layout": [
+    {
+      "page": 1,
+      "content_bottom_pt": 679.13,
+      "bottom_space_above_margin_pt": 90.87
+    },
+    {
+      "page": 2,
+      "content_bottom_pt": 737.33,
+      "bottom_space_above_margin_pt": 32.67
+    },
+    {
+      "page": 3,
+      "content_bottom_pt": 681.46,
+      "bottom_space_above_margin_pt": 88.54
+    },
+    {
+      "page": 4,
+      "content_bottom_pt": 733.49,
+      "bottom_space_above_margin_pt": 36.51
+    },
+    {
+      "page": 5,
+      "content_bottom_pt": 766.53,
+      "bottom_space_above_margin_pt": 3.47
+    },
+    {
+      "page": 6,
+      "content_bottom_pt": 732.29,
+      "bottom_space_above_margin_pt": 37.71
+    },
+    {
+      "page": 7,
+      "content_bottom_pt": 747.77,
+      "bottom_space_above_margin_pt": 22.23
+    },
+    {
+      "page": 8,
+      "content_bottom_pt": 674.26,
+      "bottom_space_above_margin_pt": 95.74
+    },
+    {
+      "page": 9,
+      "content_bottom_pt": 698.57,
+      "bottom_space_above_margin_pt": 71.43
+    },
+    {
+      "page": 10,
+      "content_bottom_pt": 719.93,
+      "bottom_space_above_margin_pt": 50.07
+    },
+    {
+      "page": 11,
+      "content_bottom_pt": 705.53,
+      "bottom_space_above_margin_pt": 64.47
+    },
+    {
+      "page": 12,
+      "content_bottom_pt": 753.41,
+      "bottom_space_above_margin_pt": 16.59
+    },
+    {
+      "page": 13,
+      "content_bottom_pt": 753.89,
+      "bottom_space_above_margin_pt": 16.11
+    },
+    {
+      "page": 14,
+      "content_bottom_pt": 670.37,
+      "bottom_space_above_margin_pt": 99.63
+    },
+    {
+      "page": 15,
+      "content_bottom_pt": 671.33,
+      "bottom_space_above_margin_pt": 98.67
+    },
+    {
+      "page": 16,
+      "content_bottom_pt": 759.53,
+      "bottom_space_above_margin_pt": 10.47
+    },
+    {
+      "page": 17,
+      "content_bottom_pt": 734.69,
+      "bottom_space_above_margin_pt": 35.31
+    },
+    {
+      "page": 18,
+      "content_bottom_pt": 743.02,
+      "bottom_space_above_margin_pt": 26.98
+    },
+    {
+      "page": 19,
+      "content_bottom_pt": 691.85,
+      "bottom_space_above_margin_pt": 78.15
+    },
+    {
+      "page": 20,
+      "content_bottom_pt": 728.81,
+      "bottom_space_above_margin_pt": 41.19
+    },
+    {
+      "page": 21,
+      "content_bottom_pt": 751.13,
+      "bottom_space_above_margin_pt": 18.87
+    },
+    {
+      "page": 22,
+      "content_bottom_pt": 700.61,
+      "bottom_space_above_margin_pt": 69.39
+    }
+  ],
+  "horizontal_overflow": [],
+  "workbooks": {
+    "1": {
+      "sheets": [
+        "计划购电量",
+        "充放电量"
+      ],
+      "cost_yuan": 35126.94858928963,
+      "bytes": 8849
+    },
+    "2": {
+      "sheets": [
+        "计划购电量",
+        "充放电量",
+        "紧急购电量"
+      ],
+      "cost_yuan": 13991392.603988541,
+      "bytes": 612419
+    },
+    "3": {
+      "sheets": [
+        "计划购电量",
+        "调整购电量",
+        "充放电量",
+        "紧急购电量"
+      ],
+      "cost_yuan": 13479283.316134242,
+      "bytes": 1095792
+    },
+    "4-2": {
+      "sheets": [
+        "计划购电量",
+        "充放电量",
+        "紧急购电量"
+      ],
+      "cost_yuan": 14765492.681447368,
+      "bytes": 614153
+    },
+    "4-3": {
+      "sheets": [
+        "计划购电量",
+        "调整购电量",
+        "充放电量",
+        "紧急购电量"
+      ],
+      "cost_yuan": 14210881.010117684,
+      "bytes": 1097973
+    }
+  },
+  "support": {
+    "status": "PASS",
+    "bytes": 19490248,
+    "files": 31,
+    "original_problem_attachments_included": false,
+    "sha256": "81ac2aa3fb3a28812a23403738f508b946ce79efab833cfd0714357c2c9891ac"
+  }
+}

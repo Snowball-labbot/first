@@ -1,0 +1,99 @@
+{
+  "1": {
+    "cost_yuan": 35126.948589289634,
+    "physical": {
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 8.313350008393172e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1200.0,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  "2": {
+    "days": 1,
+    "cost_yuan": 22372.69429393192,
+    "max_absolute_difference": {
+      "plan_kwh": 2.2737367544323206e-13,
+      "charge_kwh": 1.1368683772161603e-13,
+      "discharge_kwh": 1.1368683772161603e-13,
+      "emergency_kwh": 5.048709793414476e-29,
+      "soc_start_kwh": 1.8189894035458565e-12,
+      "soc_end_kwh": 1.8189894035458565e-12
+    },
+    "physical": {
+      "max_balance_residual_kwh": 6.821210263296962e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 2000.418804029514,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  "3": {
+    "days": 1,
+    "cost_yuan": 20588.34989431827,
+    "max_absolute_difference": {
+      "plan_kwh": 2.2737367544323206e-13,
+      "charge_kwh": 1.1368683772161603e-13,
+      "discharge_kwh": 1.1368683772161603e-13,
+      "emergency_kwh": 5.048709793414476e-29,
+      "soc_start_kwh": 1.8189894035458565e-12,
+      "soc_end_kwh": 1.8189894035458565e-12
+    },
+    "physical": {
+      "max_balance_residual_kwh": 6.252776074688882e-13,
+      "max_soc_residual_kwh": 8.597567102697212e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1598.0581019343442,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  "4-2": {
+    "days": 1,
+    "cost_yuan": 18284.53261055744,
+    "max_absolute_difference": {
+      "plan_kwh": 2.2737367544323206e-13,
+      "charge_kwh": 1.1368683772161603e-13,
+      "discharge_kwh": 1.1368683772161603e-13,
+      "emergency_kwh": 5.048709793414476e-29,
+      "soc_start_kwh": 1.8189894035458565e-12,
+      "soc_end_kwh": 1.8189894035458565e-12
+    },
+    "physical": {
+      "max_balance_residual_kwh": 6.252776074688882e-13,
+      "max_soc_residual_kwh": 9.094947017729282e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 2000.4188040295146,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  "4-3": {
+    "days": 1,
+    "cost_yuan": 16907.30085814825,
+    "max_absolute_difference": {
+      "plan_kwh": 2.2737367544323206e-13,
+      "charge_kwh": 2.2737367544323206e-13,
+      "discharge_kwh": 1.1368683772161603e-13,
+      "emergency_kwh": 5.048709793414476e-29,
+      "soc_start_kwh": 1.8189894035458565e-12,
+      "soc_end_kwh": 1.8189894035458565e-12
+    },
+    "physical": {
+      "max_balance_residual_kwh": 6.821210263296962e-13,
+      "max_soc_residual_kwh": 7.673861546209082e-13,
+      "max_soc_discontinuity_kwh": 0.0,
+      "simultaneous_intervals": 0,
+      "min_soc_kwh": 1598.0581019343435,
+      "max_soc_kwh": 10800.0,
+      "pass": true
+    }
+  },
+  "status": "PASS"
+}
