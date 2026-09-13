@@ -1,0 +1,24 @@
+{
+  "dayahead": {
+    "n": 48096,
+    "active": 39439,
+    "idle_percent": 17.999417831004656,
+    "price_min": 0.0076,
+    "price_max": 1.7936,
+    "signed_min": -5.0,
+    "signed_max": 4.999999999999999,
+    "source": "artifacts\\v5b\\q42_value_selected_intervals.csv.gz",
+    "sha256": "03f0af7dcf9c4da612a25511f39f9a44fdbb0f16275115b874a8150f4b5b6b66"
+  },
+  "rolling": {
+    "n": 48096,
+    "active": 42989,
+    "idle_percent": 10.618346640053227,
+    "price_min": 0.0076,
+    "price_max": 1.7936,
+    "signed_min": -5.0,
+    "signed_max": 4.999999999999999,
+    "source": "artifacts\\v5b\\q43_value_release_selected_intervals.csv.gz",
+    "sha256": "a6a32b0c3017bed9d9cd45ba306649a80643c4a1bd861f16ea74179eb5757949"
+  }
+}

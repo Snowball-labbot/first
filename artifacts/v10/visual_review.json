@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "reviewer": "assistant visual inspection",
+  "pdf_sha256": "e8baeb3399f1a15fa5e1275908ea994017c859bb350d3d0e7beefcecc50e90d5",
+  "all_pages_overview": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45
+  ],
+  "final_full_page_checks": [
+    13,
+    20,
+    21
+  ],
+  "earlier_full_page_checks": [
+    8,
+    13,
+    20,
+    21
+  ],
+  "observations": [
+    "Final 45-page contact sheets inspected: no blank pages or gross clipping.",
+    "Figure 7 is one taller waterfall; panel b absent; amounts and unit visible.",
+    "Final figure 12 is the user-selected unsmoothed histogram with YlGnBu palette; axes and colorbar visible.",
+    "Original figures 10 and 14 removed; corresponding values retained in prose.",
+    "All 12 image/caption pairs stay on one page."
+  ],
+  "limitations": [
+    "Subjective visual review is not journal acceptance or external peer review."
+  ]
+}

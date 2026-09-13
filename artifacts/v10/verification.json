@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": {
+    "only_documented_paragraph_changes": true,
+    "all_61_tables_unchanged": true,
+    "all_52_native_equations_unchanged": true,
+    "12_figures_sequential": true,
+    "removed_draft_absent": true,
+    "all_result_workbooks_frozen": true,
+    "q1_cost_35126_95": true,
+    "immutable_figure_data": true,
+    "matlab_exports_and_black_text": true,
+    "v9_requested_heights": true,
+    "density_normalized": true,
+    "density_all_334_days": true,
+    "all_figures_share_caption_page": true,
+    "abstract_preserved": true,
+    "pdf_text_black": true,
+    "no_blank_pages": true,
+    "body_within_30_pages": true,
+    "a4": true,
+    "ooxml_well_formed": true
+  },
+  "pages": 45,
+  "body_and_references": 21,
+  "appendix_starts": 23,
+  "figures": 12,
+  "tables": 61,
+  "native_equations": 52,
+  "effective_dpi": {
+    "modeling_overview": 600.2593548387097,
+    "raw_q1_inputs": 600.2593548387097,
+    "result_q1_dispatch": 600.2593548387097,
+    "q1_efficiency": 600.2593548387097,
+    "q2_validation": 600.2593548387097,
+    "q2_forecasts": 600.2593548387097,
+    "q2_cost": 600.2593548387097,
+    "q3_forecasts": 600.2593548387097,
+    "q3_validation": 600.2593548387097,
+    "annual_price": 600.2593548387097,
+    "price_uncertainty": 600.2593548387097,
+    "price_dispatch": 600.2593548387097
+  },
+  "hashes": {
+    "md": "8e90c294278466e6d24b8e9398f70263f9a708ca4213dc032503530d9399ce7a",
+    "docx": "983d6ff98cedec236667d1752ba4fd9e6c162c21b3a23e75770c2b29c4da562c",
+    "pdf": "e8baeb3399f1a15fa5e1275908ea994017c859bb350d3d0e7beefcecc50e90d5"
+  }
+}

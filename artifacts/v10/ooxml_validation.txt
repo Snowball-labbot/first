@@ -1,0 +1,2 @@
+Office XML validator: All validations PASSED.
+12 inline figures; 61 unchanged tables; 52 unchanged native equations.

@@ -1,0 +1,127 @@
+{
+  "source_data": "artifacts/v8/figure_data.mat",
+  "source_sha256": "811187cfa71bf5f31e2411902fb84ca2169a17044117dbafba3bf99a98d153ce",
+  "backend": "MATLAB",
+  "figures": [
+    {
+      "name": "modeling_overview",
+      "width_cm": 15.5,
+      "height_cm": 8.12025662025662,
+      "pixels": [
+        3663,
+        1919
+      ],
+      "sha256": "867c5238d79a28b215740e706a9526970abef8b34cb90862de825fff76deca95"
+    },
+    {
+      "name": "raw_q1_inputs",
+      "width_cm": 15.5,
+      "height_cm": 7.908681408681408,
+      "pixels": [
+        3663,
+        1869
+      ],
+      "sha256": "f66f6c0b7d380d09d2e3e62593690e38e84c8b131fe0bcc08520b9e0136100bb"
+    },
+    {
+      "name": "result_q1_dispatch",
+      "width_cm": 15.5,
+      "height_cm": 11.399672399672399,
+      "pixels": [
+        3663,
+        2694
+      ],
+      "sha256": "9a01bca4aaf9941ef90a6db6e286a94cad363e7dfe90820172eb90152c623f8c"
+    },
+    {
+      "name": "q1_efficiency",
+      "width_cm": 15.5,
+      "height_cm": 7.752115752115752,
+      "pixels": [
+        3663,
+        1832
+      ],
+      "sha256": "99b008b2cca777e5d915c5cc886b254683f19ea777a7b3f067c17b74008ab723"
+    },
+    {
+      "name": "q2_validation",
+      "width_cm": 15.5,
+      "height_cm": 6.347256347256347,
+      "pixels": [
+        3663,
+        1500
+      ],
+      "sha256": "36b8481ec03c8976f620ea168df244bbcf5ff207d34445c2e989759e631eb146"
+    },
+    {
+      "name": "q2_forecasts",
+      "width_cm": 15.5,
+      "height_cm": 16.37168987168987,
+      "pixels": [
+        3663,
+        3869
+      ],
+      "sha256": "23a15d7435e05b437c5b9f0988e176dacf012edbfac0a6eb42a613280e35b45b"
+    },
+    {
+      "name": "q2_cost",
+      "width_cm": 15.5,
+      "height_cm": 8.518018018018019,
+      "pixels": [
+        3663,
+        2013
+      ],
+      "sha256": "79fff39a1f09286e06b872825bd40a3d8f7c12923bfbbd2cb3be4c9f26003636"
+    },
+    {
+      "name": "q3_forecasts",
+      "width_cm": 15.5,
+      "height_cm": 8.06947856947857,
+      "pixels": [
+        3663,
+        1907
+      ],
+      "sha256": "63717bc7ad5db4d55621fa70d14a320978ecd925275f049841b51d94ea00c913"
+    },
+    {
+      "name": "q3_validation",
+      "width_cm": 15.5,
+      "height_cm": 6.216079716079716,
+      "pixels": [
+        3663,
+        1469
+      ],
+      "sha256": "30d6e89aac16faa151c99f49177762bf9f77d5e1201cf3d06eaaf15c078c5f55"
+    },
+    {
+      "name": "annual_price",
+      "width_cm": 15.5,
+      "height_cm": 8.386841386841386,
+      "pixels": [
+        3663,
+        1982
+      ],
+      "sha256": "24c248cdff3fff9fd0543fda8dd6fe385fe0265ae8bfe008d706cd55499e3850"
+    },
+    {
+      "name": "price_uncertainty",
+      "width_cm": 15.5,
+      "height_cm": 8.886158886158887,
+      "pixels": [
+        3663,
+        2100
+      ],
+      "sha256": "fd8d447b9f373410dc3da9d2268bb66762d39f35c00c120a248a4fc4e21ff86f"
+    },
+    {
+      "name": "price_dispatch",
+      "width_cm": 15.5,
+      "height_cm": 7.989079989079989,
+      "pixels": [
+        3663,
+        1888
+      ],
+      "sha256": "fea6da537276e777af1cd58436812d18413ba3d27d59ef4d96da8dc9f43b9317"
+    }
+  ]
+}
