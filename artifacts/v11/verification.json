@@ -1,0 +1,200 @@
+{
+  "passed": true,
+  "checks": {
+    "documented_prose_edits_only": true,
+    "61_tables_content_identical": true,
+    "52_native_math_objects_identical": true,
+    "all_drawing_xml_identical": true,
+    "all_media_bytes_identical": true,
+    "equation_tex_identical": true,
+    "abstract_text_identical": true,
+    "references_text_identical": true,
+    "sequential_unique_figure_captions": true,
+    "sequential_unique_table_captions": true,
+    "all_objects_referenced": true,
+    "all_5_references_cited": true,
+    "no_unintended_font_fallback": true,
+    "abstract_one_page": true,
+    "body_and_references_within_30_pages": true,
+    "no_blank_pages": true,
+    "a4": true,
+    "margins_at_least_2_5cm": true,
+    "docx_pdf_under_20mb": true,
+    "all_12_figures_share_caption_page": true,
+    "figure12_note_same_page": true,
+    "table6_note_same_page": true
+  },
+  "pages": 45,
+  "body_and_references_pages": 21,
+  "appendix_starts": 23,
+  "paragraph_edits": 35,
+  "figure_dimensions": [
+    {
+      "figure": 1,
+      "width_emu": 5580000,
+      "height_emu": 2923292
+    },
+    {
+      "figure": 2,
+      "width_emu": 5580000,
+      "height_emu": 2847125
+    },
+    {
+      "figure": 3,
+      "width_emu": 5580000,
+      "height_emu": 4103882
+    },
+    {
+      "figure": 4,
+      "width_emu": 5580000,
+      "height_emu": 2790761
+    },
+    {
+      "figure": 5,
+      "width_emu": 5580000,
+      "height_emu": 2285012
+    },
+    {
+      "figure": 6,
+      "width_emu": 5580000,
+      "height_emu": 5893808
+    },
+    {
+      "figure": 7,
+      "width_emu": 5580000,
+      "height_emu": 3066486
+    },
+    {
+      "figure": 8,
+      "width_emu": 5580000,
+      "height_emu": 2905012
+    },
+    {
+      "figure": 9,
+      "width_emu": 5580000,
+      "height_emu": 2237788
+    },
+    {
+      "figure": 10,
+      "width_emu": 5580000,
+      "height_emu": 3019262
+    },
+    {
+      "figure": 11,
+      "width_emu": 5580000,
+      "height_emu": 3199017
+    },
+    {
+      "figure": 12,
+      "width_emu": 5580000,
+      "height_emu": 2876068
+    }
+  ],
+  "fonts": [
+    {
+      "font": "Consolas",
+      "size_pt": 7.56,
+      "characters": 49988
+    },
+    {
+      "font": "SimSun",
+      "size_pt": 12.0,
+      "characters": 10025
+    },
+    {
+      "font": "TimesNewRomanPSMT",
+      "size_pt": 9.48,
+      "characters": 6530
+    },
+    {
+      "font": "TimesNewRomanPSMT",
+      "size_pt": 12.0,
+      "characters": 4381
+    },
+    {
+      "font": "TimesNewRomanPSMT",
+      "size_pt": 10.56,
+      "characters": 1646
+    },
+    {
+      "font": "SimSun",
+      "size_pt": 9.48,
+      "characters": 1505
+    },
+    {
+      "font": "SimSun",
+      "size_pt": 10.56,
+      "characters": 1074
+    },
+    {
+      "font": "CambriaMath",
+      "size_pt": 10.56,
+      "characters": 859
+    },
+    {
+      "font": "CambriaMath",
+      "size_pt": 7.56,
+      "characters": 504
+    },
+    {
+      "font": "TimesNewRomanPS-BoldMT",
+      "size_pt": 12.0,
+      "characters": 302
+    },
+    {
+      "font": "SimHei",
+      "size_pt": 12.0,
+      "characters": 278
+    },
+    {
+      "font": "CambriaMath",
+      "size_pt": 12.0,
+      "characters": 167
+    },
+    {
+      "font": "SimHei",
+      "size_pt": 14.04,
+      "characters": 125
+    },
+    {
+      "font": "CambriaMath",
+      "size_pt": 8.52,
+      "characters": 76
+    },
+    {
+      "font": "SimSun",
+      "size_pt": 7.56,
+      "characters": 56
+    },
+    {
+      "font": "CambriaMath",
+      "size_pt": 6.0,
+      "characters": 49
+    },
+    {
+      "font": "TimesNewRomanPS-BoldMT",
+      "size_pt": 9.48,
+      "characters": 42
+    },
+    {
+      "font": "TimesNewRomanPS-BoldMT",
+      "size_pt": 14.04,
+      "characters": 34
+    },
+    {
+      "font": "SimHei",
+      "size_pt": 15.96,
+      "characters": 18
+    },
+    {
+      "font": "TimesNewRomanPS-BoldMT",
+      "size_pt": 15.96,
+      "characters": 1
+    }
+  ],
+  "hashes": {
+    "docx": "13fddf96de01e403b1bb9c2337765f759f1230e91cead511e5f81b717d825693",
+    "pdf": "2e317541842e52ae412961e1aae328ca79f5afccca6bb2baa3921922bd8395ad",
+    "md": "d138d4ff993fbf1cf15f37064725cd5f2a79e83b57189ada69f934cc1e9e4422"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema": {
+    "exit_code": 0,
+    "output": "\r\nParagraphs: 0 → 2441 (+2441)\r\nAll validations PASSED!\r\n"
+  },
+  "equations": {
+    "exit_code": 0,
+    "output": "{\r\n  \"output_path\": \"D:\\\\桌面\\\\C题\\\\first_v2\\\\reports\\\\完整论文_V11.docx\",\r\n  \"equations\": 52,\r\n  \"leftover_placeholders\": [],\r\n  \"issues\": [],\r\n  \"passed\": true\r\n}\r\n"
+  },
+  "prose": {
+    "exit_code": 0,
+    "output": "结果: PASS\r\n"
+  },
+  "format": {
+    "exit_code": 1,
+    "output": "{\r\n  \"path\": \"D:\\\\桌面\\\\C题\\\\first_v2\\\\reports\\\\完整论文_V11.docx\",\r\n  \"metrics\": {\r\n    \"content_units\": 24220,\r\n    \"rendered_pages\": 45,\r\n    \"equations\": 52,\r\n    \"figures\": 12,\r\n    \"tables\": 61\r\n  },\r\n  \"issues\": [\r\n    \"图题注编号重复: [2, 8, 9]\",\r\n    \"图2 已插入但未在正文引用\",\r\n    \"图8 已插入但未在正文引用\",\r\n    \"图9 已插入但未在正文引用\",\r\n    \"表题注编号重复: [3, 4, 5, 6, 7, 8, 11]\",\r\n    \"表6 已插入但未在正文引用\",\r\n    \"表7 已插入但未在正文引用\",\r\n    \"表8 已插入但未在正文引用\",\r\n    \"表11 已插入但未在正文引用\",\r\n    \"未找到参考文献章节\",\r\n    \"渲染后共 45 页，超过当前核验的官方上限 30 页\"\r\n  ],\r\n  \"passed\": false\r\n}\r\n"
+  }
+}
